@@ -14,3 +14,9 @@ sneakers = db[config.SNEAKERS_COLLECTION]
 
 def find_sneakers(limit: int = config.DEFAULT_LIMIT, offset: int = 0):
     return sneakers.find({}).sort("releaseDate", DESCENDING).limit(limit)
+
+
+def find_sneaker_by_id(id: str = ""):
+    if not id:
+        raise ValueError('The supplied productId cannot be null')
+    return sneakers.find_one({"_id" : })
