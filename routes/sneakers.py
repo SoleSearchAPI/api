@@ -1,6 +1,7 @@
-import config
-from data.client import find_sneaker_by_id, find_sneakers
 from fastapi import APIRouter
+
+import config
+from data.instance import find_sneaker_by_id, find_sneakers
 
 router = APIRouter()
 
@@ -15,3 +16,13 @@ async def get_sneakers(
 @router.get("/sneakers/{product_id}")
 async def get_sneaker_by_id(product_id: str):
     return find_sneaker_by_id(product_id)
+
+
+@router.get("/sneakers/{product_id}/prices")
+async def get_sneaker_pricing(product_id: str):
+    return {"Error": "Not implemented yet"}
+
+
+@router.get("/sneakers/{product_id}/prices/{size}")
+async def get_sneaker_size_pricing(product_id: str, size: str):
+    return
