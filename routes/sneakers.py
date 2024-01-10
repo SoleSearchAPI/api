@@ -4,7 +4,7 @@ from fastapi import APIRouter, Query
 
 import config
 from data.instance import ASCENDING, DESCENDING, find_sneaker_by_id, find_sneakers
-from data.models import Audience
+from data.models import Audience, SortKey, SortOrder
 
 router = APIRouter()
 
@@ -18,10 +18,10 @@ async def get_sneakers(
     audience: Audience | None = None,
     releaseDate: str | None = None,
     released: bool | None = None,
-    sort: str = "releaseDate",
-    sortOrder: int = DESCENDING,
-    offset: Annotated(int, Query(gte=1, lte=100)) = config.DEFAULT_OFFSET,
-    limit: int = config.DEFAULT_LIMIT,
+    sort: SortKey = SortKey.RELEASE_DATE,
+    sortOrder: SortOrder = SortOrder.DESCENDING,
+    offset: Annotated(int, Query(gte=config.DEFAULT_OFFSET)) = config.DEFAULT_OFFSET,
+    limit: Annotated(int, Query(gte=1, lte=100)) = config.DEFAULT_LIMIT,
 ):
     return find_sneakers(
         brand=brand,
