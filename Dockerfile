@@ -13,4 +13,4 @@ COPY ./db.env /app/db.env
 COPY ./src /app/src
 
 # Use uvicorn to run the application
-CMD ["uvicorn", "src.main:app"]
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8080"]

@@ -25,7 +25,7 @@ async def get_sneakers(
     offset: Annotated[int, Query(gte=DEFAULT_OFFSET)] = DEFAULT_OFFSET,
     limit: Annotated[int, Query(gte=1, lte=100)] = DEFAULT_LIMIT,
 ):
-    return find_sneakers(
+    return await find_sneakers(
         brand=brand,
         sku=sku,
         name=name,
@@ -42,7 +42,7 @@ async def get_sneakers(
 
 @router.get("/{product_id}")
 async def get_sneaker_by_id(product_id: str):
-    return find_sneaker_by_id(product_id)
+    return await find_sneaker_by_id(product_id)
 
 
 @router.get("/{product_id}/prices")
@@ -52,4 +52,4 @@ async def get_sneaker_pricing(product_id: str):
 
 @router.get("/{product_id}/prices/{size}")
 async def get_sneaker_size_pricing(product_id: str, size: str):
-    return
+    return {"Error": "Not implemented yet"}
