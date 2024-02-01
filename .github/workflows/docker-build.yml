@@ -1,0 +1,55 @@
+name: Build Deployment Image
+on:
+  push:
+    branches: ["deploy"]
+  pull_request:
+    branches: ["deploy"]
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+      - name: Write SSH file to GH Actions Runner
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PUB_KEY }}" > ~/.ssh/id_rsa.pub
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+        env:
+          SSH_AUTH_SOCK: /dev/null
+
+      - name: Test GH Runner SSH connection
+        run: |
+          if ! ssh -T git@github.com; then
+            echo "SSH connection test failed."
+            exit 1
+          fi
+      - name: Add SSH key to agent
+        run: |
+          export DOCKER_BUILDKIT=1
+          eval `ssh-agent`
+          ssh-add ~/.ssh/id_rsa
+      - name: Build the Docker image
+        run: docker build --ssh default=$SSH_AUTH_SOCK . --tag solesearch-api:$VERSION
