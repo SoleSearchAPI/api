@@ -2,8 +2,14 @@ from datetime import UTC, datetime
 
 from bson import ObjectId
 
-from data.instance import ASCENDING, DESCENDING, config, sneakers
-from data.models import Audience, SortKey, SortOrder
+from src.data.instance import (
+    ASCENDING,
+    DEFAULT_LIMIT,
+    DEFAULT_OFFSET,
+    DESCENDING,
+    sneakers,
+)
+from src.data.models import Audience, SortKey, SortOrder
 
 
 def find_sneaker_by_id(id: str = ""):
@@ -31,8 +37,8 @@ def find_sneakers(
     released: bool = None,
     sort_by: SortKey = SortKey.RELEASE_DATE,
     sort_order: SortOrder = SortOrder.DESCENDING,
-    offset: int = config.DEFAULT_OFFSET,
-    limit: int = config.DEFAULT_LIMIT,
+    offset: int = DEFAULT_OFFSET,
+    limit: int = DEFAULT_LIMIT,
 ):
     query = {
         field: value
@@ -61,6 +67,6 @@ def find_sneakers(
         else:
             query["releaseDate"] = datetime.strptime(release_date, "%Y-%m-%d")
 
-    sneakers.find().sort(
+    sneakers.find(query).sort(
         sort_by, ASCENDING if sort_order == SortOrder.ASCENDING else DESCENDING
     ).skip(offset).limit(limit)
