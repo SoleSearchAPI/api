@@ -1,7 +1,7 @@
 import motor.motor_asyncio
 from dotenv import dotenv_values
 
-config = dotenv_values(dotenv_path="db.env")
+config = dotenv_values(dotenv_path=".env")
 
 client = motor.motor_asyncio.AsyncIOMotorClient(config["DB_URL"])
 db = client[config["DB_NAME"]]
