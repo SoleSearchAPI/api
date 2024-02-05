@@ -1,6 +1,7 @@
 from datetime import UTC, datetime
 
 from bson import ObjectId
+from bson.json_util import dumps
 
 from src.data.instance import (
     ASCENDING,
@@ -27,7 +28,7 @@ def find_sneaker_by_sku(sku: str = "", brand=None):
     return sneakers.find_one(query)
 
 
-def find_sneakers(
+async def find_sneakers(
     brand: str = None,
     sku: str = None,
     name: str = None,
@@ -67,6 +68,16 @@ def find_sneakers(
         else:
             query["releaseDate"] = datetime.strptime(release_date, "%Y-%m-%d")
 
-    sneakers.find(query).sort(
-        sort_by, ASCENDING if sort_order == SortOrder.ASCENDING else DESCENDING
-    ).skip(offset).limit(limit)
+    response_list = (
+        await sneakers.find(query)
+        .sort(sort_by, ASCENDING if sort_order == SortOrder.ASCENDING else DESCENDING)
+        .skip(offset)
+        .limit(limit)
+        .to_list(length=limit)
+    )
+
+    for item in response_list:
+        item["id"] = str(item["_id"])
+        del item["_id"]
+
+    return response_list

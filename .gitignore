@@ -1,3 +1,4 @@
 *.env
 sneakers.json
 *.pyc
+env/
