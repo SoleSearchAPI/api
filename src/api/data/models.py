@@ -1,10 +1,9 @@
 from enum import Enum
 from typing import List
 
-from pydantic import BaseModel, ValidationError
-
 from core.models.details import Audience, Images, Links, Prices
-from core.models.shoes import Shoe
+from core.models.shoes import Sneaker
+from pydantic import BaseModel, ValidationError
 
 
 class SortKey(str, Enum):

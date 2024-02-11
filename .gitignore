@@ -1,4 +1,4 @@
 *.env
-sneakers.json
 *.pyc
 env/
+dist/

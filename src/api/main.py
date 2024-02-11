@@ -1,7 +1,7 @@
-import uvicorn
 from fastapi import FastAPI
+from mangum import Mangum
 
-from src.routes import sneakers
+from src.api.routes import sneakers
 
 app = FastAPI(
     responses={404: {"resource": "Not found"}},
@@ -14,3 +14,5 @@ async def ping():
 
 
 app.include_router(sneakers.router)
+
+handler = Mangum(app)
