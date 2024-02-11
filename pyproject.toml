@@ -12,6 +12,7 @@ dependencies = [
   "python-dotenv",
   "uvicorn",
   "pydantic",
+  "mangum",
   "core @ git+ssh://git@github.com/SoleSearch-Demos/core.git@main",
 ]
 
@@ -23,8 +24,23 @@ Issues = "https://github.com/SoleSearch-Demos/api/issues"
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[tool.hatch.metadata]
+allow-direct-references = true
+
 [tool.hatch.build.targets.wheel]
 packages = ["src/api"]
 
+[tool.hatch.build.targets.sdist]
+packages = ["src/api"]
+require-runtime-dependencies = true
+
+[tool.hatch.build.targets.sdist.force-include]
+".env" = "/.env"
+"envs/lambda/Lib/site-packages" = "/"
+
+[tool.hatch.envs.lambda]
+path = "envs/lambda"
+
 [tool.hatch.envs.dev]
 pre-install-commands = ["pip install -e ../core"]
+scripts.start = "uvicorn src.api.main:app --reload"

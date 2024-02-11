@@ -3,14 +3,14 @@ from datetime import UTC, datetime
 from bson import ObjectId
 from bson.json_util import dumps
 
-from src.data.instance import (
+from src.api.data.instance import (
     ASCENDING,
     DEFAULT_LIMIT,
     DEFAULT_OFFSET,
     DESCENDING,
     sneakers,
 )
-from src.data.models import Audience, SortKey, SortOrder
+from src.api.data.models import Audience, SortKey, SortOrder
 
 
 def find_sneaker_by_id(id: str = ""):
