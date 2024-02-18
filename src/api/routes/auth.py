@@ -29,7 +29,9 @@ async def get_stockx_auth(state: str = None, code: str = None):
             "client_secret": STOCKX_CLIENT_SECRET,
             "redirect_uri": "https://localhost:8000/auth/stockx/token",
         },
+        headers={"x-api-key": STOCKX_API_KEY},
     )
+    print(response)
     response_json = response.json()
     logging.info(response_json)
     return response_json
