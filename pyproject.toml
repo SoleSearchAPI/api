@@ -42,6 +42,9 @@ require-runtime-dependencies = true
 [tool.hatch.envs.lambda]
 path = "envs/lambda"
 
+[tool.hatch.envs.default.scripts]
+start = "python -m api.server"
+
 [tool.hatch.envs.dev]
 pre-install-commands = ["pip install -e ../core"]
 scripts.start = "uvicorn src.api.main:app --reload"
