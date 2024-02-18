@@ -13,6 +13,7 @@ dependencies = [
   "uvicorn",
   "pydantic",
   "mangum",
+  "auth0-python",
   "core @ git+ssh://git@github.com/SoleSearch-Demos/core.git@main",
 ]
 

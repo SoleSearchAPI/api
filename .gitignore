@@ -2,3 +2,5 @@
 *.pyc
 env/
 dist/
+cert.pem
+key.pem
