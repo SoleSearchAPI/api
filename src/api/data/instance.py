@@ -3,10 +3,8 @@ from dotenv import dotenv_values
 
 config = dotenv_values(dotenv_path=".env")
 
-client = motor.motor_asyncio.AsyncIOMotorClient(config["DB_URL"])
-db = client[config["DB_NAME"]]
-sneakers = db[config["SNEAKERS_COLLECTION"]]
-ASCENDING = int(config["ASCENDING"])
-DESCENDING = int(config["DESCENDING"])
-DEFAULT_LIMIT = int(config["DEFAULT_LIMIT"])
-DEFAULT_OFFSET = int(config["DEFAULT_OFFSET"])
+client = motor.motor_asyncio.AsyncIOMotorClient(config["SOLESEARCH_DB_CONNECTION_STRING"])
+db = client[config["SOLESEARCH_DB_NAME"]]
+sneakers = db[config["SOLESEARCH_DB_PRIMARY_COLLECTION"]]
+DEFAULT_LIMIT = int(config["SOLESEARCH_DEFAULT_LIMIT"])
+DEFAULT_OFFSET = int(config["SOLESEARCH_DEFAULT_OFFSET"])

@@ -4,10 +4,8 @@ from bson import ObjectId
 from bson.json_util import dumps
 
 from src.api.data.instance import (
-    ASCENDING,
     DEFAULT_LIMIT,
     DEFAULT_OFFSET,
-    DESCENDING,
     sneakers,
 )
 from src.api.data.models import Audience, SortKey, SortOrder
@@ -70,7 +68,7 @@ async def find_sneakers(
 
     response_list = (
         await sneakers.find(query)
-        .sort(sort_by, ASCENDING if sort_order == SortOrder.ASCENDING else DESCENDING)
+        .sort(sort_by, 1 if sort_order == SortOrder.ASCENDING else -1)
         .skip(offset)
         .limit(limit)
         .to_list(length=limit)
