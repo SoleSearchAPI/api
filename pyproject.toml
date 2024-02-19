@@ -13,7 +13,10 @@ dependencies = [
   "uvicorn",
   "pydantic",
   "mangum",
-  "auth0-python",
+  "Authlib",
+  "httpx",
+  "Starlette",
+  "itsdangerous",
   "core @ git+ssh://git@github.com/SoleSearch-Demos/core.git@main",
 ]
 
