@@ -1,10 +1,11 @@
 import logging
 import os
 
+import requests
 from fastapi import APIRouter, HTTPException, Request
 from fastapi.responses import RedirectResponse
+
 from api.data.queries import update_tokens
-import requests
 
 STOCKX_CLIENT_ID = os.environ.get("SOLESEARCH_STOCKX_CLIENT_ID", None)
 STOCKX_CLIENT_SECRET = os.environ.get("SOLESEARCH_STOCKX_CLIENT_SECRET", None)
@@ -52,10 +53,15 @@ async def stockx_oauth_callback(state: str = None, code: str = None):
             "code": code,
             "redirect_uri": "https://solesearch.io",
         }
-        tokens = (session.post("https://accounts.stockx.com/oauth/token", data=login_data, headers=headers)).json()
+        tokens = (
+            session.post(
+                "https://accounts.stockx.com/oauth/token",
+                data=login_data,
+                headers=headers,
+            )
+        ).json()
         await update_tokens(tokens)
         return tokens
     except Exception as e:
         logging.error(e)
         raise HTTPException(status_code=500, detail=str(e))
-    
