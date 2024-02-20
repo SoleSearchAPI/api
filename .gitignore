@@ -4,3 +4,7 @@ env/
 dist/
 cert.pem
 key.pem
+node_modules/
+package-lock.json
+package.json
+stockx.js

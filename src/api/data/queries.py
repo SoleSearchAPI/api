@@ -1,5 +1,7 @@
 from datetime import UTC, datetime
 
+import logging
+
 from bson import ObjectId
 from bson.json_util import dumps
 
@@ -7,6 +9,7 @@ from src.api.data.instance import (
     DEFAULT_LIMIT,
     DEFAULT_OFFSET,
     sneakers,
+    db,
 )
 from src.api.data.models import Audience, SortKey, SortOrder
 
@@ -79,3 +82,23 @@ async def find_sneakers(
         del item["_id"]
 
     return response_list
+
+async def update_tokens(tokens: dict = {}):
+    if "id_token" in tokens:
+        db["OAuth"].update_one(
+            {"type": "id_token"},
+            {"$set": {"token": tokens["id_token"]}},
+        )
+        logging.info("Updated id_token")
+    if "access_token" in tokens:
+        db["OAuth"].update_one(
+            {"type": "access_token"},
+            {"$set": {"token": tokens["access_token"]}},
+        )
+        logging.info("Updated access_token")
+    if "refresh_token" in tokens:
+        db["OAuth"].update_one(
+            {"type": "refresh_token"},
+            {"$set": {"token": tokens["refresh_token"]}},
+        )
+        logging.info("Updated refresh_token")
