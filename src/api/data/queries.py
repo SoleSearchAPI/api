@@ -83,6 +83,7 @@ async def find_sneakers(
 
     return response_list
 
+
 async def update_tokens(tokens: dict = {}):
     if "id_token" in tokens:
         db["OAuth"].update_one(
