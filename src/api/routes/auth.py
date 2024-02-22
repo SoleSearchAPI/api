@@ -24,6 +24,7 @@ async def login_via_stockx(state: str, request: Request):
     if state != "YTPc2DqAwnmhHGzSQVtzwEPq2eEgprUi":
         raise HTTPException(status_code=400, detail="Bad state. Nice try, buster.")
     auth_url = "https://accounts.stockx.com/authorize"
+    print(STOCKX_CLIENT_ID, STOCKX_CLIENT_SECRET, STOCKX_API_KEY)
     params = {
         "response_type": "code",
         "client_id": STOCKX_CLIENT_ID,
@@ -51,7 +52,7 @@ async def stockx_oauth_callback(state: str = None, code: str = None):
             "client_id": STOCKX_CLIENT_ID,
             "client_secret": STOCKX_CLIENT_SECRET,
             "code": code,
-            "redirect_uri": "https://solesearch.io",
+            "redirect_uri": "https://localhost:8000",
         }
         tokens = (
             session.post(

@@ -4,7 +4,7 @@ from fastapi import APIRouter, Query
 
 from src.api.data.instance import DEFAULT_LIMIT, DEFAULT_OFFSET
 from src.api.data.models import Audience, SortKey, SortOrder
-from src.api.data.queries import find_sneaker_by_id, find_sneakers
+from src.api.data.queries import find_sneaker_by_id, find_sneaker_by_sku, find_sneakers
 
 router = APIRouter(
     prefix="/sneakers",
@@ -45,11 +45,6 @@ async def get_sneaker_by_id(product_id: str):
     return await find_sneaker_by_id(product_id)
 
 
-@router.get("/{product_id}/prices")
-async def get_sneaker_pricing(product_id: str):
-    return {"Error": "Not implemented yet"}
-
-
-@router.get("/{product_id}/prices/{size}")
-async def get_sneaker_size_pricing(product_id: str, size: str):
-    return {"Error": "Not implemented yet"}
+@router.get("/sku/{product_id}")
+async def get_sneaker_by_sku(sku: str, brand: str | None = None):
+    return await find_sneaker_by_sku(sku, brand)
