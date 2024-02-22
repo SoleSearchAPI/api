@@ -1,7 +1,0 @@
-fastapi
-motor
-python-dotenv
-uvicorn
-pydantic
-mangum
-git+ssh://git@github.com/SoleSearch-Demos/core.git@main

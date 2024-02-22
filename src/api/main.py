@@ -1,11 +1,9 @@
-from dotenv import load_dotenv
 from fastapi import FastAPI
-from src.api.routes import auth, sneakers
 
 # from mangum import Mangum
 from starlette.middleware.sessions import SessionMiddleware
 
-config = load_dotenv(dotenv_path=".env")
+from src.api.routes import auth, sneakers
 
 app = FastAPI(
     redoc_url=None,
