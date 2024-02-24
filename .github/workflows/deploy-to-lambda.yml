@@ -46,7 +46,7 @@ jobs:
           cd $HATCH_SITE_PACKAGES_DIR
           zip -r $build_file *
           cd ${{ github.workspace }}
-          cp $build_file ${{ github.workspace }}
+          cp $build_file ${{ github.workspace }}/deploy.zip
         shell: bash
 
       - name: Publish to Github
@@ -62,7 +62,7 @@ jobs:
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_region: us-east-1
           function_name: solesearch-api
-          zip_file: $build_file
+          zip_file: deploy.zip
           timeout: 10
           handler: api.main.handler
           runtime: python3.12
