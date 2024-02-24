@@ -36,9 +36,8 @@ jobs:
 
       - name: Build zip
         run: |
-          hatch build
-          hatch shell
-          HATCH_SITE_PACKAGES_DIR=$(echo $(python -c 'import site; print(site.getsitepackages()[0])'))
+          hatch build -t zipped-directory
+          HATCH_SITE_PACKAGES_DIR=$(hatch env find)/lib/python3.12/site-packages
           pattern="dist/*.zip"
           dist_files=( $pattern )
           zip -r ${files[0]} $HATCH_SITE_PACKAGES_DIR
