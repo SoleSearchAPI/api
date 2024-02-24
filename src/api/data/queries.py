@@ -4,7 +4,8 @@ from datetime import UTC, datetime
 from bson import ObjectId
 
 from api.data.instance import DEFAULT_LIMIT, DEFAULT_OFFSET, db, sneakers
-from api.data.models import Audience, SortKey, SortOrder
+from api.data.models import SortKey, SortOrder
+from core.models.details import Audience
 
 
 def find_sneaker_by_id(id: str = ""):

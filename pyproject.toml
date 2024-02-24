@@ -31,11 +31,11 @@ path = "src/api/__about__.py"
 allow-direct-references = true
 
 [tool.hatch.envs.default.scripts]
-start = "python -m api.server"
+start = "python -m src.api.main"
 
 [tool.hatch.envs.dev]
 pre-install-commands = ["pip install -e ../core"]
-scripts.start = "uvicorn src.api.main:app --reload"
+scripts.start = "python -m src.api.main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/api"]
