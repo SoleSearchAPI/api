@@ -1,17 +1,11 @@
-from datetime import UTC, datetime
-
 import logging
+from datetime import UTC, datetime
 
 from bson import ObjectId
 from bson.json_util import dumps
 
-from src.api.data.instance import (
-    DEFAULT_LIMIT,
-    DEFAULT_OFFSET,
-    sneakers,
-    db,
-)
-from src.api.data.models import Audience, SortKey, SortOrder
+from api.data.instance import DEFAULT_LIMIT, DEFAULT_OFFSET, db, sneakers
+from api.data.models import Audience, SortKey, SortOrder
 
 
 def find_sneaker_by_id(id: str = ""):
