@@ -45,6 +45,8 @@ jobs:
           HATCH_SITE_PACKAGES_DIR=$(hatch env find)/lib/python3.12/site-packages
           cd $HATCH_SITE_PACKAGES_DIR
           zip -r $build_file *
+          cd ${{ github.workspace }}
+          cp $build_file ${{ github.workspace }}
         shell: bash
 
       - name: Publish to Github
@@ -62,8 +64,6 @@ jobs:
           function_name: solesearch-api
           zip_file: $build_file
           timeout: 10
-          handler: main.handler
+          handler: api.main.handler
           runtime: python3.12
           role: arn:aws:iam::930702711470:role/service-role/solesearch-api-role-qr34kqa5
-          dry_run: true
-          debug: true
