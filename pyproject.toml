@@ -18,7 +18,7 @@ dependencies = [
   "pydantic",
   "mangum",
   "Authlib",
-  "httpx",
+  "requests",
   "Starlette",
   "itsdangerous",
   "core @ git+ssh://git@github.com/SoleSearch-Demos/core.git@main",
