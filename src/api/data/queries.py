@@ -2,7 +2,6 @@ import logging
 from datetime import UTC, datetime
 
 from bson import ObjectId
-from bson.json_util import dumps
 
 from api.data.instance import DEFAULT_LIMIT, DEFAULT_OFFSET, db, sneakers
 from api.data.models import Audience, SortKey, SortOrder
