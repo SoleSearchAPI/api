@@ -44,7 +44,7 @@ packages = ["src/api"]
 packages = ["src/api"]
 
 [tool.hatch.build.targets.zipped-directory]
-install-name = ""
+install-name = "api"
 sources = ["src/api"]
 
 [tool.hatch.build.targets.zipped-directory.force-include]
