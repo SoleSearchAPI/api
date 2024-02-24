@@ -41,8 +41,10 @@ jobs:
           zip_file=$(find "$dist_dir" -type f -name "*.zip" -print -quit)
           build_file=$(realpath "$zip_file")
           echo "Zip file found: $build_file"
-          HATCH_SITE_PACKAGES_DIR=$(hatch env find)
-          ls -lah $HATCH_SITE_PACKAGES_DIR/../..
+          HATCH_SITE_PACKAGES_DIR=$(hatch env find default)
+          parentdir="$(dirname "$HATCH_SITE_PACKAGES_DIR")"
+          parentdir="$(dirname "$parentdir")"
+          ls -lah $parentdir
           cd $HATCH_SITE_PACKAGES_DIR/lib/python3.12/site-packages
           zip -r $build_file *
         shell: bash
