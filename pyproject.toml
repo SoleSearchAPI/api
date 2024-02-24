@@ -1,6 +1,10 @@
+[build-system]
+requires = ["hatchling", "hatch-zipped-directory"]
+build-backend = "hatchling.build"
+
 [project]
 name = "api"
-version = "0.0.1"
+dynamic = ["version"]
 authors = [
   { name="Peter Rauscher", email="peter@peterrauscher.com" },
 ]
@@ -20,30 +24,11 @@ dependencies = [
   "core @ git+ssh://git@github.com/SoleSearch-Demos/core.git@main",
 ]
 
-[project.urls]
-Homepage = "https://github.com/SoleSearch-Demos/api"
-Issues = "https://github.com/SoleSearch-Demos/api/issues"
-
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+[tool.hatch.version]
+path = "src/api/__about__.py"
 
 [tool.hatch.metadata]
 allow-direct-references = true
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/api"]
-
-[tool.hatch.build.targets.sdist]
-packages = ["src/api"]
-require-runtime-dependencies = true
-
-[tool.hatch.build.targets.sdist.force-include]
-".env" = "/.env"
-"envs/lambda/Lib/site-packages" = "/"
-
-[tool.hatch.envs.lambda]
-path = "envs/lambda"
 
 [tool.hatch.envs.default.scripts]
 start = "python -m api.server"
@@ -51,3 +36,16 @@ start = "python -m api.server"
 [tool.hatch.envs.dev]
 pre-install-commands = ["pip install -e ../core"]
 scripts.start = "uvicorn src.api.main:app --reload"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/api"]
+
+[tool.hatch.build.targets.sdist]
+packages = ["src/api"]
+
+[tool.hatch.build.targets.zipped-directory]
+install-name = ""
+sources = ["src/api"]
+
+[tool.hatch.build.targets.zipped-directory.force-include]
+".env" = "/.env"
