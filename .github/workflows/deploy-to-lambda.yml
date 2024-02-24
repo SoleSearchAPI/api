@@ -26,22 +26,6 @@ jobs:
           python -m pipx ensurepath
           pipx install hatch
 
-      - name: Write SSH key and test connection
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
-          echo "${{ secrets.SSH_PUB_KEY }}" > ~/.ssh/id_rsa.pub
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          if ! ssh -T git@github.com; then
-            echo "SSH connection test failed."
-            exit 1
-          fi
-          eval `ssh-agent`
-          ssh-add ~/.ssh/id_rsa
-        env:
-          SSH_AUTH_SOCK: /dev/null
-
       - name: Create .env file
         run: |
           echo "${{ secrets.SOLESEARCH_ENV_FILE }}" > .env
