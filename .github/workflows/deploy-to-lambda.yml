@@ -1,0 +1,64 @@
+name: Build Deployment Image
+on:
+  push:
+    tags:
+      - "*"
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.1"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --user pipx
+          python -m pipx ensurepath
+          pipx install hatch
+
+      - name: Write SSH key and test connection
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PUB_KEY }}" > ~/.ssh/id_rsa.pub
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          if ! ssh -T git@github.com; then
+            echo "SSH connection test failed."
+            exit 1
+          fi
+          eval `ssh-agent`
+          ssh-add ~/.ssh/id_rsa
+        env:
+          SSH_AUTH_SOCK: /dev/null
+
+      - name: Create .env file
+        run: |
+          echo "${{ secrets.SOLESEARCH_ENV_FILE }}" > .env
+        shell: bash
+
+      - name: Build zip
+        run: |
+          hatch build
+          hatch shell
+          HATCH_SITE_PACKAGES_DIR=$(echo $(python -c 'import site; print(site.getsitepackages()[0])'))
+          pattern="dist/*.zip"
+          dist_files=( $pattern )
+          zip -r ${files[0]} $HATCH_SITE_PACKAGES_DIR
+        shell: bash
+
+      - name: Publish to Github
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: dist/*.zip
