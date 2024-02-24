@@ -37,10 +37,13 @@ jobs:
       - name: Build zip
         run: |
           hatch build -t zipped-directory
+          dist_dir="dist/"
+          zip_file=$(find "$dist_dir" -type f -name "*.zip" -print -quit)
+          build_file=$(realpath "$zip_file")
+          echo "Zip file found: $build_file"
           HATCH_SITE_PACKAGES_DIR=$(hatch env find)/lib/python3.12/site-packages
-          pattern="dist/*.zip"
-          dist_files=( $pattern )
-          zip -r ${files[0]} $HATCH_SITE_PACKAGES_DIR
+          cd $HATCH_SITE_PACKAGES_DIR
+          zip -r $build_file *
         shell: bash
 
       - name: Publish to Github
