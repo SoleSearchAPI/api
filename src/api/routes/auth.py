@@ -1,5 +1,6 @@
 import logging
 import os
+from urllib.parse import urlparse
 
 import requests
 from fastapi import APIRouter, HTTPException, Request
@@ -38,7 +39,7 @@ async def login_via_stockx(state: str, request: Request):
 
 
 @router.get("/stockx/callback")
-async def stockx_oauth_callback(state: str = None, code: str = None):
+async def stockx_oauth_callback(state: str, code: str, request: Request):
     if code is None:
         raise HTTPException(status_code=400, detail="No code returned from StockX.")
     if state != "YTPc2DqAwnmhHGzSQVtzwEPq2eEgprUi":
@@ -52,7 +53,7 @@ async def stockx_oauth_callback(state: str = None, code: str = None):
             "client_id": STOCKX_CLIENT_ID,
             "client_secret": STOCKX_CLIENT_SECRET,
             "code": code,
-            "redirect_uri": "https://localhost:8000",
+            "redirect_uri": f"https://{urlparse(request.url_for("get_sneakers")).netloc}",
         }
         tokens = (
             session.post(
