@@ -33,10 +33,6 @@ allow-direct-references = true
 [tool.hatch.envs.default.scripts]
 start = "python -m src.api.main"
 
-[tool.hatch.envs.dev]
-pre-install-commands = ["pip install -e ../core"]
-scripts.start = "python -m src.api.main"
-
 [tool.hatch.build.targets.wheel]
 packages = ["src/api"]
 
