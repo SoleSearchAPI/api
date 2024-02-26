@@ -32,6 +32,9 @@ allow-direct-references = true
 
 [tool.hatch.envs.default.scripts]
 start = "python -m src.api.main"
+patch = "python bump-release.py patch"
+minor = "python bump-release.py minor"
+major = "python bump-release.py major"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/api"]
