@@ -34,5 +34,5 @@ if __name__ == "__main__":
     subprocess.run(["git", "add", "."])
     subprocess.run(["git", "commit", "-m", message.strip()])
     subprocess.run(["git", "push"])
-    subprocess.run(["git", "tag", "-a", new_version, "-m", new_version])
+    subprocess.run(["git", "tag", "-a", new_version, "-m", message.strip()])
     subprocess.run(["git", "push", "origin", new_version])
