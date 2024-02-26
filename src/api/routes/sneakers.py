@@ -1,11 +1,12 @@
 from typing import Annotated
 
-from fastapi import APIRouter, Query
+from fastapi import APIRouter, HTTPException, Query
 
 from api.data.instance import DEFAULT_LIMIT, DEFAULT_OFFSET
 from api.data.models import SortKey, SortOrder
-from api.data.queries import find_sneaker_by_id, find_sneaker_by_sku, find_sneakers
+from api.data.queries import find_sneakers
 from core.models.details import Audience
+from core.models.shoes import Sneaker
 
 router = APIRouter(
     prefix="/sneakers",
@@ -43,9 +44,16 @@ async def get_sneakers(
 
 @router.get("/{product_id}")
 async def get_sneaker_by_id(product_id: str):
-    return await find_sneaker_by_id(product_id)
+    if not product_id:
+        raise HTTPException(status_code=400, detail="Invalid product_id")
+    return await Sneaker.get(product_id)
 
 
-@router.get("/sku/{product_id}")
+@router.get("/sku/{sku}")
 async def get_sneaker_by_sku(sku: str, brand: str | None = None):
-    return await find_sneaker_by_sku(sku, brand)
+    if not sku:
+        raise HTTPException(status_code=400, detail="Invalid sku")
+    if brand:
+        return await Sneaker.find_one(Sneaker.sku == sku, Sneaker.brand == brand)
+    else:
+        return await Sneaker.find_one(Sneaker.sku == sku)
