@@ -1,5 +1,15 @@
 from enum import Enum
 
+from beanie import Document
+
+
+class Token(Document):
+    type: str
+    token: str
+
+    class Settings:
+        collection = "OAuth"
+
 
 class SortKey(str, Enum):
     BRAND = "brand"

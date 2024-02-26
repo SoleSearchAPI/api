@@ -6,7 +6,7 @@ import requests
 from fastapi import APIRouter, HTTPException, Request
 from fastapi.responses import RedirectResponse
 
-from api.data.queries import update_tokens
+from api.data.models import Token
 
 STOCKX_CLIENT_ID = os.environ.get("SOLESEARCH_STOCKX_CLIENT_ID", None)
 STOCKX_CLIENT_SECRET = os.environ.get("SOLESEARCH_STOCKX_CLIENT_SECRET", None)
@@ -62,7 +62,12 @@ async def stockx_oauth_callback(state: str, code: str, request: Request):
                 headers=headers,
             )
         ).json()
-        await update_tokens(tokens)
+        for token_type in ["id_token", "access_token", "refresh_token"]:
+            if token_type in tokens:
+                await Token.find_one(Token.type == token_type).set(
+                    {"$set": {"token": tokens[token_type]}}
+                )
+                logging.info(f"Updated {token_type}")
         return tokens
     except Exception as e:
         logging.error(e)

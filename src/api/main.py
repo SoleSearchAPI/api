@@ -6,20 +6,20 @@ if not os.environ.get("AWS_EXECUTION_ENV"):
     load_dotenv(os.path.join(os.getcwd(), ".env"))
 
 from beanie import init_beanie
+from core.models.shoes import Sneaker
 from fastapi import FastAPI
 from mangum import Mangum
 from starlette.middleware.sessions import SessionMiddleware
 
 from api.data.instance import DATABASE_NAME, client
 from api.routes import auth, sneakers
-from core.models.shoes import Sneaker
 
 app = FastAPI(
     redoc_url=None,
     responses={404: {"description": "Not found"}},
 )
 
-app.add_middleware(SessionMiddleware, secret_key="some secret key here")
+app.add_middleware(SessionMiddleware, secret_key="vT!y!r5s#bwcDxDG")
 
 
 @app.on_event("startup")
