@@ -1,3 +1,5 @@
+__version__ = "1.0.5"
+
 import os
 
 from dotenv import load_dotenv
@@ -13,7 +15,6 @@ from starlette.middleware.sessions import SessionMiddleware
 
 from api.data.instance import DATABASE_NAME, client
 from api.routes import auth, sneakers
-import api.__about__.__version__ as api_version
 
 desc = """
 # SoleSearch
@@ -27,7 +28,7 @@ app = FastAPI(
     redoc_url=None,
     title="SoleSearch",
     summary="The sneaker reseller's Bloomberg Terminal.",
-    version=api_version,
+    version=__version__,
     contact={
         "name": "SoleSearch Developer Support",
         "email": "support@solesearch.io"

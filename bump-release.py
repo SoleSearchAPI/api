@@ -1,28 +1,42 @@
-# updates the version number in the __about__.py file
 import subprocess
-
+import re
 
 def update_version(version_type):
-    with open("src/api/__about__.py", "r") as f:
-        version = f.read().split("=")[1].replace('"', "").strip()
-        patch_version = version.split(".")[2]
-        minor_version = version.split(".")[1]
-        major_version = version.split(".")[0]
-        if version_type == "major":
-            major_version = str(int(major_version) + 1)
-            minor_version = "0"
-            patch_version = "0"
-        elif version_type == "minor":
-            minor_version = str(int(minor_version) + 1)
-            patch_version = "0"
-        elif version_type == "patch":
-            patch_version = str(int(patch_version) + 1)
-        else:
-            raise ValueError("Invalid version type. Please use major, minor, or patch.")
-        with open("src/api/__about__.py", "w") as f:
-            new_version = f"{major_version}.{minor_version}.{patch_version}"
-            f.write(f'__version__ = "{new_version}"\n')
-            return f"v{new_version}"
+    filepath = "src/api/main.py"
+    with open(filepath, "r") as f:
+        lines = f.readlines()
+    
+    version_line_index = None
+    version_pattern = re.compile(r'^__version__\s*=\s*["\'](\d+)\.(\d+)\.(\d+)["\']\s*$')
+    for i, line in enumerate(lines):
+        if version_pattern.match(line):
+            version_line_index = i
+            break
+
+    if version_line_index is None:
+        raise ValueError("Version line not found.")
+
+    current_version = version_pattern.match(lines[version_line_index])
+    major_version, minor_version, patch_version = current_version.groups()
+    if version_type == "major":
+        major_version = str(int(major_version) + 1)
+        minor_version = "0"
+        patch_version = "0"
+    elif version_type == "minor":
+        minor_version = str(int(minor_version) + 1)
+        patch_version = "0"
+    elif version_type == "patch":
+        patch_version = str(int(patch_version) + 1)
+    else:
+        raise ValueError("Invalid version type. Please use major, minor, or patch.")
+    
+    new_version = f'{major_version}.{minor_version}.{patch_version}'
+    lines[version_line_index] = f'__version__ = "{new_version}"\n'
+    
+    with open(filepath, "w") as file:
+        file.writelines(lines)
+    
+    return f"v{new_version}"
 
 
 # passes the command line argument to the function
