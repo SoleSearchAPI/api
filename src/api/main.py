@@ -13,6 +13,7 @@ from starlette.middleware.sessions import SessionMiddleware
 
 from api.data.instance import DATABASE_NAME, client
 from api.routes import auth, sneakers
+import api.__about__.__version__ as api_version
 
 desc = """
 # SoleSearch
@@ -26,7 +27,7 @@ app = FastAPI(
     redoc_url=None,
     title="SoleSearch",
     summary="The sneaker reseller's Bloomberg Terminal.",
-    version=api.__about__.__version__,
+    version=api_version,
     contact={
         "name": "SoleSearch Developer Support",
         "email": "support@solesearch.io"
