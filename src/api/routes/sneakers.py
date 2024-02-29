@@ -6,7 +6,7 @@ from core.models.shoes import Sneaker
 from fastapi import APIRouter, HTTPException, Query
 
 from api.data.instance import DEFAULT_LIMIT, DEFAULT_OFFSET
-from api.data.models import SortKey, SortOrder
+from api.data.models import PaginatedSneakersResponse, SortKey, SortOrder
 
 router = APIRouter(
     prefix="/sneakers",
@@ -22,9 +22,7 @@ async def get_sneakers(
     released: bool | None = None,
     sort: SortKey = SortKey.RELEASE_DATE,
     order: SortOrder = SortOrder.DESCENDING,
-    offset: Annotated[int, Query(gte=DEFAULT_OFFSET)] = DEFAULT_OFFSET,
-    limit: Annotated[int, Query(gte=1, lte=100)] = DEFAULT_LIMIT,
-):
+) -> PaginatedSneakersResponse:
     query = Sneaker.find()
     if brand:
         query = query.find(Sneaker.brand == brand)
@@ -55,9 +53,7 @@ async def get_sneakers(
             query = query.find(Sneaker.releaseDate == date_obj)
 
     order = "+" if order == SortOrder.ASCENDING else "-"
-    sneakers_list = (
-        await query.sort(f"{order}{sort.value}").skip(offset).limit(limit).to_list()
-    )
+    sneakers_list = await query.sort(f"{order}{sort.value}").limit(limit).to_list()
     return sneakers_list
 
 
