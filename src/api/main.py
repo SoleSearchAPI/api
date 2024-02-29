@@ -1,3 +1,5 @@
+__version__ = "1.0.5"
+
 import os
 
 from dotenv import load_dotenv
@@ -17,10 +19,21 @@ from starlette.middleware.sessions import SessionMiddleware
 from api.data.instance import DATABASE_NAME, client
 from api.routes import auth, sneakers
 
-# Create FastAPI app
+desc = """
+### The sneaker reseller's Bloomberg Terminal
+- 👟 Find product information, from every brand, fast.
+- 📅 Never miss another release date.
+- 💵 Never buy bricks. Stay ahead of the game with our comprehensive price history and trends.
+"""
+
 app = FastAPI(
     redoc_url=None,  # Disable redoc, keep only swagger
-    responses={404: {"resource": "Not found"}},  # Custom 404 page
+    title="SoleSearch",
+    summary="The sneaker reseller's Bloomberg Terminal.",
+    version=__version__,
+    contact={"name": "SoleSearch Developer Support", "email": "support@solesearch.io"},
+    description=desc,
+    responses={404: {"description": "Not found"}},  # Custom 404 page
 )
 
 # Enable CORS
