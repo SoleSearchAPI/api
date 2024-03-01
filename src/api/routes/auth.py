@@ -53,7 +53,7 @@ async def stockx_oauth_callback(state: str, code: str, request: Request):
             "client_id": STOCKX_CLIENT_ID,
             "client_secret": STOCKX_CLIENT_SECRET,
             "code": code,
-            "redirect_uri": f"https://{urlparse(request.url_for("get_sneakers")).netloc}",
+            "redirect_uri": f"https://{urlparse(request.url_for('get_sneakers')).netloc}",
         }
         tokens = (
             session.post(

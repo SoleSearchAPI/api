@@ -1,16 +1,19 @@
 from datetime import UTC, datetime
+import os
 from typing import Annotated
 
 from core.models.details import Audience
 from core.models.shoes import Sneaker
 from fastapi import APIRouter, HTTPException, Query
 
-from api.data.instance import DEFAULT_LIMIT, DEFAULT_OFFSET
 from api.data.models import PaginatedSneakersResponse, SortKey, SortOrder
 
 router = APIRouter(
     prefix="/sneakers",
 )
+
+MAX_LIMIT = int(os.environ.get("SOLESEARCH_MAX_LIMIT", 0))
+DEFAULT_LIMIT = int(os.environ.get("SOLESEARCH_DEFAULT_LIMIT", 20))
 
 
 @router.get("/")
@@ -22,8 +25,14 @@ async def get_sneakers(
     released: bool | None = None,
     sort: SortKey = SortKey.RELEASE_DATE,
     order: SortOrder = SortOrder.DESCENDING,
-) -> PaginatedSneakersResponse:
+    page: Annotated[int | None, Query(gte=1)] = None,
+    pageSize: Annotated[int | None, Query(gte=1, lte=MAX_LIMIT)] = None,
+):
     query = Sneaker.find()
+    if not page:
+        page = 1
+    if not pageSize:
+        pageSize = DEFAULT_LIMIT
     if brand:
         query = query.find(Sneaker.brand == brand)
     if name:
@@ -51,9 +60,15 @@ async def get_sneakers(
         else:
             date_obj = datetime.strptime(releaseDate, "%Y-%m-%d")
             query = query.find(Sneaker.releaseDate == date_obj)
-
+    total_count = await query.count()
+    print(total_count)
     order = "+" if order == SortOrder.ASCENDING else "-"
-    sneakers_list = await query.sort(f"{order}{sort.value}").limit(limit).to_list()
+    sneakers_list = (
+        await query.sort(f"{order}{sort.value}")
+        .skip((page - 1) * pageSize)
+        .limit(pageSize)
+        .to_list()
+    )
     return sneakers_list
 
 
