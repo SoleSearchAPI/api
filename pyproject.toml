@@ -20,6 +20,8 @@ dependencies = [
   "mangum",
   "requests",
   "Starlette",
+  "pre-commit",
+  "black",
   "itsdangerous",
   "core @ git+ssh://git@github.com/SoleSearch-Demos/core.git@main",
 ]
