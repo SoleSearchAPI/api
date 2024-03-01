@@ -20,16 +20,15 @@ from api.data.instance import DATABASE_NAME, client
 from api.routes import auth, sneakers
 
 desc = """
-### The sneaker reseller's Bloomberg Terminal
-- 👟 Find product information, from every brand, fast.
-- 📅 Never miss another release date.
-- 💵 Never buy bricks. Stay ahead of the game with our comprehensive price history and trends.
+### The Bloomberg Terminal of Sneakers
+- Find product information, from every brand, fast. 👟
+- Never miss another release date. 📅
+- Never buy bricks. Stay ahead of the game with our comprehensive price history and trends. 💵
 """
 
 app = FastAPI(
     redoc_url=None,  # Disable redoc, keep only swagger
     title="SoleSearch",
-    summary="The sneaker reseller's Bloomberg Terminal.",
     version=__version__,
     contact={"name": "SoleSearch Developer Support", "email": "support@solesearch.io"},
     description=desc,
@@ -66,4 +65,10 @@ if __name__ == "__main__":
     import uvicorn
 
     # Run the app locally using Uvicorn
-    uvicorn.run(app, host="localhost", port=8000)
+    uvicorn.run(
+        app,
+        host="localhost",
+        port=8000,
+        ssl_keyfile="key.pem",
+        ssl_certfile="cert.pem",
+    )
