@@ -1,6 +1,8 @@
 from enum import Enum
 from typing import List
 
+from pydantic import BaseModel
+
 from beanie import Document
 from core.models.shoes import Sneaker
 
@@ -13,7 +15,7 @@ class Token(Document):
         collection = "OAuth"
 
 
-class PaginatedSneakersResponse:
+class PaginatedSneakersResponse(BaseModel):
     total: int
     page: int
     pageSize: int

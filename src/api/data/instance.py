@@ -1,7 +1,6 @@
 import logging
 import os
 
-from beanie import init_beanie
 from motor.motor_asyncio import AsyncIOMotorClient
 
 logger = logging.getLogger(__name__)
@@ -20,5 +19,3 @@ if not DATABASE_NAME:
     )
 db = client[os.environ.get("SOLESEARCH_DB_NAME")]
 sneakers = db[os.environ.get("SOLESEARCH_DB_PRIMARY_COLLECTION")]
-DEFAULT_LIMIT = int(os.environ.get("SOLESEARCH_DEFAULT_LIMIT", 10))
-DEFAULT_OFFSET = int(os.environ.get("SOLESEARCH_DEFAULT_OFFSET", 0))
