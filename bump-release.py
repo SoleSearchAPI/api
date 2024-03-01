@@ -1,13 +1,16 @@
 import subprocess
 import re
 
+
 def update_version(version_type):
     filepath = "src/api/main.py"
     with open(filepath, "r") as f:
         lines = f.readlines()
-    
+
     version_line_index = None
-    version_pattern = re.compile(r'^__version__\s*=\s*["\'](\d+)\.(\d+)\.(\d+)["\']\s*$')
+    version_pattern = re.compile(
+        r'^__version__\s*=\s*["\'](\d+)\.(\d+)\.(\d+)["\']\s*$'
+    )
     for i, line in enumerate(lines):
         if version_pattern.match(line):
             version_line_index = i
@@ -29,13 +32,13 @@ def update_version(version_type):
         patch_version = str(int(patch_version) + 1)
     else:
         raise ValueError("Invalid version type. Please use major, minor, or patch.")
-    
-    new_version = f'{major_version}.{minor_version}.{patch_version}'
+
+    new_version = f"{major_version}.{minor_version}.{patch_version}"
     lines[version_line_index] = f'__version__ = "{new_version}"\n'
-    
+
     with open(filepath, "w") as file:
         file.writelines(lines)
-    
+
     return f"v{new_version}"
 
 
