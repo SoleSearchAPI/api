@@ -43,7 +43,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 # Enable session handling for StocxkX OAuth flow
-app.add_middleware(SessionMiddleware, secret_key="vT!y!r5s#bwcDxDG")
+SESSION_SECRET = os.environ.get("SOLESEARCH_SESSION_SECRET", "this should be a secret")
+app.add_middleware(SessionMiddleware, secret_key=SESSION_SECRET)
 
 
 @app.on_event("startup")
@@ -64,7 +65,7 @@ handler = Mangum(app)
 if __name__ == "__main__":
     import uvicorn
 
-    # Run the app locally using Uvicorn
+    # Run the app locally using Uvicorn, with SSL enabled
     uvicorn.run(
         app,
         host="localhost",

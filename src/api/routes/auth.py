@@ -11,6 +11,9 @@ from api.data.models import Token
 STOCKX_CLIENT_ID = os.environ.get("SOLESEARCH_STOCKX_CLIENT_ID", None)
 STOCKX_CLIENT_SECRET = os.environ.get("SOLESEARCH_STOCKX_CLIENT_SECRET", None)
 STOCKX_API_KEY = os.environ.get("SOLESEARCH_STOCKX_API_KEY", None)
+STOCKX_STATE = os.environ.get(
+    "SOLESEARCH_STOCKX_CALLBACK_STATE", "this should be a secret string"
+)
 
 session = requests.session()
 
@@ -22,7 +25,7 @@ router = APIRouter(
 
 @router.get("/stockx")
 async def login_via_stockx(state: str, request: Request):
-    if state != "YTPc2DqAwnmhHGzSQVtzwEPq2eEgprUi":
+    if state != STOCKX_STATE:
         raise HTTPException(status_code=400, detail="Bad state. Nice try, buster.")
     auth_url = "https://accounts.stockx.com/authorize"
     print(STOCKX_CLIENT_ID, STOCKX_CLIENT_SECRET, STOCKX_API_KEY)
@@ -42,7 +45,7 @@ async def login_via_stockx(state: str, request: Request):
 async def stockx_oauth_callback(state: str, code: str, request: Request):
     if code is None:
         raise HTTPException(status_code=400, detail="No code returned from StockX.")
-    if state != "YTPc2DqAwnmhHGzSQVtzwEPq2eEgprUi":
+    if state != STOCKX_STATE:
         raise HTTPException(status_code=400, detail="Bad state. Nice try, buster.")
     try:
         headers = {
