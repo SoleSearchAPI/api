@@ -50,4 +50,3 @@ sources = ["src/api"]
 
 [tool.hatch.build.targets.zipped-directory.force-include]
 ".env" = "/.env"
-"static" = "/static"
