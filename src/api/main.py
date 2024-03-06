@@ -12,6 +12,8 @@ if not os.environ.get("AWS_EXECUTION_ENV"):
 from beanie import init_beanie
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.openapi.docs import get_swagger_ui_html
+from fastapi.staticfiles import StaticFiles
 from mangum import Mangum
 from starlette.middleware.sessions import SessionMiddleware
 
@@ -27,13 +29,17 @@ desc = """
 """
 
 app = FastAPI(
-    redoc_url=None,  # Disable redoc, keep only swagger
+    redoc_url=None,
+    docs_url=None,
     title="SoleSearch",
     version=__version__,
-    contact={"name": "SoleSearch Emails Support", "email": "support@solesearch.io"},
+    contact={"name": "SoleSearch Email Support", "email": "support@solesearch.io"},
     description=desc,
     responses={404: {"description": "Not found"}},  # Custom 404 page
 )
+
+# Serve static files from the /static directory
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Enable CORS
 app.add_middleware(
@@ -57,6 +63,16 @@ async def startup_event():
     # Include all routers
     app.include_router(sneakers.router)
     app.include_router(auth.router)
+
+
+@app.get("/docs", include_in_schema=False)
+async def swagger_ui_html():
+    return get_swagger_ui_html(
+        openapi_url=app.openapi_url,
+        title=app.title + " - Documentation",
+        oauth2_redirect_url=app.swagger_ui_oauth2_redirect_url,
+        swagger_favicon_url="/static/favicon.png",
+    )
 
 
 # This is the entry point for AWS Lambda
