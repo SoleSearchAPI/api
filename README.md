@@ -31,7 +31,7 @@ By default, all products in the database are returned when calling `/sneakers`. 
 - releaseDate
 - released
 
-Filtering is case insensitive, but the search will start from the beginning of each field. For example, a search `/sneakers?brand=jordan` will return all sneakers with a brand starting with `Jordan`, `jordan`, `JOrdan`, etc... but a search `/sneakers?brand=ordan` will not find any `Jordan`s.
+Filtering is case insensitive, but the search will always start at the beginning of each field. For example, a search `/sneakers?brand=jordan` will return all sneakers with a brand starting with `Jordan`, `jordan`, `JORdan`, etc... but a search `/sneakers?brand=ordan` will not find any `Jordan` brand sneakers. For this reason, those needing more comprehensive "search" functionality should use the `/search` endpoint.
 
 ### Sorting
 

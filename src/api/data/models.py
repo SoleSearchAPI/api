@@ -1,10 +1,10 @@
 from enum import Enum
 from typing import List
 
+from beanie import Document
 from pydantic import BaseModel
 
-from beanie import Document
-from core.models.shoes import Sneaker
+from core.models.shoes import Sneaker, SneakerView
 
 
 class Token(Document):
@@ -21,7 +21,7 @@ class PaginatedSneakersResponse(BaseModel):
     pageSize: int
     nextPage: str | None
     previousPage: str | None
-    items: List[Sneaker]
+    items: List[SneakerView]
 
 
 class SortKey(str, Enum):
