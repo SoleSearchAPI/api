@@ -10,7 +10,6 @@ if not os.environ.get("AWS_EXECUTION_ENV"):
     load_dotenv(os.path.join(os.getcwd(), ".env"))
 
 from beanie import init_beanie
-from core.models.shoes import Sneaker
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from mangum import Mangum
@@ -18,6 +17,7 @@ from starlette.middleware.sessions import SessionMiddleware
 
 from api.data.instance import DATABASE_NAME, client
 from api.routes import auth, sneakers
+from core.models.shoes import Sneaker
 
 desc = """
 ### The Bloomberg Terminal of Sneakers
@@ -30,7 +30,7 @@ app = FastAPI(
     redoc_url=None,  # Disable redoc, keep only swagger
     title="SoleSearch",
     version=__version__,
-    contact={"name": "SoleSearch Developer Support", "email": "support@solesearch.io"},
+    contact={"name": "SoleSearch Emails Support", "email": "support@solesearch.io"},
     description=desc,
     responses={404: {"description": "Not found"}},  # Custom 404 page
 )
