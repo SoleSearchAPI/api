@@ -38,8 +38,6 @@ app = FastAPI(
     responses={404: {"description": "Not found"}},  # Custom 404 page
 )
 
-# Serve static files from the /static directory
-app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Enable CORS
 app.add_middleware(
@@ -71,7 +69,7 @@ async def swagger_ui_html():
         openapi_url=app.openapi_url,
         title=app.title + " - Documentation",
         oauth2_redirect_url=app.swagger_ui_oauth2_redirect_url,
-        swagger_favicon_url="/static/favicon.png",
+        swagger_favicon_url="https://i.imgur.com/2Y59zOy.png",
     )
 
 
