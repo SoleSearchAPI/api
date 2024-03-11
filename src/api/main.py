@@ -27,9 +27,8 @@ desc = """
 - Never miss another release date. 📅
 - Never buy bricks. Stay ahead of the game with our comprehensive price history and trends. 💵
 
-[Github Repo](https://github.com/SoleSearch-Demos)
+[Github](https://github.com/SoleSearch-Demos) | [Twitter](https://twitter.com/SoleSearchAPI)
 
-[Follow us on Twitter](https://https://twitter.com/SoleSearchAPI)
 """
 
 app = FastAPI(
