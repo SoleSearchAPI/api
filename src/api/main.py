@@ -26,6 +26,10 @@ desc = """
 - Find product information, from every brand, fast. 👟
 - Never miss another release date. 📅
 - Never buy bricks. Stay ahead of the game with our comprehensive price history and trends. 💵
+
+[Github Repo](https://github.com/SoleSearch-Demos)
+
+[Follow us on Twitter](https://https://twitter.com/SoleSearchAPI)
 """
 
 app = FastAPI(
