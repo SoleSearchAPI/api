@@ -1,12 +1,12 @@
 import logging
 import os
+from datetime import UTC, datetime, timedelta
 from urllib.parse import urlparse
 
 import requests
+from core.models import Token
 from fastapi import APIRouter, HTTPException, Request
 from fastapi.responses import RedirectResponse
-
-from api.data.models import Token
 
 STOCKX_CLIENT_ID = os.environ.get("SOLESEARCH_STOCKX_CLIENT_ID", None)
 STOCKX_CLIENT_SECRET = os.environ.get("SOLESEARCH_STOCKX_CLIENT_SECRET", None)
@@ -56,7 +56,7 @@ async def stockx_oauth_callback(state: str, code: str, request: Request):
             "client_id": STOCKX_CLIENT_ID,
             "client_secret": STOCKX_CLIENT_SECRET,
             "code": code,
-            "redirect_uri": f"https://{urlparse(request.url_for('get_sneakers')).netloc}",
+            "redirect_uri": f"https://{urlparse(str(request.url_for('get_sneakers'))).netloc}",
         }
         tokens = (
             session.post(
@@ -67,11 +67,15 @@ async def stockx_oauth_callback(state: str, code: str, request: Request):
         ).json()
         for token_type in ["id_token", "access_token", "refresh_token"]:
             if token_type in tokens:
-                await Token.find_one(Token.type == token_type).set(
-                    {"$set": {"token": tokens[token_type]}}
-                )
+                token = await Token.find_one(Token.id == token_type)
+                setattr(token, "value", tokens[token_type])
+                if token_type == "access_token":
+                    token.expires = datetime.now(UTC) + timedelta(
+                        seconds=int(tokens["expires_in"]) - 30
+                    )
+                await token.save()
                 logging.info(f"Updated {token_type}")
         return tokens
     except Exception as e:
-        logging.error(e)
+        logging.exception(e)
         raise HTTPException(status_code=500, detail=str(e))
