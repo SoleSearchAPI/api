@@ -1,7 +1,8 @@
-__version__ = "2.0.0"
+__version__ = "2.1.0"
 
 import os
 
+from core.models import Token
 from dotenv import load_dotenv
 
 # Load environment variables from .env file if not running in AWS Lambda
@@ -10,16 +11,15 @@ if not os.environ.get("AWS_EXECUTION_ENV"):
     load_dotenv(os.path.join(os.getcwd(), ".env"))
 
 from beanie import init_beanie
+from core.models.shoes import Sneaker
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.docs import get_swagger_ui_html
-from fastapi.staticfiles import StaticFiles
 from mangum import Mangum
 from starlette.middleware.sessions import SessionMiddleware
 
 from api.data.instance import DATABASE_NAME, client
 from api.routes import auth, sneakers
-from core.models.shoes import Sneaker
 
 desc = """
 ### The Bloomberg Terminal of Sneakers
@@ -56,7 +56,7 @@ async def startup_event():
     # Initialize Beanie ODM
     await init_beanie(
         database=client.get_database(DATABASE_NAME),
-        document_models=[Sneaker],
+        document_models=[Sneaker, Token],
     )
     # Include all routers
     app.include_router(sneakers.router)
