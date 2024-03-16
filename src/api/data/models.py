@@ -1,18 +1,8 @@
 from enum import Enum
 from typing import List
 
-from beanie import Document
+from core.models.shoes import SneakerView
 from pydantic import BaseModel
-
-from core.models.shoes import Sneaker, SneakerView
-
-
-class Token(Document):
-    type: str
-    token: str
-
-    class Settings:
-        collection = "OAuth"
 
 
 class PaginatedSneakersResponse(BaseModel):
