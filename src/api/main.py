@@ -15,6 +15,7 @@ from core.models.shoes import Sneaker
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.docs import get_swagger_ui_html
+from fastapi.responses import RedirectResponse
 from mangum import Mangum
 from starlette.middleware.sessions import SessionMiddleware
 
@@ -74,6 +75,11 @@ async def swagger_ui_html():
         oauth2_redirect_url=app.swagger_ui_oauth2_redirect_url,
         swagger_favicon_url="https://i.imgur.com/2Y59zOy.png",
     )
+
+
+@app.get("/", include_in_schema=False)
+def redirect_to_docs():
+    return RedirectResponse(url="/docs")
 
 
 # This is the entry point for AWS Lambda
