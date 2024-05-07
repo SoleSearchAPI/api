@@ -18,4 +18,3 @@ if not DATABASE_NAME:
         f"SOLESEARCH_DB_NAME environment variable not set, defaulting to {DATABASE_NAME}."
     )
 db = client[os.environ.get("SOLESEARCH_DB_NAME")]
-sneakers = db[os.environ.get("SOLESEARCH_DB_PRIMARY_COLLECTION")]
