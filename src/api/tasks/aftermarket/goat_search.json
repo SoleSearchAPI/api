@@ -1,0 +1,4553 @@
+{
+    "response": {
+        "result_sources": {
+            "token_match": {
+                "count": 11
+            },
+            "embeddings_match": {
+                "count": 0
+            }
+        },
+        "facets": [
+            {
+                "display_name": "Brand",
+                "name": "brand",
+                "type": "multiple",
+                "options": [
+                    {
+                        "status": "",
+                        "count": 11,
+                        "display_name": "adidas",
+                        "value": "adidas",
+                        "data": {
+                            "mobile_display": true
+                        }
+                    }
+                ],
+                "hidden": false,
+                "data": {}
+            },
+            {
+                "display_name": "Category",
+                "name": "web_groups",
+                "type": "multiple",
+                "options": [
+                    {
+                        "status": "",
+                        "count": 11,
+                        "display_name": "All",
+                        "value": "all",
+                        "data": {
+                            "mobile_display_name": "All"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 11,
+                        "display_name": "Sneakers",
+                        "value": "sneakers",
+                        "data": {
+                            "parent": "all",
+                            "mobile_display_name": "Sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 10,
+                        "display_name": "Basketball",
+                        "value": "basketball",
+                        "data": {
+                            "parent": "sneakers",
+                            "mobile_display_name": "Basketball"
+                        }
+                    }
+                ],
+                "hidden": false,
+                "data": {}
+            },
+            {
+                "display_name": "Category",
+                "name": "mobile_groups",
+                "type": "multiple",
+                "options": [
+                    {
+                        "status": "",
+                        "count": 11,
+                        "display_name": "All",
+                        "value": "all",
+                        "data": {
+                            "mobile_display_name": "All"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 11,
+                        "display_name": "All Sneakers",
+                        "value": "sneakers",
+                        "data": {
+                            "parent": "all",
+                            "mobile_display_name": "All Sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 10,
+                        "display_name": "Basketball",
+                        "value": "basketball",
+                        "data": {
+                            "parent": "sneakers",
+                            "mobile_display_name": "Basketball"
+                        }
+                    }
+                ],
+                "hidden": false,
+                "data": {}
+            },
+            {
+                "display_name": "Size",
+                "name": "size_converted",
+                "type": "multiple",
+                "options": [
+                    {
+                        "status": "",
+                        "count": 5,
+                        "display_name": "6.5",
+                        "value": "us_sneakers_youth_6.5",
+                        "data": {
+                            "gender": "youth",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "39.0",
+                                        "women": "39.0",
+                                        "youth": "39.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "40.0",
+                                        "women": "40.0",
+                                        "youth": "40.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "5.5",
+                                        "women": "5.5",
+                                        "youth": "6.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "6.5",
+                                        "women": "8.0",
+                                        "youth": "6.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 6,
+                        "display_name": "9.5",
+                        "value": "us_sneakers_women_9.5",
+                        "data": {
+                            "gender": "women",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "41.0",
+                                        "women": "41.0",
+                                        "youth": "41.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "42.0",
+                                        "women": "42.0",
+                                        "youth": "42.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "7.0",
+                                        "women": "7.0",
+                                        "youth": "7.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "8.0",
+                                        "women": "9.5",
+                                        "youth": "8.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 3,
+                        "display_name": "7.0",
+                        "value": "us_sneakers_women_7",
+                        "data": {
+                            "gender": "women",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "38.0",
+                                        "women": "38.0",
+                                        "youth": "38.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "39.0",
+                                        "women": "39.0",
+                                        "youth": "39.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "5.0",
+                                        "women": "4.5",
+                                        "youth": "5.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "5.5",
+                                        "women": "7.0",
+                                        "youth": "5.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 3,
+                        "display_name": "6.0",
+                        "value": "us_sneakers_youth_6",
+                        "data": {
+                            "gender": "youth",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "38.5",
+                                        "women": "38.5",
+                                        "youth": "38.5"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "39.5",
+                                        "women": "39.5",
+                                        "youth": "39.5"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "5.0",
+                                        "women": "5.0",
+                                        "youth": "5.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "6.0",
+                                        "women": "7.5",
+                                        "youth": "6.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 6,
+                        "display_name": "11.5",
+                        "value": "us_sneakers_women_11.5",
+                        "data": {
+                            "gender": "women",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "44.0",
+                                        "women": "44.0",
+                                        "youth": "44.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "45.0",
+                                        "women": "45.0",
+                                        "youth": "45.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "9.0",
+                                        "women": "9.0",
+                                        "youth": "9.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "10.0",
+                                        "women": "11.5",
+                                        "youth": "10.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "4.5",
+                        "value": "us_sneakers_men_4.5",
+                        "data": {
+                            "gender": "men",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "37.0",
+                                        "women": "37.0",
+                                        "youth": "36.5"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "38.0",
+                                        "women": "38.0",
+                                        "youth": "37.5"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "4.0",
+                                        "women": "3.5",
+                                        "youth": "4.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "4.5",
+                                        "women": "6.0",
+                                        "youth": "4.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 6,
+                        "display_name": "8.5",
+                        "value": "us_sneakers_men_8.5",
+                        "data": {
+                            "gender": "men",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "42.0",
+                                        "women": "42.0",
+                                        "youth": "42.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "43.0",
+                                        "women": "43.0",
+                                        "youth": "43.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "7.5",
+                                        "women": "7.5",
+                                        "youth": "7.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "8.5",
+                                        "women": "10.0",
+                                        "youth": "8.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 6,
+                        "display_name": "13.0",
+                        "value": "us_sneakers_women_13",
+                        "data": {
+                            "gender": "women",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "45.5",
+                                        "women": "45.5"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "46.5",
+                                        "women": "46.5"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "10.5",
+                                        "women": "10.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "11.5",
+                                        "women": "13.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "14.0",
+                        "value": "us_sneakers_women_14",
+                        "data": {
+                            "gender": "women",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "47.0",
+                                        "women": "47.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "48.0",
+                                        "women": "48.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "11.5",
+                                        "women": "11.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "12.5",
+                                        "women": "14.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "13.5",
+                        "value": "us_sneakers_men_13.5",
+                        "data": {
+                            "gender": "men",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "48.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "49.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "12.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "13.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 3,
+                        "display_name": "4.0",
+                        "value": "us_sneakers_men_4",
+                        "data": {
+                            "gender": "men",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "36.0",
+                                        "women": "36.0",
+                                        "youth": "36.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "37.0",
+                                        "women": "37.0",
+                                        "youth": "37.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "3.5",
+                                        "women": "3.0",
+                                        "youth": "3.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "4.0",
+                                        "women": "5.5",
+                                        "youth": "4.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "15.0",
+                        "value": "us_sneakers_women_15",
+                        "data": {
+                            "gender": "women",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "47.5",
+                                        "women": "48.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "48.5",
+                                        "women": "49.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "12.0",
+                                        "women": "12.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "13.0",
+                                        "women": "15.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "6.0",
+                        "value": "us_sneakers_women_6",
+                        "data": {
+                            "gender": "women",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "37.0",
+                                        "women": "37.0",
+                                        "youth": "36.5"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "38.0",
+                                        "women": "38.0",
+                                        "youth": "37.5"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "4.0",
+                                        "women": "3.5",
+                                        "youth": "4.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "4.5",
+                                        "women": "6.0",
+                                        "youth": "4.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 7,
+                        "display_name": "11.0",
+                        "value": "us_sneakers_women_11",
+                        "data": {
+                            "gender": "women",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "43.0",
+                                        "women": "43.0",
+                                        "youth": "43.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "44.0",
+                                        "women": "44.0",
+                                        "youth": "44.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "8.5",
+                                        "women": "8.5",
+                                        "youth": "8.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "9.5",
+                                        "women": "11.0",
+                                        "youth": "9.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 8,
+                        "display_name": "11.0",
+                        "value": "us_sneakers_men_11",
+                        "data": {
+                            "gender": "men",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "45.0",
+                                        "women": "45.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "46.0",
+                                        "women": "46.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "10.0",
+                                        "women": "10.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "11.0",
+                                        "women": "12.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 3,
+                        "display_name": "6.0",
+                        "value": "us_sneakers_men_6",
+                        "data": {
+                            "gender": "men",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "38.5",
+                                        "women": "38.5",
+                                        "youth": "38.5"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "39.5",
+                                        "women": "39.5",
+                                        "youth": "39.5"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "5.0",
+                                        "women": "5.0",
+                                        "youth": "5.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "6.0",
+                                        "women": "7.5",
+                                        "youth": "6.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "12.5",
+                        "value": "us_sneakers_men_12.5",
+                        "data": {
+                            "gender": "men",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "47.0",
+                                        "women": "47.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "48.0",
+                                        "women": "48.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "11.5",
+                                        "women": "11.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "12.5",
+                                        "women": "14.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 5,
+                        "display_name": "6.5",
+                        "value": "us_sneakers_men_6.5",
+                        "data": {
+                            "gender": "men",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "39.0",
+                                        "women": "39.0",
+                                        "youth": "39.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "40.0",
+                                        "women": "40.0",
+                                        "youth": "40.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "5.5",
+                                        "women": "5.5",
+                                        "youth": "6.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "6.5",
+                                        "women": "8.0",
+                                        "youth": "6.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 7,
+                        "display_name": "8.0",
+                        "value": "us_sneakers_women_8",
+                        "data": {
+                            "gender": "women",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "39.0",
+                                        "women": "39.0",
+                                        "youth": "39.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "40.0",
+                                        "women": "40.0",
+                                        "youth": "40.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "5.5",
+                                        "women": "5.5",
+                                        "youth": "6.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "6.5",
+                                        "women": "8.0",
+                                        "youth": "6.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "4.5",
+                        "value": "us_sneakers_youth_4.5",
+                        "data": {
+                            "gender": "youth",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "37.0",
+                                        "women": "37.0",
+                                        "youth": "36.5"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "38.0",
+                                        "women": "38.0",
+                                        "youth": "37.5"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "4.0",
+                                        "women": "3.5",
+                                        "youth": "4.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "4.5",
+                                        "women": "6.0",
+                                        "youth": "4.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 6,
+                        "display_name": "10.5",
+                        "value": "us_sneakers_women_10.5",
+                        "data": {
+                            "gender": "women",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "42.5",
+                                        "women": "42.5",
+                                        "youth": "42.5"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "43.5",
+                                        "women": "43.5",
+                                        "youth": "43.5"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "8.0",
+                                        "women": "8.0",
+                                        "youth": "8.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "9.0",
+                                        "women": "10.5",
+                                        "youth": "9.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 7,
+                        "display_name": "8.0",
+                        "value": "us_sneakers_men_8",
+                        "data": {
+                            "gender": "men",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "41.0",
+                                        "women": "41.0",
+                                        "youth": "41.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "42.0",
+                                        "women": "42.0",
+                                        "youth": "42.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "7.0",
+                                        "women": "7.0",
+                                        "youth": "7.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "8.0",
+                                        "women": "9.5",
+                                        "youth": "8.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 5,
+                        "display_name": "12.5",
+                        "value": "us_sneakers_women_12.5",
+                        "data": {
+                            "gender": "women",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "45.0",
+                                        "women": "45.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "46.0",
+                                        "women": "46.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "10.0",
+                                        "women": "10.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "11.0",
+                                        "women": "12.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "15.0",
+                        "value": "us_sneakers_men_15",
+                        "data": {
+                            "gender": "men",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "49.5"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "50.5"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "14.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "15.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 7,
+                        "display_name": "7.5",
+                        "value": "us_sneakers_men_7.5",
+                        "data": {
+                            "gender": "men",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "40.5",
+                                        "women": "40.5",
+                                        "youth": "40.5"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "41.5",
+                                        "women": "41.5",
+                                        "youth": "41.5"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "6.5",
+                                        "women": "6.5",
+                                        "youth": "6.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "7.5",
+                                        "women": "9.0",
+                                        "youth": "7.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "5.5",
+                        "value": "us_sneakers_men_5.5",
+                        "data": {
+                            "gender": "men",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "38.0",
+                                        "women": "38.0",
+                                        "youth": "38.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "39.0",
+                                        "women": "39.0",
+                                        "youth": "39.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "5.0",
+                                        "women": "4.5",
+                                        "youth": "5.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "5.5",
+                                        "women": "7.0",
+                                        "youth": "5.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 6,
+                        "display_name": "9.5",
+                        "value": "us_sneakers_men_9.5",
+                        "data": {
+                            "gender": "men",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "43.0",
+                                        "women": "43.0",
+                                        "youth": "43.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "44.0",
+                                        "women": "44.0",
+                                        "youth": "44.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "8.5",
+                                        "women": "8.5",
+                                        "youth": "8.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "9.5",
+                                        "women": "11.0",
+                                        "youth": "9.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "4.5",
+                        "value": "us_sneakers_women_4.5",
+                        "data": {
+                            "gender": "women",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "35.0",
+                                        "women": "35.0",
+                                        "youth": "35.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "36.0",
+                                        "women": "36.0",
+                                        "youth": "36.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "2.5",
+                                        "women": "2.0",
+                                        "youth": "2.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "3.0",
+                                        "women": "4.5",
+                                        "youth": "3.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 3,
+                        "display_name": "5.0",
+                        "value": "us_sneakers_women_5",
+                        "data": {
+                            "gender": "women",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "35.5",
+                                        "women": "35.5",
+                                        "youth": "35.5"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "36.5",
+                                        "women": "36.5",
+                                        "youth": "36.5"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "3.0",
+                                        "women": "2.5",
+                                        "youth": "3.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "3.5",
+                                        "women": "5.0",
+                                        "youth": "3.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "5.5",
+                        "value": "us_sneakers_youth_5.5",
+                        "data": {
+                            "gender": "youth",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "38.0",
+                                        "women": "38.0",
+                                        "youth": "38.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "39.0",
+                                        "women": "39.0",
+                                        "youth": "39.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "5.0",
+                                        "women": "4.5",
+                                        "youth": "5.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "5.5",
+                                        "women": "7.0",
+                                        "youth": "5.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 6,
+                        "display_name": "12.0",
+                        "value": "us_sneakers_men_12",
+                        "data": {
+                            "gender": "men",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "46.0",
+                                        "women": "46.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "47.0",
+                                        "women": "47.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "11.0",
+                                        "women": "11.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "12.0",
+                                        "women": "13.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "3.5",
+                        "value": "us_sneakers_youth_3.5",
+                        "data": {
+                            "gender": "youth",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "35.5",
+                                        "women": "35.5",
+                                        "youth": "35.5"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "36.5",
+                                        "women": "36.5",
+                                        "youth": "36.5"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "3.0",
+                                        "women": "2.5",
+                                        "youth": "3.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "3.5",
+                                        "women": "5.0",
+                                        "youth": "3.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 7,
+                        "display_name": "8.5",
+                        "value": "us_sneakers_women_8.5",
+                        "data": {
+                            "gender": "women",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "40.0",
+                                        "women": "40.0",
+                                        "youth": "40.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "41.0",
+                                        "women": "41.0",
+                                        "youth": "41.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "6.0",
+                                        "women": "6.0",
+                                        "youth": "6.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "7.0",
+                                        "women": "8.5",
+                                        "youth": "7.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "5.0",
+                        "value": "us_sneakers_youth_5",
+                        "data": {
+                            "gender": "youth",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "37.5",
+                                        "women": "37.5",
+                                        "youth": "37.5"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "38.5",
+                                        "women": "38.5",
+                                        "youth": "38.5"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "4.5",
+                                        "women": "4.0",
+                                        "youth": "4.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "5.0",
+                                        "women": "6.5",
+                                        "youth": "5.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "13.5",
+                        "value": "us_sneakers_women_13.5",
+                        "data": {
+                            "gender": "women",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "46.0",
+                                        "women": "46.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "47.0",
+                                        "women": "47.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "11.0",
+                                        "women": "11.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "12.0",
+                                        "women": "13.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 7,
+                        "display_name": "9.0",
+                        "value": "us_sneakers_women_9",
+                        "data": {
+                            "gender": "women",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "40.5",
+                                        "women": "40.5",
+                                        "youth": "40.5"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "41.5",
+                                        "women": "41.5",
+                                        "youth": "41.5"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "6.5",
+                                        "women": "6.5",
+                                        "youth": "6.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "7.5",
+                                        "women": "9.0",
+                                        "youth": "7.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "13.0",
+                        "value": "us_sneakers_men_13",
+                        "data": {
+                            "gender": "men",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "47.5",
+                                        "women": "48.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "48.5",
+                                        "women": "49.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "12.0",
+                                        "women": "12.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "13.0",
+                                        "women": "15.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "14.0",
+                        "value": "us_sneakers_men_14",
+                        "data": {
+                            "gender": "men",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "48.5"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "49.5"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "13.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "14.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 5,
+                        "display_name": "11.5",
+                        "value": "us_sneakers_men_11.5",
+                        "data": {
+                            "gender": "men",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "45.5",
+                                        "women": "45.5"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "46.5",
+                                        "women": "46.5"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "10.5",
+                                        "women": "10.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "11.5",
+                                        "women": "13.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "5.5",
+                        "value": "us_sneakers_women_5.5",
+                        "data": {
+                            "gender": "women",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "36.0",
+                                        "women": "36.0",
+                                        "youth": "36.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "37.0",
+                                        "women": "37.0",
+                                        "youth": "37.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "3.5",
+                                        "women": "3.0",
+                                        "youth": "3.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "4.0",
+                                        "women": "5.5",
+                                        "youth": "4.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 7,
+                        "display_name": "9.0",
+                        "value": "us_sneakers_men_9",
+                        "data": {
+                            "gender": "men",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "42.5",
+                                        "women": "42.5",
+                                        "youth": "42.5"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "43.5",
+                                        "women": "43.5",
+                                        "youth": "43.5"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "8.0",
+                                        "women": "8.0",
+                                        "youth": "8.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "9.0",
+                                        "women": "10.5",
+                                        "youth": "9.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 5,
+                        "display_name": "7.5",
+                        "value": "us_sneakers_women_7.5",
+                        "data": {
+                            "gender": "women",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "38.5",
+                                        "women": "38.5",
+                                        "youth": "38.5"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "39.5",
+                                        "women": "39.5",
+                                        "youth": "39.5"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "5.0",
+                                        "women": "5.0",
+                                        "youth": "5.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "6.0",
+                                        "women": "7.5",
+                                        "youth": "6.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "5.0",
+                        "value": "us_sneakers_men_5",
+                        "data": {
+                            "gender": "men",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "37.5",
+                                        "women": "37.5",
+                                        "youth": "37.5"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "38.5",
+                                        "women": "38.5",
+                                        "youth": "38.5"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "4.5",
+                                        "women": "4.0",
+                                        "youth": "4.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "5.0",
+                                        "women": "6.5",
+                                        "youth": "5.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 8,
+                        "display_name": "12.0",
+                        "value": "us_sneakers_women_12",
+                        "data": {
+                            "gender": "women",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "44.5",
+                                        "women": "44.5"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "45.5",
+                                        "women": "45.5"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "9.5",
+                                        "women": "9.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "10.5",
+                                        "women": "12.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 7,
+                        "display_name": "10.0",
+                        "value": "us_sneakers_women_10",
+                        "data": {
+                            "gender": "women",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "42.0",
+                                        "women": "42.0",
+                                        "youth": "42.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "43.0",
+                                        "women": "43.0",
+                                        "youth": "43.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "7.5",
+                                        "women": "7.5",
+                                        "youth": "7.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "8.5",
+                                        "women": "10.0",
+                                        "youth": "8.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 6,
+                        "display_name": "10.5",
+                        "value": "us_sneakers_men_10.5",
+                        "data": {
+                            "gender": "men",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "44.5",
+                                        "women": "44.5"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "45.5",
+                                        "women": "45.5"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "9.5",
+                                        "women": "9.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "10.5",
+                                        "women": "12.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "6.5",
+                        "value": "us_sneakers_women_6.5",
+                        "data": {
+                            "gender": "women",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "37.5",
+                                        "women": "37.5",
+                                        "youth": "37.5"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "38.5",
+                                        "women": "38.5",
+                                        "youth": "38.5"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "4.5",
+                                        "women": "4.0",
+                                        "youth": "4.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "5.0",
+                                        "women": "6.5",
+                                        "youth": "5.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "3.5",
+                        "value": "us_sneakers_men_3.5",
+                        "data": {
+                            "gender": "men",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "35.5",
+                                        "women": "35.5",
+                                        "youth": "35.5"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "36.5",
+                                        "women": "36.5",
+                                        "youth": "36.5"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "3.0",
+                                        "women": "2.5",
+                                        "youth": "3.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "3.5",
+                                        "women": "5.0",
+                                        "youth": "3.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 7,
+                        "display_name": "7.0",
+                        "value": "us_sneakers_men_7",
+                        "data": {
+                            "gender": "men",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "40.0",
+                                        "women": "40.0",
+                                        "youth": "40.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "41.0",
+                                        "women": "41.0",
+                                        "youth": "41.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "6.0",
+                                        "women": "6.0",
+                                        "youth": "6.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "7.0",
+                                        "women": "8.5",
+                                        "youth": "7.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 7,
+                        "display_name": "10.0",
+                        "value": "us_sneakers_men_10",
+                        "data": {
+                            "gender": "men",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "44.0",
+                                        "women": "44.0",
+                                        "youth": "44.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "45.0",
+                                        "women": "45.0",
+                                        "youth": "45.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "9.0",
+                                        "women": "9.0",
+                                        "youth": "9.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "10.0",
+                                        "women": "11.5",
+                                        "youth": "10.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "11.0",
+                        "value": "us_sneakers_youth_11",
+                        "data": {
+                            "gender": "youth",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "youth": "28.0",
+                                        "infant": "28.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "youth": "29.0",
+                                        "infant": "29.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "youth": "10.5",
+                                        "infant": "10.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "youth": "11.0",
+                                        "infant": "11.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 7,
+                        "display_name": "7.5",
+                        "value": "us_sneakers_youth_7.5",
+                        "data": {
+                            "gender": "youth",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "40.5",
+                                        "women": "40.5",
+                                        "youth": "40.5"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "41.5",
+                                        "women": "41.5",
+                                        "youth": "41.5"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "6.5",
+                                        "women": "6.5",
+                                        "youth": "6.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "7.5",
+                                        "women": "9.0",
+                                        "youth": "7.5"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 3,
+                        "display_name": "4.0",
+                        "value": "us_sneakers_youth_4",
+                        "data": {
+                            "gender": "youth",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "36.0",
+                                        "women": "36.0",
+                                        "youth": "36.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "37.0",
+                                        "women": "37.0",
+                                        "youth": "37.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "3.5",
+                                        "women": "3.0",
+                                        "youth": "3.5"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "4.0",
+                                        "women": "5.5",
+                                        "youth": "4.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 7,
+                        "display_name": "7.0",
+                        "value": "us_sneakers_youth_7",
+                        "data": {
+                            "gender": "youth",
+                            "sizing_info": {
+                                "eu": {
+                                    "sneakers": {
+                                        "men": "40.0",
+                                        "women": "40.0",
+                                        "youth": "40.0"
+                                    }
+                                },
+                                "fr": {
+                                    "sneakers": {
+                                        "men": "41.0",
+                                        "women": "41.0",
+                                        "youth": "41.0"
+                                    }
+                                },
+                                "uk": {
+                                    "sneakers": {
+                                        "men": "6.0",
+                                        "women": "6.0",
+                                        "youth": "6.0"
+                                    }
+                                },
+                                "us": {
+                                    "sneakers": {
+                                        "men": "7.0",
+                                        "women": "8.5",
+                                        "youth": "7.0"
+                                    }
+                                }
+                            },
+                            "product_type": "sneakers"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "us_sneakers_women_14.5",
+                        "value": "us_sneakers_women_14.5",
+                        "data": {}
+                    }
+                ],
+                "hidden": false,
+                "data": {}
+            },
+            {
+                "display_name": "Price",
+                "name": "lowest_price_cents",
+                "data": {
+                    "currency_rates": {
+                        "AUD": 1.5217067,
+                        "CAD": 1.3676302,
+                        "CNY": 7.2652483,
+                        "EUR": 0.92383564,
+                        "GBP": 0.786281,
+                        "HKD": 7.9067783,
+                        "JPY": 148.68271,
+                        "KRW": 1331.4364,
+                        "MXN": 16.994915,
+                        "MYR": 4.736535,
+                        "SGD": 1.3480674,
+                        "TWD": 31.770676
+                    },
+                    "global_pricing_regions": {
+                        "AT": "2",
+                        "AU": "12",
+                        "BE": "2",
+                        "BG": "2",
+                        "CA": "23",
+                        "CN": "1",
+                        "CY": "2",
+                        "CZ": "2",
+                        "DE": "2",
+                        "DK": "2",
+                        "EE": "2",
+                        "ES": "2",
+                        "FI": "2",
+                        "FR": "2",
+                        "GR": "2",
+                        "HK": "223",
+                        "HR": "2",
+                        "HU": "2",
+                        "IE": "2",
+                        "IT": "2",
+                        "JP": "57",
+                        "LT": "2",
+                        "LU": "2",
+                        "LV": "2",
+                        "MT": "2",
+                        "MX": "198",
+                        "MY": "69",
+                        "NL": "2",
+                        "PL": "2",
+                        "PT": "2",
+                        "RO": "2",
+                        "SE": "2",
+                        "SG": "106",
+                        "SI": "2",
+                        "SK": "2",
+                        "UK": "4",
+                        "US": "3"
+                    }
+                },
+                "type": "range",
+                "hidden": false,
+                "status": {},
+                "min": 2500,
+                "max": 200000
+            },
+            {
+                "display_name": "Price",
+                "name": "lowest_price_cents_bucket",
+                "type": "multiple",
+                "hidden": false,
+                "data": {},
+                "options": [
+                    {
+                        "status": "",
+                        "count": 8,
+                        "display_name": "Under $100",
+                        "value": "\"100\"-\"9900\"",
+                        "data": {
+                            "mobile_display_name": "Under $100"
+                        },
+                        "range": [
+                            100,
+                            9900
+                        ]
+                    },
+                    {
+                        "status": "",
+                        "count": 9,
+                        "display_name": "$100 - $200",
+                        "value": "\"10000\"-\"20000\"",
+                        "data": {
+                            "mobile_display_name": "$100 - $200"
+                        },
+                        "range": [
+                            10000,
+                            20000
+                        ]
+                    },
+                    {
+                        "status": "",
+                        "count": 8,
+                        "display_name": "$200 - $500",
+                        "value": "\"20000\"-\"50000\"",
+                        "data": {
+                            "mobile_display_name": "$200 - $500"
+                        },
+                        "range": [
+                            20000,
+                            50000
+                        ]
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "$500 - $1000",
+                        "value": "\"50000\"-\"100000\"",
+                        "data": {
+                            "mobile_display_name": "$500 - $1000"
+                        },
+                        "range": [
+                            50000,
+                            100000
+                        ]
+                    },
+                    {
+                        "status": "",
+                        "count": 5,
+                        "display_name": "$1000 - $2500",
+                        "value": "\"100000\"-\"250000\"",
+                        "data": {
+                            "mobile_display_name": "$1000 - $2500"
+                        },
+                        "range": [
+                            100000,
+                            250000
+                        ]
+                    }
+                ]
+            },
+            {
+                "display_name": "Price",
+                "name": "lowest_price_cents_myr",
+                "data": {},
+                "type": "range",
+                "hidden": false,
+                "status": {},
+                "min": 11900,
+                "max": 947400
+            },
+            {
+                "display_name": "Condition",
+                "name": "product_condition",
+                "type": "multiple",
+                "options": [
+                    {
+                        "status": "",
+                        "count": 11,
+                        "display_name": "New",
+                        "value": "new_no_defects",
+                        "data": {
+                            "description": "New and never worn items",
+                            "mobile_display_name": "New"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 9,
+                        "display_name": "Used",
+                        "value": "used",
+                        "data": {
+                            "description": "Gently used or worn items",
+                            "mobile_display_name": "Used"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "New with Defects",
+                        "value": "new_with_defects",
+                        "data": {
+                            "description": "New or unworn sneakers with imperfections",
+                            "mobile_display_name": "New with Defects"
+                        }
+                    }
+                ],
+                "hidden": false,
+                "data": {}
+            },
+            {
+                "display_name": "Color",
+                "name": "color",
+                "type": "multiple",
+                "options": [
+                    {
+                        "status": "",
+                        "count": 4,
+                        "display_name": "Black",
+                        "value": "black",
+                        "data": {
+                            "hex": "#000000",
+                            "mobile_display_name": "Black"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "Blue",
+                        "value": "blue",
+                        "data": {
+                            "hex": "#0126FF",
+                            "mobile_display_name": "Blue"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 4,
+                        "display_name": "Red",
+                        "value": "red",
+                        "data": {
+                            "hex": "#FD0209",
+                            "mobile_display_name": "Red"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "Silver",
+                        "value": "silver",
+                        "data": {
+                            "hex": "#999B9B",
+                            "mobile_display_name": "Silver"
+                        }
+                    }
+                ],
+                "hidden": false,
+                "data": {}
+            },
+            {
+                "display_name": "Year",
+                "name": "release_date_year_bucket",
+                "type": "multiple",
+                "hidden": false,
+                "data": {},
+                "options": [
+                    {
+                        "status": "",
+                        "count": 10,
+                        "display_name": "2015 - 2020",
+                        "value": "\"2015\"-\"2020\"",
+                        "data": {
+                            "mobile_display_name": "2015 - 2020"
+                        },
+                        "range": [
+                            2015,
+                            2020
+                        ]
+                    }
+                ]
+            },
+            {
+                "display_name": "Year",
+                "name": "release_date_year",
+                "type": "multiple",
+                "options": [
+                    {
+                        "status": "",
+                        "count": 10,
+                        "display_name": "2019",
+                        "value": "2019",
+                        "data": {}
+                    }
+                ],
+                "hidden": false,
+                "data": {}
+            },
+            {
+                "display_name": "Instant",
+                "name": "instant_ship_lowest_price_cents",
+                "data": {
+                    "description": "Pre-verified and ships instantly"
+                },
+                "type": "range",
+                "hidden": false,
+                "status": {},
+                "min": 9000,
+                "max": 37800
+            },
+            {
+                "display_name": "Discount Tag",
+                "name": "discount_tag",
+                "type": "multiple",
+                "options": [
+                    {
+                        "status": "",
+                        "count": 7,
+                        "display_name": "Under Retail",
+                        "value": "under_retail",
+                        "data": {
+                            "mobile_display_name": "Under Retail"
+                        }
+                    }
+                ],
+                "hidden": false,
+                "data": {}
+            },
+            {
+                "display_name": "Gender",
+                "name": "gender",
+                "type": "multiple",
+                "options": [
+                    {
+                        "status": "",
+                        "count": 8,
+                        "display_name": "Men",
+                        "value": "men",
+                        "data": {
+                            "mobile_display_name": "Men"
+                        }
+                    },
+                    {
+                        "status": "",
+                        "count": 3,
+                        "display_name": "Youth",
+                        "value": "youth",
+                        "data": {
+                            "mobile_display_name": "Youth"
+                        }
+                    }
+                ],
+                "hidden": false,
+                "data": {}
+            },
+            {
+                "display_name": "Release Date Month",
+                "name": "release_date_month",
+                "type": "multiple",
+                "options": [
+                    {
+                        "status": "",
+                        "count": 10,
+                        "display_name": "April",
+                        "value": "April",
+                        "data": {
+                            "mobile_display_name": "April"
+                        }
+                    }
+                ],
+                "hidden": false,
+                "data": {}
+            },
+            {
+                "display_name": "is_in_stock",
+                "name": "is_in_stock",
+                "type": "multiple",
+                "options": [
+                    {
+                        "status": "",
+                        "count": 11,
+                        "display_name": "Available Now",
+                        "value": "True",
+                        "data": null
+                    }
+                ],
+                "hidden": false,
+                "data": {}
+            },
+            {
+                "display_name": "lowest_price_cents_mxn",
+                "name": "lowest_price_cents_mxn",
+                "type": "multiple",
+                "options": [
+                    {
+                        "status": "",
+                        "count": 4,
+                        "display_name": "3399000",
+                        "value": "3399000",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 4,
+                        "display_name": "221000",
+                        "value": "221000",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 4,
+                        "display_name": "204000",
+                        "value": "204000",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "170000",
+                        "value": "170000",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "168300",
+                        "value": "168300",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "136000",
+                        "value": "136000",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "326400",
+                        "value": "326400",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "158100",
+                        "value": "158100",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "132600",
+                        "value": "132600",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "98600",
+                        "value": "98600",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 3,
+                        "display_name": "509900",
+                        "value": "509900",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "1031600",
+                        "value": "1031600",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "635700",
+                        "value": "635700",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "611900",
+                        "value": "611900",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "588100",
+                        "value": "588100",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 5,
+                        "display_name": "339900",
+                        "value": "339900",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 3,
+                        "display_name": "373900",
+                        "value": "373900",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 3,
+                        "display_name": "238000",
+                        "value": "238000",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "312800",
+                        "value": "312800",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "268600",
+                        "value": "268600",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "180200",
+                        "value": "180200",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "409600",
+                        "value": "409600",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "382400",
+                        "value": "382400",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "321300",
+                        "value": "321300",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "295800",
+                        "value": "295800",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "263500",
+                        "value": "263500",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "226100",
+                        "value": "226100",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 3,
+                        "display_name": "255000",
+                        "value": "255000",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 3,
+                        "display_name": "153000",
+                        "value": "153000",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "637400",
+                        "value": "637400",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "424900",
+                        "value": "424900",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "423200",
+                        "value": "423200",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "390900",
+                        "value": "390900",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "261800",
+                        "value": "261800",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "594900",
+                        "value": "594900",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "491200",
+                        "value": "491200",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "460600",
+                        "value": "460600",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "431700",
+                        "value": "431700",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "302600",
+                        "value": "302600",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "287300",
+                        "value": "287300",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "144500",
+                        "value": "144500",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "272000",
+                        "value": "272000",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "141100",
+                        "value": "141100",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "115600",
+                        "value": "115600",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "108800",
+                        "value": "108800",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "102000",
+                        "value": "102000",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "42500",
+                        "value": "42500",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "421500",
+                        "value": "421500",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "336500",
+                        "value": "336500",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "59500",
+                        "value": "59500",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "331500",
+                        "value": "331500",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "2437100",
+                        "value": "2437100",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "834500",
+                        "value": "834500",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "679800",
+                        "value": "679800",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "458900",
+                        "value": "458900",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "447000",
+                        "value": "447000",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "414700",
+                        "value": "414700",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "392600",
+                        "value": "392600",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "385800",
+                        "value": "385800",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "356900",
+                        "value": "356900",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "338200",
+                        "value": "338200",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "309400",
+                        "value": "309400",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "187000",
+                        "value": "187000",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "68000",
+                        "value": "68000",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "2039400",
+                        "value": "2039400",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "125800",
+                        "value": "125800",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "119000",
+                        "value": "119000",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "103700",
+                        "value": "103700",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "91800",
+                        "value": "91800",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "85000",
+                        "value": "85000",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "62900",
+                        "value": "62900",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 2,
+                        "display_name": "275400",
+                        "value": "275400",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "494600",
+                        "value": "494600",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "472500",
+                        "value": "472500",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "462300",
+                        "value": "462300",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "441900",
+                        "value": "441900",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "430000",
+                        "value": "430000",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "407900",
+                        "value": "407900",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "360300",
+                        "value": "360300",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "329800",
+                        "value": "329800",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "306000",
+                        "value": "306000",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "294100",
+                        "value": "294100",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "285600",
+                        "value": "285600",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "266900",
+                        "value": "266900",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "210800",
+                        "value": "210800",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "387500",
+                        "value": "387500",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "317900",
+                        "value": "317900",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "304300",
+                        "value": "304300",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "292400",
+                        "value": "292400",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "265200",
+                        "value": "265200",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "248200",
+                        "value": "248200",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "246500",
+                        "value": "246500",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "241400",
+                        "value": "241400",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "234600",
+                        "value": "234600",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "195500",
+                        "value": "195500",
+                        "data": {}
+                    },
+                    {
+                        "status": "",
+                        "count": 1,
+                        "display_name": "110500",
+                        "value": "110500",
+                        "data": {}
+                    }
+                ],
+                "hidden": false,
+                "data": {}
+            },
+            {
+                "display_name": "Price",
+                "name": "lowest_price_cents_krw",
+                "data": {},
+                "type": "range",
+                "hidden": false,
+                "status": {},
+                "min": 3328600,
+                "max": 266287300
+            },
+            {
+                "display_name": "Price",
+                "name": "lowest_price_cents_cny",
+                "data": {},
+                "type": "range",
+                "hidden": false,
+                "status": {},
+                "min": 18200,
+                "max": 1453100
+            },
+            {
+                "display_name": "Price",
+                "name": "lowest_price_cents_aud",
+                "data": {},
+                "type": "range",
+                "hidden": false,
+                "status": {},
+                "min": 3900,
+                "max": 304400
+            },
+            {
+                "display_name": "Price",
+                "name": "lowest_price_cents_twd",
+                "data": {},
+                "type": "range",
+                "hidden": false,
+                "status": {},
+                "min": 79500,
+                "max": 6354200
+            },
+            {
+                "display_name": "Price",
+                "name": "lowest_price_cents_jpy",
+                "data": {},
+                "type": "range",
+                "hidden": false,
+                "status": {},
+                "min": 371800,
+                "max": 29736600
+            },
+            {
+                "display_name": "Price",
+                "name": "lowest_price_cents_sgd",
+                "data": {},
+                "type": "range",
+                "hidden": false,
+                "status": {},
+                "min": 3400,
+                "max": 269700
+            },
+            {
+                "display_name": "Price",
+                "name": "lowest_price_cents_gbp",
+                "data": {},
+                "type": "range",
+                "hidden": false,
+                "status": {},
+                "min": 2000,
+                "max": 157300
+            },
+            {
+                "display_name": "Price",
+                "name": "gp_instant_ship_lowest_price_cents_3",
+                "data": {},
+                "type": "range",
+                "hidden": true,
+                "status": {},
+                "min": 9800,
+                "max": 38600
+            },
+            {
+                "display_name": "Price",
+                "name": "lowest_price_cents_eur",
+                "data": {},
+                "type": "range",
+                "hidden": false,
+                "status": {},
+                "min": 2400,
+                "max": 184800
+            },
+            {
+                "display_name": "Price",
+                "name": "lowest_price_cents_hkd",
+                "data": {},
+                "type": "range",
+                "hidden": false,
+                "status": {},
+                "min": 19800,
+                "max": 1581400
+            },
+            {
+                "display_name": "Price",
+                "name": "lowest_price_cents_cad",
+                "data": {},
+                "type": "range",
+                "hidden": false,
+                "status": {},
+                "min": 3500,
+                "max": 273600
+            },
+            {
+                "display_name": "Release Date",
+                "name": "release_date",
+                "data": {},
+                "type": "range",
+                "hidden": false,
+                "status": {},
+                "min": 20190426,
+                "max": 20190426
+            },
+            {
+                "display_name": "release_date_year_range",
+                "name": "release_date_year_range",
+                "data": {},
+                "type": "range",
+                "hidden": false,
+                "status": {},
+                "min": 2019,
+                "max": 2019
+            }
+        ],
+        "groups": [
+            {
+                "group_id": "all",
+                "display_name": "All",
+                "count": 11,
+                "data": {},
+                "children": [
+                    {
+                        "group_id": "sneakers",
+                        "display_name": "Sneakers",
+                        "count": 11,
+                        "data": {},
+                        "children": [],
+                        "parents": [
+                            {
+                                "display_name": "All",
+                                "group_id": "all"
+                            }
+                        ]
+                    }
+                ],
+                "parents": []
+            }
+        ],
+        "results": [
+            {
+                "matched_terms": [
+                    "heroes",
+                    "us",
+                    "among"
+                ],
+                "labels": {},
+                "data": {
+                    "id": "507335",
+                    "sku": "EF2260",
+                    "slug": "marvel-x-pro-vision-heroes-among-us-captain-marvel-mar-pro-vis-mar",
+                    "color": "red",
+                    "category": "shoes",
+                    "image_url": "https://image.goat.com/750/attachments/product_template_pictures/images/020/732/779/original/EF2260.png.png",
+                    "release_date": 20190426,
+                    "product_type": "sneakers",
+                    "release_date_year": 2019,
+                    "retail_price_cents": 11000,
+                    "retail_price_cents_twd": 346600,
+                    "retail_price_cents_cny": 80700,
+                    "retail_price_cents_hkd": 87200,
+                    "retail_price_cents_myr": 52000,
+                    "retail_price_cents_cad": 14800,
+                    "retail_price_cents_jpy": 1605300,
+                    "retail_price_cents_aud": 16700,
+                    "retail_price_cents_sgd": 15100,
+                    "retail_price_cents_eur": 10200,
+                    "retail_price_cents_gbp": 8800,
+                    "retail_price_cents_krw": 14638600,
+                    "variation_id": "fc0e4afa-68b0-4b8d-9f6c-8f1486059277",
+                    "discount_tag": "under_retail",
+                    "box_condition": "good_condition",
+                    "product_condition": "new_no_defects",
+                    "lowest_price_cents": 5800,
+                    "lowest_price_cents_cny": 42200,
+                    "lowest_price_cents_myr": 27500,
+                    "lowest_price_cents_cad": 8000,
+                    "lowest_price_cents_sgd": 7900,
+                    "lowest_price_cents_jpy": 862400,
+                    "lowest_price_cents_eur": 5400,
+                    "lowest_price_cents_twd": 184300,
+                    "lowest_price_cents_aud": 8900,
+                    "lowest_price_cents_krw": 7722400,
+                    "lowest_price_cents_hkd": 45900,
+                    "lowest_price_cents_gbp": 4600,
+                    "count_for_product_condition": 5
+                },
+                "value": "Marvel x Pro Vision 'Heroes Among Us: Captain Marvel'",
+                "is_slotted": false,
+                "variations_map": {
+                    "new_no_defects": {
+                        "good_condition": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        },
+                        "no_original_box": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        }
+                    },
+                    "used": {
+                        "good_condition": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        },
+                        "no_original_box": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        }
+                    }
+                }
+            },
+            {
+                "matched_terms": [
+                    "heroes",
+                    "us",
+                    "among"
+                ],
+                "labels": {},
+                "data": {
+                    "id": "779955",
+                    "sku": "EF2524",
+                    "slug": "marvel-x-harden-vol-3-heroes-among-us-iron-man-ef2524",
+                    "color": "red",
+                    "category": "shoes",
+                    "image_url": "https://image.goat.com/750/attachments/product_template_pictures/images/055/535/629/original/EF2524.png.png",
+                    "product_type": "sneakers",
+                    "release_date": 20190426,
+                    "release_date_year": 2019,
+                    "retail_price_cents": 15000,
+                    "retail_price_cents_jpy": 2189100,
+                    "retail_price_cents_krw": 19961700,
+                    "retail_price_cents_cad": 20100,
+                    "retail_price_cents_eur": 13900,
+                    "retail_price_cents_sgd": 20600,
+                    "retail_price_cents_twd": 472600,
+                    "retail_price_cents_hkd": 118900,
+                    "retail_price_cents_gbp": 12000,
+                    "retail_price_cents_aud": 22800,
+                    "retail_price_cents_myr": 70800,
+                    "retail_price_cents_cny": 110000,
+                    "variation_id": "c0e66483-4e5d-4f06-9b6d-4a7ceba8ec76",
+                    "box_condition": "good_condition",
+                    "product_condition": "new_no_defects",
+                    "lowest_price_cents": 30000,
+                    "lowest_price_cents_myr": 142100,
+                    "lowest_price_cents_eur": 27800,
+                    "lowest_price_cents_jpy": 4460500,
+                    "lowest_price_cents_hkd": 237300,
+                    "lowest_price_cents_cad": 41100,
+                    "lowest_price_cents_sgd": 40500,
+                    "lowest_price_cents_twd": 953200,
+                    "lowest_price_cents_gbp": 23600,
+                    "lowest_price_cents_aud": 45700,
+                    "lowest_price_cents_cny": 218000,
+                    "lowest_price_cents_krw": 39943100,
+                    "count_for_product_condition": 0
+                },
+                "value": "Marvel x Harden Vol. 3 'Heroes Among Us: Iron Man'",
+                "is_slotted": false,
+                "variations_map": {
+                    "new_no_defects": {
+                        "good_condition": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        },
+                        "badly_damaged": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        }
+                    }
+                }
+            },
+            {
+                "matched_terms": [
+                    "heroes",
+                    "us",
+                    "among"
+                ],
+                "labels": {},
+                "data": {
+                    "id": "507333",
+                    "sku": "EF2399",
+                    "slug": "marvel-x-t-mac-1-heroes-among-us-nick-fury-mar-tmac-fury",
+                    "color": "black",
+                    "category": "shoes",
+                    "image_url": "https://image.goat.com/750/attachments/product_template_pictures/images/020/689/301/original/MAR_TMAC_FURY.png",
+                    "release_date": 20190426,
+                    "product_type": "sneakers",
+                    "release_date_year": 2019,
+                    "retail_price_cents": 13000,
+                    "retail_price_cents_twd": 409600,
+                    "retail_price_cents_cny": 95400,
+                    "retail_price_cents_hkd": 103000,
+                    "retail_price_cents_myr": 61400,
+                    "retail_price_cents_cad": 17500,
+                    "retail_price_cents_jpy": 1897200,
+                    "retail_price_cents_aud": 19800,
+                    "retail_price_cents_sgd": 17800,
+                    "retail_price_cents_eur": 12100,
+                    "retail_price_cents_gbp": 10400,
+                    "retail_price_cents_krw": 17300200,
+                    "variation_id": "7feddb48-a736-4b38-b37c-a23fa7dfa391",
+                    "discount_tag": "under_retail",
+                    "box_condition": "good_condition",
+                    "product_condition": "new_no_defects",
+                    "lowest_price_cents": 9900,
+                    "lowest_price_cents_cny": 72000,
+                    "lowest_price_cents_myr": 46900,
+                    "lowest_price_cents_cad": 13600,
+                    "lowest_price_cents_sgd": 13400,
+                    "lowest_price_cents_jpy": 1472000,
+                    "lowest_price_cents_eur": 9200,
+                    "lowest_price_cents_twd": 314600,
+                    "lowest_price_cents_aud": 15100,
+                    "lowest_price_cents_krw": 13181300,
+                    "lowest_price_cents_hkd": 78300,
+                    "lowest_price_cents_gbp": 7800,
+                    "count_for_product_condition": 1
+                },
+                "value": "Marvel x T-Mac 1 'Heroes Among Us: Nick Fury'",
+                "is_slotted": false,
+                "variations_map": {
+                    "new_no_defects": {
+                        "good_condition": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        },
+                        "badly_damaged": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        }
+                    },
+                    "used": {
+                        "good_condition": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        },
+                        "no_original_box": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        }
+                    }
+                }
+            },
+            {
+                "matched_terms": [
+                    "heroes",
+                    "us",
+                    "among"
+                ],
+                "labels": {},
+                "data": {
+                    "id": "507336",
+                    "sku": "EF2259",
+                    "slug": "marvel-x-dame-5-heroes-among-us-black-panther-mar-dame-pan",
+                    "color": "black",
+                    "category": "shoes",
+                    "image_url": "https://image.goat.com/750/attachments/product_template_pictures/images/083/339/116/original/507336_00.png.png",
+                    "product_type": "sneakers",
+                    "release_date": 20190426,
+                    "release_date_year": 2019,
+                    "retail_price_cents": 12500,
+                    "retail_price_cents_jpy": 1824200,
+                    "retail_price_cents_krw": 16634800,
+                    "retail_price_cents_cad": 16800,
+                    "retail_price_cents_eur": 11600,
+                    "retail_price_cents_sgd": 17100,
+                    "retail_price_cents_twd": 393900,
+                    "retail_price_cents_hkd": 99100,
+                    "retail_price_cents_gbp": 10000,
+                    "retail_price_cents_aud": 19000,
+                    "retail_price_cents_myr": 59000,
+                    "retail_price_cents_cny": 91700,
+                    "variation_id": "8e34ceb8-9dbe-477e-847b-3e194ca4de57",
+                    "discount_tag": "under_retail",
+                    "box_condition": "good_condition",
+                    "used_image_url": "https://image.goat.com/attachments/product_outer_pictures/images/053/572/135/square/temp1619044582.jpeg?1619044582",
+                    "cheapest_product": "{\"picture_url\":\"https://image.goat.com/attachments/product_outer_pictures/images/053/572/135/square/temp1619044582.jpeg?1619044582\"}",
+                    "product_condition": "new_no_defects",
+                    "lowest_price_cents": 12000,
+                    "lowest_price_cents_myr": 56900,
+                    "lowest_price_cents_eur": 11100,
+                    "lowest_price_cents_jpy": 1784200,
+                    "lowest_price_cents_hkd": 94900,
+                    "lowest_price_cents_cad": 16500,
+                    "lowest_price_cents_sgd": 16200,
+                    "lowest_price_cents_twd": 381300,
+                    "lowest_price_cents_gbp": 9500,
+                    "lowest_price_cents_aud": 18300,
+                    "lowest_price_cents_cny": 87200,
+                    "lowest_price_cents_krw": 15977300,
+                    "count_for_product_condition": 1,
+                    "instant_ship_lowest_price_cents": 37800,
+                    "instant_ship_lowest_price_cents_aud": 57600,
+                    "instant_ship_lowest_price_cents_krw": 50328300,
+                    "instant_ship_lowest_price_cents_cad": 51700,
+                    "instant_ship_lowest_price_cents_gbp": 29800,
+                    "instant_ship_lowest_price_cents_hkd": 298900,
+                    "instant_ship_lowest_price_cents_jpy": 5620300,
+                    "instant_ship_lowest_price_cents_sgd": 51000,
+                    "instant_ship_lowest_price_cents_eur": 35000,
+                    "instant_ship_lowest_price_cents_myr": 179100,
+                    "instant_ship_lowest_price_cents_twd": 1201000,
+                    "instant_ship_lowest_price_cents_cny": 274700,
+                    "gp_instant_ship_lowest_price_cents_3": 38600
+                },
+                "value": "Marvel x Dame 5 'Heroes Among Us: Black Panther'",
+                "is_slotted": false,
+                "variations_map": {
+                    "new_no_defects": {
+                        "good_condition": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": 38600
+                        },
+                        "badly_damaged": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        },
+                        "no_original_box": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        }
+                    },
+                    "used": {
+                        "good_condition": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        },
+                        "badly_damaged": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        },
+                        "no_original_box": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        }
+                    }
+                }
+            },
+            {
+                "matched_terms": [
+                    "heroes",
+                    "us",
+                    "among"
+                ],
+                "labels": {},
+                "data": {
+                    "id": "525802",
+                    "sku": "EG2627",
+                    "slug": "marvel-avengers-x-dame-5-j-heroes-among-us-black-panther-eg2627",
+                    "color": "black",
+                    "category": "shoes",
+                    "image_url": "https://image.goat.com/750/attachments/product_template_pictures/images/022/887/479/original/EG2627.png.png",
+                    "product_type": "sneakers",
+                    "release_date": 20190426,
+                    "release_date_year": 2019,
+                    "retail_price_cents": 10000,
+                    "retail_price_cents_jpy": 1459400,
+                    "retail_price_cents_krw": 13307800,
+                    "retail_price_cents_cad": 13400,
+                    "retail_price_cents_eur": 9300,
+                    "retail_price_cents_sgd": 13700,
+                    "retail_price_cents_twd": 315100,
+                    "retail_price_cents_hkd": 79300,
+                    "retail_price_cents_gbp": 8000,
+                    "retail_price_cents_aud": 15200,
+                    "retail_price_cents_myr": 47200,
+                    "retail_price_cents_cny": 73400,
+                    "variation_id": "1016d762-d2dd-4a25-b34e-0d969e36ba28",
+                    "discount_tag": "under_retail",
+                    "box_condition": "good_condition",
+                    "product_condition": "new_no_defects",
+                    "lowest_price_cents": 6800,
+                    "lowest_price_cents_myr": 32300,
+                    "lowest_price_cents_eur": 6300,
+                    "lowest_price_cents_jpy": 1011100,
+                    "lowest_price_cents_hkd": 53800,
+                    "lowest_price_cents_cad": 9300,
+                    "lowest_price_cents_sgd": 9200,
+                    "lowest_price_cents_twd": 216100,
+                    "lowest_price_cents_gbp": 5400,
+                    "lowest_price_cents_aud": 10400,
+                    "lowest_price_cents_cny": 49500,
+                    "lowest_price_cents_krw": 9053800,
+                    "count_for_product_condition": 0
+                },
+                "value": "Marvel Avengers x Dame 5 J 'Heroes Among Us: Black Panther'",
+                "is_slotted": false,
+                "variations_map": {
+                    "new_no_defects": {
+                        "good_condition": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": 9800
+                        },
+                        "badly_damaged": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        },
+                        "no_original_box": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        }
+                    },
+                    "used": {
+                        "no_original_box": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        }
+                    }
+                }
+            },
+            {
+                "matched_terms": [
+                    "heroes",
+                    "us",
+                    "among"
+                ],
+                "labels": {},
+                "data": {
+                    "id": "511487",
+                    "sku": "EF2523",
+                    "slug": "dame-5-heroes-among-us-black-panther-asia-release-ef2523",
+                    "color": "black",
+                    "category": "shoes",
+                    "image_url": "https://image.goat.com/750/attachments/product_template_pictures/images/021/012/776/original/EF2523.png.png",
+                    "product_type": "sneakers",
+                    "retail_price_cents": 12000,
+                    "retail_price_cents_jpy": 1826000,
+                    "retail_price_cents_krw": 16122200,
+                    "retail_price_cents_cad": 16500,
+                    "retail_price_cents_eur": 11400,
+                    "retail_price_cents_sgd": 16400,
+                    "retail_price_cents_twd": 380700,
+                    "retail_price_cents_hkd": 94900,
+                    "retail_price_cents_gbp": 9700,
+                    "retail_price_cents_aud": 18700,
+                    "retail_price_cents_myr": 58100,
+                    "retail_price_cents_cny": 87100,
+                    "variation_id": "0702af36-00b8-4563-b36d-7bef058896c0",
+                    "box_condition": "good_condition",
+                    "product_condition": "new_no_defects",
+                    "lowest_price_cents": 19800,
+                    "lowest_price_cents_myr": 93800,
+                    "lowest_price_cents_eur": 18300,
+                    "lowest_price_cents_jpy": 2944000,
+                    "lowest_price_cents_hkd": 156600,
+                    "lowest_price_cents_cad": 27100,
+                    "lowest_price_cents_sgd": 26700,
+                    "lowest_price_cents_twd": 629100,
+                    "lowest_price_cents_gbp": 15600,
+                    "lowest_price_cents_aud": 30200,
+                    "lowest_price_cents_cny": 143900,
+                    "lowest_price_cents_krw": 26362500,
+                    "count_for_product_condition": 0
+                },
+                "value": "Dame 5 'Heroes Among Us: Black Panther' Asia Release",
+                "is_slotted": false,
+                "variations_map": {
+                    "new_no_defects": {
+                        "good_condition": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        }
+                    }
+                }
+            },
+            {
+                "matched_terms": [
+                    "heroes",
+                    "us",
+                    "among"
+                ],
+                "labels": {},
+                "data": {
+                    "id": "511480",
+                    "sku": "EG2628",
+                    "slug": "marvel-x-pro-vision-j-heroes-among-us-captain-marvel-eg2628",
+                    "color": "blue",
+                    "category": "shoes",
+                    "image_url": "https://image.goat.com/750/attachments/product_template_pictures/images/055/176/135/original/511480_00.png.png",
+                    "product_type": "sneakers",
+                    "release_date": 20190426,
+                    "release_date_year": 2019,
+                    "retail_price_cents": 9000,
+                    "retail_price_cents_jpy": 1313500,
+                    "retail_price_cents_krw": 11977100,
+                    "retail_price_cents_cad": 12100,
+                    "retail_price_cents_eur": 8400,
+                    "retail_price_cents_sgd": 12400,
+                    "retail_price_cents_twd": 283600,
+                    "retail_price_cents_hkd": 71400,
+                    "retail_price_cents_gbp": 7200,
+                    "retail_price_cents_aud": 13700,
+                    "retail_price_cents_myr": 42500,
+                    "retail_price_cents_cny": 66000,
+                    "variation_id": "53477810-9ae9-4029-bf14-de65ac8c7789",
+                    "box_condition": "good_condition",
+                    "product_condition": "new_no_defects",
+                    "lowest_price_cents": 9000,
+                    "lowest_price_cents_myr": 42700,
+                    "lowest_price_cents_eur": 8400,
+                    "lowest_price_cents_jpy": 1338200,
+                    "lowest_price_cents_hkd": 71200,
+                    "lowest_price_cents_cad": 12400,
+                    "lowest_price_cents_sgd": 12200,
+                    "lowest_price_cents_twd": 286000,
+                    "lowest_price_cents_gbp": 7100,
+                    "lowest_price_cents_aud": 13700,
+                    "lowest_price_cents_cny": 65400,
+                    "lowest_price_cents_krw": 11983000,
+                    "count_for_product_condition": 0
+                },
+                "value": "Marvel x Pro Vision J 'Heroes Among Us: Captain Marvel'",
+                "is_slotted": false,
+                "variations_map": {
+                    "new_no_defects": {
+                        "good_condition": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        }
+                    },
+                    "used": {
+                        "no_original_box": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        }
+                    }
+                }
+            },
+            {
+                "matched_terms": [
+                    "heroes",
+                    "us",
+                    "among"
+                ],
+                "labels": {},
+                "data": {
+                    "id": "507334",
+                    "sku": "EF2397",
+                    "slug": "marvel-x-harden-vol-3-heroes-among-us-iron-man-mar-harden-iron",
+                    "color": "red",
+                    "category": "shoes",
+                    "image_url": "https://image.goat.com/750/attachments/product_template_pictures/images/079/307/457/original/507334_00.png.png",
+                    "product_type": "sneakers",
+                    "release_date": 20190426,
+                    "release_date_year": 2019,
+                    "retail_price_cents": 15000,
+                    "retail_price_cents_jpy": 2189100,
+                    "retail_price_cents_krw": 19961700,
+                    "retail_price_cents_cad": 20100,
+                    "retail_price_cents_eur": 13900,
+                    "retail_price_cents_sgd": 20600,
+                    "retail_price_cents_twd": 472600,
+                    "retail_price_cents_hkd": 118900,
+                    "retail_price_cents_gbp": 12000,
+                    "retail_price_cents_aud": 22800,
+                    "retail_price_cents_myr": 70800,
+                    "retail_price_cents_cny": 110000,
+                    "variation_id": "37a7c81b-abe9-4dab-9382-ab0bbc98de57",
+                    "box_condition": "good_condition",
+                    "product_condition": "new_no_defects",
+                    "lowest_price_cents": 15800,
+                    "lowest_price_cents_myr": 74900,
+                    "lowest_price_cents_eur": 14600,
+                    "lowest_price_cents_jpy": 2349200,
+                    "lowest_price_cents_hkd": 125000,
+                    "lowest_price_cents_cad": 21700,
+                    "lowest_price_cents_sgd": 21300,
+                    "lowest_price_cents_twd": 502000,
+                    "lowest_price_cents_gbp": 12500,
+                    "lowest_price_cents_aud": 24100,
+                    "lowest_price_cents_cny": 114800,
+                    "lowest_price_cents_krw": 21036700,
+                    "count_for_product_condition": 1,
+                    "instant_ship_lowest_price_cents": 17100,
+                    "instant_ship_lowest_price_cents_aud": 26100,
+                    "instant_ship_lowest_price_cents_krw": 22767600,
+                    "instant_ship_lowest_price_cents_cad": 23400,
+                    "instant_ship_lowest_price_cents_gbp": 13500,
+                    "instant_ship_lowest_price_cents_hkd": 135300,
+                    "instant_ship_lowest_price_cents_jpy": 2542500,
+                    "instant_ship_lowest_price_cents_sgd": 23100,
+                    "instant_ship_lowest_price_cents_eur": 15800,
+                    "instant_ship_lowest_price_cents_myr": 81000,
+                    "instant_ship_lowest_price_cents_twd": 543300,
+                    "instant_ship_lowest_price_cents_cny": 124300,
+                    "gp_instant_ship_lowest_price_cents_3": 17900
+                },
+                "value": "Marvel x Harden Vol. 3 'Heroes Among Us: Iron Man'",
+                "is_slotted": false,
+                "variations_map": {
+                    "new_no_defects": {
+                        "good_condition": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": 17900
+                        },
+                        "badly_damaged": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        }
+                    },
+                    "used": {
+                        "good_condition": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        },
+                        "no_original_box": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        }
+                    }
+                }
+            },
+            {
+                "matched_terms": [
+                    "heroes",
+                    "us",
+                    "among"
+                ],
+                "labels": {},
+                "data": {
+                    "id": "511479",
+                    "sku": "EG2626",
+                    "slug": "marvel-x-harden-vol-3-j-heroes-among-us-iron-man-eg2626",
+                    "color": "red",
+                    "category": "shoes",
+                    "image_url": "https://image.goat.com/750/attachments/product_template_pictures/images/056/101/119/original/511479_00.png.png",
+                    "product_type": "sneakers",
+                    "release_date": 20190426,
+                    "release_date_year": 2019,
+                    "retail_price_cents": 11000,
+                    "retail_price_cents_jpy": 1605300,
+                    "retail_price_cents_krw": 14638600,
+                    "retail_price_cents_cad": 14800,
+                    "retail_price_cents_eur": 10200,
+                    "retail_price_cents_sgd": 15100,
+                    "retail_price_cents_twd": 346600,
+                    "retail_price_cents_hkd": 87200,
+                    "retail_price_cents_gbp": 8800,
+                    "retail_price_cents_aud": 16700,
+                    "retail_price_cents_myr": 52000,
+                    "retail_price_cents_cny": 80700,
+                    "variation_id": "8eddfc9f-ff4e-4499-b45d-77b5fe1027d7",
+                    "discount_tag": "under_retail",
+                    "box_condition": "good_condition",
+                    "product_condition": "new_no_defects",
+                    "lowest_price_cents": 3700,
+                    "lowest_price_cents_myr": 17600,
+                    "lowest_price_cents_eur": 3500,
+                    "lowest_price_cents_jpy": 550200,
+                    "lowest_price_cents_hkd": 29300,
+                    "lowest_price_cents_cad": 5100,
+                    "lowest_price_cents_sgd": 5000,
+                    "lowest_price_cents_twd": 117600,
+                    "lowest_price_cents_gbp": 3000,
+                    "lowest_price_cents_aud": 5700,
+                    "lowest_price_cents_cny": 26900,
+                    "lowest_price_cents_krw": 4926400,
+                    "count_for_product_condition": 0
+                },
+                "value": "Marvel x Harden Vol. 3 J 'Heroes Among Us: Iron Man'",
+                "is_slotted": false,
+                "variations_map": {
+                    "new_no_defects": {
+                        "good_condition": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        },
+                        "missing_lid": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        },
+                        "badly_damaged": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        },
+                        "no_original_box": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        }
+                    },
+                    "new_with_defects": {
+                        "good_condition": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        }
+                    },
+                    "used": {
+                        "good_condition": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        }
+                    }
+                }
+            },
+            {
+                "matched_terms": [
+                    "heroes",
+                    "us",
+                    "among"
+                ],
+                "labels": {},
+                "data": {
+                    "id": "507332",
+                    "sku": "EF2257",
+                    "slug": "marvel-x-n3xt-l3v3l-heroes-among-us-captain-america-mar-l3v3l-cap",
+                    "color": "blue",
+                    "category": "shoes",
+                    "image_url": "https://image.goat.com/750/attachments/product_template_pictures/images/020/732/775/original/EF2257.png.png",
+                    "release_date": 20190426,
+                    "product_type": "sneakers",
+                    "release_date_year": 2019,
+                    "retail_price_cents": 18000,
+                    "retail_price_cents_twd": 567100,
+                    "retail_price_cents_cny": 132000,
+                    "retail_price_cents_hkd": 142700,
+                    "retail_price_cents_myr": 85000,
+                    "retail_price_cents_cad": 24200,
+                    "retail_price_cents_jpy": 2626900,
+                    "retail_price_cents_aud": 27400,
+                    "retail_price_cents_sgd": 24700,
+                    "retail_price_cents_eur": 16700,
+                    "retail_price_cents_gbp": 14400,
+                    "retail_price_cents_krw": 23954100,
+                    "variation_id": "c297a51c-b4a9-48bf-ba63-771c3a4eca33",
+                    "discount_tag": "under_retail",
+                    "box_condition": "good_condition",
+                    "product_condition": "new_no_defects",
+                    "lowest_price_cents": 15000,
+                    "lowest_price_cents_cny": 109000,
+                    "lowest_price_cents_myr": 71100,
+                    "lowest_price_cents_cad": 20600,
+                    "lowest_price_cents_sgd": 20300,
+                    "lowest_price_cents_jpy": 2230300,
+                    "lowest_price_cents_eur": 13900,
+                    "lowest_price_cents_twd": 476600,
+                    "lowest_price_cents_aud": 22900,
+                    "lowest_price_cents_krw": 19971600,
+                    "lowest_price_cents_hkd": 118700,
+                    "lowest_price_cents_gbp": 11800,
+                    "count_for_product_condition": 0
+                },
+                "value": "Marvel x N3XT L3V3L 'Heroes Among Us: Captain America'",
+                "is_slotted": false,
+                "variations_map": {
+                    "new_no_defects": {
+                        "good_condition": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        },
+                        "badly_damaged": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        },
+                        "no_original_box": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        }
+                    },
+                    "new_with_defects": {
+                        "no_original_box": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        }
+                    },
+                    "used": {
+                        "good_condition": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        },
+                        "no_original_box": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        }
+                    }
+                }
+            },
+            {
+                "matched_terms": [
+                    "heroes",
+                    "us",
+                    "among"
+                ],
+                "labels": {},
+                "data": {
+                    "id": "509479",
+                    "sku": "EF2258",
+                    "slug": "marvel-x-marquee-boost-heroes-among-us-thor-ef2258",
+                    "color": "silver",
+                    "category": "shoes",
+                    "image_url": "https://image.goat.com/750/attachments/product_template_pictures/images/020/802/571/original/EF2258.png.png",
+                    "product_type": "sneakers",
+                    "release_date": 20190426,
+                    "release_date_year": 2019,
+                    "retail_price_cents": 14000,
+                    "retail_price_cents_jpy": 2043100,
+                    "retail_price_cents_krw": 18631000,
+                    "retail_price_cents_cad": 18800,
+                    "retail_price_cents_eur": 13000,
+                    "retail_price_cents_sgd": 19200,
+                    "retail_price_cents_twd": 441100,
+                    "retail_price_cents_hkd": 111000,
+                    "retail_price_cents_gbp": 11200,
+                    "retail_price_cents_aud": 21300,
+                    "retail_price_cents_myr": 66100,
+                    "retail_price_cents_cny": 102700,
+                    "variation_id": "64af4617-e55b-496d-b5ee-850c9fcdfa84",
+                    "discount_tag": "under_retail",
+                    "box_condition": "good_condition",
+                    "product_condition": "new_no_defects",
+                    "lowest_price_cents": 13000,
+                    "lowest_price_cents_myr": 61600,
+                    "lowest_price_cents_eur": 12100,
+                    "lowest_price_cents_jpy": 1932900,
+                    "lowest_price_cents_hkd": 102800,
+                    "lowest_price_cents_cad": 17800,
+                    "lowest_price_cents_sgd": 17600,
+                    "lowest_price_cents_twd": 413100,
+                    "lowest_price_cents_gbp": 10300,
+                    "lowest_price_cents_aud": 19800,
+                    "lowest_price_cents_cny": 94500,
+                    "lowest_price_cents_krw": 17308700,
+                    "count_for_product_condition": 0
+                },
+                "value": "Marvel x Marquee Boost 'Heroes Among Us: Thor'",
+                "is_slotted": false,
+                "variations_map": {
+                    "new_no_defects": {
+                        "good_condition": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        },
+                        "badly_damaged": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        },
+                        "no_original_box": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        }
+                    },
+                    "used": {
+                        "good_condition": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        },
+                        "no_original_box": {
+                            "min_regional_price": null,
+                            "min_regional_instant_ship_price": null
+                        }
+                    }
+                }
+            }
+        ],
+        "sort_options": [
+            {
+                "sort_by": "relevance",
+                "display_name": "Popular",
+                "sort_order": "descending",
+                "status": "selected"
+            },
+            {
+                "sort_by": "date_added",
+                "display_name": "New In",
+                "sort_order": "descending",
+                "status": ""
+            },
+            {
+                "sort_by": "release_date",
+                "display_name": "Upcoming Releases",
+                "sort_order": "ascending",
+                "status": ""
+            },
+            {
+                "sort_by": "lowest_price_cents",
+                "display_name": "Price (Low - High)",
+                "sort_order": "ascending",
+                "status": ""
+            },
+            {
+                "sort_by": "lowest_price_cents",
+                "display_name": "Price (High - Low)",
+                "sort_order": "descending",
+                "status": ""
+            },
+            {
+                "sort_by": "release_date",
+                "display_name": "Recently Released Sneakers",
+                "sort_order": "descending",
+                "status": ""
+            },
+            {
+                "sort_by": "gp_lowest_price_cents_106",
+                "display_name": "Price (Low - High)",
+                "sort_order": "ascending",
+                "status": ""
+            },
+            {
+                "sort_by": "gp_lowest_price_cents_106",
+                "display_name": "Price (High - Low)",
+                "sort_order": "descending",
+                "status": ""
+            },
+            {
+                "sort_by": "gp_lowest_price_cents_2",
+                "display_name": "Price (Low - High)",
+                "sort_order": "ascending",
+                "status": ""
+            },
+            {
+                "sort_by": "gp_lowest_price_cents_2",
+                "display_name": "Price (High - Low)",
+                "sort_order": "descending",
+                "status": ""
+            },
+            {
+                "sort_by": "gp_lowest_price_cents_223",
+                "display_name": "Price (Low - High)",
+                "sort_order": "ascending",
+                "status": ""
+            },
+            {
+                "sort_by": "gp_lowest_price_cents_223",
+                "display_name": "Price (High - Low)",
+                "sort_order": "descending",
+                "status": ""
+            },
+            {
+                "sort_by": "gp_lowest_price_cents_3",
+                "display_name": "Price (Low - High)",
+                "sort_order": "ascending",
+                "status": ""
+            },
+            {
+                "sort_by": "gp_lowest_price_cents_3",
+                "display_name": "Price (High - Low)",
+                "sort_order": "descending",
+                "status": ""
+            },
+            {
+                "sort_by": "gp_lowest_price_cents_4",
+                "display_name": "Price (Low - High)",
+                "sort_order": "ascending",
+                "status": ""
+            },
+            {
+                "sort_by": "gp_lowest_price_cents_4",
+                "display_name": "Price (High - Low)",
+                "sort_order": "descending",
+                "status": ""
+            },
+            {
+                "sort_by": "gp_lowest_price_cents_57",
+                "display_name": "Price (Low - High)",
+                "sort_order": "ascending",
+                "status": ""
+            },
+            {
+                "sort_by": "gp_lowest_price_cents_57",
+                "display_name": "Price (High - Low)",
+                "sort_order": "descending",
+                "status": ""
+            },
+            {
+                "sort_by": "gp_lowest_price_cents_23",
+                "display_name": "Price (Low - High)",
+                "sort_order": "ascending",
+                "status": ""
+            },
+            {
+                "sort_by": "gp_lowest_price_cents_23",
+                "display_name": "Price (High - Low)",
+                "sort_order": "descending",
+                "status": ""
+            },
+            {
+                "sort_by": "gp_lowest_price_cents_69",
+                "display_name": "Price (High - Low)",
+                "sort_order": "descending",
+                "status": ""
+            },
+            {
+                "sort_by": "gp_lowest_price_cents_69",
+                "display_name": "Price (Low - High)",
+                "sort_order": "ascending",
+                "status": ""
+            },
+            {
+                "sort_by": "gp_lowest_price_cents_12",
+                "display_name": "Price (Low - High)",
+                "sort_order": "ascending",
+                "status": ""
+            },
+            {
+                "sort_by": "gp_lowest_price_cents_12",
+                "display_name": "Price (High - Low)",
+                "sort_order": "descending",
+                "status": ""
+            },
+            {
+                "sort_by": "gp_lowest_price_cents_1",
+                "display_name": "Price (Low - High)",
+                "sort_order": "ascending",
+                "status": ""
+            },
+            {
+                "sort_by": "gp_lowest_price_cents_1",
+                "display_name": "Price (High - Low)",
+                "sort_order": "descending",
+                "status": ""
+            }
+        ],
+        "refined_content": [],
+        "total_num_results": 11,
+        "features": [
+            {
+                "feature_name": "a_a_test",
+                "display_name": "a_a_test",
+                "enabled": true,
+                "variant": null
+            },
+            {
+                "feature_name": "auto_generated_refined_query_rules",
+                "display_name": "Affinity Engine",
+                "enabled": true,
+                "variant": {
+                    "name": "soft_rules",
+                    "display_name": "Lowered weights"
+                }
+            },
+            {
+                "feature_name": "custom_autosuggest_ui",
+                "display_name": "custom_autosuggest_ui",
+                "enabled": false,
+                "variant": null
+            },
+            {
+                "feature_name": "disable_test_only_global_rules_browse",
+                "display_name": "Disables global refined filter rules with include_in_test=1 column",
+                "enabled": false,
+                "variant": null
+            },
+            {
+                "feature_name": "disable_test_only_global_rules_search",
+                "display_name": "Disables global refined query rules with include_in_test=1 column",
+                "enabled": false,
+                "variant": null
+            },
+            {
+                "feature_name": "filter_items",
+                "display_name": "Filter-item boosts",
+                "enabled": true,
+                "variant": {
+                    "name": "goat_weighted_ctr_w_atc_purchases_diff_periods",
+                    "display_name": ""
+                }
+            },
+            {
+                "feature_name": "manual_searchandizing",
+                "display_name": "Searchandizing",
+                "enabled": true,
+                "variant": null
+            },
+            {
+                "feature_name": "personalization",
+                "display_name": "Personalization",
+                "enabled": true,
+                "variant": {
+                    "name": "default_personalization",
+                    "display_name": "Default Personalization"
+                }
+            },
+            {
+                "feature_name": "query_items",
+                "display_name": "Learn To Rank",
+                "enabled": true,
+                "variant": {
+                    "name": "goat_weighted_ctr_w_atc_purchases_diff_periods",
+                    "display_name": ""
+                }
+            },
+            {
+                "feature_name": "use_enriched_attributes_as_fuzzy_searchable",
+                "display_name": "use_enriched_attributes_as_fuzzy_searchable",
+                "enabled": false,
+                "variant": null
+            },
+            {
+                "feature_name": "use_reranker_service_for_all",
+                "display_name": "Use reranker service to rerank search and browse results",
+                "enabled": false,
+                "variant": null
+            },
+            {
+                "feature_name": "use_reranker_service_for_browse",
+                "display_name": "Use reranker service to rerank browse / collections results",
+                "enabled": false,
+                "variant": null
+            },
+            {
+                "feature_name": "use_reranker_service_for_search",
+                "display_name": "Use reranker service to rerank search results",
+                "enabled": false,
+                "variant": null
+            }
+        ]
+    },
+    "result_id": "4427c7ef-9840-4b20-8b49-694068cb4881",
+    "request": {
+        "page": 1,
+        "num_results_per_page": 100,
+        "sort_by": "relevance",
+        "sort_order": "descending",
+        "variations_map": {
+            "group_by": [
+                {
+                    "name": "product_condition",
+                    "field": "data.product_condition"
+                },
+                {
+                    "name": "box_condition",
+                    "field": "data.box_condition"
+                }
+            ],
+            "values": {
+                "min_regional_price": {
+                    "aggregation": "min",
+                    "field": "data.gp_lowest_price_cents_3"
+                },
+                "min_regional_instant_ship_price": {
+                    "aggregation": "min",
+                    "field": "data.gp_instant_ship_lowest_price_cents_3"
+                }
+            },
+            "dtype": "object"
+        },
+        "fmt_options": {
+            "groups_max_depth": 1,
+            "groups_start": "current",
+            "show_hidden_fields": false,
+            "hidden_fields": [
+                "gp_instant_ship_lowest_price_cents_3"
+            ],
+            "show_hidden_facets": false,
+            "hidden_facets": [
+                "gp_instant_ship_lowest_price_cents_3"
+            ],
+            "show_protected_facets": false
+        },
+        "blacklist_rules": true,
+        "term": "heroes among us",
+        "section": "Products",
+        "features": {
+            "query_items": true,
+            "a_a_test": true,
+            "auto_generated_refined_query_rules": true,
+            "manual_searchandizing": true,
+            "personalization": true,
+            "filter_items": true,
+            "use_reranker_service_for_search": false,
+            "use_reranker_service_for_browse": false,
+            "use_reranker_service_for_all": false,
+            "custom_autosuggest_ui": false,
+            "disable_test_only_global_rules_search": false,
+            "disable_test_only_global_rules_browse": false,
+            "use_enriched_attributes_as_fuzzy_searchable": false
+        },
+        "feature_variants": {
+            "query_items": "goat_weighted_ctr_w_atc_purchases_diff_periods",
+            "a_a_test": null,
+            "auto_generated_refined_query_rules": "soft_rules",
+            "manual_searchandizing": null,
+            "personalization": "default_personalization",
+            "filter_items": "goat_weighted_ctr_w_atc_purchases_diff_periods",
+            "use_reranker_service_for_search": null,
+            "use_reranker_service_for_browse": null,
+            "use_reranker_service_for_all": null,
+            "custom_autosuggest_ui": null,
+            "disable_test_only_global_rules_search": null,
+            "disable_test_only_global_rules_browse": null,
+            "use_enriched_attributes_as_fuzzy_searchable": null
+        },
+        "searchandized_items": {}
+    }
+}

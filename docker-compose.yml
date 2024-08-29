@@ -1,0 +1,23 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: sneakers_db
+    environment:
+      POSTGRES_DB: Sneakers
+      POSTGRES_USER: solesearch
+      POSTGRES_PASSWORD: solesearch
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  redis:
+    image: redis:latest
+    container_name: sneakers_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  postgres_data:
+  redis_data:
