@@ -5,7 +5,7 @@ from api.models.sneaker.enums import Audience, Platform
 from api.models.sneaker.image import Image
 from api.models.sneaker.link import Link
 from api.models.sneaker.price import Price
-from api.models.sneaker.sneaker_size import SneakerSizeLink
+from api.models.sneaker.sneaker_size_link import SneakerSizeLink
 from sqlmodel import Field, Relationship, SQLModel
 
 

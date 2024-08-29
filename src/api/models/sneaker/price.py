@@ -1,7 +1,7 @@
 from typing import Optional
 
 from api.models.sneaker.enums import Platform
-from api.models.sneaker.sneaker_size import SneakerSize
+from api.models.sneaker.sneaker_size_link import SneakerSizeLink
 from sqlmodel import Field, Relationship, SQLModel
 
 
@@ -11,7 +11,7 @@ class Price(SQLModel, table=True):
     amount: int
 
     sneaker_size_id: int | None = Relationship(back_populates="price")
-    sneaker_size: SneakerSize = Relationship(back_populates="prices")
+    sneaker_size: SneakerSizeLink = Relationship(back_populates="prices")
 
     def merge(self, target):
         if self.platform == target.platform and target.amount > 0:
