@@ -10,8 +10,7 @@ if not os.environ.get("AWS_EXECUTION_ENV"):
     print("Loading .env file")
     load_dotenv(os.path.join(os.getcwd(), ".env"))
 
-from beanie import init_beanie
-from core.models.shoes import Sneaker
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.docs import get_swagger_ui_html
@@ -19,7 +18,7 @@ from fastapi.responses import RedirectResponse
 from mangum import Mangum
 from starlette.middleware.sessions import SessionMiddleware
 
-from api.data.instance import DATABASE_NAME, client
+from api.db import DATABASE_NAME, client
 from api.routes import auth, sneakers
 
 desc = """
@@ -57,11 +56,6 @@ app.add_middleware(SessionMiddleware, secret_key=SESSION_SECRET)
 
 @app.on_event("startup")
 async def startup_event():
-    # Initialize Beanie ODM
-    await init_beanie(
-        database=client.get_database(DATABASE_NAME),
-        document_models=[Sneaker, Token],
-    )
     # Include all routers
     app.include_router(sneakers.router)
     app.include_router(auth.router)

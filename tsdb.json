@@ -1,0 +1,2690 @@
+{
+    "count": 255645,
+    "totalPages": 10,
+    "results": [
+        {
+            "id": "e16a1838-bc4b-443f-addf-9703ad4c7f67",
+            "sku": "310155-172",
+            "brand": "Nike",
+            "name": "Air Max 180 'White Gold Black'",
+            "colorway": "White/Metallic Gold/Black",
+            "gender": "men",
+            "silhouette": "Air Max 180",
+            "releaseYear": "5",
+            "releaseDate": "0005-04-30",
+            "retailPrice": 0,
+            "estimatedMarketValue": 150,
+            "story": "",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/026/036/139/original/310155_172.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/026/036/139/original/310155_172.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/026/036/139/original/310155_172.png.png"
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-max-180-white-gold-black-310155-172",
+                "flightClub": "https://flightclub.com/air-max-180-white-gold-black-310155-172",
+                "stadiumGoods": ""
+            }
+        },
+        {
+            "id": "cc25575e-b235-46bc-b12e-6a66633c3ddf",
+            "brand": "adidas",
+            "colorway": "Core Black/Cloud White/Chalk White",
+            "estimatedMarketValue": 91,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/098/451/956/original/1280492_00.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/098/451/956/original/1280492_00.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/098/451/956/original/1280492_00.png.png"
+            },
+            "links": {
+                "stockX": "https://stockx.com/adidas-crazy-iiinfinity-stormtrooper",
+                "goat": "https://goat.com/sneakers/crazy-iiinfinity-white-black-ig6303",
+                "flightClub": "https://flightclub.com/crazy-iiinfinity-white-black-ig6303",
+                "stadiumGoods": ""
+            },
+            "name": "adidas Crazy IIInfinity Stormtrooper",
+            "releaseDate": "2024-12-30",
+            "releaseYear": "2024",
+            "retailPrice": 160,
+            "silhouette": "Crazy IIInfinity",
+            "sku": "IG6303",
+            "story": "The adidas Crazy IIInfinity \u2018Stormtrooper\u2019 presents a retro-inspired lifestyle silhouette that takes design cues from the Crazy 1, formerly known as The Kobe. The upper features a zippered shroud in black textile, contrasted by white molded foam paneling with debossed three-stripes at the midfoot. A reinforced rubber toe cap gives a nod to The Kobe 2, along with adidas\u2019 shell-toe heritage. Underfoot, the herringbone-traction rubber outsole reveals an exposed TPU shank for midfoot stability.",
+            "color": "black"
+        },
+        {
+            "id": "be58449f-1866-46c7-93ba-4b4db96cb291",
+            "brand": "adidas",
+            "colorway": "Off-White/Black/Metallic Gold",
+            "estimatedMarketValue": 118,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/096/506/877/original/IH7516.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/096/506/877/original/IH7516.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/096/506/877/original/IH7516.png.png"
+            },
+            "links": {
+                "stockX": "https://stockx.com/adidas-harden-vol-7-year-of-the-dragon-2024",
+                "goat": "https://goat.com/sneakers/harden-vol-7-year-of-the-dragon-ih7516",
+                "flightClub": "https://flightclub.com/harden-vol-7-year-of-the-dragon-ih7516",
+                "stadiumGoods": ""
+            },
+            "name": "adidas Harden Vol. 7 Year of the Dragon (2024)",
+            "releaseDate": "2024-12-29",
+            "releaseYear": "2024",
+            "retailPrice": 160,
+            "silhouette": "Harden Vol. 7",
+            "sku": "IH7516",
+            "story": "",
+            "color": "white"
+        },
+        {
+            "id": "7bd701b1-9c21-4c1a-9569-4165b9df529c",
+            "brand": "adidas",
+            "colorway": "Core White/Matte Gold/Halo Gold",
+            "estimatedMarketValue": 74,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/096/421/316/original/IH7517.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/096/421/316/original/IH7517.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/096/421/316/original/IH7517.png.png"
+            },
+            "links": {
+                "stockX": "https://stockx.com/adidas-don-issue-5-year-of-the-dragon-2024",
+                "goat": "https://goat.com/sneakers/d-o-n-issue-5-year-of-the-dragon-ih7517",
+                "flightClub": "https://flightclub.com/d-o-n-issue-5-year-of-the-dragon-ih7517",
+                "stadiumGoods": ""
+            },
+            "name": "adidas D.O.N. Issue #5 Year of the Dragon (2024)",
+            "releaseDate": "2024-12-27",
+            "releaseYear": "2024",
+            "retailPrice": 120,
+            "silhouette": "D.O.N. Issue #5",
+            "sku": "IH7517",
+            "story": "",
+            "color": "white"
+        },
+        {
+            "id": "f3316ff8-54db-48a9-be9c-346cb19f21fe",
+            "brand": "Jordan",
+            "color": "",
+            "colorway": "Black/Chutney/White",
+            "estimatedMarketValue": 150,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-13-retro-gs-chutney-884129-070",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 13 Retro GS 'Chutney'",
+            "releaseDate": "2024-12-22",
+            "releaseYear": "2024",
+            "retailPrice": 150,
+            "silhouette": "Air Jordan 13",
+            "sku": "884129-070",
+            "story": ""
+        },
+        {
+            "id": "83237240-0421-485d-8796-bc205b218f1d",
+            "brand": "Jordan",
+            "color": "",
+            "colorway": "Black/Chutney/White",
+            "estimatedMarketValue": 90,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-13-retro-ps-chutney-414575-070",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 13 Retro PS 'Chutney'",
+            "releaseDate": "2024-12-22",
+            "releaseYear": "2024",
+            "retailPrice": 90,
+            "silhouette": "Air Jordan 13",
+            "sku": "414575-070",
+            "story": ""
+        },
+        {
+            "id": "49b75c70-9425-4425-8704-17504753fadd",
+            "brand": "Jordan",
+            "color": "",
+            "colorway": "Black/Chutney/White",
+            "estimatedMarketValue": 75,
+            "gender": "infant",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-13-retro-td-chutney-414581-070",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 13 Retro TD 'Chutney'",
+            "releaseDate": "2024-12-22",
+            "releaseYear": "2024",
+            "retailPrice": 75,
+            "silhouette": "Air Jordan 13",
+            "sku": "414581-070",
+            "story": ""
+        },
+        {
+            "id": "24be88d2-74a1-4718-b865-0189627f263d",
+            "brand": "Jordan",
+            "color": "",
+            "colorway": "Black/Chutney/White",
+            "estimatedMarketValue": 200,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-13-retro-chutney-dj5982-070",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 13 Retro 'Chutney'",
+            "releaseDate": "2024-12-22",
+            "releaseYear": "2024",
+            "retailPrice": 200,
+            "silhouette": "Air Jordan 13",
+            "sku": "DJ5982-070",
+            "story": ""
+        },
+        {
+            "id": "be1f66b9-0093-4761-9d46-9f2f749ce159",
+            "brand": "Jordan",
+            "color": "white",
+            "colorway": "White/Legend Blue/Black",
+            "estimatedMarketValue": 85,
+            "gender": "infant",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-11-retro-td-columbia-legend-blue-2024-378040-104",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 11 Retro TD 'Columbia / Legend Blue' 2024",
+            "releaseDate": "2024-12-15",
+            "releaseYear": "2024",
+            "retailPrice": 85,
+            "silhouette": "Air Jordan 11",
+            "sku": "378040-104",
+            "story": ""
+        },
+        {
+            "id": "ab1c6af9-908d-4584-8295-0e6f2211684b",
+            "brand": "Puma",
+            "colorway": "Blue/Clyde Blue/Blue",
+            "estimatedMarketValue": 270,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "https://images.stockx.com/images/Puma-Clyde-Made-in-Japan-Blue-Blue-Japan-Navy .jpg?fit=fill&bg=FFFFFF&w=500&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1704187809",
+                "small": "https://images.stockx.com/images/Puma-Clyde-Made-in-Japan-Blue-Blue-Japan-Navy .jpg?fit=fill&bg=FFFFFF&w=375&h=375&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1704187809",
+                "thumbnail": "https://images.stockx.com/images/Puma-Clyde-Made-in-Japan-Blue-Blue-Japan-Navy .jpg?fit=fill&bg=FFFFFF&w=200&h=200&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1704187809"
+            },
+            "links": {
+                "stockX": "https://stockx.com/puma-clyde-made-in-japan-blue-blue-japan-navy",
+                "goat": "",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Puma Clyde Made in Japan Blue Blue Japan Navy",
+            "releaseDate": "2024-12-15",
+            "releaseYear": "2024",
+            "retailPrice": 270,
+            "silhouette": "Puma Clyde",
+            "sku": "395212-01",
+            "story": ""
+        },
+        {
+            "id": "7bd0b31e-9210-46fc-b714-e8f45dc19e5d",
+            "brand": "Jordan",
+            "color": "white",
+            "colorway": "White/Legend Blue/Black",
+            "estimatedMarketValue": 70,
+            "gender": "infant",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-11-retro-cb-columbia-legend-blue-2024-ci6165-104",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 11 Retro CB 'Columbia / Legend Blue' 2024",
+            "releaseDate": "2024-12-15",
+            "releaseYear": "2024",
+            "retailPrice": 70,
+            "silhouette": "Air Jordan 11",
+            "sku": "CI6165-104",
+            "story": ""
+        },
+        {
+            "id": "3c861638-e348-44c4-a23f-283a11423319",
+            "brand": "Jordan",
+            "color": "white",
+            "colorway": "White/Legend Blue/Black",
+            "estimatedMarketValue": 100,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-11-retro-ps-columbia-legend-blue-2024-378039-104",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 11 Retro PS 'Columbia / Legend Blue' 2024",
+            "releaseDate": "2024-12-15",
+            "releaseYear": "2024",
+            "retailPrice": 100,
+            "silhouette": "Air Jordan 11",
+            "sku": "378039-104",
+            "story": ""
+        },
+        {
+            "id": "27822880-d0b8-44f6-84a1-bc2364140caf",
+            "brand": "Jordan",
+            "color": "white",
+            "colorway": "White/Legend Blue/Black",
+            "estimatedMarketValue": 185,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-11-retro-gs-columbia-legend-blue-2024-378038-104",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 11 Retro GS 'Columbia / Legend Blue' 2024",
+            "releaseDate": "2024-12-15",
+            "releaseYear": "2024",
+            "retailPrice": 185,
+            "silhouette": "Air Jordan 11",
+            "sku": "378038-104",
+            "story": ""
+        },
+        {
+            "id": "da7b06fa-fb34-44ba-b6a7-19cf8356cd1a",
+            "brand": "Jordan",
+            "color": "white",
+            "colorway": "White/Legend Blue/Black",
+            "estimatedMarketValue": 2000,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-11-retro-columbia-2024-ct8012-104",
+                "flightClub": "https://flightclub.com/air-jordan-11-retro-columbia-2024-ct8012-104",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 11 Retro 'Columbia / Legend Blue' 2024",
+            "releaseDate": "2024-12-14",
+            "releaseYear": "2024",
+            "retailPrice": 230,
+            "silhouette": "Air Jordan 11",
+            "sku": "CT8012-104",
+            "story": "The 2024 edition of the Air Jordan 11 Retro &#39;Columbia/Legend Blue&#39; brings back an OG colorway of the championship model. Laces feed through webbing eyelets to secure the white leather upper, bolstered with a tonal patent leather mudguard and marked with a blue embroidered Jumpman on the lateral collar. Contrasting black accents land on the interior lining and back tab, featuring signature &#39;23&#39; branding. A white Phylon midsole packs a full-length Air-sole unit for lightweight cushioning. Underfoot, a blue-tinged translucent rubber outsole reveals a carbon fiber shank plate for midfoot stability."
+        },
+        {
+            "id": "df92f847-3573-40f1-978c-05fc8ecf964b",
+            "brand": "Jordan",
+            "color": "",
+            "colorway": "Phantom/Metallic Gold/White",
+            "estimatedMarketValue": 200,
+            "gender": "women",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/wmns-air-jordan-12-retro-phantom-fd9101-007",
+                "flightClub": "https://flightclub.com/wmns-air-jordan-12-retro-phantom-fd9101-007",
+                "stadiumGoods": ""
+            },
+            "name": "Wmns Air Jordan 12 Retro 'Phantom'",
+            "releaseDate": "2024-12-02",
+            "releaseYear": "2024",
+            "retailPrice": 200,
+            "silhouette": "Air Jordan 12",
+            "sku": "FD9101-007",
+            "story": "The Women&#39;s Air Jordan 12 Retro &#39;Phantom&#39; features an ivory-colored leather upper, accented with radiating stitched lines and bolstered with a lizard-textured mudguard. The upper eyelets are finished in metallic gold, matching the TPU midfoot overlay. Jumpman branding embellishes the tongue and heel tab. The legacy silhouette&#39;s performance benefits include a carbon fiber shank plate and a Phylon midsole with full-length Zoom Air cushioning. Underfoot, the outsole is equipped with herringbone traction pods for optimal grip."
+        },
+        {
+            "id": "e04cfd07-34b8-48b2-a81f-3297d95ed293",
+            "brand": "Nike",
+            "color": "",
+            "colorway": "Metallic Copper/Black",
+            "estimatedMarketValue": 130,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/zoom-kd-4-christmas-2024-fz5913-800",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Zoom KD 4 'Christmas' 2024",
+            "releaseDate": "2024-12-01",
+            "releaseYear": "2024",
+            "retailPrice": 130,
+            "silhouette": "KD 4",
+            "sku": "FZ5913-800",
+            "story": "The 2024 edition of the Nike Zoom KD 4 &#39;Christmas&#39; brings back a holiday-themed colorway of Kevin Durant&#39;s fourth signature shoe. Inspired by Christmas cookie cutters, the retro model sports a copper-hued mesh upper with tonal no-sew overlays. Durant&#39;s &#39;KD&#39; logo adorns the back heel, while Nike Swoosh branding appears on the Adaptive Fit strap. The cushioning setup takes the form of a lightweight Phylon midsole, painted black and fitted with a springy Zoom Air unit in forefoot."
+        },
+        {
+            "id": "81fe7efa-748b-4400-9e19-3d1fd2e0ae6d",
+            "brand": "Nike",
+            "colorway": "Luminous Green/Crimson Tint/Volt/Black",
+            "estimatedMarketValue": 200,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/095/591/040/original/FQ8109_331.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/095/591/040/original/FQ8109_331.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/095/591/040/original/FQ8109_331.png.png"
+            },
+            "links": {
+                "stockX": "https://stockx.com/nike-zoomx-vaporfly-3-ekiden-pack",
+                "goat": "https://goat.com/sneakers/zoomx-vaporfly-next-3-ekiden-zoom-pack-fq8109-331",
+                "flightClub": "https://flightclub.com/zoomx-vaporfly-next-3-ekiden-zoom-pack-fq8109-331",
+                "stadiumGoods": ""
+            },
+            "name": "Nike ZoomX Vaporfly 3 Ekiden Pack",
+            "releaseDate": "2024-12-01",
+            "releaseYear": "2024",
+            "retailPrice": 270,
+            "silhouette": "ZoomX VaporFly Next% 3",
+            "sku": "FQ8109-331",
+            "story": "",
+            "color": "green"
+        },
+        {
+            "id": "8682e7bd-a1bb-4552-813a-2c469c23e27d",
+            "brand": "adidas",
+            "colorway": "Crystal White/Cloud White/Better Scarlet",
+            "estimatedMarketValue": 2000,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/095/520/751/original/IF3501.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/095/520/751/original/IF3501.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/095/520/751/original/IF3501.png.png"
+            },
+            "links": {
+                "stockX": "https://stockx.com/adidas-nmd-r1-crystal-white-better-scarlet",
+                "goat": "https://goat.com/sneakers/nmd_r1-crystal-white-scarlet-if3501",
+                "flightClub": "https://flightclub.com/nmd_r1-crystal-white-scarlet-if3501",
+                "stadiumGoods": ""
+            },
+            "name": "adidas NMD R1 Crystal White Better Scarlet",
+            "releaseDate": "2024-11-26",
+            "releaseYear": "2024",
+            "retailPrice": 130,
+            "silhouette": "NMD Runner",
+            "sku": "IF3501",
+            "story": "",
+            "color": "white"
+        },
+        {
+            "id": "f62075b6-f2de-4875-9709-d559e8e40443",
+            "brand": "Jordan",
+            "color": "black",
+            "colorway": "Black/Gym Red/White",
+            "estimatedMarketValue": 85,
+            "gender": "infant",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-11-ps-retro-td-bred-velvet-hf7808-061",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 11 PS Retro TD 'Bred Velvet'",
+            "releaseDate": "2024-11-11",
+            "releaseYear": "2024",
+            "retailPrice": 85,
+            "silhouette": "Air Jordan 11",
+            "sku": "HF7808-061",
+            "story": ""
+        },
+        {
+            "id": "65c2eb0a-f87e-412f-be27-57442d957311",
+            "brand": "Jordan",
+            "color": "black",
+            "colorway": "Black/Gym Red/White",
+            "estimatedMarketValue": 230,
+            "gender": "women",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/wmns-air-jordan-11-retro-bred-velvet-db5457-061",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Wmns Air Jordan 11 Retro 'Bred Velvet'",
+            "releaseDate": "2024-11-11",
+            "releaseYear": "2024",
+            "retailPrice": 230,
+            "silhouette": "Air Jordan 11",
+            "sku": "DB5457-061",
+            "story": "The Women&#39;s Air Jordan 11 Retro &#39;Bred Velvet&#39; features black nubuck construction with a tonal velvet mudguard, replacing the glossy patent leather overlay of the original. Heritage details remain intact, including webbing eyelets and a crimson Jumpman logo on the lateral collar. Lightweight cushioning arrives via a white Phylon midsole, fitted with a full-length Air-sole unit and supported by a crimson translucent rubber outsole."
+        },
+        {
+            "id": "5b4e1507-8ed9-4326-9f80-2bb0d3e75e8d",
+            "brand": "Jordan",
+            "color": "black",
+            "colorway": "Black/Gym Red/White",
+            "estimatedMarketValue": 100,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-11-ps-retro-ps-bred-velvet-hf7807-061",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 11 PS Retro PS 'Bred Velvet'",
+            "releaseDate": "2024-11-11",
+            "releaseYear": "2024",
+            "retailPrice": 100,
+            "silhouette": "Air Jordan 11",
+            "sku": "HF7807-061",
+            "story": ""
+        },
+        {
+            "id": "241db403-9db2-4fd0-b7bd-d92e7ce1d4c3",
+            "brand": "Nike",
+            "colorway": "Black/Black/Multi/Color/Picante Red/Anthracite",
+            "estimatedMarketValue": 95,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/094/631/969/original/FV4137_001.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/094/631/969/original/FV4137_001.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/094/631/969/original/FV4137_001.png.png"
+            },
+            "links": {
+                "stockX": "https://stockx.com/nike-air-zoom-gt-hustle-2-gte-greater-than-ever",
+                "goat": "https://goat.com/sneakers/air-zoom-gt-hustle-2-greater-than-ever-fv4137-001",
+                "flightClub": "https://flightclub.com/air-zoom-gt-hustle-2-greater-than-ever-fv4137-001",
+                "stadiumGoods": ""
+            },
+            "name": "Nike Air Zoom GT Hustle 2 Greater Than Ever",
+            "releaseDate": "2024-11-09",
+            "releaseYear": "2024",
+            "retailPrice": 180,
+            "silhouette": "Air Zoom GT Hustle 2",
+            "sku": "FV4137-001",
+            "story": "The Nike GT Hustle 2 \u2018Greater Than Ever\u2019 delivers a performance basketball shoe that takes design cues from the running shoe space. The minimalist upper is crafted from breathable black mesh with tonal iridescent overlays and a padded mid-cut collar. Accented with a crimson topline and treated to a purple iridescent finish, a lightweight Phylon midsole features full-length Zoom Air cushioning for on-court responsiveness. Underfoot, a translucent rubber outsole provides multi-directional traction.",
+            "color": "black"
+        },
+        {
+            "id": "f1f48d52-a18f-4292-b938-6a7412b0237f",
+            "brand": "Jordan",
+            "color": "white",
+            "colorway": "White/Varsity Red/Black/Metallic Silver",
+            "estimatedMarketValue": 150,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-14-retro-gs-black-toe-2024-487524-160",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 14 Retro GS 'Black Toe' 2024",
+            "releaseDate": "2024-11-02",
+            "releaseYear": "2024",
+            "retailPrice": 150,
+            "silhouette": "Air Jordan 14",
+            "sku": "487524-160",
+            "story": ""
+        },
+        {
+            "id": "5c81dbed-54fe-4ad8-b80e-744ab8ca399e",
+            "brand": "Jordan",
+            "color": "white",
+            "colorway": "White/Varsity Red/Black/Metallic Silver",
+            "estimatedMarketValue": 210,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-14-retro-black-toe-2024-487471-160",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 14 Retro 'Black Toe' 2024",
+            "releaseDate": "2024-11-02",
+            "releaseYear": "2024",
+            "retailPrice": 210,
+            "silhouette": "Air Jordan 14",
+            "sku": "487471-160",
+            "story": ""
+        },
+        {
+            "id": "ca9358af-d9e6-4194-8d21-6f28763a685d",
+            "brand": "Jordan",
+            "color": "black",
+            "colorway": "Black/Medium Grey/White",
+            "estimatedMarketValue": 85,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-high-og-ps-satin-shadow-fd5304-010",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 1 Retro High OG PS 'Satin Shadow'",
+            "releaseDate": "2024-10-26",
+            "releaseYear": "2024",
+            "retailPrice": 85,
+            "silhouette": "Air Jordan 1",
+            "sku": "FD5304-010",
+            "story": ""
+        },
+        {
+            "id": "c2a2f75d-b2b3-43cb-9c8a-a3352339ecef",
+            "brand": "Jordan",
+            "color": "black",
+            "colorway": "Black/Medium Grey/White",
+            "estimatedMarketValue": 180,
+            "gender": "women",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/wmns-air-jordan-1-retro-high-og-satin-shadow-fd4810-010",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Wmns Air Jordan 1 Retro High OG 'Satin Shadow'",
+            "releaseDate": "2024-10-26",
+            "releaseYear": "2024",
+            "retailPrice": 180,
+            "silhouette": "Air Jordan 1",
+            "sku": "FD4810-010",
+            "story": ""
+        },
+        {
+            "id": "42a8b5e3-97a5-4655-b80c-c1d0680d912e",
+            "brand": "Jordan",
+            "color": "black",
+            "colorway": "Black/Medium Grey/White",
+            "estimatedMarketValue": 70,
+            "gender": "infant",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-high-og-td-satin-shadow-fd5305-010",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 1 Retro High OG TD 'Satin Shadow'",
+            "releaseDate": "2024-10-26",
+            "releaseYear": "2024",
+            "retailPrice": 70,
+            "silhouette": "Air Jordan 1",
+            "sku": "FD5305-010",
+            "story": ""
+        },
+        {
+            "id": "a6d34e1e-23c1-44cc-b75a-cacd428b3da3",
+            "brand": "Jordan",
+            "color": "black",
+            "colorway": "Black/Black/Varsity Red/White",
+            "estimatedMarketValue": 140,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-high-og-gs-black-toe-reimagined-fd1437-061",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 1 Retro High OG GS 'Black Toe Reimagined'",
+            "releaseDate": "2024-10-18",
+            "releaseYear": "2024",
+            "retailPrice": 140,
+            "silhouette": "Air Jordan 1",
+            "sku": "FD1437-061",
+            "story": ""
+        },
+        {
+            "id": "94125653-a8d2-4b15-b0ea-5da17f0a5ccd",
+            "brand": "Jordan",
+            "color": "black",
+            "colorway": "Black/Black/Varsity Red/White",
+            "estimatedMarketValue": 85,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-high-og-ps-black-toe-reimagined-fd1412-061",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 1 Retro High OG PS 'Black Toe Reimagined'",
+            "releaseDate": "2024-10-18",
+            "releaseYear": "2024",
+            "retailPrice": 85,
+            "silhouette": "Air Jordan 1",
+            "sku": "FD1412-061",
+            "story": ""
+        },
+        {
+            "id": "5ad09aa2-cc91-40cf-a2e3-63301197d407",
+            "brand": "Jordan",
+            "color": "black",
+            "colorway": "Black/Black/Varsity Red/White",
+            "estimatedMarketValue": 70,
+            "gender": "infant",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-high-og-td-black-toe-reimagined-fd1413-061",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 1 Retro High OG TD 'Black Toe Reimagined'",
+            "releaseDate": "2024-10-18",
+            "releaseYear": "2024",
+            "retailPrice": 70,
+            "silhouette": "Air Jordan 1",
+            "sku": "FD1413-061",
+            "story": ""
+        },
+        {
+            "id": "3cfac414-7424-4084-bbc8-e8fccc2e1018",
+            "brand": "Jordan",
+            "color": "black",
+            "colorway": "Black/Black/Varsity Red/White",
+            "estimatedMarketValue": 180,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-high-og-black-toe-reimagined-dz5485-061",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 1 Retro High OG 'Black Toe Reimagined'",
+            "releaseDate": "2024-10-18",
+            "releaseYear": "2024",
+            "retailPrice": 180,
+            "silhouette": "Air Jordan 1",
+            "sku": "DZ5485-061",
+            "story": ""
+        },
+        {
+            "id": "36c220d3-d195-4638-b5eb-6bdd6d60b5f4",
+            "brand": "Jordan",
+            "color": "",
+            "colorway": "Sail/Game Royal/Metallic Platinum",
+            "estimatedMarketValue": 150,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/awake-ny-x-jordan-air-ship-pe-sp-game-royal-fn8675-104",
+                "flightClub": "https://flightclub.com/awake-ny-x-jordan-air-ship-pe-sp-game-royal-fn8675-104",
+                "stadiumGoods": ""
+            },
+            "name": "Awake NY x Jordan Air Ship PE SP 'Game Royal'",
+            "releaseDate": "2024-10-16",
+            "releaseYear": "2024",
+            "retailPrice": 150,
+            "silhouette": "Air Ship",
+            "sku": "FN8675-104",
+            "story": ""
+        },
+        {
+            "id": "a1372203-7174-46ea-a177-8674a88ff92b",
+            "brand": "Jordan",
+            "color": "",
+            "colorway": "Orchid/Neutral Grey/Black/White",
+            "estimatedMarketValue": 215,
+            "gender": "women",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/wmns-air-jordan-4-retro-orchid-aq9129-501",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Wmns Air Jordan 4 Retro 'Orchid'",
+            "releaseDate": "2024-10-05",
+            "releaseYear": "2024",
+            "retailPrice": 215,
+            "silhouette": "Air Jordan 4",
+            "sku": "AQ9129-501",
+            "story": ""
+        },
+        {
+            "id": "128ca42c-6a39-4d33-8f0a-21db8b2fbe83",
+            "brand": "Nike",
+            "color": "green",
+            "colorway": "Black/Gorge Green-White",
+            "estimatedMarketValue": 135,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "https://stockx.com/nike-sb-dunk-low-there-skateboards",
+                "goat": "https://goat.com/sneakers/there-skateboards-x-dunk-low-sb-black-gorge-green-hf7743-001",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Nike SB Dunk Low There Skateboards",
+            "releaseDate": "2024-10-01",
+            "releaseYear": "2024",
+            "retailPrice": 135,
+            "silhouette": "Dunk SB",
+            "sku": "HF7743-001",
+            "story": ""
+        },
+        {
+            "id": "6c7649bf-a414-4b21-b85d-82429254639d",
+            "brand": "Jordan",
+            "color": "",
+            "colorway": "Fossil Stone/Metallic Pewter/Burgundy Crush",
+            "estimatedMarketValue": 250,
+            "gender": "women",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/a-ma-maniere-x-wmns-air-jordan-4-retro-fossil-stone-fz4810-200",
+                "flightClub": "https://flightclub.com/a-ma-maniere-x-wmns-air-jordan-4-retro-fossil-stone-fz4810-200",
+                "stadiumGoods": ""
+            },
+            "name": "A Ma Mani\u00e9re x Wmns Air Jordan 4 Retro 'Fossil Stone'",
+            "releaseDate": "2024-09-28",
+            "releaseYear": "2024",
+            "retailPrice": 250,
+            "silhouette": "Air Jordan 4",
+            "sku": "FZ4810-200",
+            "story": ""
+        },
+        {
+            "id": "201acae8-609c-4282-b5f0-adbb5ce17e50",
+            "brand": "Li-Ning",
+            "colorway": "White/Pink",
+            "estimatedMarketValue": 48,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/080/035/880/original/ABPS039_4.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/080/035/880/original/ABPS039_4.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/080/035/880/original/ABPS039_4.png.png"
+            },
+            "links": {
+                "stockX": "https://stockx.com/li-ning-wade-ice-blood-v2-305",
+                "goat": "https://goat.com/sneakers/wade-ice-blood-v2-305-abps039-4",
+                "flightClub": "https://flightclub.com/wade-ice-blood-v2-305-abps039-4",
+                "stadiumGoods": ""
+            },
+            "name": "Li-Ning Wade Ice Blood V2 305",
+            "releaseDate": "2024-09-24",
+            "releaseYear": "2024",
+            "retailPrice": 150,
+            "silhouette": "Wade Ice Blood V2",
+            "sku": "ABPS039-4",
+            "story": "",
+            "color": "white"
+        },
+        {
+            "id": "c9d5abab-0b97-4d8e-90c9-01a4884cf999",
+            "brand": "Jordan",
+            "colorway": "Phantom/Metallic Pewter/Violet Ore/Light Iron Ore/Muslin/Burgundy Crush",
+            "estimatedMarketValue": 250,
+            "gender": "women",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/a-ma-maniere-x-wmns-air-jordan-4-retro-burgundy-crush-fz4810-001",
+                "flightClub": "https://flightclub.com/a-ma-maniere-x-wmns-air-jordan-4-retro-burgundy-crush-fz4810-001",
+                "stadiumGoods": ""
+            },
+            "name": "A Ma Mani\u00e9re x Wmns Air Jordan 4 Retro 'Phantom'",
+            "releaseDate": "2024-09-19",
+            "releaseYear": "2024",
+            "retailPrice": 250,
+            "silhouette": "Air Jordan 4",
+            "sku": "FZ4810-001",
+            "story": "",
+            "color": "white"
+        },
+        {
+            "id": "bfee372b-8078-44ee-b878-51bdbc622b06",
+            "brand": "Jordan",
+            "colorway": "White/Black/Dark Mocha",
+            "estimatedMarketValue": 65,
+            "gender": "infant",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-low-og-td-mocha-fq5435-102",
+                "flightClub": "https://flightclub.com/air-jordan-1-retro-low-og-td-mocha-fq5435-102",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 1 Retro Low OG TD 'Mocha'",
+            "releaseDate": "2024-08-21",
+            "releaseYear": "2024",
+            "retailPrice": 65,
+            "silhouette": "Air Jordan 1",
+            "sku": "FQ5435-102",
+            "story": "The Air Jordan 1 Retro Low OG TD \u2018Mocha\u2019 features color blocking that parallels the AJ1 \u2018Dark Mocha\u2019 from 2020. The low-top makes use of a white leather upper, contrasted by black accents on the forefoot overlay and signature Swoosh. Brown nubuck construction is utilized on the heel overlay and back tab. The latter is stamped with the iconic Wings logo, while a woven Nike tag appears on the tongue. Underfoot, a black rubber outsole provides reliable traction for growing feet."
+        },
+        {
+            "id": "9266875a-4e96-4e80-b968-e8d54d62cba4",
+            "brand": "Jordan",
+            "colorway": "White/Black/Dark Mocha",
+            "estimatedMarketValue": 75,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-low-og-ps-mocha-fq5436-102",
+                "flightClub": "https://flightclub.com/air-jordan-1-retro-low-og-ps-mocha-fq5436-102",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 1 Retro Low OG PS 'Mocha'",
+            "releaseDate": "2024-08-21",
+            "releaseYear": "2024",
+            "retailPrice": 75,
+            "silhouette": "Air Jordan 1",
+            "sku": "FQ5436-102",
+            "story": "The Air Jordan 1 Retro Low OG PS \u2018Mocha\u2019 features a white and black leather upper with brown nubuck construction on the heel overlay and back tab. The latter displays the iconic Wings logo, while a woven Nike tag decorates the tongue. The low-top is appointed with classic Jordan details, including a perforated toe box and a durable rubber cupsole. Underfoot, the outsole pattern features a pivot circle originally designed for the hardwood."
+        },
+        {
+            "id": "5338a798-ac8b-442f-a8b2-71d3a79311a5",
+            "brand": "Jordan",
+            "colorway": "White/Black/Dark Mocha",
+            "estimatedMarketValue": 120,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-low-og-gs-mocha-cz0858-102",
+                "flightClub": "https://flightclub.com/air-jordan-1-retro-low-og-gs-mocha-cz0858-102",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 1 Retro Low OG GS 'Mocha'",
+            "releaseDate": "2024-08-21",
+            "releaseYear": "2024",
+            "retailPrice": 120,
+            "silhouette": "Air Jordan 1",
+            "sku": "CZ0858-102",
+            "story": "The Air Jordan 1 Retro Low OG GS \u2018Mocha\u2019 showcases color blocking that recalls the \u2018Dark Mocha\u2019 AJ1 from 2020. The low-top sports a white leather upper with contrasting black accents on the Swoosh and forefoot overlay. Brown nubuck construction is utilized on the heel and back tab, marked with the iconic Wings logo. A woven Nike tag adorns the breathable nylon tongue. The sneaker rests on a standard rubber cupsole, featuring stitched sidewall construction and encapsulated Air-sole cushioning."
+        },
+        {
+            "id": "a6e39a20-5512-4a2f-81c5-2c026a55271c",
+            "brand": "Jordan",
+            "colorway": "White/Midnight Navy/Diffused Blue/Football Grey",
+            "estimatedMarketValue": 190,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "https://stockx.com/air-jordan-11-retro-low-midnight-navy-2024",
+                "goat": "https://goat.com/sneakers/air-jordan-11-retro-low-midnight-navy-fv5104-104",
+                "flightClub": "https://flightclub.com/air-jordan-11-retro-low-midnight-navy-fv5104-104",
+                "stadiumGoods": ""
+            },
+            "name": "Jordan 11 Retro Low Midnight Navy (2024)",
+            "releaseDate": "2024-08-17",
+            "releaseYear": "2024",
+            "retailPrice": 190,
+            "silhouette": "Air Jordan 11",
+            "sku": "FV5104-104",
+            "story": "",
+            "color": "blue"
+        },
+        {
+            "id": "b9efa6a5-4e2e-4e31-b2e7-e36f866cca01",
+            "brand": "Hoka One One",
+            "color": "",
+            "colorway": "Wheat/Mushroom",
+            "estimatedMarketValue": 240,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "https://images.stockx.com/images/Hoka-One-One-Tor-Ultra-Low-Wheat-Mushroom.jpg?fit=fill&bg=FFFFFF&w=500&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1709144567",
+                "small": "https://images.stockx.com/images/Hoka-One-One-Tor-Ultra-Low-Wheat-Mushroom.jpg?fit=fill&bg=FFFFFF&w=375&h=375&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1709144567",
+                "thumbnail": "https://images.stockx.com/images/Hoka-One-One-Tor-Ultra-Low-Wheat-Mushroom.jpg?fit=fill&bg=FFFFFF&w=200&h=200&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1709144567"
+            },
+            "links": {
+                "stockX": "https://stockx.com/hoka-one-one-tor-ultra-low-wheat-mushroom",
+                "goat": "",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Hoka One One Tor Ultra Low Wheat Mushroom",
+            "releaseDate": "2024-08-02",
+            "releaseYear": "2024",
+            "retailPrice": 225,
+            "silhouette": "Hoka One One Tor Ultra Low",
+            "sku": "1153137-WSH",
+            "story": ""
+        },
+        {
+            "id": "6d767432-f068-40f8-8275-7741fed105b2",
+            "brand": "Nike",
+            "color": "black",
+            "colorway": "Black/Varsity Red/Wolf Grey",
+            "estimatedMarketValue": 150,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/098/856/512/original/FQ1854_001.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/098/856/512/original/FQ1854_001.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/098/856/512/original/FQ1854_001.png.png"
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/metcon-1-og-road-to-metcon-x-fq1854-001",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Metcon 1 OG 'Road to Metcon X'",
+            "releaseDate": "2024-08-02",
+            "releaseYear": "2024",
+            "retailPrice": 150,
+            "silhouette": "Metcon 1",
+            "sku": "FQ1854-001",
+            "story": ""
+        },
+        {
+            "id": "a5fd59ee-0cdf-4942-8d11-05037dec821a",
+            "brand": "ASICS",
+            "colorway": "Black/Gold",
+            "estimatedMarketValue": 88,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "https://images.stockx.com/images/Onitsuka-Tiger-Mexico-66-Black-Gold-Silver.jpg?fit=fill&bg=FFFFFF&w=500&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1694323883",
+                "small": "https://images.stockx.com/images/Onitsuka-Tiger-Mexico-66-Black-Gold-Silver.jpg?fit=fill&bg=FFFFFF&w=375&h=375&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1694323883",
+                "thumbnail": "https://images.stockx.com/images/Onitsuka-Tiger-Mexico-66-Black-Gold-Silver.jpg?fit=fill&bg=FFFFFF&w=200&h=200&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1694323883"
+            },
+            "links": {
+                "stockX": "https://stockx.com/onitsuka-tiger-mexico-66-black-gold-silver",
+                "goat": "",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Onitsuka Tiger Mexico 66 Black Gold Silver",
+            "releaseDate": "2024-08-01",
+            "releaseYear": "2024",
+            "retailPrice": 120,
+            "silhouette": "Onitsuka Tiger Mexico 66",
+            "sku": "D5V2L-9094",
+            "story": "",
+            "color": "black"
+        },
+        {
+            "id": "5f3e9e50-6fad-4f97-9730-d18dffa5546e",
+            "brand": "ASICS",
+            "colorway": "Black/Black",
+            "estimatedMarketValue": 126,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "https://images.stockx.com/images/Onitsuka-Tiger-Mexico-66-Triple-Black-Product.jpg?fit=fill&bg=FFFFFF&w=500&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1705093751",
+                "small": "https://images.stockx.com/images/Onitsuka-Tiger-Mexico-66-Triple-Black-Product.jpg?fit=fill&bg=FFFFFF&w=375&h=375&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1705093751",
+                "thumbnail": "https://images.stockx.com/images/Onitsuka-Tiger-Mexico-66-Triple-Black-Product.jpg?fit=fill&bg=FFFFFF&w=200&h=200&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1705093751"
+            },
+            "links": {
+                "stockX": "https://stockx.com/onitsuka-tiger-mexico-66-triple-black",
+                "goat": "",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Onitsuka Tiger Mexico 66 Triple Black",
+            "releaseDate": "2024-08-01",
+            "releaseYear": "2024",
+            "retailPrice": 120,
+            "silhouette": "Onitsuka Tiger Mexico 66",
+            "sku": "1183C102-002/D4J2L-9090",
+            "story": "",
+            "color": "black"
+        },
+        {
+            "id": "4b33b5df-a14b-4790-a295-6d7802d442ba",
+            "brand": "ASICS",
+            "colorway": "White/Light Sage",
+            "estimatedMarketValue": 142,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "https://images.stockx.com/images/Onitsuka-Tiger-Mexico-66-White-Light-Sage.jpg?fit=fill&bg=FFFFFF&w=500&h=500&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1694323941",
+                "small": "https://images.stockx.com/images/Onitsuka-Tiger-Mexico-66-White-Light-Sage.jpg?fit=fill&bg=FFFFFF&w=375&h=375&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1694323941",
+                "thumbnail": "https://images.stockx.com/images/Onitsuka-Tiger-Mexico-66-White-Light-Sage.jpg?fit=fill&bg=FFFFFF&w=200&h=200&fm=webp&auto=compress&trim=color&q=90&dpr=2&updated_at=1694323941"
+            },
+            "links": {
+                "stockX": "https://stockx.com/onitsuka-tiger-mexico-66-white-light-sage",
+                "goat": "",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Onitsuka Tiger Mexico 66 White Light Sage",
+            "releaseDate": "2024-08-01",
+            "releaseYear": "2024",
+            "retailPrice": 130,
+            "silhouette": "Onitsuka Tiger Mexico 66",
+            "sku": "1183A942-101",
+            "story": "",
+            "color": "white"
+        },
+        {
+            "id": "f2f0f50e-6c11-4d02-a7d9-21ec8704757f",
+            "brand": "Jordan",
+            "colorway": "University Blue/Midnight Navy-Sail",
+            "estimatedMarketValue": 180,
+            "gender": "women",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "https://stockx.com/air-jordan-1-high-og-first-in-flight-womens",
+                "goat": "https://goat.com/sneakers/wmns-air-jordan-1-retro-high-og-university-blue-midnight-navy-fd2596-400",
+                "flightClub": "https://flightclub.com/wmns-air-jordan-1-retro-high-og-university-blue-midnight-navy-fd2596-400",
+                "stadiumGoods": ""
+            },
+            "name": "Jordan 1 High OG First in Flight (Women's)",
+            "releaseDate": "2024-07-06",
+            "releaseYear": "2024",
+            "retailPrice": 180,
+            "silhouette": "Air Jordan 1",
+            "sku": "FD2596-400",
+            "story": "The Women&#39;s Air Jordan 1 Retro High OG &#39;University Blue Midnight Navy&#39; dresses the timeless silhouette in a familiar color palette inspired by Michael Jordan&#39;s alma mater. The upper features a tumbled leather base in a subtle off-white finish, contrasted by powder blue nubuck on the forefoot overlay and Swoosh. Navy blue accents land on the leather heel overlay and collar flap, marked with an amber Wings logo on the lateral side. Atop the nylon tongue, a woven tag displays the classic Nike Air logo with &#39;First in Flight&#39; branding. The high-top is mounted on a sturdy rubber cupsole, fitted with encapsulated Air-sole cushioning in the heel.",
+            "color": ""
+        },
+        {
+            "id": "e8ba1993-f30a-4c78-a33a-ba0dccd48acd",
+            "brand": "Jordan",
+            "colorway": "White/Varsity Red/Sail/Cement Grey",
+            "estimatedMarketValue": 123,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/098/863/146/original/1293077_00.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/098/863/146/original/1293077_00.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/098/863/146/original/1293077_00.png.png"
+            },
+            "links": {
+                "stockX": "https://stockx.com/air-jordan-2-3-white-varsity-red",
+                "goat": "https://goat.com/sneakers/air-jordan-2-3-white-varsity-red-fd0383-161",
+                "flightClub": "https://flightclub.com/air-jordan-2-3-white-varsity-red-fd0383-161",
+                "stadiumGoods": ""
+            },
+            "name": "Jordan 2/3 White Varsity Red",
+            "releaseDate": "2024-07-06",
+            "releaseYear": "2024",
+            "retailPrice": 160,
+            "silhouette": "Air Jordan 2/3",
+            "sku": "FD0383-161",
+            "story": "",
+            "color": "white"
+        },
+        {
+            "id": "c8f2762d-9bef-4bbd-8f08-d97bceca8c3b",
+            "brand": "Jordan",
+            "colorway": "Summit White/Obsidian-Summit White-Gum Medium Brown",
+            "estimatedMarketValue": 260,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "https://stockx.com/air-jordan-1-retro-high-og-denim",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-high-og-summit-white-obsidian-fq2947-100",
+                "flightClub": "https://flightclub.com/air-jordan-1-retro-high-og-summit-white-obsidian-fq2947-100",
+                "stadiumGoods": ""
+            },
+            "name": "Jordan 1 Retro High OG Denim",
+            "releaseDate": "2024-07-01",
+            "releaseYear": "2024",
+            "retailPrice": 180,
+            "silhouette": "Air Jordan 1",
+            "sku": "FQ2947-100",
+            "story": "",
+            "color": "white"
+        },
+        {
+            "id": "b7788b21-e1f4-4fee-b678-17813f58619a",
+            "brand": "Nike",
+            "color": "",
+            "colorway": "Concord/Bright Crimson/Black/Cool Grey/Green Strike",
+            "estimatedMarketValue": 150,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "https://stockx.com/nike-kd-4-nerf-2024",
+                "goat": "",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Nike KD 4 NERF (2024)",
+            "releaseDate": "2024-07-01",
+            "releaseYear": "2024",
+            "retailPrice": 150,
+            "silhouette": "Nike KD 4",
+            "sku": "FQ8180-400",
+            "story": ""
+        },
+        {
+            "id": "5f233519-992e-45c3-b7f3-9f20ec6c448a",
+            "brand": "Jordan",
+            "colorway": "Black/Solar Flare-Total Crimson Abyss",
+            "estimatedMarketValue": 652,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "https://stockx.com/air-jordan-3-retro-j-balvin-rio",
+                "goat": "https://goat.com/sneakers/j-balvin-x-air-jordan-3-retro-rio-fn0344-001",
+                "flightClub": "https://flightclub.com/j-balvin-x-air-jordan-3-retro-rio-fn0344-001",
+                "stadiumGoods": ""
+            },
+            "name": "Jordan 3 Retro J Balvin Rio",
+            "releaseDate": "2024-07-01",
+            "releaseYear": "2024",
+            "retailPrice": 250,
+            "silhouette": "Air Jordan 3",
+            "sku": "FN0344-001",
+            "story": "The J Balvin x Air Jordan 3 Retro &#39;Rio&#39; takes its name from the reggaeton artist&#39;s son. The legacy silhouette carries a black leather upper with grey elephant print overlays at the forefoot and heel. Gradient accents in Solar Flare and Total Crimson Abyss coat the back tab, marked with Nike Air branding on the left foot and J Balvin&#39;s smiley face logo on the right. The sunset colors are repeated on the rear of the polyurethane midsole, supported by a red-tinged translucent rubber outsole.",
+            "color": "orange"
+        },
+        {
+            "id": "dffe1dac-ff44-4e6c-840a-637acae9a71d",
+            "brand": "Nike",
+            "color": "",
+            "colorway": "Football Grey/Amber Brown/Sail/Picante Red/Astronomy Blue",
+            "estimatedMarketValue": 100,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/sabrina-2-gs-orchestrator-fq7376-002",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Sabrina 2 GS 'Orchestrator'",
+            "releaseDate": "2024-06-28",
+            "releaseYear": "2024",
+            "retailPrice": 100,
+            "silhouette": "Sabrina 2",
+            "sku": "FQ7376-002",
+            "story": ""
+        },
+        {
+            "id": "340c5e13-c20d-4530-bcf8-f514e54126c5",
+            "brand": "Nike",
+            "color": "",
+            "colorway": "Football Grey/Amber Brown/Sail/Picante Red/Astronomy Blue",
+            "estimatedMarketValue": 130,
+            "gender": "women",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/wmns-sabrina-2-orchestrator-fq2174-002",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Wmns Sabrina 2 'Orchestrator'",
+            "releaseDate": "2024-06-28",
+            "releaseYear": "2024",
+            "retailPrice": 130,
+            "silhouette": "Sabrina 2",
+            "sku": "FQ2174-002",
+            "story": ""
+        },
+        {
+            "id": "54410ff8-503c-4252-ba52-86bbe4436bf4",
+            "brand": "Jordan",
+            "colorway": "White/Team Red/White",
+            "estimatedMarketValue": 151,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/098/168/766/original/1321532_00.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/098/168/766/original/1321532_00.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/098/168/766/original/1321532_00.png.png"
+            },
+            "links": {
+                "stockX": "https://stockx.com/air-jordan-1-retro-high-85-og-metallic-burgundy",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-high-85-metallic-burgundy-bq4422-161",
+                "flightClub": "https://flightclub.com/air-jordan-1-retro-high-85-metallic-burgundy-bq4422-161",
+                "stadiumGoods": ""
+            },
+            "name": "Jordan 1 Retro High '85 OG Metallic Burgundy",
+            "releaseDate": "2024-06-22",
+            "releaseYear": "2024",
+            "retailPrice": 180,
+            "silhouette": "Air Jordan 1",
+            "sku": "BQ4422-161",
+            "story": "The Air Jordan 1 Retro High \u201885 OG \u2018Metallic Burgundy\u2019 brings back an OG colorway from 1986. Constructed with the higher-cut collar and wider toe box of the silhouette\u2019s original release, the foundational sneaker features a white leather upper with contrasting Team Red accents. The hits of color land on the padded collar and the shoe\u2019s branding elements, including the Swoosh, Nike Air tongue tag, and the Wings logo stamped on the lateral ankle. Anchoring the high-top is a durable rubber cupsole, featuring white sidewalls and a burgundy outsole.",
+            "color": "white"
+        },
+        {
+            "id": "bb9f7af6-ce7c-4047-b127-5d5339c8f41f",
+            "brand": "Jordan",
+            "colorway": "White/Black",
+            "estimatedMarketValue": 85,
+            "gender": "infant",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-6-retro-td-reverse-oreo-dv3606-112",
+                "flightClub": "https://flightclub.com/air-jordan-6-retro-td-reverse-oreo-dv3606-112",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 6 Retro TD 'Reverse Oreo'",
+            "releaseDate": "2024-06-08",
+            "releaseYear": "2024",
+            "retailPrice": 85,
+            "silhouette": "Air Jordan 6",
+            "sku": "DV3606-112",
+            "story": "The Air Jordan 6 Retro TD \u2018Reverse Oreo\u2019 takes its design cues from a black-and-white AJ6 colorway originally released in 2010. Crisp white leather is utilized on the upper, accented with perforated detailing and contrasting hits of black on the interior lining and tongue. The latter is marked with Jordan branding and an embroidered Jumpman logo. A second Jumpman icon decorates the back heel. A cushy foam midsole features white speckles against a solid black backdrop."
+        },
+        {
+            "id": "4a47c221-a61d-4217-8b3b-05a93a76d3c0",
+            "brand": "Jordan",
+            "colorway": "White/Black",
+            "estimatedMarketValue": 100,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-6-retro-ps-reverse-oreo-dv3605-112",
+                "flightClub": "https://flightclub.com/air-jordan-6-retro-ps-reverse-oreo-dv3605-112",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 6 Retro PS 'Reverse Oreo'",
+            "releaseDate": "2024-06-08",
+            "releaseYear": "2024",
+            "retailPrice": 100,
+            "silhouette": "Air Jordan 6",
+            "sku": "DV3605-112",
+            "story": "Offered in pre-school sizing, the Air Jordan 6 Retro PS \u2018Reverse Oreo\u2019 presents a two-tone colorway inspired by the classic AJ6 release from 2010. Built with crisp white leather, the upper features perforated detailing and contrasting hits of black on the molded tongue and interior lining. Embroidered Jumpman branding decorates the lace cover and back heel. Anchoring the sneaker is a lightweight foam midsole, ornamented with black accents covered in white speckles."
+        },
+        {
+            "id": "4280d52c-99fe-4a7a-a5f6-418c92393023",
+            "brand": "Jordan",
+            "colorway": "White/Black",
+            "estimatedMarketValue": 160,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-6-retro-gs-reverse-oreo-384665-112",
+                "flightClub": "https://flightclub.com/air-jordan-6-retro-gs-reverse-oreo-384665-112",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 6 Retro GS 'Reverse Oreo'",
+            "releaseDate": "2024-06-08",
+            "releaseYear": "2024",
+            "retailPrice": 160,
+            "silhouette": "Air Jordan 6",
+            "sku": "384665-112",
+            "story": "Made for big kids, the Air Jordan 6 Retro GS \u2018Reverse Oreo\u2019 draws inspiration from the black-and-white AJ6 colorway from 2010. The legacy silhouette dons a white leather upper, contrasted by a molded black tongue and a matching black textile lining. Jumpman branding embellishes the neoprene lace cover and back heel. The midsole and molded pull tab feature white speckles against a solid black backdrop, accentuating the shoe\u2019s cookies-and-cream design motif Underfoot, a translucent rubber outsole provides grippy traction."
+        },
+        {
+            "id": "5208f5dc-5a01-4b86-84e7-48745344e274",
+            "brand": "Jordan",
+            "color": "",
+            "colorway": "Bicoastal/Black/Malachite/Fossil",
+            "estimatedMarketValue": 225,
+            "gender": "women",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/099/241/497/original/FZ7974_300.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/099/241/497/original/FZ7974_300.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/099/241/497/original/FZ7974_300.png.png"
+            },
+            "links": {
+                "stockX": "https://stockx.com/air-jordan-3-retro-sp-nina-chanel-abney-bicoastal-womens",
+                "goat": "https://goat.com/sneakers/nina-chanel-abney-x-wmns-air-jordan-3-retro-sp-bicoastal-fz7974-300",
+                "flightClub": "https://flightclub.com/nina-chanel-abney-x-wmns-air-jordan-3-retro-sp-bicoastal-fz7974-300",
+                "stadiumGoods": ""
+            },
+            "name": "Jordan 3 Retro SP Nina Chanel Abney Bicoastal (Women's)",
+            "releaseDate": "2024-06-06",
+            "releaseYear": "2024",
+            "retailPrice": 225,
+            "silhouette": "Air Jordan 3",
+            "sku": "FZ7974-300",
+            "story": ""
+        },
+        {
+            "id": "e17adf8b-78d1-4b9b-9a00-e582e3946d10",
+            "brand": "Jordan",
+            "color": "",
+            "colorway": "Neutral Grey/Metallic Silver/White",
+            "estimatedMarketValue": 120,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-low-og-gs-metallic-silver-cz0858-002",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 1 Retro Low OG GS 'Metallic Silver'",
+            "releaseDate": "2024-06-01",
+            "releaseYear": "2024",
+            "retailPrice": 120,
+            "silhouette": "Air Jordan 1",
+            "sku": "CZ0858-002",
+            "story": "Made for big kids, the Air Jordan 1 Retro Low OG GS &#39;Metallic Silver&#39; features the same neutral design that was showcased on the CO.JP Air Jordan 1 High from 2001. The upper is crafted from light grey nubuck with metallic silver leather on the toe box, Swoosh and heel overlay. A woven Nike tag adorns the breathable nylon tongue, while the iconic Wings logo appears on the back tab. Anchoring the sneaker is a rubber cupsole with encapsulated Air-sole cushioning in the heel."
+        },
+        {
+            "id": "d1372fbf-77a6-47c0-a0c3-f98e63e8eded",
+            "brand": "Jordan",
+            "colorway": "White/Legend Pink",
+            "estimatedMarketValue": 60,
+            "gender": "infant",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-11-retro-low-td-legend-pink-645107-160",
+                "flightClub": "https://flightclub.com/air-jordan-11-retro-low-td-legend-pink-645107-160",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 11 Retro Low TD 'Legend Pink'",
+            "releaseDate": "2024-06-01",
+            "releaseYear": "2024",
+            "retailPrice": 60,
+            "silhouette": "Air Jordan 11",
+            "sku": "645107-160",
+            "story": "The Air Jordan 11 Retro Low TD \u2018Legend Pink\u2019 brings pastel accents to the championship model. Rope laces feed through webbing eyelets to secure the upper, crafted from white ballistic mesh with a shiny patent leather mudguard in a soft pink finish. Jumpman branding decorates the tongue and back tab. The sneaker rests on a white foam midsole for lightweight cushioning and a comfortable ride. A translucent rubber outsole provides durable traction."
+        },
+        {
+            "id": "c8776721-6a43-42d7-bc80-0d7fd6332d39",
+            "brand": "Nike",
+            "colorway": "Bicoastal/Black/Metallic Silver",
+            "estimatedMarketValue": 600,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/097/827/636/original/FQ3545_300.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/097/827/636/original/FQ3545_300.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/097/827/636/original/FQ3545_300.png.png"
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/zoom-kobe-4-protro-bicoastal-fq3545-300",
+                "flightClub": "https://flightclub.com/zoom-kobe-4-protro-bicoastal-fq3545-300",
+                "stadiumGoods": ""
+            },
+            "name": "Zoom Kobe 4 Protro 'Girl Dad'",
+            "releaseDate": "2024-06-01",
+            "releaseYear": "2024",
+            "retailPrice": 190,
+            "silhouette": "Zoom Kobe 4",
+            "sku": "FQ3545-300",
+            "story": "The Nike Zoom Kobe 4 Protro \u2018Girl Dad\u2019 is a nod to the bond that Kobe Bryant shared with his daughters. A muted teal suede upper built with rolled edges is contrasted with black accents on the Swoosh, collar lining and interior tongue. A chrome-plated heel counter displays Kobe Bryant\u2019s signature on the lateral side, while the inside tongue showcases a \u2018Girl Dad\u2019 inscription. The sneaker rides on a lightweight Phylon midsole with a springy Zoom Air unit in the heel. Underfoot, a herringbone-traction rubber outsole reveals a carbon fiber shank plate for midfoot support.",
+            "color": "green"
+        },
+        {
+            "id": "c8724e6f-4954-4f21-a896-20192642449e",
+            "brand": "Jordan",
+            "color": "",
+            "colorway": "Neutral Grey/Metallic Silver/White",
+            "estimatedMarketValue": 65,
+            "gender": "infant",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-low-og-td-metallic-silver-fq5435-002",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 1 Retro Low OG TD 'Metallic Silver'",
+            "releaseDate": "2024-06-01",
+            "releaseYear": "2024",
+            "retailPrice": 65,
+            "silhouette": "Air Jordan 1",
+            "sku": "FQ5435-002",
+            "story": "The Air Jordan 1 Retro Low OG TD &#39;Metallic Silver&#39; takes inspiration from the CO.JP Air Jordan 1 High, which launched exclusively in Japan on January 1, 2001. The leather upper combines a neutral grey base with metallic silver accents on the toe box, Swoosh and heel overlay. Nike branding appears on the woven tongue tag and sockliner, while the classic Wings logo graces the back tab. Underfoot, a rubber outsole provides grippy traction for little feet."
+        },
+        {
+            "id": "c7096810-a77f-4d29-958e-15c34a303bae",
+            "brand": "Nike",
+            "color": "",
+            "colorway": "Pale Ivory/Black-Light Bone-Pale Vanilla-Aquarius Blue",
+            "estimatedMarketValue": 144,
+            "gender": "women",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/098/170/051/original/HF4524_111.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/098/170/051/original/HF4524_111.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/098/170/051/original/HF4524_111.png.png"
+            },
+            "links": {
+                "stockX": "https://stockx.com/nike-zoom-vomero-5-design-by-japan-womens",
+                "goat": "https://goat.com/sneakers/wmns-air-zoom-vomero-5-design-by-japan-hf4524-111",
+                "flightClub": "https://flightclub.com/wmns-air-zoom-vomero-5-design-by-japan-hf4524-111",
+                "stadiumGoods": ""
+            },
+            "name": "Nike Zoom Vomero 5 Design By Japan (Women's)",
+            "releaseDate": "2024-06-01",
+            "releaseYear": "2024",
+            "retailPrice": 180,
+            "silhouette": "Air Zoom Vomero 5",
+            "sku": "HF4524-111",
+            "story": ""
+        },
+        {
+            "id": "94068c05-3d2c-4687-99eb-e8f1c90f4f24",
+            "brand": "Jordan",
+            "color": "",
+            "colorway": "Neutral Grey/Metallic Silver/White",
+            "estimatedMarketValue": 250,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/099/157/353/original/CZ0790_002.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/099/157/353/original/CZ0790_002.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/099/157/353/original/CZ0790_002.png.png"
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-low-og-neutral-grey-cz0790-002",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 1 Retro Low OG 'Metallic Silver'",
+            "releaseDate": "2024-06-01",
+            "releaseYear": "2024",
+            "retailPrice": 140,
+            "silhouette": "Air Jordan 1",
+            "sku": "CZ0790-002",
+            "story": "The Air Jordan 1 Retro Low OG &#39;Metallic Silver&#39; showcases a neutral design inspired by the CO.JP Air Jordan 1 High from 2001. The low-top carries a light grey nubuck upper with tumbled leather accents in metallic silver on the toe box, Swoosh and heel overlay. A jeweled Wings logo adorns the back tab, while a woven Nike Air tag graces the breathable nylon tongue. The sneaker rests on a rubber cupsole, highlighted by crisp white sidewalls and a grey outsole."
+        },
+        {
+            "id": "52648b46-33a0-4ac5-bd3d-db6b8381602d",
+            "brand": "Nike",
+            "color": "",
+            "colorway": "Black/Black/Summit White/Hot Curry/Light Bone/University Red",
+            "estimatedMarketValue": 110,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/098/624/891/original/FV2923_001.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/098/624/891/original/FV2923_001.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/098/624/891/original/FV2923_001.png.png"
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/acg-rufus-triple-black-fv2923-001",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "ACG Rufus 'Triple Black'",
+            "releaseDate": "2024-06-01",
+            "releaseYear": "2024",
+            "retailPrice": 110,
+            "silhouette": "ACG Rufus",
+            "sku": "FV2923-001",
+            "story": ""
+        },
+        {
+            "id": "2315421d-c14c-4558-b873-f9b9dbe40ab7",
+            "brand": "Jordan",
+            "colorway": "White/Legend Pink",
+            "estimatedMarketValue": 80,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-11-retro-low-gs-legend-pink-580522-160",
+                "flightClub": "https://flightclub.com/air-jordan-11-retro-low-gs-legend-pink-580522-160",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 11 Retro Low GS 'Legend Pink'",
+            "releaseDate": "2024-06-01",
+            "releaseYear": "2024",
+            "retailPrice": 80,
+            "silhouette": "Air Jordan 11",
+            "sku": "580522-160",
+            "story": "Made for big kids, the Air Jordan 11 Retro Low GS \u2018Legend Pink\u2019 delivers a pastel colorway of the legacy silhouette. White ballistic mesh is utilized on the upper, fortified with a pink patent leather mudguard and secured with rope laces that feed through webbing eyelets. Branding elements include a Jumpman logo and a stylized \u201823\u2019 on the back heel. The low-top is mounted on a white Phylon midsole with encapsulated Air-sole cushioning and a carbon fiber spring plate. A translucent rubber outsole features herringbone traction pods for reliable grip."
+        },
+        {
+            "id": "01596bdc-d384-45b4-91a9-0986e7302bae",
+            "brand": "Jordan",
+            "color": "",
+            "colorway": "Neutral Grey/Metallic Silver/White",
+            "estimatedMarketValue": 75,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/099/067/683/original/FQ5436_002.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/099/067/683/original/FQ5436_002.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/099/067/683/original/FQ5436_002.png.png"
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-low-og-ps-neutral-grey-fq5436-002",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 1 Retro Low OG PS 'Metallic Silver'",
+            "releaseDate": "2024-06-01",
+            "releaseYear": "2024",
+            "retailPrice": 75,
+            "silhouette": "Air Jordan 1",
+            "sku": "FQ5436-002",
+            "story": "Built for little kids, the Air Jordan 1 Retro Low OG PS &#39;Metallic Silver&#39; features a familiar color scheme lifted from the CO.JP Air Jordan 1 High from 2001. The low-top makes use of a light grey nubuck upper with metallic silver leather accents on the toe box, Swoosh and heel overlay. Nike branding appears on the woven tongue tag and sockliner, while an etched Wings logo decorates the back tab. A crisp white finish is applied to the midsole, supported underfoot by a grey rubber outsole."
+        },
+        {
+            "id": "f7ea0142-dff3-40ae-b4e7-fd201c6761c5",
+            "brand": "Jordan",
+            "colorway": "Black/Legend Medium Brown/White/Sail",
+            "estimatedMarketValue": 192,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-high-og-ps-legend-medium-brown-fd2597-021",
+                "flightClub": "https://flightclub.com/air-jordan-1-retro-high-og-ps-legend-medium-brown-fd2597-021",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 1 Retro High OG PS 'Latte'",
+            "releaseDate": "2024-05-29",
+            "releaseYear": "2024",
+            "retailPrice": 85,
+            "silhouette": "Air Jordan 1",
+            "sku": "FD2597-021",
+            "story": "Made for little kids, the Air Jordan 1 Retro High OG PS &#39;Latte&#39; blends a smooth leather upper with contrasting hits of black on the forefoot overlay and signature Swoosh. The Wings logo is stamped on the lateral collar flap, finished in the same tan shade that covers the heel overlay. A woven Nike tag decorates the breathable nylon tongue. The high-top is completed with cupsole tooling, highlighted by off-white sidewalls and a grippy tan rubber outsole.",
+            "color": "brown"
+        },
+        {
+            "id": "8a975f9b-efed-4656-ad61-9463592e959a",
+            "brand": "Jordan",
+            "colorway": "Black/Legend Medium Brown/White/Sail",
+            "estimatedMarketValue": 700,
+            "gender": "women",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/wmns-air-jordan-1-retro-high-og-legend-medium-brown-fd2596-021",
+                "flightClub": "https://flightclub.com/wmns-air-jordan-1-retro-high-og-legend-medium-brown-fd2596-021",
+                "stadiumGoods": ""
+            },
+            "name": "Wmns Air Jordan 1 Retro High OG 'Latte'",
+            "releaseDate": "2024-05-29",
+            "releaseYear": "2024",
+            "retailPrice": 180,
+            "silhouette": "Air Jordan 1",
+            "sku": "FD2596-021",
+            "story": "The Women\u2019s Air Jordan 1 Retro High OG \u2018Latte\u2019 dresses the classic silhouette in color blocking that mirrors the \u2018Dark Mocha\u2019 AJ1 from 2020. Built with a crisp white base, the leather upper features black accents on the forefoot overlay and Swoosh, along with contrasting hits of dark tan on the heel and collar flap. The latter is marked with the iconic Wings logo, while a woven Nike Air tag embellishes the tongue. Underpinning the high-top is a vintage off-white rubber midsole, fitted with an Air-sole heel unit encapsulated in a lightweight polyurethane wedge.",
+            "color": "brown"
+        },
+        {
+            "id": "33d32857-3a4a-4177-a4bc-2d266028b458",
+            "brand": "Jordan",
+            "colorway": "Black/Legend Medium Brown/White/Sail",
+            "estimatedMarketValue": 70,
+            "gender": "infant",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-high-og-td-legend-medium-brown-fd2598-021",
+                "flightClub": "https://flightclub.com/air-jordan-1-retro-high-og-td-legend-medium-brown-fd2598-021",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 1 Retro High OG TD 'Latte'",
+            "releaseDate": "2024-05-29",
+            "releaseYear": "2024",
+            "retailPrice": 70,
+            "silhouette": "Air Jordan 1",
+            "sku": "FD2598-021",
+            "story": "The Air Jordan 1 Retro High OG TD &#39;Latte&#39; presents an all-leather upper, contrasted by a black forefoot overlay and a color-matched Swoosh. Tan accents land on the heel overlay and ankle flap, marked with the iconic Wings logo on the lateral side. A woven Nike tag embellishes the lightly padded nylon tongue. An off-white midsole accentuates the vintage &#39;80s design.",
+            "color": "brown"
+        },
+        {
+            "id": "f8f3ccd2-6c4b-49b1-bdb5-2cd6f80a52b7",
+            "brand": "Nike",
+            "color": "",
+            "colorway": "Wolf Grey/University Gold/Phantom/Malachite",
+            "estimatedMarketValue": 102,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/099/196/970/original/FN4975_001.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/099/196/970/original/FN4975_001.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/099/196/970/original/FN4975_001.png.png"
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/zoom-freak-5-gs-welcome-to-camp-fn4975-001",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Zoom Freak 5 GS 'Welcome to Camp'",
+            "releaseDate": "2024-05-25",
+            "releaseYear": "2024",
+            "retailPrice": 105,
+            "silhouette": "Zoom Freak 5",
+            "sku": "FN4975-001",
+            "story": "Built for big kids, the Nike Zoom Freak 5 GS &#39;Welcome to Camp&#39; dons a mixed-material upper, highlighted by patterned textile in a subtle off-white finish with tonal synthetic leather overlays. A dripping-paint graphic in two shades of green dominates the lateral side, alongside an oversized leather Swoosh in a golden yellow hue. A speckled foam midsole offers lightweight cushioning with every step. Underfoot, a multicolor marbled rubber outsole features flex grooves for a comfortable stride."
+        },
+        {
+            "id": "eb9e3be0-be37-4e77-b0b9-ce7e095aff40",
+            "brand": "Jordan",
+            "colorway": "White/Oxidized Green/White/Neutral Grey",
+            "estimatedMarketValue": 210,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "https://stockx.com/air-jordan-4-retro-oxidized-green",
+                "goat": "https://goat.com/sneakers/air-jordan-4-retro-oxidized-green-fq8138-103",
+                "flightClub": "https://flightclub.com/air-jordan-4-retro-oxidized-green-fq8138-103",
+                "stadiumGoods": ""
+            },
+            "name": "Jordan 4 Retro Oxidized Green",
+            "releaseDate": "2024-05-25",
+            "releaseYear": "2024",
+            "retailPrice": 210,
+            "silhouette": "Air Jordan 4",
+            "sku": "FQ8138-103",
+            "story": "The Air Jordan 4 Retro \u2018Oxidized Green\u2019 arrives in a crisp white leather upper with tonal quarter panel netting and grey molded eyelets. Contrasting green accents make their way to the support wings and back tab, marked with embossed Jumpman branding. A second Jumpman logo decorates the woven tongue tag. An additional hit of green coloring distinguishes the lightweight polyurethane midsole, featuring an exposed Air-sole unit in the heel.",
+            "color": "white"
+        },
+        {
+            "id": "c823aecf-f4fb-458d-8656-a20df4876101",
+            "brand": "Nike",
+            "color": "",
+            "colorway": "Obsidian/University Gold/Vapor Green/Hyper Violet",
+            "estimatedMarketValue": 99,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/099/196/971/original/FN4977_400.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/099/196/971/original/FN4977_400.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/099/196/971/original/FN4977_400.png.png"
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/ja-1-gs-welcome-to-camp-fn4977-400",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Ja 1 GS 'Welcome to Camp'",
+            "releaseDate": "2024-05-25",
+            "releaseYear": "2024",
+            "retailPrice": 105,
+            "silhouette": "Ja 1",
+            "sku": "FN4977-400",
+            "story": "Made for big kids, the Nike Ja 1 GS &#39;Welcome to Camp&#39; features an open-cell mesh upper in Vapor Green and Hyper Violet. A TPU Swoosh in University Gold wraps around the heel, while the navy leather back tab displays Ja Morant&#39;s embroidered jersey number in mismatched hues. The kicks come with a set of summer camp-themed patches, which can be affixed to the tongue and heel for a customized look. Underpinning the sneaker is a lightweight foam midsole, reinforced underfoot by a green-tinged translucent rubber outsole."
+        },
+        {
+            "id": "abd77356-7c9e-423a-877f-896815bbe2a2",
+            "brand": "Jordan",
+            "color": "white",
+            "colorway": "White/Oxidized Green/White/Neutral Grey",
+            "estimatedMarketValue": 100,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-4-retro-ps-oxidized-green-bq7669-103",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 4 Retro PS 'Oxidized Green'",
+            "releaseDate": "2024-05-25",
+            "releaseYear": "2024",
+            "retailPrice": 100,
+            "silhouette": "Air Jordan 4",
+            "sku": "BQ7669-103",
+            "story": "Made for little kids, the Air Jordan 4 Retro PS &#39;Oxidized Green&#39; features a white leather upper with lush green accents on the collar lining, molded eyelets and textile quarter panel. Green Jumpman logos adorn the tongue and leather heel tab. The dark emerald hue makes a repeat appearance on the lightweight foam midsole, supported underfoot by a durable grey rubber outsole."
+        },
+        {
+            "id": "8e566762-4df8-4bc9-ab3a-0a667d274862",
+            "brand": "Jordan",
+            "colorway": "White/Team Red",
+            "estimatedMarketValue": 85,
+            "gender": "infant",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-high-og-td-white-team-red-fd1413-160",
+                "flightClub": "https://flightclub.com/air-jordan-1-retro-high-og-td-white-team-red-fd1413-160",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 1 Retro High OG TD 'Team Red'",
+            "releaseDate": "2024-05-25",
+            "releaseYear": "2024",
+            "retailPrice": 70,
+            "silhouette": "Air Jordan 1",
+            "sku": "FD1413-160",
+            "story": "The Air Jordan 1 Retro High OG TD &#39;Team Red&#39; combines a white foundation with maroon-hued overlays and a color-matched Swoosh. A woven Nike tag embellishes the breathable nylon tongue, while the classic Wings logo appears on the lateral collar flap. Underfoot, the solid rubber outsole features a traction pattern developed for pivoting on the hardwood.",
+            "color": "white"
+        },
+        {
+            "id": "594faa12-648c-4a60-a468-6555342218d4",
+            "brand": "Jordan",
+            "colorway": "White/Team Red",
+            "estimatedMarketValue": 108,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/098/624/864/original/DZ5485_160.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/098/624/864/original/DZ5485_160.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/098/624/864/original/DZ5485_160.png.png"
+            },
+            "links": {
+                "stockX": "https://stockx.com/air-jordan-1-retro-high-og-team-red",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-high-og-white-team-red-dz5485-160",
+                "flightClub": "https://flightclub.com/air-jordan-1-retro-high-og-white-team-red-dz5485-160",
+                "stadiumGoods": ""
+            },
+            "name": "Jordan 1 Retro High OG Team Red",
+            "releaseDate": "2024-05-25",
+            "releaseYear": "2024",
+            "retailPrice": 180,
+            "silhouette": "Air Jordan 1",
+            "sku": "DZ5485-160",
+            "story": "The Air Jordan 1 Retro High OG &#39;Artisanal Red&#39; dons a smooth leather upper, featuring a crisp white base with contrasting maroon overlays and a color-matched Swoosh. Nike Air branding decorates the sockliner and woven tongue tag, while the iconic Wings logo is pressed into the lateral collar flap. The high-top is underpinned by a durable rubber cupsole with encapsulated Air-sole cushioning in the heel.",
+            "color": "white"
+        },
+        {
+            "id": "3c946fc4-1822-4bf2-9d37-8c0332d914d6",
+            "brand": "Jordan",
+            "color": "white",
+            "colorway": "White/Oxidized Green/White/Neutral Grey",
+            "estimatedMarketValue": 85,
+            "gender": "infant",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-4-retro-td-oxidized-green-bq7670-103",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 4 Retro TD 'Oxidized Green'",
+            "releaseDate": "2024-05-25",
+            "releaseYear": "2024",
+            "retailPrice": 85,
+            "silhouette": "Air Jordan 4",
+            "sku": "BQ7670-103",
+            "story": "The Air Jordan 4 Retro TD &#39;Oxidized Green&#39; features contrasting green accents on the collar lining, quarter panel and stitched-on eyelets. The dark emerald hue makes repeat appearances on the Jumpman branding hits that decorate the tongue and heel tab, as well as the lightweight foam midsole. Underfoot, a grey rubber outsole provides durable traction for little feet."
+        },
+        {
+            "id": "1c112e6f-1159-47ed-ba6e-f151fd8a3535",
+            "brand": "Jordan",
+            "colorway": "White/Team Red",
+            "estimatedMarketValue": 112,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-high-og-ps-white-team-red-fd1412-160",
+                "flightClub": "https://flightclub.com/air-jordan-1-retro-high-og-ps-white-team-red-fd1412-160",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 1 Retro High OG PS 'Team Red'",
+            "releaseDate": "2024-05-25",
+            "releaseYear": "2024",
+            "retailPrice": 85,
+            "silhouette": "Air Jordan 1",
+            "sku": "FD1412-160",
+            "story": "Scaled down for little kids, the Air Jordan 1 Retro High OG PS &#39;Team Red&#39; showcases simple two-tone color blocking on a smooth leather upper. A stark white base is contrasted by maroon overlays at the forefoot and heel, along with a color-matched signature Swoosh. Heritage details include a perforated toe box, a padded high-cut collar and and the iconic Wings logo on the lateral collar flap. Anchoring the sneaker is a sturdy rubber cupsole, featuring white sidewalls and a grippy outsole in Team Red.",
+            "color": "white"
+        },
+        {
+            "id": "188ff3b9-6cf4-4730-beae-e1c62b0e715f",
+            "brand": "Jordan",
+            "color": "white",
+            "colorway": "White/Oxidized Green/White/Neutral Grey",
+            "estimatedMarketValue": 150,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-4-retro-gs-oxidized-green-fq8213-103",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 4 Retro GS 'Oxidized Green'",
+            "releaseDate": "2024-05-25",
+            "releaseYear": "2024",
+            "retailPrice": 150,
+            "silhouette": "Air Jordan 4",
+            "sku": "FQ8213-103",
+            "story": "Built for big kids, the Air Jordan 4 Retro GS &#39;Oxidized Green&#39; features a white leather upper, including the signature support wings and heel tab. The latter is marked with a dark green Jumpman logo, matching the shoe&#39;s collar lining, netted quarter panel and TPU eyelets. Additional Jumpman branding adorns the woven tongue tag and sockliner. The legacy silhouette is mounted on a two-tone polyurethane midsole, fitted with a visible Air-sole unit in the heel and supported by a light grey rubber outsole."
+        },
+        {
+            "id": "0edf1d67-4af1-455d-921a-4761c1371e80",
+            "brand": "Nike",
+            "color": "",
+            "colorway": "Hyper Violet/Hyper Royal/Obsidian/Bright Mandarin",
+            "estimatedMarketValue": 110,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/099/196/972/original/FN5040_500.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/099/196/972/original/FN5040_500.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/099/196/972/original/FN5040_500.png.png"
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/lebron-21-gs-welcome-to-camp-fn5040-500",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "LeBron 21 GS 'Welcome to Camp'",
+            "releaseDate": "2024-05-25",
+            "releaseYear": "2024",
+            "retailPrice": 170,
+            "silhouette": "LeBron 21",
+            "sku": "FN5040-500",
+            "story": "Offered in grade school sizing, the Nike LeBron 21 GS &#39;Welcome to Camp&#39; showcases a vibrant palette inspired by the colorful courts of summer basketball camps. A modified digital camo print in violet and navy enlivens the textile upper, covered in a zonal cabling system for lightweight support. A raised Swoosh outlined in gold embroidery adorns the lateral side, while LeBron James&#39; signature graces the tongue. A black midsole is fitted with a bottom-loaded Zoom Air unit in the heel and supported by a marbled Bright Mandarin and Obsidian rubber outsole."
+        },
+        {
+            "id": "044dd38d-099e-4cf7-890c-53098794748b",
+            "brand": "Jordan",
+            "colorway": "White/Team Red",
+            "estimatedMarketValue": 160,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-high-og-gs-white-team-red-fd1437-160",
+                "flightClub": "https://flightclub.com/air-jordan-1-retro-high-og-gs-white-team-red-fd1437-160",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 1 Retro High OG GS 'Team Red'",
+            "releaseDate": "2024-05-25",
+            "releaseYear": "2024",
+            "retailPrice": 140,
+            "silhouette": "Air Jordan 1",
+            "sku": "FD1437-160",
+            "story": "Made for big kids, the Air Jordan 1 Retro High OG GS &#39;Team Red&#39; employs a smooth leather upper in classic two-tone color blocking, highlighted by a white base with contrasting overlays in Team Red. In addition to the Wings icon stamped on the lateral collar flap, branding elements include a Nike Air logo on the sockliner and woven tongue tag. The high-top is mounted on a traditional cupsole, featuring white sidewalls and a maroon rubber outsole.",
+            "color": "white"
+        },
+        {
+            "id": "f1a835ba-a50f-4deb-a27c-484fc4f14975",
+            "brand": "Jordan",
+            "colorway": "White/Gym Red/Black",
+            "estimatedMarketValue": 160,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-12-retro-gs-red-taxi-153265-162",
+                "flightClub": "https://flightclub.com/air-jordan-12-retro-gs-red-taxi-153265-162",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 12 Retro GS 'Red Taxi'",
+            "releaseDate": "2024-05-18",
+            "releaseYear": "2024",
+            "retailPrice": 160,
+            "silhouette": "Air Jordan 12",
+            "sku": "153265-162",
+            "story": "Made for big kids, the Air Jordan 12 Retro GS \u2018Red Taxi\u2019 takes inspiration from a classic OG colorway of the championship silhouette. Radiating stitched lines enliven the upper, crafted from white tumbled leather with a black lizard-textured mudguard. Gym Red accents settle on the midfoot overlay and an embroidered Jumpman logo atop the tongue. A lightweight Phylon midsole with Zoom Air cushioning provides a smooth and responsive ride."
+        },
+        {
+            "id": "e76fab85-6adb-4384-b75a-4151ab1e56e5",
+            "brand": "Jordan",
+            "colorway": "White/Gym Red/Black",
+            "estimatedMarketValue": 85,
+            "gender": "infant",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-12-retro-td-red-taxi-850000-162",
+                "flightClub": "https://flightclub.com/air-jordan-12-retro-td-red-taxi-850000-162",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 12 Retro TD 'Red Taxi'",
+            "releaseDate": "2024-05-18",
+            "releaseYear": "2024",
+            "retailPrice": 85,
+            "silhouette": "Air Jordan 12",
+            "sku": "850000-162",
+            "story": "The Air Jordan TD Retro PS \u2018Red Taxi\u2019 draws inspiration from an OG colorway of the championship silhouette that Michael Jordan wore during the \u201996 \u2013 \u201997 NBA season. Like the older shoe, the design is highlighted by a white tumbled leather upper, accented with stitched lines and fortified with a black lizard-textured mudguard. Gym Red accents make their way to the midfoot overlay and a Jumpman logo embroidered on the tongue. Underfoot, the outsole features herringbone traction pods for reliable grip."
+        },
+        {
+            "id": "a211e6a9-78ec-4b62-ac6e-e6d6d29b586c",
+            "brand": "Jordan",
+            "colorway": "White/Gym Red/Black",
+            "estimatedMarketValue": 206,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-12-retro-red-taxi-ct8013-162",
+                "flightClub": "https://flightclub.com/air-jordan-12-retro-red-taxi-ct8013-162",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 12 Retro 'Red Taxi'",
+            "releaseDate": "2024-05-18",
+            "releaseYear": "2024",
+            "retailPrice": 0,
+            "silhouette": "Air Jordan 12",
+            "sku": "CT8013-162",
+            "story": "The Air Jordan 12 Retro \u2018Red Taxi\u2019 adds splashes of color to a familiar colorway inspired by an OG 1996 release. Crafted from tumbled white leather, the upper features radiating stitched lines and a lizard-textured mudguard in a contrasting black finish. A crimson Jumpman logo is embroidered on the tongue, matching a midfoot TPU overlay. Performance benefits include a lightweight Phylon midsole with full-length Zoom Air cushioning and a carbon fiber spring plate.",
+            "color": "white"
+        },
+        {
+            "id": "8d128576-87cc-4c2e-a8a1-61bf8b6de120",
+            "brand": "Jordan",
+            "colorway": "White/Gym Red/Black",
+            "estimatedMarketValue": 100,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-12-retro-ps-red-taxi-151186-162",
+                "flightClub": "https://flightclub.com/air-jordan-12-retro-ps-red-taxi-151186-162",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 12 Retro PS 'Red Taxi'",
+            "releaseDate": "2024-05-18",
+            "releaseYear": "2024",
+            "retailPrice": 100,
+            "silhouette": "Air Jordan 12",
+            "sku": "151186-162",
+            "story": "Built for little kids, the Air Jordan 12 Retro PS \u2018Red Taxi\u2019 adds bold pops of color to an OG-inspired white and black colorway. White tumbled leather is utilized on the upper, which is accented with radiating stitched lines and a black lizard-textured mudguard. An embroidered Jumpman logo in Gym Red adorns the tongue, matching the TPU midfoot overlay. A foam midsole offers lightweight cushioning with each step, while the rubber outsole features herringbone traction pods for superior grip."
+        },
+        {
+            "id": "8ab60d87-dd74-4f12-bd66-3913cec69fd8",
+            "brand": "Nike",
+            "color": "",
+            "colorway": "White/Multi-Color-Dark Pony/Light Silver",
+            "estimatedMarketValue": 111,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/098/856/511/original/FN4861_100.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/098/856/511/original/FN4861_100.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/098/856/511/original/FN4861_100.png.png"
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/dunk-low-gs-rainbow-swoosh-fn4861-100",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Dunk Low GS 'Rainbow Swoosh'",
+            "releaseDate": "2024-05-17",
+            "releaseYear": "2024",
+            "retailPrice": 100,
+            "silhouette": "Dunk",
+            "sku": "FN4861-100",
+            "story": "Made for big kids, the Nike Dunk Low GS &#39;Rainbow Swoosh&#39; makes use of a crisp white leather upper, accented on the lateral side with a twisted lace Swoosh in pastel rainbow colors. Nike branding in a dark beige hue embellishes the woven tongue tag and sockliner. A vintage off-white finish is applied to the midsole, built with stitched sidewall construction and reinforced by a semi-translucent rubber outsole."
+        },
+        {
+            "id": "8412535a-3029-470a-aa42-f79c71637d54",
+            "brand": "Jordan",
+            "colorway": "Canary/Racer Blue-Light Silver-Gum Medium Brown",
+            "estimatedMarketValue": 1500,
+            "gender": "women",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/097/103/468/original/DZ4137_700.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/097/103/468/original/DZ4137_700.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/097/103/468/original/DZ4137_700.png.png"
+            },
+            "links": {
+                "stockX": "https://stockx.com/air-jordan-1-retro-low-og-sp-travis-scott-canary-womens",
+                "goat": "https://goat.com/sneakers/travis-scott-x-wmns-air-jordan-1-retro-low-og-sp-canary-dz4137-700",
+                "flightClub": "https://flightclub.com/travis-scott-x-wmns-air-jordan-1-retro-low-og-sp-canary-dz4137-700",
+                "stadiumGoods": ""
+            },
+            "name": "Jordan 1 Retro Low OG SP Travis Scott Canary (Women's)",
+            "releaseDate": "2024-05-17",
+            "releaseYear": "2024",
+            "retailPrice": 150,
+            "silhouette": "Air Jordan 1",
+            "sku": "DZ4137-700",
+            "story": "The Travis Scott x Women&#39;s Air Jordan 1 Retro Low OG SP &#39;Canary&#39; showcases the Houston rapper&#39;s signature reverse Swoosh, cropped and finished in Racer Blue adorning the lateral side of the shoe. A white leather upper is contrasted with yellow overlays at the forefoot and heel. A red and black Nike Air tag adorns the tongue, while mismatched Cactus Jack and Wings branding is embroidered on the heel tab of each shoe. The sneaker is underpinned by a traditional cupsole, highlighted by white textured sidewalls and a gum rubber outsole.",
+            "color": "blue"
+        },
+        {
+            "id": "67ecddbf-2949-4f66-960d-ebfb9c69dc1c",
+            "brand": "Nike",
+            "color": "",
+            "colorway": "White/Multi-Color/Terra Blush/Vapor Green",
+            "estimatedMarketValue": 95,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/098/825/070/original/FQ4948_100.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/098/825/070/original/FQ4948_100.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/098/825/070/original/FQ4948_100.png.png"
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-force-1-low-gs-rainbow-swoosh-fq4948-100",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Air Force 1 Low GS 'Rainbow Swoosh'",
+            "releaseDate": "2024-05-17",
+            "releaseYear": "2024",
+            "retailPrice": 100,
+            "silhouette": "Air Force 1",
+            "sku": "FQ4948-100",
+            "story": ""
+        },
+        {
+            "id": "f67ae517-292b-41c3-869b-883e4d9363d5",
+            "brand": "Nike",
+            "color": "",
+            "colorway": "White/Light Orewood Brown/Burnt Sunrise/Black",
+            "estimatedMarketValue": 140,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/book-1-rattlesnake-fj4249-101",
+                "flightClub": "",
+                "stadiumGoods": ""
+            },
+            "name": "Book 1 'Rattlesnake'",
+            "releaseDate": "2024-05-11",
+            "releaseYear": "2024",
+            "retailPrice": 140,
+            "silhouette": "Book 1",
+            "sku": "FJ4249-101",
+            "story": "The Nike Book 1 &#39;Rattlesnake&#39; showcases a greyscale snakeskin Swoosh on the off-white upper, featuring a smooth leather build with textile side panels. Contrasting crimson accents stand out on the woven &#39;Book&#39; tongue tag, as well as the &#39;96&#39; \u2014 referencing Devin Booker&#39;s birth year \u2014 imprinted on the pull tab. The cushioning setup takes the form of a lightweight Cushlon midsole, caged with a rigid TPU sidewall on the lateral side and fitted with a top-loaded Zoom Air unit in the heel."
+        },
+        {
+            "id": "8e205b90-120a-4fb2-b69d-39375de00f83",
+            "brand": "Jordan",
+            "colorway": "Black/Varsity Royal/White",
+            "estimatedMarketValue": 80,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-11-retro-low-ps-space-jam-fv5116-004",
+                "flightClub": "https://flightclub.com/air-jordan-11-retro-low-ps-space-jam-fv5116-004",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 11 Retro Low PS 'Space Jam'",
+            "releaseDate": "2024-05-11",
+            "releaseYear": "2024",
+            "retailPrice": 80,
+            "silhouette": "Air Jordan 11",
+            "sku": "FV5116-004",
+            "story": "Made for little kids, the Air Jordan 11 Retro Low PS \u2018Space Jam\u2019 showcases the same sleek design worn by Michael Jordan in his 1996 cinematic debut. A stealthy black finish is executed on the upper, built with ballistic mesh and a shiny patent leather mudguard. Embroidered on the back heel is a royal blue Jumpman logo for a discreet pop of color. A white foam midsole offers lightweight cushioning with each step, while a translucent rubber outsole provides grippy traction."
+        },
+        {
+            "id": "87643047-eb8f-4992-bbf1-3fc6c88abaf5",
+            "brand": "Jordan",
+            "colorway": "Black/Varsity Royal/White",
+            "estimatedMarketValue": 150,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-11-retro-low-gs-space-jam-fv5121-004",
+                "flightClub": "https://flightclub.com/air-jordan-11-retro-low-gs-space-jam-fv5121-004",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 11 Retro Low GS 'Space Jam'",
+            "releaseDate": "2024-05-11",
+            "releaseYear": "2024",
+            "retailPrice": 150,
+            "silhouette": "Air Jordan 11",
+            "sku": "FV5121-004",
+            "story": "Built for big kids, the Air Jordan 11 Retro Low GS \u2018Space Jam\u2019 takes inspiration from the coveted AJ11 release from 2000. Rope laces feed through webbing eyelets to secure an upper crafted from black ballistic mesh with a tonal patent leather mudguard. \u201823\u2019 is printed on the heel tab, directly above an embroidered Jumpman logo in Varsity Royal. The low-top is mounted on a white Phylon midsole, enhanced with encapsulated Air-sole cushioning and supported by a translucent rubber outsole."
+        },
+        {
+            "id": "7733e57a-8c68-4521-8214-64f77cb2d78a",
+            "brand": "Jordan",
+            "colorway": "Black/Varsity Royal/White",
+            "estimatedMarketValue": 504,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "https://stockx.com/air-jordan-11-retro-low-space-jam",
+                "goat": "https://goat.com/sneakers/air-jordan-11-retro-low-space-jam-fv5104-004",
+                "flightClub": "https://flightclub.com/air-jordan-11-retro-low-space-jam-fv5104-004",
+                "stadiumGoods": ""
+            },
+            "name": "Jordan 11 Retro Low Space Jam",
+            "releaseDate": "2024-05-11",
+            "releaseYear": "2024",
+            "retailPrice": 190,
+            "silhouette": "Air Jordan 11",
+            "sku": "FV5104-004",
+            "story": "The Air Jordan 11 Retro Low \u2018Space Jam\u2019 is based on the high-top AJ11 of the same name, featuring a black ballistic mesh upper with a tonal patent leather mudguard. Rope laces feed through webbing eyelets for a secure fit, while the back heel is marked with a stylized \u201823\u2019 and classic Jumpman branding. Anchoring the sneaker is a white Phylon midsole, fitted with full-length Air-sole cushioning and an exposed carbon fiber plate. A translucent rubber outsole utilizes herringbone traction pods for superior grip.",
+            "color": "black"
+        },
+        {
+            "id": "2b8c9b95-a411-489f-947a-01b4405a0e09",
+            "brand": "Jordan",
+            "colorway": "Black/Varsity Royal/White",
+            "estimatedMarketValue": 60,
+            "gender": "infant",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-11-retro-low-td-space-jam-fv5120-004",
+                "flightClub": "https://flightclub.com/air-jordan-11-retro-low-td-space-jam-fv5120-004",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 11 Retro Low TD 'Space Jam'",
+            "releaseDate": "2024-05-11",
+            "releaseYear": "2024",
+            "retailPrice": 60,
+            "silhouette": "Air Jordan 11",
+            "sku": "FV5120-004",
+            "story": "The Air Jordan 11 Retro Low TD \u2018Space Jam\u2019 takes inspiration from the sleek AJ11 of the same name, which debuted in movie theaters in 1996 before hitting store shelves in 2000. The upper is built with black ballistic mesh and fortified with a tonal patent leather mudguard. Jumpman branding decorates the tongue and back heel. A crisp white finish is applied to a cushy foam midsole. Underfoot, a translucent rubber outsole yields durable traction."
+        },
+        {
+            "id": "f15fc1ce-6edc-4526-976d-99285fb0de54",
+            "brand": "Jordan",
+            "colorway": "Black/Medium Grey/White",
+            "estimatedMarketValue": 190,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/098/863/256/original/1305543_00.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/098/863/256/original/1305543_00.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/098/863/256/original/1305543_00.png.png"
+            },
+            "links": {
+                "stockX": "https://stockx.com/air-jordan-1-low-og-shadow",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-low-og-shadow-2024-cz0790-003",
+                "flightClub": "https://flightclub.com/air-jordan-1-retro-low-og-shadow-2024-cz0790-003",
+                "stadiumGoods": ""
+            },
+            "name": "Jordan 1 Low OG Shadow (2024)",
+            "releaseDate": "2024-05-10",
+            "releaseYear": "2024",
+            "retailPrice": 140,
+            "silhouette": "Air Jordan 1",
+            "sku": "CZ0790-003",
+            "story": "The 2024 edition of the Air Jordan 1 Retro Low OG &#39;Shadow&#39; brings back an original colorway of Michael Jordan&#39;s debut signature shoe. Rendered in low-top form, the vaunted silhouette sports a leather upper, featuring a black base with neutral grey accents on the toe box, Swoosh, heel and back tab. The latter is stamped with the iconic Wings logo, while a woven Nike Air tag decorates the black nylon tongue. The sneaker sits on a white rubber midsole, fitted with an encapsulated Air-sole unit in the heel and supported by a grippy black rubber outsole.",
+            "color": "black"
+        },
+        {
+            "id": "ff53cb60-0a1f-4366-b313-192ae1f01133",
+            "brand": "Jordan",
+            "colorway": "Off-White/Military Blue/Neutral Grey",
+            "estimatedMarketValue": 341,
+            "gender": "preschool",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "https://stockx.com/air-jordan-4-retro-military-blue-2024-ps",
+                "goat": "https://goat.com/sneakers/air-jordan-4-retro-ps-military-blue-2024-bq7669-141",
+                "flightClub": "https://flightclub.com/air-jordan-4-retro-ps-military-blue-2024-bq7669-141",
+                "stadiumGoods": ""
+            },
+            "name": "Jordan 4 Retro Military Blue (2024) (PS)",
+            "releaseDate": "2024-05-04",
+            "releaseYear": "2024",
+            "retailPrice": 100,
+            "silhouette": "Air Jordan 4",
+            "sku": "BQ7669-141",
+            "story": "The 2024 edition of the Air Jordan 4 Retro PS \u2018Military Blue\u2019 brings back an OG colorway in a scaled-down build made for little kids. Constructed from off-white leather, the upper features signature AJ4 details, including quarter panel netting and TPU support wings. A vibrant blue Jumpman logo graces the woven tongue tag, matching the molded eyelets and a back tab marked with Nike Air branding. A two-tone foam midsole is supported underfoot by a herringbone-traction rubber outsole.",
+            "color": "cream"
+        },
+        {
+            "id": "86c361e7-95a6-445f-94b3-8016126ce84d",
+            "brand": "Jordan",
+            "colorway": "White/Black/Green Glow",
+            "estimatedMarketValue": 150,
+            "gender": "youth",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-high-og-gs-green-glow-fd1437-130",
+                "flightClub": "https://flightclub.com/air-jordan-1-retro-high-og-gs-green-glow-fd1437-130",
+                "stadiumGoods": ""
+            },
+            "name": "Air Jordan 1 Retro High OG GS 'Green Glow'",
+            "releaseDate": "2024-05-04",
+            "releaseYear": "2024",
+            "retailPrice": 140,
+            "silhouette": "Air Jordan 1",
+            "sku": "FD1437-130",
+            "story": "Made for big kids, the Air Jordan 1 Retro High OG GS \u2018Green Glow\u2019 blends white side panels with a black forefoot overlay and matching black Swoosh. Mint green accents land on the perforated toe box, heel overlay and collar flap, marked with the retro Wings logo on the lateral side. A woven Nike Air tag decorates the breathable nylon tongue. The high-top rests on a rubber cupsole, featuring white sidewalls and a bright green rubber outsole.",
+            "color": "green"
+        },
+        {
+            "id": "4a42c391-4907-4f36-9431-699ecc2be36a",
+            "brand": "Jordan",
+            "colorway": "White/Black/Green Glow",
+            "estimatedMarketValue": 128,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/098/949/375/original/1253703_00.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/098/949/375/original/1253703_00.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/098/949/375/original/1253703_00.png.png"
+            },
+            "links": {
+                "stockX": "https://stockx.com/air-jordan-1-retro-high-og-green-glow",
+                "goat": "https://goat.com/sneakers/air-jordan-1-retro-high-og-green-glow-dz5485-130",
+                "flightClub": "https://flightclub.com/air-jordan-1-retro-high-og-green-glow-dz5485-130",
+                "stadiumGoods": ""
+            },
+            "name": "Jordan 1 Retro High OG Green Glow",
+            "releaseDate": "2024-05-04",
+            "releaseYear": "2024",
+            "retailPrice": 180,
+            "silhouette": "Air Jordan 1",
+            "sku": "DZ5485-130",
+            "story": "The Air Jordan 1 Retro High OG &#39;Green Glow&#39; showcases &#39;Bred Toe&#39; color blocking with vibrant pops of color. The smooth leather upper combines white side panels with contrasting black accents on the high-cut collar, forefoot overlay and signature Swoosh. Green Glow covers the toe box, heel and ankle flap, marked with a black Wings logo on the lateral side. A woven Nike Air tag adorns the black nylon tongue. Supporting the sneaker is a durable cupsole, featuring white sidewalls and a bright teal rubber outsole.",
+            "color": "green"
+        },
+        {
+            "id": "3e11d933-d463-4cec-b7a2-3672a4623682",
+            "brand": "Jordan",
+            "colorway": "Off-White/Military Blue/Neutral Grey",
+            "estimatedMarketValue": 163,
+            "gender": "child",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/098/838/963/original/1332339_00.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/098/838/963/original/1332339_00.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/098/838/963/original/1332339_00.png.png"
+            },
+            "links": {
+                "stockX": "https://stockx.com/air-jordan-4-retro-military-blue-2024-gs",
+                "goat": "https://goat.com/sneakers/air-jordan-4-retro-gs-military-blue-2024-hf4281-141",
+                "flightClub": "https://flightclub.com/air-jordan-4-retro-gs-military-blue-2024-hf4281-141",
+                "stadiumGoods": ""
+            },
+            "name": "Jordan 4 Retro Military Blue (2024) (GS)",
+            "releaseDate": "2024-05-04",
+            "releaseYear": "2024",
+            "retailPrice": 160,
+            "silhouette": "Air Jordan 4",
+            "sku": "HF4281-141",
+            "story": "Made for big kids, the 2024 reissue of the Air Jordan 4 Retro GS \u2018Military Blue\u2019 brings back one of the four OG colorways of the classic silhouette. The off-white leather upper is equipped with TPU support wings and breathable quarter panel netting. Bright blue accents make their way to molded eyelets, a woven Jumpman tongue tag, and a back tab embellished with Nike Air branding. The lightweight polyurethane midsole features a blue topline and exposed Air-sole cushioning in the heel.",
+            "color": "cream"
+        },
+        {
+            "id": "190aeb0e-94a3-44a4-acaf-1b8972e8ff5f",
+            "brand": "Jordan",
+            "colorway": "Off-White/Military Blue/Neutral Grey",
+            "estimatedMarketValue": 381,
+            "gender": "men",
+            "image": {
+                "360": [],
+                "original": "https://image.goat.com/attachments/product_template_pictures/images/099/440/967/original/1253639_00.png.png",
+                "small": "https://image.goat.com/750/attachments/product_template_pictures/images/099/440/967/original/1253639_00.png.png",
+                "thumbnail": "https://image.goat.com/375/attachments/product_template_pictures/images/099/440/967/original/1253639_00.png.png"
+            },
+            "links": {
+                "stockX": "https://stockx.com/air-jordan-4-retro-military-blue-2024",
+                "goat": "https://goat.com/sneakers/air-jordan-4-retro-military-blue-2024-fv5029-141",
+                "flightClub": "https://flightclub.com/air-jordan-4-retro-military-blue-2024-fv5029-141",
+                "stadiumGoods": ""
+            },
+            "name": "Jordan 4 Retro Military Blue (2024)",
+            "releaseDate": "2024-05-04",
+            "releaseYear": "2024",
+            "retailPrice": 215,
+            "silhouette": "Air Jordan 4",
+            "sku": "FV5029-141",
+            "story": "The 2024 edition of the Air Jordan 4 Retro \u2018Military Blue\u2019 brings back a coveted OG colorway of the legacy silhouette. Smooth off-white leather is utilized on the upper, featuring quarter panel netting and a tonal nubuck forefoot overlay. A vibrant blue Jumpman logo adorns the woven tongue tag, matching the molded eyelets and a back tab marked with Nike Air branding. The sneaker rides on a lightweight polyurethane midsole with encapsulated Air-sole cushioning in the forefoot and a visible Air bag in the heel.",
+            "color": "cream"
+        },
+        {
+            "id": "0b9b4a08-0798-483e-8826-a71ea81be0cb",
+            "brand": "Jordan",
+            "colorway": "Off-White/Military Blue/Neutral Grey",
+            "estimatedMarketValue": 99,
+            "gender": "toddler",
+            "image": {
+                "360": [],
+                "original": "",
+                "small": "",
+                "thumbnail": ""
+            },
+            "links": {
+                "stockX": "https://stockx.com/air-jordan-4-retro-military-blue-2024-td",
+                "goat": "https://goat.com/sneakers/air-jordan-4-retro-td-military-blue-2024-bq7670-141",
+                "flightClub": "https://flightclub.com/air-jordan-4-retro-td-military-blue-2024-bq7670-141",
+                "stadiumGoods": ""
+            },
+            "name": "Jordan 4 Retro Military Blue (2024) (TD)",
+            "releaseDate": "2024-05-04",
+            "releaseYear": "2024",
+            "retailPrice": 85,
+            "silhouette": "Air Jordan 4",
+            "sku": "BQ7670-141",
+            "story": "The 2024 edition of the Air Jordan 4 Retro TD \u2018Military Blue\u2019 brings back an OG colorway in time for the classic silhouette\u2019s 35th anniversary. True to the original, the upper features off-white leather construction with quarter panel netting and TPU support wings. Military Blue lands on the upper and lower eyelets, along with a heel tab marked with Nike Air branding. Lightweight cushioning is provided by a two-tone foam midsole, reinforced underfoot by a herringbone-traction outsole.",
+            "color": "cream"
+        }
+    ]
+}
