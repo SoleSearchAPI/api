@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Optional
 
 from api.models.base import TimestampedModel
-from api.models.sneaker.enums import Platform
+from api.models.enums import Platform
 from sqlmodel import Field
 
 

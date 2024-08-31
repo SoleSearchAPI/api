@@ -3,7 +3,7 @@ import re
 from pathlib import Path
 from urllib.parse import urlencode, urlparse, urlunparse
 
-from api.models.sneaker.enums import Audience
+from api.models.enums import Audience
 from fastapi import Request
 
 STRIP_HTML = re.compile("<.*?>")

@@ -5,7 +5,7 @@ from contextlib import contextmanager
 import requests
 from api.db import get_session
 from api.models.auth import Token
-from api.models.sneaker.enums import Platform
+from api.models.enums import Platform
 from requests.adapters import HTTPAdapter
 from requests_ratelimiter import LimiterAdapter
 from sqlmodel import select
