@@ -3,8 +3,8 @@ from datetime import UTC, datetime
 from typing import Annotated, List
 
 from api.db import get_session
-from api.models.sneaker import Sneaker
 from api.models.sneaker.enums import Audience
+from api.models.sneaker.sneaker import Sneaker
 from api.models.sorting import SortKey, SortOrder
 from api.utils.helpers import url_for_query
 from fastapi import APIRouter, Depends, HTTPException, Query, Request

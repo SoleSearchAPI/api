@@ -1,10 +1,11 @@
 from typing import Optional
 
 from api.models.base import TimestampedModel
-from api.models.sneaker.enums import Platform
-from api.models.sneaker.sneaker_size_link import SneakerSizeLink
 from sqlalchemy import Index, UniqueConstraint
 from sqlmodel import Field, Relationship
+
+from .enums import Platform
+from .sneaker_size_link import SneakerSizeLink
 
 
 class Price(TimestampedModel, table=True):

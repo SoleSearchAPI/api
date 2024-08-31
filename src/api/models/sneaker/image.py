@@ -1,9 +1,10 @@
 from typing import Optional
 
 from api.models.base import TimestampedModel
-from api.models.sneaker import Sneaker
-from api.models.sneaker.enums import Platform
 from sqlmodel import Field, Relationship
+
+from .enums import Platform
+from .sneaker import Sneaker
 
 
 class Image(TimestampedModel, table=True):

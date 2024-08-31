@@ -1,11 +1,12 @@
 from typing import Optional
 
 from api.models.base import TimestampedModel
-from api.models.sneaker import Sneaker
-from api.models.sneaker.price import Price
-from api.models.sneaker.size import Size
 from sqlalchemy import Index, UniqueConstraint
 from sqlmodel import Field, Relationship
+
+from .price import Price
+from .size import Size
+from .sneaker import Sneaker
 
 
 class SneakerSizeLink(TimestampedModel, table=True):
