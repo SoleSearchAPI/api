@@ -4,7 +4,7 @@ from datetime import UTC, datetime, timedelta
 from urllib.parse import urlparse
 
 import requests
-from core.models import Token
+from api.models.auth import Token
 from fastapi import APIRouter, HTTPException, Request
 from fastapi.responses import RedirectResponse
 
