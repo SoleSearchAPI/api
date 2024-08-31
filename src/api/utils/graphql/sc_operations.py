@@ -1,7 +1,6 @@
+import api.utils.graphql.sc_schema as sc_schema
 import sgqlc.operation
 import sgqlc.types
-
-import core.graphql.sc_schema as sc_schema
 
 _schema = sc_schema
 _schema_root = _schema.sc_schema
@@ -13,11 +12,11 @@ def query_get_sneakers():
     _op = sgqlc.operation.Operation(
         _schema_root.query_type,
         name="GetSneakers",
-        variables=dict(
-            sortFilter=sgqlc.types.Arg(_schema.JSON),
-            perPage=sgqlc.types.Arg(_schema.Int),
-            page=sgqlc.types.Arg(_schema.Int),
-        ),
+        variables={
+            "sortFilter": sgqlc.types.Arg(_schema.JSON),
+            "perPage": sgqlc.types.Arg(_schema.Int),
+            "page": sgqlc.types.Arg(_schema.Int),
+        },
     )
     _op_release_pagination = _op.release_pagination(
         sort=sgqlc.types.Variable("sortFilter"),

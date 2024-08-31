@@ -4,7 +4,6 @@ from typing import List
 
 import requests
 from bs4 import BeautifulSoup
-
 from core.models.details import Audience, Images, Links, Prices
 from core.models.shoes import Sneaker
 from ingest.models.json import Ingest

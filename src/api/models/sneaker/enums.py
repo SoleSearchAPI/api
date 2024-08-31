@@ -2,16 +2,16 @@ from enum import Enum
 
 
 class Platform(str, Enum):
-    retail = "retail"
-    stockx = "stockx"
-    goat = "goat"
-    stadium_goods = "stadium_goods"
+    RETAIL = "retail"
+    STOCKX = "stockx"
+    GOAT = "goat"
+    STADIUM_GOODS = "stadium_goods"
 
 
 class Audience(str, Enum):
-    Unisex = "Unisex"
-    Men = "Men"
-    Women = "Women"
-    Youth = "Youth"
-    Toddler = "Toddler"
-    Unknown = "Unknown"
+    UNISEX = "Unisex"
+    MEN = "Men"
+    WOMEN = "Women"
+    YOUTH = "Youth"
+    TODDLER = "Toddler"
+    UNKNOWN = "Unknown"

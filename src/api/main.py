@@ -1,14 +1,14 @@
 __version__ = "2.2.0"
 
 import os
+from pathlib import Path
 
-from core.models import Token
 from dotenv import load_dotenv
 
 # Load environment variables from .env file if not running in AWS Lambda
 if not os.environ.get("AWS_EXECUTION_ENV"):
     print("Loading .env file")
-    load_dotenv(os.path.join(os.getcwd(), ".env"))
+    load_dotenv(Path.cwd() / ".env")
 
 
 from fastapi import FastAPI
@@ -18,7 +18,7 @@ from fastapi.responses import RedirectResponse
 from mangum import Mangum
 from starlette.middleware.sessions import SessionMiddleware
 
-from api.db import DATABASE_NAME, client
+from api.db import initialize_db
 from api.routes import auth, sneakers
 
 desc = """
@@ -56,6 +56,8 @@ app.add_middleware(SessionMiddleware, secret_key=SESSION_SECRET)
 
 @app.on_event("startup")
 async def startup_event():
+    # Create the database tables
+    initialize_db()
     # Include all routers
     app.include_router(sneakers.router)
     app.include_router(auth.router)
@@ -71,6 +73,7 @@ async def swagger_ui_html():
     )
 
 
+# Redirect the root URL to the documentation
 @app.get("/", include_in_schema=False)
 def redirect_to_docs():
     return RedirectResponse(url="/docs")
