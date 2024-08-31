@@ -18,6 +18,7 @@ celery = "^5.4.0"
 sqlalchemy = "^2.0.32"
 free-proxy = "^1.1.1"
 sgqlc = "^16.3"
+itsdangerous = "^2.2.0"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "*"
