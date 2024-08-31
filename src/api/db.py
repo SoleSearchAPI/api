@@ -2,7 +2,7 @@ from sqlmodel import Session, SQLModel, create_engine
 
 import api.models  # noqa: F401
 from api.config import DB_URL, ENVIRONMENT
-from api.models.misc import Environment
+from api.models.env import Environment
 
 engine = create_engine(
     DB_URL,
