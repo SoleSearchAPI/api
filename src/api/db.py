@@ -4,11 +4,7 @@ import api.models  # noqa: F401
 from api.config import DB_URL, ENVIRONMENT
 from api.models.env import Environment
 
-engine = create_engine(
-    DB_URL,
-    echo=ENVIRONMENT != Environment.PRODUCTION,
-    connect_args={"check_same_thread": False},
-)
+engine = create_engine(DB_URL, echo=ENVIRONMENT != Environment.PRODUCTION)
 
 
 def initialize_db():
