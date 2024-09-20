@@ -1,4 +1,30 @@
 services:
+  api:
+    build: .
+    container_name: sneakers_api
+    working_dir: /app
+    depends_on:
+      - db
+      - redis
+    expose:
+      - "8000"
+    networks:
+      - sneakers_network
+    restart: always
+
+  nginx:
+    image: nginx:latest
+    container_name: sneakers_nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.local.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - api
+    networks:
+      - sneakers_network
+    restart: always
+
   db:
     image: postgres:latest
     container_name: sneakers_db
@@ -10,6 +36,10 @@ services:
       - postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+    networks:
+      - sneakers_network
+    restart: always
+
   redis:
     image: redis:latest
     container_name: sneakers_redis
@@ -17,7 +47,15 @@ services:
       - "6379:6379"
     volumes:
       - redis_data:/data
+    networks:
+      - sneakers_network
+    restart: always
 
 volumes:
   postgres_data:
   redis_data:
+
+
+networks:
+  sneakers_network:
+    driver: bridge

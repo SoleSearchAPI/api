@@ -1,0 +1,31 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table sneaker {
+  id integer [pk]
+  name varchar
+  brand varchar
+}
+
+Table size {
+  id integer [pk]
+  size integer
+}
+
+Table sneaker_size_link {
+  id integer [pk]
+  sneaker_id integer
+  size_id integer
+}
+
+Table price {
+  id integer [pk]
+  sneaker_size_link_id integer
+  amount decimal
+}
+
+
+// Define relationships
+Ref: sneaker_size_link.sneaker_id > sneaker.id
+Ref: sneaker_size_link.size_id > size.id
+Ref: price.sneaker_size_link_id > sneaker_size_link.id

@@ -1,7 +1,7 @@
 *.env
 *.pyc
 *__pycache__/
-env/
+.venv/
 dist/
 cert.pem
 key.pem

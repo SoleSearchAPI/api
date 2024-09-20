@@ -6,6 +6,7 @@ class Platform(str, Enum):
     STOCKX = "stockx"
     GOAT = "goat"
     STADIUM_GOODS = "stadium_goods"
+    FLIGHT_CLUB = "flight_club"
 
 
 class Audience(str, Enum):
@@ -15,3 +16,8 @@ class Audience(str, Enum):
     YOUTH = "Youth"
     TODDLER = "Toddler"
     UNKNOWN = "Unknown"
+
+
+class SizeStandard(str, Enum):
+    MENS_US = "mens_US"
+    WOMENS_US = "womens_US"
