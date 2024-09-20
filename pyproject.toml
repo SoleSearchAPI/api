@@ -4,6 +4,7 @@ version = "2.0.0"
 description = ""
 authors = ["Peter Rauscher <peter@peterrauscher.com>"]
 readme = "README.md"
+packages = [{ include = "api", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.12.5"
@@ -20,6 +21,7 @@ free-proxy = "^1.1.1"
 sgqlc = "^16.3"
 itsdangerous = "^2.2.0"
 psycopg2-binary = "^2.9.9"
+motor = "^3.5.1"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "*"
