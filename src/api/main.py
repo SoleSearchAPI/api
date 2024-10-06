@@ -15,7 +15,6 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.responses import RedirectResponse
-from mangum import Mangum
 from starlette.middleware.sessions import SessionMiddleware
 
 from api.db import initialize_db
@@ -77,10 +76,6 @@ async def swagger_ui_html():
 @app.get("/", include_in_schema=False)
 def redirect_to_docs():
     return RedirectResponse(url="/docs")
-
-
-# This is the entry point for AWS Lambda
-handler = Mangum(app)
 
 if __name__ == "__main__":
     import uvicorn
