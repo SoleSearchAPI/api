@@ -4,7 +4,7 @@ from typing import Any, Dict
 from motor.motor_asyncio import AsyncIOMotorClient
 from sqlmodel import Session, SQLModel, create_engine
 
-from api.models import Image, Link, Sneaker
+from api.models import Image, Link, Sneaker, Token
 from api.models.enums import Audience, Platform
 
 # MongoDB connection
@@ -86,10 +86,39 @@ async def migrate_sneakers(mongo_client: AsyncIOMotorClient):
                 break
 
 
+async def migrate_tokens(mongo_client: AsyncIOMotorClient):
+    token_collection = mongo_client[MONGO_DB_NAME].OAuth
+    batch_size = 1
+    with Session(engine) as session:
+        while True:
+            cursor = token_collection.find().limit(batch_size)
+            batch_empty = True
+            token_id = None
+            async for token_data in cursor:
+                batch_empty = False
+                token_id = token_data["_id"]
+                sql_token = Token(
+                    platform=Platform.STOCKX,
+                    type=token_data["_id"],
+                    value=token_data["value"],
+                )
+                session.add(sql_token)
+            if batch_empty:
+                break
+            try:
+                session.commit()
+                await token_collection.delete_one({"_id": token_id})
+            except Exception as e:
+                session.rollback()
+                print(f"Session commit failed: {e}")
+                break
+
+
 async def main():
     mongo_client = AsyncIOMotorClient(MONGO_URI)
 
     await migrate_sneakers(mongo_client)
+    await migrate_tokens(mongo_client)
 
     mongo_client.close()
 
