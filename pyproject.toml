@@ -7,21 +7,16 @@ readme = "README.md"
 packages = [{ include = "api", from = "src" }]
 
 [tool.poetry.dependencies]
-python = "^3.12.5"
-fastapi = "^0.112.2"
-python-dotenv = "^1.0.1"
-uvicorn = "^0.30.6"
-mangum = "^0.17.0"
-requests = "^2.32.3"
-requests-ratelimiter = "^0.7.0"
+python = "3.12.5"
 sqlmodel = "^0.0.22"
-celery = "^5.4.0"
-sqlalchemy = "^2.0.32"
-free-proxy = "^1.1.1"
-sgqlc = "^16.3"
-itsdangerous = "^2.2.0"
+fastapi = {extras = ["uvicorn"], version = "^0.115.0"}
+uvicorn = "^0.31.0"
 psycopg2-binary = "^2.9.9"
-motor = "^3.5.1"
+motor = "^3.6.0"
+python-dotenv = "^1.0.1"
+itsdangerous = "^2.2.0"
+requests = "^2.32.3"
+
 
 [tool.poetry.group.dev.dependencies]
 ruff = "*"

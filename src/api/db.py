@@ -1,6 +1,5 @@
 from sqlmodel import Session, SQLModel, create_engine
 
-import api.models  # noqa: F401
 from api.config import DB_URL, ENVIRONMENT
 from api.models.env import Environment
 

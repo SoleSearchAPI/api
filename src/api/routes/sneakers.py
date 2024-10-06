@@ -1,14 +1,15 @@
 import os
 from datetime import UTC, datetime
-from typing import Annotated, List
+from typing import Annotated
 
-from api.db import get_session
-from api.models.enums import Audience
-from api.models.sneaker import Sneaker
-from api.models.sorting import SortKey, SortOrder
-from api.utils.helpers import url_for_query
 from fastapi import APIRouter, Depends, HTTPException, Query, Request
 from sqlmodel import Session, func, select
+
+from api.db import get_session
+from api.models import Sneaker
+from api.models.enums import Audience
+from api.models.sorting import SortKey, SortOrder
+from api.utils.helpers import url_for_query
 
 router = APIRouter(
     prefix="/sneakers",
@@ -18,7 +19,7 @@ MAX_LIMIT = int(os.environ.get("SOLESEARCH_MAX_LIMIT", 100))
 DEFAULT_LIMIT = int(os.environ.get("SOLESEARCH_DEFAULT_LIMIT", 20))
 
 
-@router.get("/")
+@router.get("/", response_model=list[Sneaker])
 async def get_sneakers(
     request: Request,
     db: Session = Depends(get_session),
@@ -169,6 +170,21 @@ async def get_sneaker_by_id(*, db: Session = Depends(get_session), product_id: i
     sneaker = db.get(Sneaker, product_id)
     if not sneaker:
         raise HTTPException(status_code=404, detail="Sneaker not found")
+    return sneaker
+
+
+@router.post("/", response_model=Sneaker)
+async def create_sneaker(*, db: Session = Depends(get_session)):
+    sneaker = Sneaker(
+        brand="Nike",
+        sku="123456-789",
+        name="Air Max 1",
+        colorway="White/Red",
+        release_date=datetime.now(UTC),
+    )
+    db.add(sneaker)
+    db.commit()
+    db.refresh(sneaker)
     return sneaker
 
 
