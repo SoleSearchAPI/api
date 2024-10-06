@@ -7,7 +7,7 @@ class SortKey(str, Enum):
     NAME = "name"
     COLORWAY = "colorway"
     AUDIENCE = "audience"
-    RELEASE_DATE = "releaseDate"
+    RELEASE_DATE = "release_date"
     PRICE = "price"
 
 

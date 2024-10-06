@@ -24,14 +24,14 @@ def execute() -> None:
 
 
 def shoe_from_json(json: dict) -> Shoe:
-    releaseDate = datetime.fromtimestamp(json["releaseDate"])
+    release_date = datetime.fromtimestamp(json["releaseDate"])
     return Shoe(
         brand=try_guess_brand(json["brand"]),
         sku=json["sku"],
         name=json["name"],
         colorway=json["colorway"],
         audience=try_guess_audience(json["audience"]),
-        releaseDate=releaseDate,
+        release_date=release_date,
         released=json["released"],
         images=Images(
             original=json["images"]["original"],

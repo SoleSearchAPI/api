@@ -34,7 +34,7 @@ class SnksDropsIngest(IngestInterface):
                         name=release["name"],
                         colorway=None,
                         audience=None,
-                        releaseDate=release_date,
+                        release_date=release_date,
                         images=Images(
                             original=release["images"][0],
                             alternateAngles=release["images"][1:],

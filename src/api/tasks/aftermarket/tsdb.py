@@ -60,7 +60,7 @@ async def get_latest() -> None:
                         ),
                         colorway=result["colorway"].strip(),
                         audience=try_guess_audience(result["gender"]),
-                        releaseDate=datetime.strptime(result["releaseDate"].strip()),
+                        release_date=datetime.strptime(result["releaseDate"].strip()),
                         prices=Prices(retail=float(result["retailPrice"])),
                         links=Links(
                             stockx=result["links"]["stockX"],

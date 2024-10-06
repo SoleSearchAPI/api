@@ -13,14 +13,19 @@ class TimestampedModel(SQLModel):
     created_at: datetime = Field(default_factory=utc_now, nullable=False)
     updated_at: datetime = Field(default_factory=utc_now, nullable=False)
 
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        if "created_at" not in kwargs:
+            self.created_at = utc_now()
+        self.updated_at = self.created_at
+
 
 @event.listens_for(TimestampedModel, "before_update")
 def update_timestamp(mapper, connection, target):
     target.updated_at = utc_now()
 
 
-class Sneaker(TimestampedModel, table=True):
-    id: int | None = Field(default=None, primary_key=True)
+class SneakerBase(SQLModel):
     brand: str | None = None
     sku: str | None = None
     name: str | None = None
@@ -28,20 +33,18 @@ class Sneaker(TimestampedModel, table=True):
     audience: Audience | None = None
     release_date: datetime | None = None
     description: str | None = None
+
+
+class Sneaker(SneakerBase, TimestampedModel, table=True):
+    id: int | None = Field(default=None, primary_key=True)
     stockx_id: str | None = None
     stadium_goods_id: str | None = None
     source: Platform | None = None
-    date_added: datetime | None = None
-    last_scraped: datetime | None = None
 
-    # One to many relationships
+    # Relationships
     links: list["Link"] = Relationship(back_populates="sneaker")
     images: list["Image"] = Relationship(back_populates="sneaker")
     sizes: list["SneakerSize"] = Relationship(back_populates="sneaker")
-
-    @property
-    def prices(self) -> List["Price"]:
-        return List(reduce(lambda x, y: x.prices + y.prices, self.sizes, []))
 
     def get_links(self) -> List[str]:
         return [link.url for link in self.links]
@@ -54,6 +57,13 @@ class Sneaker(TimestampedModel, table=True):
     ) -> List[str]:
         return [size.get_standardized(size_standard) for size in self.sizes]
 
+    @property
+    def prices(self) -> List["Price"]:
+        return List(reduce(lambda x, y: x.prices + y.prices, self.sizes, []))
+
+    def get_prices(self) -> List[int]:
+        return [price.amount for price in self.prices]
+
     def merge(self, other=None):
         if other:
             stockx_images = [
@@ -64,6 +74,22 @@ class Sneaker(TimestampedModel, table=True):
 
             if len(other.colorway) > len(self.colorway):
                 self.colorway = other.colorway
+
+
+class SneakerPublic(SneakerBase):
+    id: int
+    links: List[str]
+    images: List[str]
+    sizes: List[str]
+
+
+class PaginatedSneakersPublic(SQLModel):
+    total: int
+    page: int
+    page_size: int
+    next_page: str | None
+    previous_page: str | None
+    items: List[SneakerPublic]
 
 
 class SneakerSize(SQLModel, table=True):

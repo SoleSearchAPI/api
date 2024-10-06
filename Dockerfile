@@ -15,12 +15,12 @@ RUN pip install --no-cache-dir poetry
 # Copy only requirements to cache them in docker layer
 COPY pyproject.toml poetry.lock* ./
 
-# Copy the project
-COPY src ./src
-
 # Project initialization
 RUN poetry config virtualenvs.create false \
     && poetry install --no-interaction --no-ansi
+
+# Copy the project
+COPY src ./src
 
 # Include the project in the Python path
 ENV PYTHONPATH=/app/src:$PYTHONPATH

@@ -143,7 +143,7 @@ class PumaIngest(Ingest):
                                 name=name,
                                 colorway=colorway,
                                 audience=audience,
-                                releaseDate=release_date,
+                                release_date=release_date,
                                 images=images,
                                 links=links,
                                 prices=prices,

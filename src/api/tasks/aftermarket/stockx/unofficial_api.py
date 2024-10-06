@@ -29,7 +29,7 @@ def json_to_model(self, product: dict) -> Sneaker:
         description=product["description"],
         prices=Prices(stockx_price, retail_price=product["retailPrice"]),
         links=Links(stockx=f"https://stockx.com/{product['urlKey']}".strip()),
-        releaseDate=datetime.fromtimestamp(float(product["releaseTime"]), UTC),
+        release_date=datetime.fromtimestamp(float(product["releaseTime"]), UTC),
         images=Images(
             original=product["media"]["imageUrl"],
             alternateAngles=product["media"]["gallery"],

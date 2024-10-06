@@ -6,7 +6,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query, Request
 from sqlmodel import Session, func, select
 
 from api.db import get_session
-from api.models import Sneaker
+from api.models import PaginatedSneakersPublic, Sneaker, SneakerBase, SneakerPublic
 from api.models.enums import Audience
 from api.models.sorting import SortKey, SortOrder
 from api.utils.helpers import url_for_query
@@ -19,7 +19,7 @@ MAX_LIMIT = int(os.environ.get("SOLESEARCH_MAX_LIMIT", 100))
 DEFAULT_LIMIT = int(os.environ.get("SOLESEARCH_DEFAULT_LIMIT", 20))
 
 
-@router.get("/", response_model=list[Sneaker])
+@router.get("/", response_model=PaginatedSneakersPublic)
 async def get_sneakers(
     request: Request,
     db: Session = Depends(get_session),
@@ -53,7 +53,7 @@ async def get_sneakers(
             min_length=3,
         ),
     ] = None,
-    releaseDate: Annotated[
+    release_date: Annotated[
         str | None,
         Query(
             title="Release Date",
@@ -64,7 +64,7 @@ async def get_sneakers(
         bool | None,
         Query(
             title="Released?",
-            description="Filter by whether the shoes have been released or not. Overrides any filter on releaseDate if set.",
+            description="Filter by whether the shoes have been released or not. Overrides any filter on release_date if set.",
         ),
     ] = None,
     sort: Annotated[
@@ -83,7 +83,7 @@ async def get_sneakers(
             ge=1, title="Page Number", description="The page number of the result set."
         ),
     ] = 1,
-    pageSize: Annotated[
+    page_size: Annotated[
         int | None,
         Query(
             ge=1,
@@ -110,9 +110,9 @@ async def get_sneakers(
             query = query.where(Sneaker.release_date <= now)
         else:
             query = query.where(Sneaker.release_date > now)
-    elif releaseDate:
-        if ":" in releaseDate:
-            inequality_operator, date_str = releaseDate.split(":")
+    elif release_date:
+        if ":" in release_date:
+            inequality_operator, date_str = release_date.split(":")
             date_obj = datetime.strptime(date_str, "%Y-%m-%d")
             if inequality_operator == "lt":
                 query = query.where(Sneaker.release_date < date_obj)
@@ -123,12 +123,12 @@ async def get_sneakers(
             elif inequality_operator == "gte":
                 query = query.where(Sneaker.release_date >= date_obj)
         else:
-            date_obj = datetime.strptime(releaseDate, "%Y-%m-%d")
+            date_obj = datetime.strptime(release_date, "%Y-%m-%d")
             query = query.where(Sneaker.release_date == date_obj)
 
     # Count total results
     count_query = select(func.count()).select_from(query.subquery())
-    total_count = db.exec(count_query).scalar()
+    total_count = db.exec(count_query).one()
 
     # Apply sorting
     if order == SortOrder.ASCENDING:
@@ -137,14 +137,29 @@ async def get_sneakers(
         query = query.order_by(getattr(Sneaker, sort.value).desc())
 
     # Apply pagination
-    query = query.offset((page - 1) * pageSize).limit(pageSize)
+    query = query.offset((page - 1) * page_size).limit(page_size)
 
     # Execute query
-    results = db.exec(query).all()
+    db_results = db.exec(query).all()
+
+    # Prepare readable results
+    results = []
+    for db_result in db_results:
+        sneaker_public = SneakerPublic(
+            id=db_result.id,
+            links=db_result.get_links(),
+            images=db_result.get_images(),
+            sizes=db_result.get_sizes(),
+        )
+        for key in SneakerBase.model_fields:
+            db_value = getattr(db_result, key, None)
+            if db_value:
+                setattr(sneaker_public, key, db_value)
+        results.append(sneaker_public)
 
     # Prepare pagination links
     params = dict(request.query_params)
-    if total_count > page * pageSize:
+    if total_count > page * page_size:
         params["page"] = page + 1
         next_page = url_for_query(request, "get_sneakers", **params)
     else:
@@ -158,14 +173,14 @@ async def get_sneakers(
     return {
         "total": total_count,
         "page": page,
-        "pageSize": pageSize,
-        "nextPage": next_page,
-        "previousPage": previous_page,
+        "page_size": page_size,
+        "next_page": next_page,
+        "previous_page": previous_page,
         "items": results,
     }
 
 
-@router.get("/{product_id}", response_model=Sneaker)
+@router.get("/{product_id}", response_model=SneakerPublic)
 async def get_sneaker_by_id(*, db: Session = Depends(get_session), product_id: int):
     sneaker = db.get(Sneaker, product_id)
     if not sneaker:
@@ -173,22 +188,7 @@ async def get_sneaker_by_id(*, db: Session = Depends(get_session), product_id: i
     return sneaker
 
 
-@router.post("/", response_model=Sneaker)
-async def create_sneaker(*, db: Session = Depends(get_session)):
-    sneaker = Sneaker(
-        brand="Nike",
-        sku="123456-789",
-        name="Air Max 1",
-        colorway="White/Red",
-        release_date=datetime.now(UTC),
-    )
-    db.add(sneaker)
-    db.commit()
-    db.refresh(sneaker)
-    return sneaker
-
-
-@router.get("/sku/{sku}", response_model=Sneaker)
+@router.get("/sku/{sku}", response_model=SneakerPublic)
 async def get_sneaker_by_sku(
     *, db: Session = Depends(get_session), sku: str, brand: str | None = None
 ):
