@@ -1,4 +1,4 @@
-# SoleSearch: Ingest
+# The SoleSearch API
 
 [Read the Docs](https://api.solesearch.io/docs)
 
