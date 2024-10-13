@@ -4,30 +4,25 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
-
-# Load environment variables from .env file if not running in AWS Lambda
-if not os.environ.get("AWS_EXECUTION_ENV"):
-    print("Loading .env file")
-    load_dotenv(Path.cwd() / ".env")
-
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.responses import RedirectResponse
+from fastapi_pagination import add_pagination
 from starlette.middleware.sessions import SessionMiddleware
 
-from api.db import initialize_db
-from api.routes import auth, sneakers
+load_dotenv(Path.cwd() / ".env")
+
+from api.db import initialize_db  # noqa: E402
+from api.routes import auth, sneakers  # noqa: E402
 
 desc = """
 ### The Bloomberg Terminal of Sneakers
-- Find product information, from every brand, fast. 👟
-- Never miss another release date. 📅
-- Never buy bricks. Stay ahead of the game with our comprehensive price history and trends. 💵
+- Find product information, from every brand, fast.
+- Never miss another release date.
+- Never buy bricks. Stay ahead of the game with our comprehensive price insights.
 
-[Github](https://github.com/SoleSearchAPI) | [Twitter](https://twitter.com/SoleSearchAPI)
-
+[Twitter](https://twitter.com/SoleSearchAPI) | [Github](https://github.com/SoleSearchAPI)
 """
 
 app = FastAPI(
@@ -40,17 +35,18 @@ app = FastAPI(
     responses={404: {"description": "Not found"}},  # Custom 404 page
 )
 
-
-# Enable CORS
+# Enable session handling for StocxkX OAuth flow
+app.add_middleware(
+    SessionMiddleware,
+    secret_key="UPJsM1yNViUx6YU3",
+)
+# Enable CORS for all origins
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
-# Enable session handling for StocxkX OAuth flow
-SESSION_SECRET = os.environ.get("SOLESEARCH_SESSION_SECRET", "this should be a secret")
-app.add_middleware(SessionMiddleware, secret_key=SESSION_SECRET)
 
 
 @app.on_event("startup")
@@ -60,6 +56,8 @@ async def startup_event():
     # Include all routers
     app.include_router(sneakers.router)
     app.include_router(auth.router)
+    # Load the pagination module
+    add_pagination(app)
 
 
 @app.get("/docs", include_in_schema=False)
@@ -76,6 +74,7 @@ async def swagger_ui_html():
 @app.get("/", include_in_schema=False)
 def redirect_to_docs():
     return RedirectResponse(url="/docs")
+
 
 if __name__ == "__main__":
     import uvicorn
