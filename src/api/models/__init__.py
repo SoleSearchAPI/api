@@ -95,19 +95,6 @@ class PaginatedSneakersPublic(SQLModel):
     previous_page: str | None
     items: List[SneakerPublic]
 
-    # def __init__(self, db: Session, query: SelectOfScalar, request: Request):
-    #     params = dict(request.query_params)
-    #     if total_count > page * page_size:
-    #         params["page"] = page + 1
-    #         next_page = url_for_query(request, "get_sneakers", **params)
-    #     else:
-    #         next_page = None
-    #     if page > 1:
-    #         params["page"] = page - 1
-    #         previous_page = url_for_query(request, "get_sneakers", **params)
-    #     else:
-    #         previous_page = None
-
 
 class SneakerSize(SQLModel, table=True):
     __table_args__ = (
