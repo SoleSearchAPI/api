@@ -3,13 +3,17 @@ from datetime import UTC, datetime
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, HTTPException, Query, Request
-from sqlmodel import Session, func, select
+from fastapi_pagination import Params
+from fastapi_pagination.api import set_items_transformer
+from fastapi_pagination.ext.sqlmodel import paginate
+from fastapi_pagination.links import Page
+from sqlmodel import Session, select
 
 from api.db import get_session
-from api.models import PaginatedSneakersPublic, Sneaker, SneakerBase, SneakerPublic
+from api.models import Sneaker, SneakerPublic
 from api.models.enums import Audience
 from api.models.sorting import SortKey, SortOrder
-from api.utils.helpers import url_for_query
+from api.models.utils import sneaker_to_public
 
 router = APIRouter(
     prefix="/sneakers",
@@ -19,7 +23,7 @@ MAX_LIMIT = int(os.environ.get("SOLESEARCH_MAX_LIMIT", 100))
 DEFAULT_LIMIT = int(os.environ.get("SOLESEARCH_DEFAULT_LIMIT", 20))
 
 
-@router.get("/", response_model=PaginatedSneakersPublic)
+@router.get("/", response_model=Page[SneakerPublic])
 async def get_sneakers(
     request: Request,
     db: Session = Depends(get_session),
@@ -77,22 +81,8 @@ async def get_sneakers(
             description="The order to sort in based on the sort key.",
         ),
     ] = SortOrder.DESCENDING,
-    page: Annotated[
-        int | None,
-        Query(
-            ge=1, title="Page Number", description="The page number of the result set."
-        ),
-    ] = 1,
-    page_size: Annotated[
-        int | None,
-        Query(
-            ge=1,
-            le=MAX_LIMIT,
-            title="Page Size",
-            description=f"The number of items on each page. Must be in the range [1-{MAX_LIMIT}] (inclusive).",
-        ),
-    ] = DEFAULT_LIMIT,
-) -> dict:
+) -> Page[Sneaker]:
+    set_items_transformer(sneaker_to_public)
     query = select(Sneaker)
 
     if brand:
@@ -107,7 +97,7 @@ async def get_sneakers(
     if released is not None:
         now = datetime.now(UTC)
         if released:
-            query = query.where(Sneaker.release_date <= now)
+            query = query.wheZre(Sneaker.release_date <= now)
         else:
             query = query.where(Sneaker.release_date > now)
     elif release_date:
@@ -126,58 +116,13 @@ async def get_sneakers(
             date_obj = datetime.strptime(release_date, "%Y-%m-%d")
             query = query.where(Sneaker.release_date == date_obj)
 
-    # Count total results
-    count_query = select(func.count()).select_from(query.subquery())
-    total_count = db.exec(count_query).one()
-
     # Apply sorting
     if order == SortOrder.ASCENDING:
         query = query.order_by(getattr(Sneaker, sort.value))
     else:
         query = query.order_by(getattr(Sneaker, sort.value).desc())
 
-    # Apply pagination
-    query = query.offset((page - 1) * page_size).limit(page_size)
-
-    # Execute query
-    db_results = db.exec(query).all()
-
-    # Prepare readable results
-    results = []
-    for db_result in db_results:
-        sneaker_public = SneakerPublic(
-            id=db_result.id,
-            links=db_result.get_links(),
-            images=db_result.get_images(),
-            sizes=db_result.get_sizes(),
-        )
-        for key in SneakerBase.model_fields:
-            db_value = getattr(db_result, key, None)
-            if db_value:
-                setattr(sneaker_public, key, db_value)
-        results.append(sneaker_public)
-
-    # Prepare pagination links
-    params = dict(request.query_params)
-    if total_count > page * page_size:
-        params["page"] = page + 1
-        next_page = url_for_query(request, "get_sneakers", **params)
-    else:
-        next_page = None
-    if page > 1:
-        params["page"] = page - 1
-        previous_page = url_for_query(request, "get_sneakers", **params)
-    else:
-        previous_page = None
-
-    return {
-        "total": total_count,
-        "page": page,
-        "page_size": page_size,
-        "next_page": next_page,
-        "previous_page": previous_page,
-        "items": results,
-    }
+    return paginate(db, query)
 
 
 @router.get("/{product_id}", response_model=SneakerPublic)

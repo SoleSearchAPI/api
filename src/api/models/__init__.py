@@ -2,8 +2,10 @@ from datetime import datetime
 from functools import reduce
 from typing import List
 
-from sqlalchemy import event
-from sqlmodel import Field, Index, Relationship, SQLModel, UniqueConstraint
+from fastapi import Request
+from sqlalchemy import Sequence, event
+from sqlmodel import Field, Index, Relationship, Session, SQLModel, UniqueConstraint
+from sqlmodel.sql.expression import SelectOfScalar
 
 from api.models.enums import Audience, Platform, SizeStandard
 from api.utils.time import utc_now
@@ -42,9 +44,11 @@ class Sneaker(SneakerBase, TimestampedModel, table=True):
     source: Platform | None = None
 
     # Relationships
-    links: list["Link"] = Relationship(back_populates="sneaker")
-    images: list["Image"] = Relationship(back_populates="sneaker")
-    sizes: list["SneakerSize"] = Relationship(back_populates="sneaker")
+    links: list["Link"] = Relationship(back_populates="sneaker", cascade_delete=True)
+    images: list["Image"] = Relationship(back_populates="sneaker", cascade_delete=True)
+    sizes: list["SneakerSize"] = Relationship(
+        back_populates="sneaker", cascade_delete=True
+    )
 
     def get_links(self) -> List[str]:
         return [link.url for link in self.links]
@@ -90,6 +94,19 @@ class PaginatedSneakersPublic(SQLModel):
     next_page: str | None
     previous_page: str | None
     items: List[SneakerPublic]
+
+    # def __init__(self, db: Session, query: SelectOfScalar, request: Request):
+    #     params = dict(request.query_params)
+    #     if total_count > page * page_size:
+    #         params["page"] = page + 1
+    #         next_page = url_for_query(request, "get_sneakers", **params)
+    #     else:
+    #         next_page = None
+    #     if page > 1:
+    #         params["page"] = page - 1
+    #         previous_page = url_for_query(request, "get_sneakers", **params)
+    #     else:
+    #         previous_page = None
 
 
 class SneakerSize(SQLModel, table=True):

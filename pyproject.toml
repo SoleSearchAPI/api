@@ -17,6 +17,7 @@ python-dotenv = "^1.0.1"
 itsdangerous = "^2.2.0"
 requests = "^2.32.3"
 celery = {extras = ["redis"], version = "^5.4.0"}
+fastapi-pagination = "^0.12.31"
 
 
 [tool.poetry.group.dev.dependencies]
