@@ -3,7 +3,6 @@ from datetime import UTC, datetime
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, HTTPException, Query, Request
-from fastapi_pagination import Params
 from fastapi_pagination.api import set_items_transformer
 from fastapi_pagination.ext.sqlmodel import paginate
 from fastapi_pagination.links import Page
