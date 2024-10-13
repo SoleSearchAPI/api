@@ -3,7 +3,6 @@ from datetime import UTC, datetime
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, HTTPException, Query, Request
-from fastapi_pagination.api import set_items_transformer
 from fastapi_pagination.ext.sqlmodel import paginate
 from fastapi_pagination.links import Page
 from sqlmodel import Session, select
@@ -12,7 +11,6 @@ from api.db import get_session
 from api.models import Sneaker, SneakerPublic
 from api.models.enums import Audience
 from api.models.sorting import SortKey, SortOrder
-from api.models.utils import sneaker_to_public
 
 router = APIRouter(
     prefix="/sneakers",
@@ -81,7 +79,7 @@ async def get_sneakers(
         ),
     ] = SortOrder.DESCENDING,
 ) -> Page[Sneaker]:
-    set_items_transformer(sneaker_to_public)
+    # set_items_transformer(sneaker_to_public)
     query = select(Sneaker)
 
     if brand:

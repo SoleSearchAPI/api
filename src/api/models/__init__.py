@@ -1,14 +1,34 @@
 from datetime import datetime
 from functools import reduce
-from typing import List
+from typing import Any, List
 
 from fastapi import Request
+from pydantic import BaseModel, computed_field, model_validator
 from sqlalchemy import Sequence, event
 from sqlmodel import Field, Index, Relationship, Session, SQLModel, UniqueConstraint
 from sqlmodel.sql.expression import SelectOfScalar
 
 from api.models.enums import Audience, Platform, SizeStandard
 from api.utils.time import utc_now
+
+
+class CustomBase(BaseModel):
+    class Config:
+        from_attributes = True
+
+    @model_validator(mode="before")
+    def handle_relationship_attributes(cls, values: dict[str, Any]) -> dict[str, Any]:
+        for field_name, field in cls.__annotations__.items():
+            if (
+                field_name in values
+                and isinstance(values[field_name], List)
+                and all(isinstance(item, SQLModel) for item in values[field_name])
+            ):
+                if hasattr(values, f"get_{field_name}"):
+                    values[field_name] = getattr(values, f"get_{field_name}")()
+                else:
+                    values[field_name] = [item.dict() for item in values[field_name]]
+        return values
 
 
 class TimestampedModel(SQLModel):
@@ -80,11 +100,25 @@ class Sneaker(SneakerBase, TimestampedModel, table=True):
                 self.colorway = other.colorway
 
 
-class SneakerPublic(SneakerBase):
+class SneakerPublic(SneakerBase, CustomBase):
     id: int
-    links: List[str]
-    images: List[str]
-    sizes: List[str]
+
+    model_config = {"from_attributes": True}
+
+    @computed_field
+    @property
+    def links(self) -> List[str]:
+        return self.get_links() if hasattr(self, "get_links") else []
+
+    @computed_field
+    @property
+    def images(self) -> List[str]:
+        return self.get_images() if hasattr(self, "get_images") else []
+
+    @computed_field
+    @property
+    def sizes(self) -> List[str]:
+        return self.get_sizes() if hasattr(self, "get_sizes") else []
 
 
 class PaginatedSneakersPublic(SQLModel):
