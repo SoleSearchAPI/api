@@ -1,35 +1,28 @@
 __version__ = "2.2.0"
 
 import os
+from pathlib import Path
 
-from core.models import Token
 from dotenv import load_dotenv
-
-# Load environment variables from .env file if not running in AWS Lambda
-if not os.environ.get("AWS_EXECUTION_ENV"):
-    print("Loading .env file")
-    load_dotenv(os.path.join(os.getcwd(), ".env"))
-
-from beanie import init_beanie
-from core.models.shoes import Sneaker
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.responses import RedirectResponse
-from mangum import Mangum
+from fastapi_pagination import add_pagination
 from starlette.middleware.sessions import SessionMiddleware
 
-from api.data.instance import DATABASE_NAME, client
-from api.routes import auth, sneakers
+load_dotenv(Path.cwd() / ".env")
+
+from api.db import initialize_db  # noqa: E402
+from api.routes import auth, sneakers  # noqa: E402
 
 desc = """
 ### The Bloomberg Terminal of Sneakers
-- Find product information, from every brand, fast. 👟
-- Never miss another release date. 📅
-- Never buy bricks. Stay ahead of the game with our comprehensive price history and trends. 💵
+- Find product information, from every brand, fast.
+- Never miss another release date.
+- Never buy bricks. Stay ahead of the game with our comprehensive price insights.
 
-[Github](https://github.com/SoleSearch-Demos) | [Twitter](https://twitter.com/SoleSearchAPI)
-
+[Twitter](https://twitter.com/SoleSearchAPI) | [Github](https://github.com/SoleSearchAPI)
 """
 
 app = FastAPI(
@@ -42,29 +35,29 @@ app = FastAPI(
     responses={404: {"description": "Not found"}},  # Custom 404 page
 )
 
-
-# Enable CORS
+# Enable session handling for StocxkX OAuth flow
+app.add_middleware(
+    SessionMiddleware,
+    secret_key="UPJsM1yNViUx6YU3",
+)
+# Enable CORS for all origins
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
-# Enable session handling for StocxkX OAuth flow
-SESSION_SECRET = os.environ.get("SOLESEARCH_SESSION_SECRET", "this should be a secret")
-app.add_middleware(SessionMiddleware, secret_key=SESSION_SECRET)
 
 
 @app.on_event("startup")
 async def startup_event():
-    # Initialize Beanie ODM
-    await init_beanie(
-        database=client.get_database(DATABASE_NAME),
-        document_models=[Sneaker, Token],
-    )
+    # Create the database tables
+    initialize_db()
     # Include all routers
     app.include_router(sneakers.router)
     app.include_router(auth.router)
+    # Load the pagination module
+    add_pagination(app)
 
 
 @app.get("/docs", include_in_schema=False)
@@ -77,13 +70,11 @@ async def swagger_ui_html():
     )
 
 
+# Redirect the root URL to the documentation
 @app.get("/", include_in_schema=False)
 def redirect_to_docs():
     return RedirectResponse(url="/docs")
 
-
-# This is the entry point for AWS Lambda
-handler = Mangum(app)
 
 if __name__ == "__main__":
     import uvicorn
