@@ -4,9 +4,10 @@ from datetime import UTC, datetime, timedelta
 from urllib.parse import urlparse
 
 import requests
-from core.models import Token
 from fastapi import APIRouter, HTTPException, Request
 from fastapi.responses import RedirectResponse
+
+from api.models import Token
 
 STOCKX_CLIENT_ID = os.environ.get("SOLESEARCH_STOCKX_CLIENT_ID", None)
 STOCKX_CLIENT_SECRET = os.environ.get("SOLESEARCH_STOCKX_CLIENT_SECRET", None)
