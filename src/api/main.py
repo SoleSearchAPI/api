@@ -74,16 +74,3 @@ async def swagger_ui_html():
 @app.get("/", include_in_schema=False)
 def redirect_to_docs():
     return RedirectResponse(url="/docs")
-
-
-if __name__ == "__main__":
-    import uvicorn
-
-    # Run the app locally using Uvicorn, with SSL enabled
-    uvicorn.run(
-        app,
-        host="localhost",
-        port=8000,
-        ssl_keyfile="key.pem",
-        ssl_certfile="cert.pem",
-    )
