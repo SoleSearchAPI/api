@@ -13,7 +13,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN pip install --no-cache-dir poetry
 
 # Copy only requirements to cache them in docker layer
-COPY pyproject.toml poetry.lock* ./
+COPY pyproject.toml poetry.lock* .env scripts/set-production-dependencies.sh ./
+RUN chmod +x set-production-dependencies.sh
+RUN ./set-production-dependencies.sh
 
 # Project initialization
 RUN poetry config virtualenvs.create false \
@@ -24,9 +26,6 @@ COPY src ./src
 
 # Include the project in the Python path
 ENV PYTHONPATH=/app/src:$PYTHONPATH
-
-# Copy environment variables
-COPY .env ./.env
 
 # Expose the port the app runs on
 EXPOSE 8000
