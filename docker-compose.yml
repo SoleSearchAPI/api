@@ -11,9 +11,26 @@ services:
     networks:
       - sneakers_network
     restart: always
+    env_file:
+      - ".env"
+
+  celery_worker:
+    build: .
+    container_name: sneakers_worker
+    working_dir: /app
+    command: celery -A api.tasks worker --loglevel=info
+    depends_on:
+      - api
+      - redis
+      - rabbitmq
+    networks:
+      - sneakers_network
+    restart: always
+    env_file:
+      - ".env"
 
   nginx:
-    image: nginx:latest
+    image: nginx:alpine-slim
     container_name: sneakers_nginx
     ports:
       - "80:80"
@@ -26,7 +43,7 @@ services:
     restart: always
 
   db:
-    image: postgres:latest
+    image: postgres:16-alpine
     container_name: sneakers_db
     environment:
       POSTGRES_DB: Sneakers
@@ -41,7 +58,7 @@ services:
     restart: always
 
   redis:
-    image: redis:latest
+    image: redis:alpine
     container_name: sneakers_redis
     ports:
       - "6379:6379"
@@ -49,6 +66,18 @@ services:
       - redis_data:/data
     networks:
       - sneakers_network
+    restart: always
+
+  rabbitmq:
+    image: rabbitmq:alpine
+    container_name: sneakers_rabbitmq
+    ports:
+      - "5672:5672"
+    networks:
+      - sneakers_network
+    environment:
+      - RABBITMQ_DEFAULT_USER=solesearch
+      - RABBITMQ_DEFAULT_PASS=solesearch
     restart: always
 
 volumes:
