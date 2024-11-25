@@ -1,17 +1,11 @@
 __version__ = "2.2.0"
 
-import os
-from pathlib import Path
-
-from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.responses import RedirectResponse
 from fastapi_pagination import add_pagination
 from starlette.middleware.sessions import SessionMiddleware
-
-load_dotenv(Path.cwd() / ".env")
 
 from api.db import initialize_db  # noqa: E402
 from api.routes import auth, sneakers  # noqa: E402

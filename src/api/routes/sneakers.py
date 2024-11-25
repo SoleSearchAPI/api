@@ -16,8 +16,8 @@ router = APIRouter(
     prefix="/sneakers",
 )
 
-MAX_LIMIT = int(os.environ.get("SOLESEARCH_MAX_LIMIT", 100))
-DEFAULT_LIMIT = int(os.environ.get("SOLESEARCH_DEFAULT_LIMIT", 20))
+MAX_LIMIT = 100
+DEFAULT_LIMIT = 20
 
 
 @router.get("/", response_model=Page[SneakerPublic])

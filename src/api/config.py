@@ -1,16 +1,21 @@
 import os
 
-DB_URL = os.environ.get("SOLESEARCH_DB_CONNECTION_STRING")
+DB_URL = os.environ.get("DB_CONNECTION_STRING")
 
 if not DB_URL:
-    raise Exception("SOLESEARCH_DB_CONNECTION_STRING environment variable not set.")
+    raise OSError("DB_CONNECTION_STRING environment variable not set.")
 
-REDIS_URL = os.environ.get("SOLESEARCH_REDIS_URL")
+CELERY_BROKER = os.environ.get("CELERY_BROKER_URL")
 
-if not REDIS_URL:
-    raise Exception("SOLESEARCH_REDIS_URL environment variable not set.")
+if not CELERY_BROKER:
+    raise OSError("CELERY_BROKER_URL environment variable not set.")
 
-ENVIRONMENT = os.environ.get("SOLESEARCH_ENVIRONMENT")
+CELERY_BACKEND = os.environ.get("CELERY_RESULT_BACKEND")
+
+if not CELERY_BACKEND:
+    raise OSError("CELERY_RESULT_BACKEND environment variable not set.")
+
+ENVIRONMENT = os.environ.get("ENVIRONMENT")
 
 if not ENVIRONMENT:
-    raise Exception("SOLESEARCH_ENVIRONMENT environment variable not set.")
+    raise OSError("ENVIRONMENT environment variable not set.")
