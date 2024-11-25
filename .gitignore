@@ -1,7 +1,7 @@
 *.env
 *.pyc
 *__pycache__/
-env/
+.venv/
 dist/
 cert.pem
 key.pem
@@ -9,3 +9,5 @@ node_modules/
 package-lock.json
 package.json
 stockx.js
+*.DS_STORE
+settings.json

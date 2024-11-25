@@ -1,52 +1,47 @@
-[build-system]
-requires = ["hatchling", "hatch-zipped-directory"]
-build-backend = "hatchling.build"
-
-[project]
+[tool.poetry]
 name = "api"
-dynamic = ["version"]
-authors = [
-  { name="Peter Rauscher", email="peter@peterrauscher.com" },
+version = "2.0.0"
+description = ""
+authors = ["Peter Rauscher <peter@peterrauscher.com>"]
+readme = "README.md"
+packages = [{ include = "api", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "3.12.5"
+sqlmodel = "^0.0.22"
+fastapi = { extras = ["uvicorn"], version = "^0.115.0" }
+uvicorn = "^0.31.0"
+psycopg2-binary = "^2.9.9"
+motor = "^3.6.0"
+python-dotenv = "^1.0.1"
+itsdangerous = "^2.2.0"
+requests = "^2.32.3"
+celery = { extras = ["redis"], version = "^5.4.0" }
+fastapi-pagination = "^0.12.31"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "*"
+black = "*"
+pre-commit = "^3.8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+select = [
+  "E",   # pycodestyle error
+  "W",   # pycodestyle warning
+  "F",   # pyflakes
+  "A",   # flakes8-builtins
+  "COM", # flakes8-commas
+  "C4",  # flake8-comprehensions
+  "Q",   # flake8-quotes
+  "SIM", # flake8-simplify
+  "PTH", # flake8-use-pathlib
+  "I",   # isort
+  "N",   # pep8 naming
+  "UP",  # pyupgrade  
+  "S",   # bandit
 ]
-description = "API package for SoleSearch"
-requires-python = ">=3.12"
-dependencies = [
-  "fastapi",
-  "motor",
-  "beanie",
-  "python-dotenv",
-  "uvicorn",
-  "pydantic",
-  "mangum",
-  "requests",
-  "Starlette",
-  "pre-commit",
-  "black",
-  "itsdangerous",
-  "core @ git+ssh://git@github.com/SoleSearch-Demos/core.git@main",
-]
-
-[tool.hatch.version]
-path = "src/api/main.py"
-
-[tool.hatch.metadata]
-allow-direct-references = true
-
-[tool.hatch.envs.default.scripts]
-start = "python -m src.api.main"
-patch = "python bump-release.py patch"
-minor = "python bump-release.py minor"
-major = "python bump-release.py major"
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/api"]
-
-[tool.hatch.build.targets.sdist]
-packages = ["src/api"]
-
-[tool.hatch.build.targets.zipped-directory]
-install-name = "api"
-sources = ["src/api"]
-
-[tool.hatch.build.targets.zipped-directory.force-include]
-".env" = "/.env"
