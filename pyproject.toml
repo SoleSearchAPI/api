@@ -8,6 +8,7 @@ packages = [{ include = "api", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "3.12.5"
+solesearch-common = { path = "../common/src/solesearch_common", develop = true }
 sqlmodel = "^0.0.22"
 fastapi = { extras = ["uvicorn"], version = "^0.115.0" }
 uvicorn = "^0.31.0"
