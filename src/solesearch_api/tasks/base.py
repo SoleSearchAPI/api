@@ -1,6 +1,6 @@
 from celery import Task
 
-from api.db import SessionLocal
+from solesearch_api.db import SessionLocal
 
 
 class IngestTask(Task):

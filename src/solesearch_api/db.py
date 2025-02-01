@@ -1,7 +1,7 @@
 from sqlmodel import Session, SQLModel, create_engine
 
-from api.config import DB_URL, ENVIRONMENT
-from api.models.env import Environment
+from solesearch_api.config import DB_URL, ENVIRONMENT
+from solesearch_api.models.env import Environment
 
 engine = create_engine(DB_URL, echo=ENVIRONMENT != Environment.PRODUCTION)
 

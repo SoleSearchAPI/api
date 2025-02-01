@@ -7,8 +7,8 @@ from fastapi.responses import RedirectResponse
 from fastapi_pagination import add_pagination
 from starlette.middleware.sessions import SessionMiddleware
 
-from api.db import initialize_db  # noqa: E402
-from api.routes import auth, sneakers  # noqa: E402
+from solesearch_api.db import initialize_db  # noqa: E402
+from solesearch_api.routes import auth, sneakers  # noqa: E402
 
 desc = """
 ### The Bloomberg Terminal of Sneakers

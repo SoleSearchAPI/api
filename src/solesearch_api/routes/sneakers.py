@@ -7,10 +7,10 @@ from fastapi_pagination.ext.sqlmodel import paginate
 from fastapi_pagination.links import Page
 from sqlmodel import Session, select
 
-from api.db import get_session
-from api.models import Sneaker, SneakerPublic
-from api.models.enums import Audience
-from api.models.sorting import SortKey, SortOrder
+from solesearch_api.db import get_session
+from solesearch_api.models import Sneaker, SneakerPublic
+from solesearch_api.models.enums import Audience
+from solesearch_api.models.sorting import SortKey, SortOrder
 
 router = APIRouter(
     prefix="/sneakers",
