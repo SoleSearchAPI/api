@@ -1,15 +1,18 @@
 from datetime import datetime
 from functools import reduce
+from typing import TYPE_CHECKING
 
 from pydantic import computed_field
 from sqlmodel import Field, Relationship, SQLModel
 
 from solesearch_api.models.base import TimestampedModel
 from solesearch_api.models.enums import Audience, Platform, SizeStandard
-from solesearch_api.models.image import Image
-from solesearch_api.models.link import Link
-from solesearch_api.models.price import Price
-from solesearch_api.models.sneaker_size import SneakerSize
+
+if TYPE_CHECKING:
+    from solesearch_api.models.image import Image
+    from solesearch_api.models.link import Link
+    from solesearch_api.models.price import Price
+    from solesearch_api.models.sneaker_size import SneakerSize
 
 
 class SneakerBase(SQLModel):

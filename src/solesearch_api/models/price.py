@@ -1,11 +1,14 @@
 from datetime import datetime
+from typing import TYPE_CHECKING
 
 from sqlalchemy import Index, UniqueConstraint
 from sqlmodel import Field, Relationship
 
 from solesearch_api.models.base import TimestampedModel
 from solesearch_api.models.enums import Platform
-from solesearch_api.models.sneaker_size import SneakerSize
+
+if TYPE_CHECKING:
+    from solesearch_api.models.sneaker_size import SneakerSize
 
 
 class Price(TimestampedModel, table=True):
@@ -19,7 +22,7 @@ class Price(TimestampedModel, table=True):
     observed_at: datetime | None = None
 
     sneaker_size_id: int | None = Field(default=None, foreign_key="sneakersize.id")
-    sneaker_size: SneakerSize | None = Relationship(back_populates="prices")
+    sneaker_size: "SneakerSize" | None = Relationship(back_populates="prices")
 
     @property
     def in_dollars(self) -> float:

@@ -1,9 +1,13 @@
+from typing import TYPE_CHECKING
+
 from sqlalchemy import Index, UniqueConstraint
 from sqlmodel import Field, Relationship
 
 from solesearch_api.models.base import TimestampedModel
 from solesearch_api.models.enums import Platform
-from solesearch_api.models.sneaker import Sneaker
+
+if TYPE_CHECKING:
+    from solesearch_api.models.sneaker import Sneaker
 
 
 class Image(TimestampedModel, table=True):
@@ -17,4 +21,4 @@ class Image(TimestampedModel, table=True):
     url: str
 
     sneaker_id: int | None = Field(default=None, foreign_key="sneaker.id")
-    sneaker: Sneaker | None = Relationship(back_populates="images")
+    sneaker: "Sneaker" | None = Relationship(back_populates="images")
