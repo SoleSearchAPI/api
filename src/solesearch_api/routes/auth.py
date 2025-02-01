@@ -7,8 +7,7 @@ import requests
 from fastapi import APIRouter, HTTPException, Request
 from fastapi.responses import RedirectResponse
 
-from solesearch_api.models import Token
-from solesearch_api.models.misc import TokenType
+from solesearch_api.models.misc import Token, TokenType
 
 STOCKX_CLIENT_ID = os.environ.get("SOLESEARCH_STOCKX_CLIENT_ID", None)
 STOCKX_CLIENT_SECRET = os.environ.get("SOLESEARCH_STOCKX_CLIENT_SECRET", None)

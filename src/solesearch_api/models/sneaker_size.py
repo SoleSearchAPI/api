@@ -1,9 +1,13 @@
+from typing import TYPE_CHECKING
+
 from sqlalchemy import Index, UniqueConstraint
 from sqlmodel import Field, Relationship, SQLModel
 
 from solesearch_api.models.enums import SizeStandard
-from solesearch_api.models.price import Price
-from solesearch_api.models.sneaker import Sneaker
+
+if TYPE_CHECKING:
+    from solesearch_api.models.price import Price
+    from solesearch_api.models.sneaker import Sneaker
 
 
 class SneakerSize(SQLModel, table=True):
@@ -15,7 +19,7 @@ class SneakerSize(SQLModel, table=True):
     value: int
 
     sneaker_id: int | None = Field(default=None, foreign_key="sneaker.id")
-    sneaker: Sneaker | None = Relationship(back_populates="sizes")
+    sneaker: "Sneaker" | None = Relationship(back_populates="sizes")
 
     prices: list["Price"] = Relationship(back_populates="sneaker_size")
 

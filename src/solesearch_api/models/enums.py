@@ -21,3 +21,18 @@ class Audience(str, Enum):
 class SizeStandard(str, Enum):
     MENS_US = "mens_US"
     WOMENS_US = "womens_US"
+
+
+class SneakerSortKey(str, Enum):
+    BRAND = "brand"
+    SKU = "sku"
+    NAME = "name"
+    COLORWAY = "colorway"
+    AUDIENCE = "audience"
+    RELEASE_DATE = "releaseDate"
+    PRICE = "price"
+
+
+class SortOrder(str, Enum):
+    ASCENDING = "asc"
+    DESCENDING = "desc"

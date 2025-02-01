@@ -7,9 +7,8 @@ from fastapi_pagination.links import Page
 from sqlmodel import Session, select
 
 from solesearch_api.db import get_session
-from solesearch_api.models import Sneaker, SneakerPublic
-from solesearch_api.models.enums import Audience
-from solesearch_api.models.sorting import SortKey, SortOrder
+from solesearch_api.models.enums import Audience, SneakerSortKey, SortOrder
+from solesearch_api.models.sneaker import Sneaker, SneakerPublic
 
 router = APIRouter(
     prefix="/sneakers",
@@ -26,7 +25,9 @@ async def get_sneakers(
     brand: Annotated[
         str | None,
         Query(
-            title="Brand", description="Filter by the brand of the shoes.", min_length=3,
+            title="Brand",
+            description="Filter by the brand of the shoes.",
+            min_length=3,
         ),
     ] = None,
     name: Annotated[
@@ -68,8 +69,9 @@ async def get_sneakers(
         ),
     ] = None,
     sort: Annotated[
-        SortKey, Query(title="Sort By", description="The field to sort by."),
-    ] = SortKey.RELEASE_DATE,
+        SneakerSortKey,
+        Query(title="Sort By", description="The field to sort by."),
+    ] = SneakerSortKey.RELEASE_DATE,
     order: Annotated[
         SortOrder,
         Query(
@@ -131,7 +133,10 @@ async def get_sneaker_by_id(*, db: Session = Depends(get_session), product_id: i
 
 @router.get("/sku/{sku}", response_model=SneakerPublic)
 async def get_sneaker_by_sku(
-    *, db: Session = Depends(get_session), sku: str, brand: str | None = None,
+    *,
+    db: Session = Depends(get_session),
+    sku: str,
+    brand: str | None = None,
 ):
     query = select(Sneaker).where(Sneaker.sku == sku)
     if brand:
