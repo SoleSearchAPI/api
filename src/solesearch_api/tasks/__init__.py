@@ -1,6 +1,6 @@
 from celery.app import Celery
 
-from api.config import CELERY_BACKEND, CELERY_BROKER
+from solesearch_api.config import CELERY_BACKEND, CELERY_BROKER
 
 
 class CeleryConfig:
