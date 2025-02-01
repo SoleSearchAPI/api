@@ -1,18 +1,12 @@
 from datetime import datetime
 from functools import reduce
-from typing import TYPE_CHECKING
 
 from pydantic import computed_field
+from sqlalchemy import Index, UniqueConstraint
 from sqlmodel import Field, Relationship, SQLModel
 
 from solesearch_api.models.base import TimestampedModel
 from solesearch_api.models.enums import Audience, Platform, SizeStandard
-
-if TYPE_CHECKING:
-    from solesearch_api.models.image import Image
-    from solesearch_api.models.link import Link
-    from solesearch_api.models.price import Price
-    from solesearch_api.models.sneaker_size import SneakerSize
 
 
 class SneakerBase(SQLModel):
@@ -96,3 +90,71 @@ class PaginatedSneakersPublic(SQLModel):
     next_page: str | None
     previous_page: str | None
     items: list[SneakerPublic]
+
+
+class SneakerSize(TimestampedModel, table=True):
+    __table_args__ = (
+        UniqueConstraint("sneaker_id", "value"),
+        Index("ix_sneaker_id_value", "sneaker_id", "value"),
+    )
+    id: int | None = Field(default=None, primary_key=True)
+    value: int
+
+    sneaker_id: int | None = Field(default=None, foreign_key="sneaker.id")
+    sneaker: Sneaker | None = Relationship(back_populates="sizes")
+
+    prices: list["Price"] = Relationship(back_populates="sneaker_size")
+
+    def get_standardized(self, size_standard: SizeStandard = SizeStandard.MENS_US):
+        if size_standard == SizeStandard.MENS_US:
+            return self.value
+
+
+class Price(TimestampedModel, table=True):
+    __table_args__ = (
+        UniqueConstraint("sneaker_size_id", "platform"),
+        Index("ix_sneaker_size_id_platform", "sneaker_size_id", "platform"),
+    )
+    id: int | None = Field(default=None, primary_key=True)
+    platform: Platform | None = None
+    amount: int  # Monetary values stored as US cents
+    observed_at: datetime | None = None
+
+    sneaker_size_id: int | None = Field(default=None, foreign_key="sneakersize.id")
+    sneaker_size: SneakerSize | None = Relationship(back_populates="prices")
+
+    @property
+    def in_dollars(self) -> float:
+        return self.amount / 100
+
+    @property
+    def for_size(self) -> int:
+        return self.sneaker_size.value
+
+
+class Link(TimestampedModel, table=True):
+    __table_args__ = (
+        UniqueConstraint("platform", "sneaker_id"),
+        Index("ix_link_platform_sneaker_id", "platform", "sneaker_id"),
+        Index("ix_url", "url"),
+    )
+    id: int | None = Field(default=None, primary_key=True)
+    platform: Platform
+    url: str
+
+    sneaker_id: int | None = Field(default=None, foreign_key="sneaker.id")
+    sneaker: Sneaker | None = Relationship(back_populates="links")
+
+
+class Image(TimestampedModel, table=True):
+    __table_args__ = (
+        UniqueConstraint("platform", "sneaker_id", "position"),
+        Index("ix_image_platform_sneaker_id", "platform", "sneaker_id"),
+    )
+    id: int | None = Field(default=None, primary_key=True)
+    platform: Platform | None = None
+    position: int
+    url: str
+
+    sneaker_id: int | None = Field(default=None, foreign_key="sneaker.id")
+    sneaker: Sneaker | None = Relationship(back_populates="images")

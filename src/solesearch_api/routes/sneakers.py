@@ -95,7 +95,7 @@ async def get_sneakers(
     if released is not None:
         now = datetime.now(UTC)
         if released:
-            query = query.wheZre(Sneaker.release_date <= now)
+            query = query.where(Sneaker.release_date <= now)
         else:
             query = query.where(Sneaker.release_date > now)
     elif release_date:
