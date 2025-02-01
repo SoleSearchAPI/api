@@ -4,12 +4,12 @@ from functools import reduce
 from pydantic import computed_field
 from sqlmodel import Field, Relationship, SQLModel
 
-from solesearch_common.models.base import TimestampedModel
-from solesearch_common.models.enums import Audience, Platform, SizeStandard
-from solesearch_common.models.image import Image
-from solesearch_common.models.link import Link
-from solesearch_common.models.price import Price
-from solesearch_common.models.sneaker_size import SneakerSize
+from solesearch_api.models.base import TimestampedModel
+from solesearch_api.models.enums import Audience, Platform, SizeStandard
+from solesearch_api.models.image import Image
+from solesearch_api.models.link import Link
+from solesearch_api.models.price import Price
+from solesearch_api.models.sneaker_size import SneakerSize
 
 
 class SneakerBase(SQLModel):
@@ -32,7 +32,8 @@ class Sneaker(SneakerBase, TimestampedModel, table=True):
     links: list["Link"] = Relationship(back_populates="sneaker", cascade_delete=True)
     images: list["Image"] = Relationship(back_populates="sneaker", cascade_delete=True)
     sizes: list["SneakerSize"] = Relationship(
-        back_populates="sneaker", cascade_delete=True
+        back_populates="sneaker",
+        cascade_delete=True,
     )
 
     def get_links(self) -> list[str]:
@@ -42,7 +43,8 @@ class Sneaker(SneakerBase, TimestampedModel, table=True):
         return [image.url for image in sorted(self.images, key=lambda i: i.position)]
 
     def get_sizes(
-        self, size_standard: SizeStandard = SizeStandard.MENS_US
+        self,
+        size_standard: SizeStandard = SizeStandard.MENS_US,
     ) -> list[str]:
         return [size.get_standardized(size_standard) for size in self.sizes]
 

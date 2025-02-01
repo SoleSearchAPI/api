@@ -1,9 +1,9 @@
 from sqlalchemy import Index, UniqueConstraint
 from sqlmodel import Field, Relationship, SQLModel
 
-from solesearch_common.models.enums import SizeStandard
-from solesearch_common.models.price import Price
-from solesearch_common.models.sneaker import Sneaker
+from solesearch_api.models.enums import SizeStandard
+from solesearch_api.models.price import Price
+from solesearch_api.models.sneaker import Sneaker
 
 
 class SneakerSize(SQLModel, table=True):

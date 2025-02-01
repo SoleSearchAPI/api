@@ -1,9 +1,9 @@
 from sqlalchemy import Index, UniqueConstraint
 from sqlmodel import Field, Relationship
 
-from solesearch_common.models.base import TimestampedModel
-from solesearch_common.models.enums import Platform
-from solesearch_common.models.sneaker import Sneaker
+from solesearch_api.models.base import TimestampedModel
+from solesearch_api.models.enums import Platform
+from solesearch_api.models.sneaker import Sneaker
 
 
 class Image(TimestampedModel, table=True):

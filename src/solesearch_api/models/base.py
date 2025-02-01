@@ -3,7 +3,7 @@ from datetime import datetime
 from sqlalchemy import event
 from sqlmodel import Field, SQLModel
 
-from solesearch_common.utils.time import utc_now
+from solesearch_api.utils.time import utc_now
 
 
 class TimestampedModel(SQLModel):
