@@ -8,7 +8,7 @@ class CeleryConfig:
 
 
 scheduler = Celery(
-    "ingest",
+    "solesearch",
     broker=CELERY_BROKER,
     backend=CELERY_BACKEND,
     config_source=CeleryConfig,

@@ -1,14 +1,13 @@
 [tool.poetry]
-name = "api"
+name = "solesearch-api"
 version = "2.0.0"
-description = ""
+description = "API for the solesearch project"
 authors = ["Peter Rauscher <peter@peterrauscher.com>"]
 readme = "README.md"
-packages = [{ include = "api", from = "src" }]
+packages = [{ include = "solesearch_api", from = "src" }]
 
 [tool.poetry.dependencies]
-python = "3.12.5"
-solesearch-common = { path = "../common/src/solesearch_common", develop = true }
+python = "3.12.8"
 sqlmodel = "^0.0.22"
 fastapi = { extras = ["uvicorn"], version = "^0.115.0" }
 uvicorn = "^0.31.0"
@@ -20,15 +19,8 @@ fastapi-pagination = "^0.12.31"
 celery = "^5.4.0"
 redis = "^5.2.0"
 
-
 [tool.poetry.group.dev.dependencies]
-ruff = "*"
-black = "*"
-pre-commit = "^3.8.0"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+ruff = "^0.9.4"
 
 [tool.ruff]
 select = [

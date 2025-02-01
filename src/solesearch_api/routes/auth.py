@@ -8,12 +8,14 @@ from fastapi import APIRouter, HTTPException, Request
 from fastapi.responses import RedirectResponse
 
 from solesearch_api.models import Token
+from solesearch_api.models.misc import TokenType
 
 STOCKX_CLIENT_ID = os.environ.get("SOLESEARCH_STOCKX_CLIENT_ID", None)
 STOCKX_CLIENT_SECRET = os.environ.get("SOLESEARCH_STOCKX_CLIENT_SECRET", None)
 STOCKX_API_KEY = os.environ.get("SOLESEARCH_STOCKX_API_KEY", None)
 STOCKX_STATE = os.environ.get(
-    "SOLESEARCH_STOCKX_CALLBACK_STATE", "this should be a secret string"
+    "SOLESEARCH_STOCKX_CALLBACK_STATE",
+    "this should be a secret string",
 )
 
 session = requests.session()
@@ -66,13 +68,17 @@ async def stockx_oauth_callback(state: str, code: str, request: Request):
                 headers=headers,
             )
         ).json()
-        for token_type in ["id_token", "access_token", "refresh_token"]:
+        for token_type in [
+            TokenType.ID_TOKEN,
+            TokenType.ACCESS_TOKEN,
+            TokenType.REFRESH_TOKEN,
+        ]:
             if token_type in tokens:
                 token = await Token.find_one(Token.id == token_type)
                 setattr(token, "value", tokens[token_type])
-                if token_type == "access_token":
+                if token_type == TokenType.ACCESS_TOKEN:
                     token.expires = datetime.now(UTC) + timedelta(
-                        seconds=int(tokens["expires_in"]) - 30
+                        seconds=int(tokens["expires_in"]) - 30,
                     )
                 await token.save()
                 logging.info(f"Updated {token_type}")
