@@ -1,5 +1,8 @@
 __version__ = "2.2.0"
 
+import os
+
+import logfire
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.docs import get_swagger_ui_html
@@ -7,8 +10,8 @@ from fastapi.responses import RedirectResponse
 from fastapi_pagination import add_pagination
 from starlette.middleware.sessions import SessionMiddleware
 
-from solesearch_api.db import initialize_db  # noqa: E402
-from solesearch_api.routes import auth, sneakers  # noqa: E402
+from solesearch_api.db import initialize_db
+from solesearch_api.routes import auth, sneakers
 
 desc = """
 ### The Bloomberg Terminal of Sneakers
@@ -24,15 +27,23 @@ app = FastAPI(
     docs_url=None,
     title="SoleSearch",
     version=__version__,
-    contact={"name": "SoleSearch Email Support", "email": "support@solesearch.io"},
+    contact={
+        "name": "SoleSearch",
+        "url": "https://solesearch.io",
+        "email": "support@solesearch.io",
+    },
     description=desc,
     responses={404: {"description": "Not found"}},  # Custom 404 page
 )
 
+# Configure Logfire
+logfire.configure()
+logfire.instrument_fastapi(app)
+
 # Enable session handling for StocxkX OAuth flow
 app.add_middleware(
     SessionMiddleware,
-    secret_key="UPJsM1yNViUx6YU3",
+    secret_key=os.getenv("SESSION_SECRET"),
 )
 # Enable CORS for all origins
 app.add_middleware(
