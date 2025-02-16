@@ -19,6 +19,7 @@ fastapi-pagination = "^0.12.31"
 celery = "^5.4.0"
 redis = "^5.2.0"
 logfire = { extras = ["fastapi", "celery", "sqlalchemy"], version = "^3.4.0" }
+beautifulsoup4 = "^4.13.3"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.9.4"

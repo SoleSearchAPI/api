@@ -19,3 +19,11 @@ ENVIRONMENT = os.environ.get("ENVIRONMENT")
 
 if not ENVIRONMENT:
     raise OSError("ENVIRONMENT environment variable not set.")
+
+DATA_DIR = "/var/data/solesearch"
+HTML_DIR = os.path.join(DATA_DIR, "html")
+JSON_DIR = os.path.join(DATA_DIR, "json")
+
+os.makedirs(DATA_DIR, exist_ok=True)
+os.makedirs(HTML_DIR, exist_ok=True)
+os.makedirs(JSON_DIR, exist_ok=True)

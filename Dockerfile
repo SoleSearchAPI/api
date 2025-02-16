@@ -1,4 +1,4 @@
-# Use Python 3.12.5 slim image as the base
+# Use Python 3.12.8 slim image as the base
 FROM python:3.12.8-slim
 
 # Set working directory
@@ -13,13 +13,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN pip install --no-cache-dir poetry
 
 # Copy only requirements to cache them in docker layer
-COPY pyproject.toml poetry.lock* .env ./
+COPY pyproject.toml poetry.lock* ./
 
 # Project initialization
 RUN poetry config virtualenvs.create false \
     && poetry install --only main --no-interaction --no-ansi --no-root
 
 # Copy the project
+COPY .env ./
 COPY src ./src
 
 # Include the project in the Python path

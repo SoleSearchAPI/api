@@ -11,7 +11,7 @@ from fastapi_pagination import add_pagination
 from starlette.middleware.sessions import SessionMiddleware
 
 from solesearch_api.db import initialize_db
-from solesearch_api.routes import auth, sneakers
+from solesearch_api.routes import auth, sneakers, triggers
 
 desc = """
 ### The Bloomberg Terminal of Sneakers
@@ -61,6 +61,7 @@ async def startup_event():
     # Include all routers
     app.include_router(sneakers.router)
     app.include_router(auth.router)
+    app.include_router(triggers.router)
     # Load the pagination module
     add_pagination(app)
 

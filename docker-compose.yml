@@ -8,6 +8,8 @@ services:
       - redis
     expose:
       - "8000"
+    volumes:
+      - ~/data/solesearch:/var/data/solesearch
     networks:
       - sneakers_network
     restart: always
@@ -23,6 +25,8 @@ services:
       - api
       - redis
       - rabbitmq
+    volumes:
+      - ~/data/solesearch:/var/data/solesearch
     networks:
       - sneakers_network
     restart: always
@@ -37,6 +41,8 @@ services:
       - api
       - redis
       - rabbitmq
+    volumes:
+      - ~/data/solesearch:/var/data/solesearch
     networks:
       - sneakers_network
     restart: always
