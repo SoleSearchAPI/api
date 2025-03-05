@@ -39,3 +39,14 @@ def next_json_extractor(html: str) -> dict:
         return page_props
 
     return {}
+
+
+def react_query_data_extractor(html: str) -> dict:
+    """Extracts the json data from the REACT_QUERY_DATA script in an HTML string."""
+    react_query_data_script = re.search(
+        "<script>window.REACT_QUERY_DATA =.*</script>",
+        html,
+    )
+    if react_query_data_script:
+        return json.loads(react_query_data_script.group())
+    return {}

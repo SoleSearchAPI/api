@@ -13,8 +13,8 @@ def get_random_user_agent():
     return random.choice(USER_AGENTS)
 
 
-def get_browser_headers(referer=None):
-    headers = {
+def get_default_browser_headers():
+    return {
         "User-Agent": get_random_user_agent(),
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
@@ -28,8 +28,3 @@ def get_browser_headers(referer=None):
         "Cache-Control": "no-cache",
         "Pragma": "no-cache",
     }
-
-    if referer:
-        headers["Referer"] = referer
-
-    return headers
