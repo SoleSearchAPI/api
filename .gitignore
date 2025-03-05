@@ -11,3 +11,4 @@ package.json
 stockx.js
 *.DS_STORE
 settings.json
+investigation/

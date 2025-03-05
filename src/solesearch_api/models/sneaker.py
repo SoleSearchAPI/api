@@ -1,4 +1,5 @@
 from datetime import datetime
+from decimal import Decimal
 from functools import reduce
 
 from pydantic import computed_field
@@ -12,11 +13,13 @@ from solesearch_api.models.enums import Audience, Platform, SizeStandard
 class SneakerBase(SQLModel):
     brand: str | None = None
     sku: str | None = None
+    parent_sku: str | None = None
     name: str | None = None
     colorway: str | None = None
     audience: Audience | None = None
     release_date: datetime | None = None
     description: str | None = None
+    retail_price: int | None = None  # Monetary values stored as US cents
 
 
 class Sneaker(SneakerBase, TimestampedModel, table=True):
@@ -44,6 +47,12 @@ class Sneaker(SneakerBase, TimestampedModel, table=True):
         size_standard: SizeStandard = SizeStandard.MENS_US,
     ) -> list[str]:
         return [size.get_standardized(size_standard) for size in self.sizes]
+
+    @property
+    def retail_price_in_dollars(self) -> Decimal | None:
+        return (
+            Decimal(self.retail_price) / 100 if self.retail_price is not None else None
+        )
 
     @property
     def prices(self) -> list["Price"]:
@@ -81,6 +90,17 @@ class SneakerPublic(SneakerBase):
     @property
     def sizes(self) -> list[str]:
         return self.get_sizes() if hasattr(self, "get_sizes") else []
+
+    @computed_field
+    @property
+    def retail_price_formatted(self) -> str | None:
+        if not hasattr(self, "retail_price_in_dollars"):
+            return None
+        return (
+            f"${self.retail_price_in_dollars:.2f}"
+            if self.retail_price_in_dollars
+            else None
+        )
 
 
 class PaginatedSneakersPublic(SQLModel):
@@ -124,8 +144,8 @@ class Price(TimestampedModel, table=True):
     sneaker_size: SneakerSize | None = Relationship(back_populates="prices")
 
     @property
-    def in_dollars(self) -> float:
-        return self.amount / 100
+    def in_dollars(self) -> Decimal:
+        return Decimal(self.amount) / 100
 
     @property
     def for_size(self) -> int:

@@ -28,9 +28,4 @@ app = Celery(
     config_source=CeleryConfig,
 )
 
-app.conf.update(
-    imports=(
-        "solesearch_api.tasks.ingest.retail.nike",
-        "solesearch_api.tasks.ingest.retail.adidas",
-    )
-)
+import solesearch_api.tasks.scraping
