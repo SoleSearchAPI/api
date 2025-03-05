@@ -30,4 +30,4 @@ ENV PYTHONPATH=/app/src:$PYTHONPATH
 EXPOSE 8000
 
 # Command to run the application
-CMD ["poetry", "run", "uvicorn", "src.solesearch_api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["poetry", "run", "debugpy", "--listen", "0.0.0.0:5678", "-m", "uvicorn", "--reload", "src.solesearch_api.main:app", "--host", "0.0.0.0", "--port", "8000"]

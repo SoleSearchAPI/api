@@ -6,8 +6,9 @@ services:
     depends_on:
       - db
       - redis
-    expose:
-      - "8000"
+    ports:
+      - "8000:8000"
+      - "5678:5678"
     volumes:
       - ~/data/solesearch:/var/data/solesearch
     networks:
@@ -48,19 +49,6 @@ services:
     restart: always
     env_file:
       - ".env"
-
-  nginx:
-    image: nginx:alpine-slim
-    container_name: sneakers_nginx
-    ports:
-      - "80:80"
-    volumes:
-      - ./nginx/nginx.local.conf:/etc/nginx/nginx.conf:ro
-    depends_on:
-      - api
-    networks:
-      - sneakers_network
-    restart: always
 
   db:
     image: postgres:16-alpine
