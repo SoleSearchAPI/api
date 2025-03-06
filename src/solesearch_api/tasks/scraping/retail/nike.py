@@ -1,8 +1,12 @@
 import re
 from datetime import UTC, datetime
+from zoneinfo import ZoneInfo
+
+import logfire
 
 from solesearch_api.models.enums import Audience, Platform
 from solesearch_api.models.sneaker import Image, Link, Price, Sneaker
+from solesearch_api.tasks.db.base import create_or_update_sneaker
 from solesearch_api.tasks.scraping.base import BaseScrapingTask
 from solesearch_api.tasks.scraping.task_registry import register_scraping_task
 from solesearch_api.utils.extractors import next_json_extractor
@@ -19,98 +23,192 @@ class NikeScrapingTask(BaseScrapingTask):
             brand="Nike",
             download_url="https://www.nike.com/launch?s=upcoming",
             audience_mapping={
-                "Men": Audience.MEN,
-                "Women": Audience.WOMEN,
-                "Unisex": Audience.UNISEX,
+                Audience.MEN: ["MEN"],
+                Audience.WOMEN: ["WOMEN"],
+                Audience.UNISEX: ["MEN", "WOMEN"],
             },
             extractor=next_json_extractor,
         )
+
+    def guess_audience(self, genders: list[str]) -> Audience:
+        if "MEN" in genders and "WOMEN" in genders:
+            return Audience.UNISEX
+        elif "MEN" in genders:
+            return Audience.MEN
+        elif "WOMEN" in genders:
+            return Audience.WOMEN
+        return Audience.UNKNOWN
 
     def scrape(self, session, *args, **kwargs):
         json = self.get_json()
         sneakers = self.json_to_sneakers(json)
         for sneaker in sneakers:
-            session.add(sneaker)
+            create_or_update_sneaker(session, sneaker)
+        session.commit()
 
     def json_to_sneakers(self, json: dict) -> list[Sneaker]:
-        products = get_from_json(json, "product.threads.data.items")
-        product_details = get_from_json(json, "product.products.data.items")
-        more_details = {
-            x["threadId"]: (x["productId"], x["startEntryDate"])
-            for x in json["viewFeed"]["upcomingIds"]
-        }
+        threads = get_from_json(json, "product.threads.data.items")
+        products = get_from_json(json, "product.products.data.items")
+        upcoming_ids = get_from_json(json, "viewFeed.upcomingIds")
         sneakers = []
-        for thread_id in products:
-            product_id = more_details.get(thread_id)
-            if product_id:
-                product_id = product_id[0]
-            else:
-                raise ValueError(f"Missing product_id for thread_id: {thread_id}")
+        for thread_id, thread in threads.items():
+            for product_id in thread["productIds"]:
+                product = products.get(product_id)
+                if not product:
+                    logfire.error(
+                        "Nike product not found for thread",
+                        attributes={
+                            "thread_id": thread_id,
+                            "product_id": product_id,
+                        },
+                    )
+                    continue
 
-            product = products[thread_id]
-            details = product_details.get(product_id)
-            if not details:
-                raise ValueError(
-                    f"Missing product details for product_id: {product_id}",
-                )
+                if product["productType"] != "FOOTWEAR":
+                    logfire.info(
+                        "Skipping product because it is not footwear",
+                        attributes={
+                            "product_id": product_id,
+                            "product_type": product["productType"],
+                        },
+                    )
+                    continue
 
-            if details["productType"] != "FOOTWEAR":
-                raise ValueError(
-                    f"Product was type {details['productType']}, not footwear!",
-                )
+                brand = product["brand"]
+                sku = product["styleColor"]
+                parent_sku = product["styleCode"]
 
-            sku = details["styleColor"]
-            brand = details["brand"]
-            name = re.sub(r" \(.*-.*\) Release Date", "", product["seo"]["title"])
-            colorway = details["colorDescription"]
-            audience = self.guess_audience(details["genders"])
-            release_date = more_details[thread_id][1]
-            description = html_cleaner(
-                next(
+                name = product["title"]
+                colorway = product["colorDescription"]
+
+                audience = self.guess_audience(product["genders"])
+
+                try:
+                    upcoming_id = next(
+                        filter(
+                            lambda x: x["threadId"] == thread_id,
+                            upcoming_ids,
+                        )
+                    )
+                    release_date = datetime.fromtimestamp(
+                        upcoming_id.get("startEntryDate") / 1000
+                    )
+                    release_date = release_date.replace(
+                        tzinfo=ZoneInfo("America/New_York")
+                    )
+                except StopIteration:
+                    logfire.warning(
+                        "Nike thread does not have an upcoming ID",
+                        attributes={
+                            "thread_id": thread_id,
+                            "product_id": product_id,
+                        },
+                    )
+                    release_date = None
+
+                retail_price = product["fullPrice"] * 100
+
+                if product.get("discounted"):
+                    logfire.info(
+                        "Nike has a discount on a product",
+                        attributes={
+                            "sku": sku,
+                            "discounted": product["discounted"],
+                            "fullPrice": retail_price,
+                            "currentPrice": product["currentPrice"],
+                            "msrp": product["msrp"],
+                        },
+                    )
+
+                carousel = next(
                     filter(
                         lambda x: x["subType"] == "carousel",
-                        product["cards"],
-                    ),
-                )["description"],
-            )
-
-            sneaker = Sneaker(
-                source=Platform.RETAIL,
-                brand=brand,
-                sku=sku,
-                name=name,
-                colorway=colorway,
-                audience=audience,
-                release_date=release_date,
-                description=description,
-            )
-
-            sneaker_link = Link(
-                platform=Platform.RETAIL,
-                url=product["externalLink"],
-            )
-            sneaker.links = [sneaker_link]
-
-            sneaker_images = []
-            for index, image in enumerate(product["cards"]):
-                if image["subType"] == "image":
-                    sneaker_images.append(
-                        Image(
-                            platform=Platform.RETAIL,
-                            position=index,
-                            url=image["defaultURL"],
-                        ),
+                        thread["cards"],
                     )
-            sneaker.images = sneaker_images
+                )
+                try:
+                    description = html_cleaner(carousel.get("description", ""))
+                except Exception as e:
+                    logfire.error(
+                        "Error parsing description from Nike thread",
+                        attributes={
+                            "error": str(e),
+                            "thread_id": thread_id,
+                            "product_id": product_id,
+                        },
+                    )
+                    description = None
 
-            sneaker_price = Price(
-                platform=Platform.RETAIL,
-                amount=details.get("msrp", details.get("fullPrice", None)),
-                observed_at=datetime.now(UTC),
-            )
-            sneaker.prices = [sneaker_price]
+                sneaker = Sneaker(
+                    source=Platform.RETAIL,
+                    brand=brand,
+                    sku=sku,
+                    parent_sku=parent_sku,
+                    name=name,
+                    colorway=colorway,
+                    audience=audience,
+                    release_date=release_date,
+                    description=description,
+                )
 
-            sneakers.append(sneaker)
+                slug = thread.get("seo", {}).get("slug")
+                if not slug:
+                    logfire.warning(
+                        "Nike thread does not have a slug",
+                        attributes={
+                            "thread_id": thread_id,
+                            "product_id": product_id,
+                        },
+                    )
+                    url = f"https://www.nike.com/launch/thread/{thread_id}"
+                else:
+                    url = f"https://www.nike.com/launch/t/{slug}"
+
+                sneaker_link = Link(
+                    platform=Platform.RETAIL,
+                    url=url,
+                )
+                sneaker.links = [sneaker_link]
+
+                sneaker_images = []
+
+                # First, check for 1st-level cards that are images and see if any productIds match
+                position = 0
+                for card in thread["cards"]:
+                    if card["subType"] == "image":
+                        if card.get("actions"):
+                            # if any action has a productId that matches the current productId, use this image
+                            for action in card["actions"]:
+                                if action["product"]["productId"] == product_id:
+                                    if card.get("imageId") and card.get("imageSlug"):
+                                        image_url = f"https://static.nike.com/a/images/{card['imageId']}/{card['imageSlug']}.jpg"
+                                    else:
+                                        image_url = card["defaultURL"]
+                                    sneaker_images.append(
+                                        Image(
+                                            platform=Platform.RETAIL,
+                                            position=position,
+                                            url=image_url,
+                                        ),
+                                    )
+                                    position += 1
+                if not sneaker_images:
+                    for index, image in enumerate(carousel["cards"]):
+                        if image["subType"] == "image":
+                            if image.get("imageId") and image.get("imageSlug"):
+                                image_url = f"https://static.nike.com/a/images/{image['imageId']}/{image['imageSlug']}.jpg"
+                            else:
+                                image_url = image["defaultURL"]
+                            sneaker_images.append(
+                                Image(
+                                    platform=Platform.RETAIL,
+                                    position=index,
+                                    url=image_url,
+                                ),
+                            )
+                sneaker.images = sneaker_images
+
+                sneakers.append(sneaker)
         return sneakers
 
 

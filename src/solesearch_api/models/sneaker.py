@@ -23,6 +23,10 @@ class SneakerBase(SQLModel):
 
 
 class Sneaker(SneakerBase, TimestampedModel, table=True):
+    __table_args__ = (
+        UniqueConstraint("sku", "brand", name="uix_sneaker_sku_brand"),
+        Index("ix_sneaker_sku_brand", "sku", "brand"),
+    )
     id: int | None = Field(default=None, primary_key=True)
     stockx_id: str | None = None
     stadium_goods_id: str | None = None
@@ -49,12 +53,6 @@ class Sneaker(SneakerBase, TimestampedModel, table=True):
         return [size.get_standardized(size_standard) for size in self.sizes]
 
     @property
-    def retail_price_in_dollars(self) -> Decimal | None:
-        return (
-            Decimal(self.retail_price) / 100 if self.retail_price is not None else None
-        )
-
-    @property
     def prices(self) -> list["Price"]:
         return list(reduce(lambda x, y: x.prices + y.prices, self.sizes, []))
 
@@ -78,6 +76,14 @@ class SneakerPublic(SneakerBase):
 
     @computed_field
     @property
+    def retail_price_formatted(self) -> str | None:
+        if self.retail_price is None:
+            return None
+        retail_price_in_dollars = Decimal(self.retail_price) / 100
+        return f"${retail_price_in_dollars:.2f}"
+
+    @computed_field
+    @property
     def links(self) -> list[str]:
         return self.get_links() if hasattr(self, "get_links") else []
 
@@ -90,17 +96,6 @@ class SneakerPublic(SneakerBase):
     @property
     def sizes(self) -> list[str]:
         return self.get_sizes() if hasattr(self, "get_sizes") else []
-
-    @computed_field
-    @property
-    def retail_price_formatted(self) -> str | None:
-        if not hasattr(self, "retail_price_in_dollars"):
-            return None
-        return (
-            f"${self.retail_price_in_dollars:.2f}"
-            if self.retail_price_in_dollars
-            else None
-        )
 
 
 class PaginatedSneakersPublic(SQLModel):
