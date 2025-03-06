@@ -5,13 +5,13 @@ import logfire
 
 from solesearch_api.models.enums import Platform
 from solesearch_api.models.sneaker import Image, Link, Sneaker
+from solesearch_api.tasks.db.base import create_or_update_sneaker
 from solesearch_api.tasks.scraping.retail.adidas.base import AdidasScrapingTask
 from solesearch_api.tasks.scraping.task_registry import register_scraping_task
 from solesearch_api.utils.extractors import next_json_extractor
 
 
 class AdidasNewReleasesScrapingTask(AdidasScrapingTask):
-    # This is the name that Celery will look for
     name = "solesearch_api.tasks.scraping.retail.adidas.new_releases"
 
     def __init__(self, *args, **kwargs):
@@ -29,12 +29,13 @@ class AdidasNewReleasesScrapingTask(AdidasScrapingTask):
         for product in json_data.get("plcSSRData", []):
             sneaker = self.json_to_sneaker(product)
             if sneaker:
-                session.add(sneaker)
+                create_or_update_sneaker(session, sneaker)
+        session.commit()
 
     def json_to_sneaker(self, data: dict) -> Sneaker | None:
         sku = data.get("id", "").strip()
         if not sku:
-            logfire.warning(f"No SKU found for product: {data}")
+            logfire.warning(f"No SKU found for {self.brand} product: {data}")
             return None
 
         release_date = data.get("preview_to", "").strip()

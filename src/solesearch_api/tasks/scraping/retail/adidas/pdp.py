@@ -1,5 +1,6 @@
 import logging
 
+from solesearch_api.tasks.db.base import create_or_update_sneaker
 from solesearch_api.tasks.scraping.retail.adidas.base import AdidasScrapingTask
 from solesearch_api.tasks.scraping.task_registry import register_scraping_task
 from solesearch_api.utils.extractors import (
@@ -28,7 +29,8 @@ class AdidasPDPScrapingTask(AdidasScrapingTask):
         json_data = self.get_json()
         sneaker = self.json_to_sneaker(json_data)
         if sneaker:
-            session.add(sneaker)
+            create_or_update_sneaker(session, sneaker)
+        session.commit()
 
 
 # Replace the class-based task registration with the decorator-based approach

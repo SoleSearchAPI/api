@@ -50,7 +50,7 @@ class BaseScrapingTask:
         with Session(engine) as session:
             return self.scrape(session, *args, **kwargs)
 
-    def guess_audience(self, gender: str) -> Audience:
+    def guess_audience(self, gender: str | list[str]) -> Audience:
         if gender not in self.audience_mapping:
             logfire.warning(
                 f"'{gender}' not in {self.__class__.__name__} audience_mapping",
