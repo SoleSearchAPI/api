@@ -12,3 +12,4 @@ stockx.js
 *.DS_STORE
 settings.json
 investigation/
+data
