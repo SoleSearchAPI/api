@@ -1,5 +1,6 @@
 __version__ = "2.2.0"
 
+import logging
 import os
 
 import logfire
@@ -39,6 +40,7 @@ app = FastAPI(
 # Configure Logfire
 logfire.configure()
 logfire.instrument_fastapi(app)
+logger = logging.getLogger(__name__)
 
 # Enable session handling for StocxkX OAuth flow
 app.add_middleware(
@@ -58,12 +60,15 @@ app.add_middleware(
 async def startup_event():
     # Create the database tables
     initialize_db()
+    logger.info("Database initialized")
     # Include all routers
     app.include_router(sneakers.router)
     app.include_router(auth.router)
     app.include_router(scrape.router)
+    logger.info("Routers imported")
     # Load the pagination module
     add_pagination(app)
+    logger.info("Pagination module loaded")
 
 
 @app.get("/docs", include_in_schema=False)

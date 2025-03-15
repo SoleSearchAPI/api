@@ -1,11 +1,9 @@
 from celery.result import AsyncResult
-from fastapi import APIRouter, Request
+from fastapi import APIRouter, HTTPException, Request
 
-from solesearch_api.tasks.scraping.retail.adidas.new_releases import (
-    adidas_new_releases_task,
-)
-from solesearch_api.tasks.scraping.retail.adidas.pdp import adidas_pdp_task
-from solesearch_api.tasks.scraping.retail.nike import nike_scraping_task
+from solesearch_api.tasks.scraping import adidas_new_releases_task
+from solesearch_api.tasks.scraping import nike_scraping_task
+from solesearch_api.tasks.scraping import nike_instock_scraping_task
 
 router = APIRouter(
     prefix="/scrape",
@@ -28,21 +26,18 @@ def task_result_factory(request: Request, task: AsyncResult):
     }
 
 
-@router.get("/nike")
-async def scrape_nike_new_releases(request: Request):
-    task = nike_scraping_task.apply_async()
-    return task_status_factory(request, task)
-
-
-@router.get("/adidas")
-async def scrape_adidas_new_releases(request: Request):
-    task = adidas_new_releases_task.apply_async()
-    return task_status_factory(request, task)
-
-
-@router.get("/adidas/{slug}")
-async def scrape_adidas_pdp(request: Request, slug: str):
-    task = adidas_pdp_task.apply_async(args=[slug])
+@router.get("/{retailer}")
+async def scrape_retailer_new_releases(
+    request: Request, retailer: str, nocache: bool = False
+):
+    task_mapping = {
+        "nike": nike_scraping_task,
+        "nike_instock": nike_instock_scraping_task,
+        "adidas": adidas_new_releases_task,
+    }
+    if retailer not in task_mapping:
+        raise HTTPException(status_code=404, detail="Retailer not found")
+    task = task_mapping[retailer].delay(nocache=nocache)
     return task_status_factory(request, task)
 
 

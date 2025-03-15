@@ -1,9 +1,11 @@
 from datetime import datetime
 from decimal import Decimal
 from functools import reduce
+from typing import Any
 
 from pydantic import computed_field
 from sqlalchemy import Index, UniqueConstraint
+from sqlalchemy.dialects.postgresql import JSONB
 from sqlmodel import Field, Relationship, SQLModel
 
 from solesearch_api.models.base import TimestampedModel
@@ -28,9 +30,11 @@ class Sneaker(SneakerBase, TimestampedModel, table=True):
         Index("ix_sneaker_sku_brand", "sku", "brand"),
     )
     id: int | None = Field(default=None, primary_key=True)
+    last_observed: datetime | None = None
     stockx_id: str | None = None
     stadium_goods_id: str | None = None
     source: Platform | None = None
+    meta: dict = Field(sa_type=JSONB, default_factory=dict)
 
     # Relationships
     links: list["Link"] = Relationship(back_populates="sneaker", cascade_delete=True)
@@ -38,6 +42,9 @@ class Sneaker(SneakerBase, TimestampedModel, table=True):
     sizes: list["SneakerSize"] = Relationship(
         back_populates="sneaker",
         cascade_delete=True,
+    )
+    nike_launches: list["NikeLaunch"] = Relationship(
+        back_populates="sneaker", cascade_delete=True
     )
 
     def get_links(self) -> list[str]:
@@ -109,31 +116,38 @@ class PaginatedSneakersPublic(SQLModel):
 
 class SneakerSize(TimestampedModel, table=True):
     __table_args__ = (
-        UniqueConstraint("sneaker_id", "value"),
-        Index("ix_sneaker_id_value", "sneaker_id", "value"),
+        UniqueConstraint("sneaker_id", "value", "size_standard"),
+        Index(
+            "ix_sneaker_id_value_size_standard",
+            "sneaker_id",
+            "value",
+            "size_standard",
+        ),
     )
     id: int | None = Field(default=None, primary_key=True)
-    value: int
+    value: str
+    size_standard: SizeStandard
+    meta: dict = Field(sa_type=JSONB, default_factory=dict)
 
     sneaker_id: int | None = Field(default=None, foreign_key="sneaker.id")
     sneaker: Sneaker | None = Relationship(back_populates="sizes")
 
     prices: list["Price"] = Relationship(back_populates="sneaker_size")
 
-    def get_standardized(self, size_standard: SizeStandard = SizeStandard.MENS_US):
-        if size_standard == SizeStandard.MENS_US:
-            return self.value
 
-
-class Price(TimestampedModel, table=True):
+class Price(SQLModel, table=True):
+    # Ordered by last_observed timestamp
     __table_args__ = (
-        UniqueConstraint("sneaker_size_id", "platform"),
         Index("ix_sneaker_size_id_platform", "sneaker_size_id", "platform"),
+        Index("ix_amount", "amount"),
+        Index("ix_last_observed", "last_observed"),
+        Index("ix_first_observed", "first_observed"),
     )
     id: int | None = Field(default=None, primary_key=True)
     platform: Platform | None = None
     amount: int  # Monetary values stored as US cents
-    observed_at: datetime | None = None
+    first_observed: datetime | None = None
+    last_observed: datetime | None = None
 
     sneaker_size_id: int | None = Field(default=None, foreign_key="sneakersize.id")
     sneaker_size: SneakerSize | None = Relationship(back_populates="prices")
@@ -141,10 +155,6 @@ class Price(TimestampedModel, table=True):
     @property
     def in_dollars(self) -> Decimal:
         return Decimal(self.amount) / 100
-
-    @property
-    def for_size(self) -> int:
-        return self.sneaker_size.value
 
 
 class Link(TimestampedModel, table=True):
@@ -173,3 +183,26 @@ class Image(TimestampedModel, table=True):
 
     sneaker_id: int | None = Field(default=None, foreign_key="sneaker.id")
     sneaker: Sneaker | None = Relationship(back_populates="images")
+
+
+class NikeLaunch(SQLModel, table=True):
+    __table_args__ = (
+        UniqueConstraint("product_id", "launch_id"),
+        Index("ix_product_id_launch_id", "product_id", "launch_id"),
+    )
+    id: int | None = Field(default=None, primary_key=True)
+
+    sneaker_id: int | None = Field(default=None, foreign_key="sneaker.id")
+    sneaker: Sneaker | None = Relationship(back_populates="nike_launches")
+
+    launch_id: str
+    product_id: str
+    launch_method: str | None = None
+    payment_method: str | None = None
+    launch_link: str | None = None
+    start_entry_date: datetime | None = None
+    stop_entry_date: datetime | None = None
+    stop_notify_date: datetime | None = None
+    merch_product_status: str | None = None
+    is_launch_product: bool | None = None
+    last_observed: datetime | None = None

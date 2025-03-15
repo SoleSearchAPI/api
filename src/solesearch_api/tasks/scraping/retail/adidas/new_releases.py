@@ -1,7 +1,6 @@
+import logging
 import re
 from datetime import datetime, timezone
-
-import logfire
 
 from solesearch_api.models.enums import Platform
 from solesearch_api.models.sneaker import Image, Link, Sneaker
@@ -9,6 +8,8 @@ from solesearch_api.tasks.db.base import create_or_update_sneaker
 from solesearch_api.tasks.scraping.retail.adidas.base import AdidasScrapingTask
 from solesearch_api.tasks.scraping.task_registry import register_scraping_task
 from solesearch_api.utils.extractors import next_json_extractor
+
+logger = logging.getLogger(__name__)
 
 
 class AdidasNewReleasesScrapingTask(AdidasScrapingTask):
@@ -35,7 +36,7 @@ class AdidasNewReleasesScrapingTask(AdidasScrapingTask):
     def json_to_sneaker(self, data: dict) -> Sneaker | None:
         sku = data.get("id", "").strip()
         if not sku:
-            logfire.warning(f"No SKU found for {self.brand} product: {data}")
+            logger.warning(f"No SKU found for {self.brand} product: {data}")
             return None
 
         release_date = data.get("preview_to", "").strip()
