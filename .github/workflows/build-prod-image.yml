@@ -26,6 +26,9 @@ jobs:
         id: get_version
         run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
 
+      - name: Create .env file from secret
+        run: echo "${{ secrets.PRODUCTION_ENV_FILE }}" > .env
+
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
