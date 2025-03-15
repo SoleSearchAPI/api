@@ -1,15 +1,16 @@
-services:
+version: "3.8"
 
+services:
   api:
     container_name: solesearch_api
     image: peterrauscher/solesearch-api:latest
-    depends_on:
-      - db
-      - redis
     volumes:
       - ~/solesearch/api/data:/var/data/solesearch
     networks:
       - solesearch_network
+    depends_on:
+      - db
+      - redis
     restart: always
     env_file:
       - ".env"
@@ -18,14 +19,14 @@ services:
     container_name: solesearch_worker
     image: peterrauscher/solesearch-api:latest
     command: celery -A solesearch_api.tasks worker --loglevel=info
-    depends_on:
-      - api
-      - redis
-      - rabbitmq
     volumes:
       - ~/solesearch/api/data:/var/data/solesearch
     networks:
       - solesearch_network
+    depends_on:
+      - api
+      - redis
+      - rabbitmq
     restart: always
     env_file:
       - ".env"
@@ -34,34 +35,34 @@ services:
     container_name: solesearch_beat
     image: peterrauscher/solesearch-api:latest
     command: celery -A solesearch_api.tasks beat --loglevel=info
-    depends_on:
-      - api
-      - redis
-      - rabbitmq
     volumes:
       - ~/solesearch/api/data:/var/data/solesearch
     networks:
       - solesearch_network
+    depends_on:
+      - api
+      - redis
+      - rabbitmq
     restart: always
     env_file:
       - ".env"
 
   db:
-    image: postgres:16-alpine
     container_name: solesearch_db
-    env_file:
-      - ".env"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
+    image: postgres:16-alpine
     ports:
       - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
     networks:
       - solesearch_network
     restart: always
+    env_file:
+      - ".env"
 
   redis:
-    image: redis:alpine
     container_name: solesearch_redis
+    image: redis:alpine
     volumes:
       - redis_data:/data
     networks:
@@ -69,8 +70,8 @@ services:
     restart: always
 
   rabbitmq:
-    image: rabbitmq:management-alpine
     container_name: solesearch_rabbitmq
+    image: rabbitmq:management-alpine
     ports:
       - "15672:15672"
     networks:
@@ -89,11 +90,13 @@ services:
       - ./nginx/templates:/etc/nginx/templates
       - ./nginx/certbot/etc/letsencrypt:/etc/letsencrypt
       - ./nginx/certbot/var/www/certbot:/var/www/certbot
-    depends_on:
-      - api
     networks:
       - solesearch_network
+    depends_on:
+      - api
     restart: always
+    env_file:
+      - ".env"
 
   certbot:
     image: certbot/certbot:latest
