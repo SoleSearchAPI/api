@@ -9,7 +9,7 @@ class AdidasScrapingTask(BaseScrapingTask):
             audience_mapping={
                 "M": Audience.MEN,
                 "W": Audience.WOMEN,
-                "K": Audience.YOUTH,
+                "K": Audience.GRADE_SCHOOL,
                 "U": Audience.UNISEX,
             },
             headers={

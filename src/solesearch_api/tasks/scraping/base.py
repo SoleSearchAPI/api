@@ -5,7 +5,7 @@ import time
 from datetime import datetime
 from typing import Callable
 
-import logfire
+import logging
 import requests
 from requests.adapters import HTTPAdapter
 from sqlmodel import Session
@@ -15,6 +15,8 @@ from solesearch_api.config import HTML_DIR, JSON_DIR
 from solesearch_api.db import engine
 from solesearch_api.models.enums import Audience
 from solesearch_api.utils.browser import get_default_browser_headers
+
+logger = logging.getLogger(__name__)
 
 
 class MisconfigurationError(ValueError):
@@ -52,7 +54,7 @@ class BaseScrapingTask:
 
     def guess_audience(self, gender: str | list[str]) -> Audience:
         if gender not in self.audience_mapping:
-            logfire.warning(
+            logger.warning(
                 f"'{gender}' not in {self.__class__.__name__} audience_mapping",
             )
         return self.audience_mapping.get(gender, Audience.UNKNOWN)

@@ -11,16 +11,19 @@ class Platform(str, Enum):
 
 class Audience(str, Enum):
     UNISEX = "Unisex"
-    MEN = "Men"
-    WOMEN = "Women"
-    YOUTH = "Youth"
+    MEN = "Mens"
+    WOMEN = "Womens"
+    GRADE_SCHOOL = "Grade School"
+    PRESCHOOL = "Preschool"
     TODDLER = "Toddler"
+    YOUTH = "Youth"
     UNKNOWN = "Unknown"
 
 
 class SizeStandard(str, Enum):
     MENS_US = "mens_US"
     WOMENS_US = "womens_US"
+    KIDS_US = "kids_US"
 
 
 class SneakerSortKey(str, Enum):
