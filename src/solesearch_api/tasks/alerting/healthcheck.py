@@ -7,6 +7,7 @@ from solesearch_api.config import (
     AWS_HEALTHCHECK_URL,
     AWS_SECRET_ACCESS_KEY,
     AWS_REGION,
+    ENVIRONMENT,
 )
 from solesearch_api.tasks import app
 
@@ -22,6 +23,8 @@ auth = AWS4Auth(
 
 @app.task(name="solesearch_api.tasks.alerting.healthcheck")
 def healthcheck():
+    if not ENVIRONMENT == "production":
+        return
     response = requests.post(
         AWS_HEALTHCHECK_URL,
         json={"ping": True},

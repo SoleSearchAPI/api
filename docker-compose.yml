@@ -1,94 +1,93 @@
 services:
   api:
-    build: .
-    container_name: sneakers_api
-    working_dir: /app
+    build:
+      context: .
+      args:
+        - ENVIRONMENT=development
+    container_name: solesearch_api
     depends_on:
       - db
       - redis
-    ports:
-      - "8000:8000"
-      - "5678:5678"
     volumes:
-      - ~/data/solesearch:/var/data/solesearch
+      - ~/solesearch/api/data:/var/data/solesearch
     networks:
-      - sneakers_network
+      - solesearch_network
     restart: always
     env_file:
       - ".env"
 
   celery_worker:
-    build: .
-    container_name: sneakers_worker
-    working_dir: /app
-    command: ["sh", "-c", "pip install debugpy -t /tmp && python /tmp/debugpy --listen 0.0.0.0:6900 -m celery -A solesearch_api.tasks worker --loglevel=info"]
+    build:
+      context: .
+      args:
+        - ENVIRONMENT=development
+    container_name: solesearch_worker
+    command: celery -A solesearch_api.tasks worker --loglevel=info
     depends_on:
       - api
       - redis
       - rabbitmq
-    ports:
-      - "6900:6900"
     volumes:
-      - ~/data/solesearch:/var/data/solesearch
+      - ~/solesearch/api/data:/var/data/solesearch
     networks:
-      - sneakers_network
+      - solesearch_network
     restart: always
     env_file:
       - ".env"
 
   celery_beat:
-    build: .
-    container_name: sneakers_beat
+    build:
+      context: .
+      args:
+        - ENVIRONMENT=development
+    container_name: solesearch_beat
     command: celery -A solesearch_api.tasks beat --loglevel=info
     depends_on:
       - api
       - redis
       - rabbitmq
     volumes:
-      - ~/data/solesearch:/var/data/solesearch
+      - ~/solesearch/api/data:/var/data/solesearch
     networks:
-      - sneakers_network
+      - solesearch_network
     restart: always
     env_file:
       - ".env"
 
   db:
     image: postgres:16-alpine
-    container_name: sneakers_db
-    environment:
-      POSTGRES_DB: Sneakers
-      POSTGRES_USER: solesearch
-      POSTGRES_PASSWORD: solesearch
+    container_name: solesearch_db
+    env_file:
+      - ".env"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     networks:
-      - sneakers_network
+      - solesearch_network
     restart: always
 
   redis:
     image: redis:alpine
-    container_name: sneakers_redis
-    ports:
-      - "6379:6379"
+    container_name: solesearch_redis
     volumes:
       - redis_data:/data
+    ports:
+      - "6379:6379"
     networks:
-      - sneakers_network
+      - solesearch_network
     restart: always
 
   rabbitmq:
-    image: rabbitmq:alpine
-    container_name: sneakers_rabbitmq
+    image: rabbitmq:management-alpine
+    container_name: solesearch_rabbitmq
     ports:
-      - "5672:5672"
+      - "15672:15672"
     networks:
-      - sneakers_network
-    environment:
-      - RABBITMQ_DEFAULT_USER=solesearch
-      - RABBITMQ_DEFAULT_PASS=solesearch
+      - solesearch_network
     restart: always
+    env_file:
+      - ".env"
 
 volumes:
   postgres_data:
@@ -96,5 +95,5 @@ volumes:
 
 
 networks:
-  sneakers_network:
+  solesearch_network:
     driver: bridge

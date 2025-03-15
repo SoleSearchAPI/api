@@ -15,9 +15,19 @@ RUN pip install --no-cache-dir poetry
 # Copy only requirements to cache them in docker layer
 COPY pyproject.toml poetry.lock* ./
 
+# Add build argument with default value
+ARG ENVIRONMENT=development
+
+# Set environment variable from build arg
+ENV ENVIRONMENT=${ENVIRONMENT}
+
 # Project initialization
 RUN poetry config virtualenvs.create false \
-    && poetry install --only main --no-interaction --no-ansi --no-root
+    && if [ "$ENVIRONMENT" = "development" ]; then \
+    poetry install --with dev --no-interaction --no-ansi --no-root; \
+    else \
+    poetry install --only main --no-interaction --no-ansi --no-root; \
+    fi
 
 # Copy the project
 COPY .env ./
@@ -30,4 +40,8 @@ ENV PYTHONPATH=/app/src:$PYTHONPATH
 EXPOSE 8000
 
 # Command to run the application
-CMD ["poetry", "run", "debugpy", "--listen", "0.0.0.0:5678", "-m", "uvicorn", "--reload", "src.solesearch_api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD if [ "$ENVIRONMENT" = "development" ]; then \
+    poetry run debugpy --listen 0.0.0.0:5678 -m uvicorn --reload src.solesearch_api.main:app --host 0.0.0.0 --port 8000; \
+    else \
+    poetry run uvicorn src.solesearch_api.main:app --host 0.0.0.0 --port 8000; \
+    fi

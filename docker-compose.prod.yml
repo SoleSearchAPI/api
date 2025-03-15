@@ -1,0 +1,126 @@
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: solesearch_nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/templates:/etc/nginx/templates
+      - ./nginx/certbot/etc/letsencrypt:/etc/letsencrypt
+      - ./nginx/certbot/var/www/certbot:/var/www/certbot
+    depends_on:
+      - api
+    networks:
+      - solesearch_network
+    restart: always
+
+  certbot:
+    image: certbot/certbot:latest
+    container_name: solesearch_certbot
+    command: certonly --reinstall --webroot --webroot-path=/var/www/certbot --email ${EMAIL} --agree-tos --no-eff-email -d ${DOMAIN}
+    volumes:
+      - ./nginx/certbot/etc/letsencrypt:/etc/letsencrypt
+      - ./nginx/certbot/var/www/certbot:/var/www/certbot
+    depends_on:
+      - nginx
+    restart: unless-stopped
+    env_file:
+      - ".env"
+
+  api:
+    build:
+      context: .
+      args:
+        - ENVIRONMENT=production
+    container_name: solesearch_api
+    depends_on:
+      - db
+      - redis
+    volumes:
+      - ~/solesearch/api/data:/var/data/solesearch
+    networks:
+      - solesearch_network
+    restart: always
+    env_file:
+      - ".env"
+
+  celery_worker:
+    build:
+      context: .
+      args:
+        - ENVIRONMENT=production
+    container_name: solesearch_worker
+    command: celery -A solesearch_api.tasks worker --loglevel=info
+    depends_on:
+      - api
+      - redis
+      - rabbitmq
+    volumes:
+      - ~/solesearch/api/data:/var/data/solesearch
+    networks:
+      - solesearch_network
+    restart: always
+    env_file:
+      - ".env"
+
+  celery_beat:
+    build:
+      context: .
+      args:
+        - ENVIRONMENT=production
+    container_name: solesearch_beat
+    command: celery -A solesearch_api.tasks beat --loglevel=info
+    depends_on:
+      - api
+      - redis
+      - rabbitmq
+    volumes:
+      - ~/solesearch/api/data:/var/data/solesearch
+    networks:
+      - solesearch_network
+    restart: always
+    env_file:
+      - ".env"
+
+  db:
+    image: postgres:16-alpine
+    container_name: solesearch_db
+    env_file:
+      - ".env"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - solesearch_network
+    restart: always
+
+  redis:
+    image: redis:alpine
+    container_name: solesearch_redis
+    volumes:
+      - redis_data:/data
+    networks:
+      - solesearch_network
+    restart: always
+
+  rabbitmq:
+    image: rabbitmq:management-alpine
+    container_name: solesearch_rabbitmq
+    ports:
+      - "15672:15672"
+    networks:
+      - solesearch_network
+    restart: always
+    env_file:
+      - ".env"
+
+volumes:
+  postgres_data:
+  redis_data:
+
+
+networks:
+  solesearch_network:
+    driver: bridge
