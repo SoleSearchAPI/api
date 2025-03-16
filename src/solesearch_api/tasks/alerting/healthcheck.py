@@ -13,12 +13,13 @@ from solesearch_api.tasks import app
 
 logger = logging.getLogger(__name__)
 
-auth = AWS4Auth(
-    AWS_ACCESS_KEY_ID,
-    AWS_SECRET_ACCESS_KEY,
-    AWS_REGION,
-    "execute-api",
-)
+if ENVIRONMENT == "production":
+    auth = AWS4Auth(
+        AWS_ACCESS_KEY_ID,
+        AWS_SECRET_ACCESS_KEY,
+        AWS_REGION,
+        "execute-api",
+    )
 
 
 @app.task(name="solesearch_api.tasks.alerting.healthcheck")

@@ -11,6 +11,7 @@ from fastapi.responses import RedirectResponse
 from fastapi_pagination import add_pagination
 from starlette.middleware.sessions import SessionMiddleware
 
+from solesearch_api.config import ENVIRONMENT
 from solesearch_api.db import initialize_db
 from solesearch_api.routes import auth, scrape, sneakers
 
@@ -38,7 +39,7 @@ app = FastAPI(
 )
 
 # Configure Logfire
-logfire.configure()
+logfire.configure(environment=ENVIRONMENT)
 logfire.instrument_fastapi(app)
 logger = logging.getLogger(__name__)
 

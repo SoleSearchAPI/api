@@ -1,38 +1,33 @@
 import os
 
-DB_URL = os.environ.get("DB_CONNECTION_STRING")
+REQUIRED_PROD_ENV_VARS = [
+    "LOGFIRE_TOKEN",
+    "DB_CONNECTION_STRING",
+    "CELERY_BROKER_URL",
+    "CELERY_RESULT_BACKEND",
+    "AWS_HEALTHCHECK_URL",
+    "AWS_ACCESS_KEY_ID",
+    "AWS_SECRET_ACCESS_KEY",
+    "AWS_REGION",
+]
 
-if not DB_URL:
-    raise OSError("DB_CONNECTION_STRING environment variable not set.")
-
-CELERY_BROKER = os.environ.get("CELERY_BROKER_URL")
-
-if not CELERY_BROKER:
-    raise OSError("CELERY_BROKER_URL environment variable not set.")
-
-CELERY_BACKEND = os.environ.get("CELERY_RESULT_BACKEND")
-
-if not CELERY_BACKEND:
-    raise OSError("CELERY_RESULT_BACKEND environment variable not set.")
-
-ENVIRONMENT = os.environ.get("ENVIRONMENT")
-
-if not ENVIRONMENT:
+if not os.environ.get("ENVIRONMENT"):
     raise OSError("ENVIRONMENT environment variable not set.")
+
+if os.environ.get("ENVIRONMENT") == "prod":
+    for var in REQUIRED_PROD_ENV_VARS:
+        if not os.environ.get(var):
+            raise OSError(f"{var} environment variable not set.")
+
+DB_URL = os.environ.get("DB_CONNECTION_STRING")
+CELERY_BROKER = os.environ.get("CELERY_BROKER_URL")
+CELERY_BACKEND = os.environ.get("CELERY_RESULT_BACKEND")
+ENVIRONMENT = os.environ.get("ENVIRONMENT")
 
 AWS_HEALTHCHECK_URL = os.environ.get("AWS_HEALTHCHECK_URL")
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 AWS_REGION = os.environ.get("AWS_REGION", "us-east-1")
-
-if not AWS_HEALTHCHECK_URL:
-    raise OSError("AWS_HEALTHCHECK_URL environment variable not set.")
-
-if not AWS_ACCESS_KEY_ID:
-    raise OSError("AWS_ACCESS_KEY_ID environment variable not set.")
-
-if not AWS_SECRET_ACCESS_KEY:
-    raise OSError("AWS_SECRET_ACCESS_KEY environment variable not set.")
 
 DATA_DIR = "/var/data/solesearch"
 HTML_DIR = os.path.join(DATA_DIR, "html")
