@@ -1,5 +1,12 @@
-from solesearch_api.models.enums import Audience
+from datetime import datetime, timezone
+import logging
+import re
+from solesearch_api.models.enums import Audience, Platform
+from solesearch_api.models.sneaker import Image, Link, Sneaker
+from solesearch_api.tasks.db.base import create_or_update_sneaker
 from solesearch_api.tasks.scraping.base import BaseScrapingTask
+
+logger = logging.getLogger(__name__)
 
 
 class AdidasScrapingTask(BaseScrapingTask):
@@ -13,19 +20,21 @@ class AdidasScrapingTask(BaseScrapingTask):
                 "U": Audience.UNISEX,
             },
             headers={
-                "sec-ch-ua": '"Chromium";v="122", "Not(A:Brand";v="24", "Google Chrome";v="122"',
-                "sec-ch-ua-mobile": "?0",
-                "sec-ch-ua-platform": '"macOS"',
-                "DNT": "1",
-                "Origin": "https://www.adidas.com",
-                "Host": "www.adidas.com",
-                "Sec-Fetch-Site": "same-origin",
-                "Sec-Fetch-Mode": "navigate",
-                "Sec-Fetch-User": "?1",
-                "Sec-Fetch-Dest": "document",
-                "Accept-Language": "en-US,en;q=0.9",
-                "Accept-Encoding": "gzip, deflate, br",
-                "Cookie": "geo_country=US; geo_state=CA",
+                "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+                "accept-language": "en-US,en;q=0.9",
+                "cache-control": "max-age=0",
+                "priority": "u=0, i",
+                "sec-ch-ua": '"Chromium";v="134", "Not:A-Brand";v="24", "Brave";v="134"',
+                "sec-ch-ua-mobile": "?1",
+                "sec-ch-ua-platform": '"Android"',
+                "sec-fetch-dest": "document",
+                "sec-fetch-mode": "navigate",
+                "sec-fetch-site": "same-origin",
+                "sec-fetch-user": "?1",
+                "sec-gpc": "1",
+                "upgrade-insecure-requests": "1",
+                "Referer": "https://www.adidas.com/us/shoes",
+                "Referrer-Policy": "strict-origin-when-cross-origin",
             },
             *args,
             **kwargs,

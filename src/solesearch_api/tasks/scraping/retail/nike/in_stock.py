@@ -5,11 +5,9 @@ from solesearch_api.utils.extractors import next_json_extractor
 
 
 class NikeInStockScrapingTask(BaseScrapingTask):
-    name = "solesearch_api.tasks.scraping.NikeInStockScrapingTask"
-
     def __init__(self):
         super().__init__(
-            brand="NikeInStock",
+            brand="Nike",
             download_url="https://www.nike.com/launch?s=in-stock",
             audience_mapping={
                 "M": Audience.MEN,
@@ -23,4 +21,4 @@ class NikeInStockScrapingTask(BaseScrapingTask):
         return json_data
 
 
-nike_instock_scraping_task = register_scraping_task(NikeInStockScrapingTask)
+nike_in_stock_scraping_task = register_scraping_task(NikeInStockScrapingTask)

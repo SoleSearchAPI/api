@@ -1,6 +1,6 @@
+from datetime import datetime, timezone
 import logging
 import re
-from datetime import datetime, timezone
 
 from solesearch_api.models.enums import Platform
 from solesearch_api.models.sneaker import Image, Link, Sneaker
@@ -13,8 +13,6 @@ logger = logging.getLogger(__name__)
 
 
 class AdidasNewReleasesScrapingTask(AdidasScrapingTask):
-    name = "solesearch_api.tasks.scraping.retail.adidas.new_releases"
-
     def __init__(self, *args, **kwargs):
         super().__init__(
             download_url="https://www.adidas.com/us/release-dates",
@@ -57,7 +55,7 @@ class AdidasNewReleasesScrapingTask(AdidasScrapingTask):
             sku=sku,
             parent_sku=data.get("model_number"),
             audience=self.guess_audience(data.get("attribute_list", {}).get("gender")),
-            release_date=data.get("release_date"),
+            release_date=release_date,
             retail_price=price,
         )
 

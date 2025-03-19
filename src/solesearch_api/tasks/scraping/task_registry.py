@@ -16,11 +16,7 @@ def register_scraping_task(task_class, name=None):
     """
     task_instance = task_class()
     # Use the name attribute from the class if available, otherwise use the class name
-    task_name = name or getattr(
-        task_class,
-        "name",
-        f"solesearch_api.tasks.scraping.{task_class.__name__}",
-    )
+    task_name = name or f"solesearch_api.tasks.scraping.{task_class.__name__}"
 
     @app.task(name=task_name, bind=True)
     @wraps(task_instance.run)
