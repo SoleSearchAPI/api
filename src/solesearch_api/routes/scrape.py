@@ -1,9 +1,11 @@
 from celery.result import AsyncResult
 from fastapi import APIRouter, HTTPException, Request
 
-from solesearch_api.tasks.scraping import adidas_new_releases_task
-from solesearch_api.tasks.scraping import nike_scraping_task
-from solesearch_api.tasks.scraping import nike_instock_scraping_task
+from solesearch_api.tasks.scraping import (
+    adidas_new_releases_task,
+    nike_instock_scraping_task,
+    nike_scraping_task,
+)
 
 router = APIRouter(
     prefix="/scrape",

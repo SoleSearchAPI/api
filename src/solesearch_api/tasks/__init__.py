@@ -51,5 +51,5 @@ app.conf.beat_schedule = {
     },
 }
 
+import solesearch_api.tasks.alerting
 import solesearch_api.tasks.scraping
-import solesearch_api.tasks.alerting.healthcheck
