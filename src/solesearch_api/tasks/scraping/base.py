@@ -1,11 +1,11 @@
 import json
+import logging
 import os
 import random
 import time
 from datetime import datetime
 from typing import Callable
 
-import logging
 import requests
 from requests.adapters import HTTPAdapter
 from sqlmodel import Session

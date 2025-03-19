@@ -1,5 +1,4 @@
-import re
-from datetime import UTC, datetime
+from datetime import datetime
 from zoneinfo import ZoneInfo
 
 import logfire
@@ -9,7 +8,6 @@ from solesearch_api.models.sneaker import (
     Image,
     Link,
     NikeLaunch,
-    Price,
     Sneaker,
     SneakerSize,
 )
@@ -289,23 +287,22 @@ class NikeScrapingTask(BaseScrapingTask):
                 # First, check for 1st-level cards that are images and see if any productIds match
                 position = 0
                 for card in thread["cards"]:
-                    if card["subType"] == "image":
-                        if card.get("actions"):
-                            # if any action has a productId that matches the current productId, use this image
-                            for action in card["actions"]:
-                                if action["product"]["productId"] == product_id:
-                                    if card.get("imageId") and card.get("imageSlug"):
-                                        image_url = f"https://static.nike.com/a/images/{card['imageId']}/{card['imageSlug']}.jpg"
-                                    else:
-                                        image_url = card["defaultURL"]
-                                    sneaker_images.append(
-                                        Image(
-                                            platform=Platform.RETAIL,
-                                            position=position,
-                                            url=image_url,
-                                        ),
-                                    )
-                                    position += 1
+                    if card["subType"] == "image" and card.get("actions"):
+                        # if any action has a productId that matches the current productId, use this image
+                        for action in card["actions"]:
+                            if action["product"]["productId"] == product_id:
+                                if card.get("imageId") and card.get("imageSlug"):
+                                    image_url = f"https://static.nike.com/a/images/{card['imageId']}/{card['imageSlug']}.jpg"
+                                else:
+                                    image_url = card["defaultURL"]
+                                sneaker_images.append(
+                                    Image(
+                                        platform=Platform.RETAIL,
+                                        position=position,
+                                        url=image_url,
+                                    ),
+                                )
+                                position += 1
                 if not sneaker_images:
                     for index, image in enumerate(carousel["cards"]):
                         if image["subType"] == "image":

@@ -1,7 +1,6 @@
 from datetime import datetime
 from decimal import Decimal
 from functools import reduce
-from typing import Any
 
 from pydantic import computed_field
 from sqlalchemy import Index, UniqueConstraint

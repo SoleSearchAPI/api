@@ -10,7 +10,7 @@ USER_AGENTS = [
 
 
 def get_random_user_agent():
-    return random.choice(USER_AGENTS)
+    return random.choice(USER_AGENTS)  # noqa: S311
 
 
 def get_default_browser_headers():
