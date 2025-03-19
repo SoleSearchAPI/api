@@ -73,6 +73,7 @@ class BaseScrapingTask:
         file_path = os.path.join(
             HTML_DIR,
             self.brand,
+            self.__class__.__name__,
             datetime.now().strftime("%Y-%m-%d.html"),
         )
         if os.path.exists(file_path):
@@ -106,6 +107,7 @@ class BaseScrapingTask:
         file_path = os.path.join(
             JSON_DIR,
             self.brand,
+            self.__class__.__name__,
             datetime.now().strftime("%Y-%m-%d.json"),
         )
         if os.path.exists(file_path):

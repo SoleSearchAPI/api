@@ -21,10 +21,8 @@ from solesearch_api.utils.parsing import html_cleaner
 logfire.configure()
 
 
-class NikeScrapingTask(BaseScrapingTask):
+class NikeNewReleasesScrapingTask(BaseScrapingTask):
     # This is the exact name that Celery is looking for
-    name = "solesearch_api.tasks.scraping.NikeScrapingTask"
-
     def __init__(self):
         super().__init__(
             brand="Nike",
@@ -338,4 +336,4 @@ class NikeScrapingTask(BaseScrapingTask):
 
 
 # Replace the class-based task registration with the decorator-based approach
-nike_scraping_task = register_scraping_task(NikeScrapingTask)
+nike_new_releases_task = register_scraping_task(NikeNewReleasesScrapingTask)

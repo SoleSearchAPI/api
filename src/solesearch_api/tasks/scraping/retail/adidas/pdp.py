@@ -11,9 +11,6 @@ logger = logging.getLogger(__name__)
 
 
 class AdidasPDPScrapingTask(AdidasScrapingTask):
-    # This is the name that Celery will look for
-    name = "solesearch_api.tasks.scraping.retail.adidas.pdp"
-
     def __init__(self, *args, **kwargs):
         super().__init__(
             extractor=react_query_data_extractor,

@@ -30,19 +30,27 @@ app = Celery(
 
 app.conf.beat_schedule = {
     "adidas-new-releases-every-4-hours": {
-        "task": "solesearch_api.tasks.scraping.retail.adidas.new_releases",
+        "task": "solesearch_api.tasks.scraping.AdidasNewReleasesScrapingTask",
         "schedule": 4 * 60 * 60,  # every 4 hours
     },
-    "adidas-pdp-every-4-hours": {
-        "task": "solesearch_api.tasks.scraping.retail.adidas.pdp",
+    "adidas-baby-and-toddler-every-4-hours": {
+        "task": "solesearch_api.tasks.scraping.AdidasBabyAndToddlerScrapingTask",
+        "schedule": 4 * 60 * 60,  # every 4 hours
+    },
+    "adidas-children-and-little-kids-every-4-hours": {
+        "task": "solesearch_api.tasks.scraping.AdidasChildrenAndLittleKidsScrapingTask",
+        "schedule": 4 * 60 * 60,  # every 4 hours
+    },
+    "adidas-youth-and-big-kids-every-4-hours": {
+        "task": "solesearch_api.tasks.scraping.AdidasYouthAndBigKidsScrapingTask",
         "schedule": 4 * 60 * 60,  # every 4 hours
     },
     "nike-new-releases-every-4-hours": {
-        "task": "solesearch_api.tasks.scraping.retail.nike.new_releases",
+        "task": "solesearch_api.tasks.scraping.NikeNewReleasesScrapingTask",
         "schedule": 4 * 60 * 60,  # every 4 hours
     },
     "nike-in-stock-every-4-hours": {
-        "task": "solesearch_api.tasks.scraping.retail.nike.in_stock",
+        "task": "solesearch_api.tasks.scraping.NikeInStockScrapingTask",
         "schedule": 4 * 60 * 60,  # every 4 hours
     },
     "healthcheck-every-minute": {
