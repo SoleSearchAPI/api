@@ -68,7 +68,11 @@ def create_or_update_sneaker(
                 link.platform: link.url for link in existing_sneaker.links
             }
             for new_link in sneaker.links:
-                if existing_links.get(new_link.platform) != new_link.url:
+                if existing_links.get(new_link.platform) == new_link.url:
+                    # Skip if we already have this exact link
+                    continue
+                elif new_link.platform in existing_links:
+                    # Log warning if we're trying to add a different URL for the same platform
                     logfire.warning(
                         f"{sneaker.brand} SKU '{sneaker.sku}' already has a link for {new_link.platform}",
                         sneaker_id=existing_sneaker.id,
@@ -78,20 +82,47 @@ def create_or_update_sneaker(
                         new_link=new_link.url,
                     )
                 else:
+                    # Only add if we don't have a link for this platform yet
                     new_link.sneaker = existing_sneaker
                     existing_sneaker.links.append(new_link)
 
             # Add any new images
-            existing_image_urls = {image.url for image in existing_sneaker.images}
+            existing_images = {
+                (image.platform, image.position): image.url
+                for image in existing_sneaker.images
+            }
             for image in sneaker.images:
-                if image.url not in existing_image_urls:
+                key = (image.platform, image.position)
+                if existing_images.get(key) == image.url:
+                    # Skip if we already have this exact image
+                    continue
+                elif key in existing_images:
+                    # Log warning if we're trying to add a different URL for the same platform/position
+                    logfire.warning(
+                        f"{sneaker.brand} SKU '{sneaker.sku}' already has an image for {image.platform} at position {image.position}",
+                        sneaker_id=existing_sneaker.id,
+                        sneaker_sku=sneaker.sku,
+                        sneaker_brand=sneaker.brand,
+                        existing_image=existing_images[key],
+                        new_image=image.url,
+                    )
+                else:
+                    # Only add if we don't have an image for this platform/position yet
                     image.sneaker = existing_sneaker
                     existing_sneaker.images.append(image)
 
             # Add any new sizes
-            existing_size_values = {size.value for size in existing_sneaker.sizes}
+            existing_sizes = {
+                (size.value, size.size_standard): size
+                for size in existing_sneaker.sizes
+            }
             for size in sneaker.sizes:
-                if size.value not in existing_size_values:
+                key = (size.value, size.size_standard)
+                if key in existing_sizes:
+                    # Skip if we already have this size
+                    continue
+                else:
+                    # Only add if we don't have this size yet
                     size.sneaker = existing_sneaker
                     existing_sneaker.sizes.append(size)
 
