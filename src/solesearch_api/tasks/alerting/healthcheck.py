@@ -1,5 +1,3 @@
-import logging
-
 import requests
 from requests_aws4auth import AWS4Auth
 
@@ -11,8 +9,6 @@ from solesearch_api.config import (
     ENVIRONMENT,
 )
 from solesearch_api.tasks import app
-
-logger = logging.getLogger(__name__)
 
 if ENVIRONMENT == "production":
     auth = AWS4Auth(

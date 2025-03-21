@@ -1,6 +1,6 @@
 import logfire
 from celery import Celery
-from celery.signals import beat_init, worker_init
+from celery.signals import worker_init
 
 from solesearch_api.config import CELERY_BACKEND, CELERY_BROKER
 
@@ -11,13 +11,6 @@ class CeleryConfig:
 
 @worker_init.connect()
 def configure_logfire(*args, **kwargs):
-    logfire.configure(service_name="worker")
-    logfire.instrument_celery()
-
-
-@beat_init.connect()
-def init_beat(*args, **kwargs):
-    logfire.configure(service_name="beat")
     logfire.instrument_celery()
 
 

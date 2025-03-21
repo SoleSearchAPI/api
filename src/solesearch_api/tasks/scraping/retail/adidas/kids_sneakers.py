@@ -1,14 +1,12 @@
-from datetime import datetime, timezone
-import logging
 import re
+
+import logfire
 from solesearch_api.models.enums import Audience, Platform
 from solesearch_api.models.sneaker import Image, Link, Sneaker
 from solesearch_api.tasks.db.base import create_or_update_sneaker
 from solesearch_api.tasks.scraping.retail.adidas.base import AdidasScrapingTask
 from solesearch_api.tasks.scraping.task_registry import register_scraping_task
 from solesearch_api.utils.extractors import next_json_extractor
-
-logger = logging.getLogger(__name__)
 
 
 class AdidasYouthBaseScrapingTask(AdidasScrapingTask):
@@ -19,21 +17,20 @@ class AdidasYouthBaseScrapingTask(AdidasScrapingTask):
             **kwargs,
         )
 
-    def scrape(self, session, *args, **kwargs):
+    def scrape(self, *args, **kwargs):
         json_data = self.get_json()
 
         # Process each product in the products array
         for product in json_data.get("products", []):
             sneakers = self.json_to_sneakers(product)
             for sneaker in sneakers:
-                create_or_update_sneaker(session, sneaker)
-        session.commit()
+                create_or_update_sneaker(sneaker)
 
     def json_to_sneakers(self, data: dict) -> list[Sneaker] | None:
         sneakers = []
         sku = data.get("id", "").strip()
         if not sku:
-            logger.warning(f"No SKU found for {self.brand} product: {data}")
+            logfire.warning(f"No SKU found for {self.brand} product: {data}")
             return None
 
         price = data.get("priceData", {}).get("price")
