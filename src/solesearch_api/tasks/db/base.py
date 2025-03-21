@@ -67,19 +67,19 @@ def create_or_update_sneaker(
             existing_links = {
                 link.platform: link.url for link in existing_sneaker.links
             }
-            for platform, link in sneaker.links.items():
-                if existing_links.get(platform) == link.url:
+            for new_link in sneaker.links:
+                if existing_links.get(new_link.platform) != new_link.url:
                     logfire.warning(
-                        f"{sneaker.brand} SKU '{sneaker.sku}' already has a link for {platform}",
+                        f"{sneaker.brand} SKU '{sneaker.sku}' already has a link for {new_link.platform}",
                         sneaker_id=existing_sneaker.id,
                         sneaker_sku=sneaker.sku,
                         sneaker_brand=sneaker.brand,
-                        existing_link=existing_links[platform],
-                        new_link=link.url,
+                        existing_link=existing_links[new_link.platform],
+                        new_link=new_link.url,
                     )
                 else:
-                    link.sneaker = existing_sneaker
-                    existing_sneaker.links.append(link)
+                    new_link.sneaker = existing_sneaker
+                    existing_sneaker.links.append(new_link)
 
             # Add any new images
             existing_image_urls = {image.url for image in existing_sneaker.images}
