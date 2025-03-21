@@ -1,12 +1,5 @@
-from datetime import datetime, timezone
-import logging
-import re
-from solesearch_api.models.enums import Audience, Platform
-from solesearch_api.models.sneaker import Image, Link, Sneaker
-from solesearch_api.tasks.db.base import create_or_update_sneaker
+from solesearch_api.models.enums import Audience
 from solesearch_api.tasks.scraping.base import BaseScrapingTask
-
-logger = logging.getLogger(__name__)
 
 
 class AdidasScrapingTask(BaseScrapingTask):

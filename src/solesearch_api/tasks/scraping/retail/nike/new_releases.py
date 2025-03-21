@@ -18,8 +18,6 @@ from solesearch_api.utils.extractors import next_json_extractor
 from solesearch_api.utils.json import get_from_json
 from solesearch_api.utils.parsing import html_cleaner
 
-logfire.configure()
-
 
 class NikeNewReleasesScrapingTask(BaseScrapingTask):
     # This is the exact name that Celery is looking for
@@ -60,18 +58,13 @@ class NikeNewReleasesScrapingTask(BaseScrapingTask):
             return SizeStandard.WOMENS_US
         return None
 
-    def scrape(self, session, *args, **kwargs):
+    def scrape(self, *args, **kwargs):
         json = self.get_json()
         sneakers = self.json_to_sneakers(json)
         for sneaker in sneakers:
-            create_or_update_sneaker(session, sneaker)
-        session.commit()
+            create_or_update_sneaker(sneaker)
 
     def json_to_sneakers(self, json: dict) -> list[Sneaker]:
-        logfire.info(
-            "Nike JSON scrape complete, converting to sneakers",
-            attributes=json,
-        )
         threads = get_from_json(json, "product.threads.data.items")
         products = get_from_json(json, "product.products.data.items")
         launch_views = get_from_json(json, "product.launchViews.data.items")

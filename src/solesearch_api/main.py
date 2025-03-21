@@ -1,6 +1,5 @@
-__version__ = "2.2.0"
+__version__ = "3.0.0"
 
-import logging
 import os
 
 import logfire
@@ -11,15 +10,11 @@ from fastapi.responses import RedirectResponse
 from fastapi_pagination import add_pagination
 from starlette.middleware.sessions import SessionMiddleware
 
-from solesearch_api.config import ENVIRONMENT
 from solesearch_api.db import initialize_db
 from solesearch_api.routes import auth, scrape, sneakers
 
 desc = """
 ### The Bloomberg Terminal of Sneakers
-- Find product information, from every brand, fast.
-- Never miss another release date.
-- Never buy bricks. Stay ahead of the game with our comprehensive price insights.
 
 [Twitter](https://twitter.com/SoleSearchAPI) | [Github](https://github.com/SoleSearchAPI)
 """
@@ -35,13 +30,12 @@ app = FastAPI(
         "email": "support@solesearch.io",
     },
     description=desc,
-    responses={404: {"description": "Not found"}},  # Custom 404 page
+    responses={404: {"description": "404: Not found"}},  # Custom 404 page
 )
 
 # Configure Logfire
-logfire.configure(environment=ENVIRONMENT)
+logfire.configure(service_name="api")
 logfire.instrument_fastapi(app)
-logger = logging.getLogger(__name__)
 
 # Enable session handling for StocxkX OAuth flow
 app.add_middleware(
@@ -61,15 +55,15 @@ app.add_middleware(
 async def startup_event():
     # Create the database tables
     initialize_db()
-    logger.info("Database initialized")
+    logfire.info("Database initialized")
     # Include all routers
     app.include_router(sneakers.router)
     app.include_router(auth.router)
     app.include_router(scrape.router)
-    logger.info("Routers imported")
+    logfire.info("Routers imported")
     # Load the pagination module
     add_pagination(app)
-    logger.info("Pagination module loaded")
+    logfire.info("Pagination module loaded")
 
 
 @app.get("/docs", include_in_schema=False)

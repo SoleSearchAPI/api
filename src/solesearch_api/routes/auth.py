@@ -1,8 +1,8 @@
-import logging
 import os
 from datetime import UTC, datetime, timedelta
 from urllib.parse import urlparse
 
+import logfire
 import requests
 from fastapi import APIRouter, HTTPException, Request
 from fastapi.responses import RedirectResponse
@@ -80,8 +80,8 @@ async def stockx_oauth_callback(state: str, code: str, request: Request):
                         seconds=int(tokens["expires_in"]) - 30,
                     )
                 await token.save()
-                logging.info(f"Updated {token_type}")
+                logfire.info(f"Updated {token_type}")
         return tokens
     except Exception as e:
-        logging.exception(e)
+        logfire.exception(e)
         raise HTTPException(status_code=500, detail=str(e))

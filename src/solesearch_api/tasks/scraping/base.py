@@ -1,11 +1,11 @@
 import json
-import logging
 import os
 import random
 import time
 from datetime import datetime
 from typing import Callable
 
+import logfire
 import requests
 from requests.adapters import HTTPAdapter
 from sqlmodel import Session
@@ -16,7 +16,7 @@ from solesearch_api.db import engine
 from solesearch_api.models.enums import Audience
 from solesearch_api.utils.browser import get_default_browser_headers
 
-logger = logging.getLogger(__name__)
+logfire.configure(service_name="worker")
 
 
 class MisconfigurationError(ValueError):
@@ -49,12 +49,23 @@ class BaseScrapingTask:
         self.extractor = extractor
 
     def run(self, *args, **kwargs):
-        with Session(engine) as session:
-            return self.scrape(session, *args, **kwargs)
+        logfire.info(
+            "Running scraping task",
+            brand=self.brand,
+            task_name=self.__class__.__name__,
+        )
+        result = self.scrape(*args, **kwargs)
+        logfire.info(
+            "Scraping task completed",
+            brand=self.brand,
+            task_name=self.__class__.__name__,
+            result=result,
+        )
+        return result
 
     def guess_audience(self, gender: str | list[str]) -> Audience:
         if gender not in self.audience_mapping:
-            logger.warning(
+            logfire.warning(
                 f"'{gender}' not in {self.__class__.__name__} audience_mapping",
             )
         return self.audience_mapping.get(gender, Audience.UNKNOWN)
@@ -78,8 +89,13 @@ class BaseScrapingTask:
         )
         if os.path.exists(file_path):
             with open(file_path) as f:
+                logfire.info(
+                    "HTML data loaded from file",
+                    brand=self.brand,
+                    task_name=self.__class__.__name__,
+                    file_path=file_path,
+                )
                 return f.read()
-
         # Create a session with retry strategy
         session = requests.Session()
         retry_strategy = Retry(
@@ -99,8 +115,13 @@ class BaseScrapingTask:
         response = session.get(self.download_url, headers=self.headers, timeout=30)
         response.raise_for_status()
         html = response.text
-
         self.save_to_file(html, file_path)
+        logfire.info(
+            "HTML data saved to file",
+            brand=self.brand,
+            task_name=self.__class__.__name__,
+            file_path=file_path,
+        )
         return html
 
     def get_json(self) -> dict:
@@ -112,8 +133,20 @@ class BaseScrapingTask:
         )
         if os.path.exists(file_path):
             with open(file_path) as f:
+                logfire.info(
+                    "JSON data loaded from file",
+                    brand=self.brand,
+                    task_name=self.__class__.__name__,
+                    file_path=file_path,
+                )
                 return json.load(f)
         html_data = self.get_html()
         json_data = self.extractor(html_data)
         self.save_to_file(json.dumps(json_data, indent=2), file_path)
+        logfire.info(
+            "JSON data saved to file",
+            brand=self.brand,
+            task_name=self.__class__.__name__,
+            file_path=file_path,
+        )
         return json_data
