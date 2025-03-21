@@ -11,6 +11,7 @@ services:
       - "8000:8000"
     volumes:
       - ~/solesearch/api/data:/var/data/solesearch
+      - ~/Code/personal/api/src:/app/src
     networks:
       - solesearch_network
     depends_on:
@@ -26,9 +27,10 @@ services:
       context: .
       args:
         - ENVIRONMENT=development
-    command: celery -A solesearch_api.tasks worker --loglevel=info
+    command: watchmedo auto-restart --directory=./src/solesearch_api --pattern=*.py --recursive -- celery -A solesearch_api.tasks worker --loglevel=info
     volumes:
       - ~/solesearch/api/data:/var/data/solesearch
+      - ~/Code/personal/api/src:/app/src
     networks:
       - solesearch_network
     depends_on:
@@ -45,9 +47,10 @@ services:
       context: .
       args:
         - ENVIRONMENT=development
-    command: celery -A solesearch_api.tasks beat --loglevel=info
+    command: watchmedo auto-restart --directory=./src/solesearch_api --pattern=*.py --recursive -- celery -A solesearch_api.tasks beat --loglevel=info
     volumes:
       - ~/solesearch/api/data:/var/data/solesearch
+      - ~/Code/personal/api/src:/app/src
     networks:
       - solesearch_network
     depends_on:
