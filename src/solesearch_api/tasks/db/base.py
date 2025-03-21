@@ -1,6 +1,7 @@
 import logfire
 from sqlmodel import Session, select
 
+from solesearch_api.models.enums import Platform
 from solesearch_api.models.sneaker import Sneaker
 from solesearch_api.db import engine
 
@@ -63,9 +64,20 @@ def create_or_update_sneaker(
             )
 
             # Add any new links
-            existing_link_urls = {link.url for link in existing_sneaker.links}
-            for link in sneaker.links:
-                if link.url not in existing_link_urls:
+            existing_links = {
+                link.platform: link.url for link in existing_sneaker.links
+            }
+            for platform, link in sneaker.links.items():
+                if existing_links.get(platform) == link.url:
+                    logfire.warning(
+                        f"{sneaker.brand} SKU '{sneaker.sku}' already has a link for {platform}",
+                        sneaker_id=existing_sneaker.id,
+                        sneaker_sku=sneaker.sku,
+                        sneaker_brand=sneaker.brand,
+                        existing_link=existing_links[platform],
+                        new_link=link.url,
+                    )
+                else:
                     link.sneaker = existing_sneaker
                     existing_sneaker.links.append(link)
 
