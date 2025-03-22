@@ -271,7 +271,7 @@ class NikeNewReleasesScrapingTask(BaseScrapingTask):
                     platform=Platform.RETAIL,
                     url=url,
                 )
-                sneaker.links = [sneaker_link]
+                sneaker.sneaker_links = [sneaker_link]
 
                 sneaker_images = []
 
@@ -308,7 +308,7 @@ class NikeNewReleasesScrapingTask(BaseScrapingTask):
                                     url=image_url,
                                 ),
                             )
-                sneaker.images = sneaker_images
+                sneaker.sneaker_images = sneaker_images
 
                 size_standard = self.guess_size_standard(sneaker.audience)
                 if not size_standard:
@@ -322,7 +322,7 @@ class NikeNewReleasesScrapingTask(BaseScrapingTask):
                         sneaker_size = SneakerSize(
                             value=size_value, size_standard=size_standard, meta=size
                         )
-                        sneaker.sizes.append(sneaker_size)
+                        sneaker.sneaker_sizes.append(sneaker_size)
 
                 sneakers.append(sneaker)
         return sneakers

@@ -62,7 +62,7 @@ class AdidasNewReleasesScrapingTask(AdidasScrapingTask):
                 url=f"https://www.adidas.com{sneaker_slug}",
                 platform=Platform.RETAIL,
             )
-            sneaker.links.append(sneaker_link)
+            sneaker.sneaker_links.append(sneaker_link)
 
         for index, image in enumerate(data.get("images", [])):
             image_url = re.sub(r"images/[^/]+/", "images/", image.get("src"))
@@ -73,7 +73,7 @@ class AdidasNewReleasesScrapingTask(AdidasScrapingTask):
                 position=position,
                 url=image_url,
             )
-            sneaker.images.append(image)
+            sneaker.sneaker_images.append(image)
 
         return sneaker
 
