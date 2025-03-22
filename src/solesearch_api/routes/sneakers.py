@@ -79,7 +79,7 @@ async def get_sneakers(
             description="The order to sort in based on the sort key.",
         ),
     ] = SortOrder.DESCENDING,
-) -> Page[Sneaker]:
+) -> Page[SneakerPublic]:
     # set_items_transformer(sneaker_to_public)
     query = select(Sneaker)
 
@@ -125,7 +125,7 @@ async def get_sneakers(
 
 @router.get("/{product_id}", response_model=SneakerPublic)
 async def get_sneaker_by_id(*, db: Session = Depends(get_session), product_id: int):
-    sneaker = db.get(Sneaker, product_id)
+    sneaker = db.exec(select(Sneaker).where(Sneaker.id == product_id)).first()
     if not sneaker:
         raise HTTPException(status_code=404, detail="Sneaker not found")
     return sneaker

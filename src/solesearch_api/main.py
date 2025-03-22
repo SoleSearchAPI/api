@@ -80,3 +80,67 @@ async def swagger_ui_html():
 @app.get("/", include_in_schema=False)
 def redirect_to_docs():
     return RedirectResponse(url="/docs")
+
+
+@app.get("/investigate", include_in_schema=False)
+async def investigate_url(url: str, extractor_type: str = "next_json_extractor"):
+    """
+    Endpoint to trigger an investigation download for any URL.
+    This will download the HTML and JSON data and store it in the Investigation folder.
+
+    Args:
+        url: The URL to investigate
+        extractor_type: Type of extractor to use (default: "json")
+    """
+    try:
+        # Import the appropriate extractor
+        # This should be equivalent to:
+        # from solesearch_api.utils.extractors import next_json_extractor as extractor
+        import solesearch_api.utils.extractors as extractor_module
+
+        extractor = getattr(extractor_module, extractor_type)
+
+        # Create an instance of the investigation task
+        from solesearch_api.tasks.scraping.investigation import GenericInvestigationTask
+
+        task_instance = GenericInvestigationTask(
+            url=url,
+            extractor=extractor,
+            headers={
+                "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+                "accept-language": "en-US,en;q=0.9",
+                "cache-control": "max-age=0",
+                "priority": "u=0, i",
+                "sec-ch-ua": '"Chromium";v="134", "Not:A-Brand";v="24", "Brave";v="134"',
+                "sec-ch-ua-mobile": "?1",
+                "sec-ch-ua-platform": '"Android"',
+                "sec-fetch-dest": "document",
+                "sec-fetch-mode": "navigate",
+                "sec-fetch-site": "same-origin",
+                "sec-fetch-user": "?1",
+                "sec-gpc": "1",
+                "upgrade-insecure-requests": "1",
+                "Referer": "https://www.adidas.com/us/shoes",
+                "Referrer-Policy": "strict-origin-when-cross-origin",
+            },
+        )
+
+        # Force download of HTML and JSON
+        json_data = task_instance.get_json()
+
+        return {
+            "status": "success",
+            "message": f"Investigation data downloaded for URL: {url}",
+            "json_size": len(str(json_data)),
+        }
+    except Exception as e:
+        logfire.error(
+            "Failed to download investigation data",
+            url=url,
+            extractor_type=extractor_type,
+            error=str(e),
+        )
+        return {
+            "status": "error",
+            "message": f"Failed to download investigation data: {str(e)}",
+        }

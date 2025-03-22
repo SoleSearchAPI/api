@@ -6,6 +6,8 @@ from solesearch_api.tasks.scraping import (
     adidas_children_and_little_kids_task,
     adidas_youth_and_big_kids_task,
     adidas_new_releases_task,
+    adidas_mens_sneakers_task,
+    adidas_womens_sneakers_task,
     nike_in_stock_scraping_task,
     nike_new_releases_task,
 )
@@ -43,6 +45,8 @@ async def scrape_retailer_new_releases(
         "adidas/baby": adidas_baby_and_toddler_task,
         "adidas/children": adidas_children_and_little_kids_task,
         "adidas/youth": adidas_youth_and_big_kids_task,
+        "adidas/womens": adidas_womens_sneakers_task,
+        "adidas/mens": adidas_mens_sneakers_task,
     }
     if task_name not in task_mapping:
         raise HTTPException(status_code=404, detail="Task not found")

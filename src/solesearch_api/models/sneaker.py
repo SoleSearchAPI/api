@@ -12,15 +12,16 @@ from solesearch_api.models.enums import Audience, Platform, SizeStandard
 
 
 class SneakerBase(SQLModel):
-    brand: str | None = None
+    id: int | None = Field(default=None, primary_key=True)
     sku: str | None = None
+    brand: str | None = None
     parent_sku: str | None = None
     name: str | None = None
     colorway: str | None = None
     audience: Audience | None = None
     release_date: datetime | None = None
     description: str | None = None
-    retail_price: int | None = None  # Monetary values stored as US cents
+    retail_price: int | None = None
 
 
 class Sneaker(SneakerBase, TimestampedModel, table=True):
@@ -28,7 +29,6 @@ class Sneaker(SneakerBase, TimestampedModel, table=True):
         UniqueConstraint("sku", "brand", name="uix_sneaker_sku_brand"),
         Index("ix_sneaker_sku_brand", "sku", "brand"),
     )
-    id: int | None = Field(default=None, primary_key=True)
     last_observed: datetime | None = None
     stockx_id: str | None = None
     stadium_goods_id: str | None = None
@@ -36,9 +36,13 @@ class Sneaker(SneakerBase, TimestampedModel, table=True):
     meta: dict = Field(sa_type=JSONB, default_factory=dict)
 
     # Relationships
-    links: list["Link"] = Relationship(back_populates="sneaker", cascade_delete=True)
-    images: list["Image"] = Relationship(back_populates="sneaker", cascade_delete=True)
-    sizes: list["SneakerSize"] = Relationship(
+    sneaker_links: list["Link"] = Relationship(
+        back_populates="sneaker", cascade_delete=True
+    )
+    sneaker_images: list["Image"] = Relationship(
+        back_populates="sneaker", cascade_delete=True
+    )
+    sneaker_sizes: list["SneakerSize"] = Relationship(
         back_populates="sneaker",
         cascade_delete=True,
     )
@@ -46,39 +50,14 @@ class Sneaker(SneakerBase, TimestampedModel, table=True):
         back_populates="sneaker", cascade_delete=True
     )
 
-    def get_links(self) -> list[str]:
-        return [link.url for link in self.links]
-
-    def get_images(self) -> list[str]:
-        return [image.url for image in sorted(self.images, key=lambda i: i.position)]
-
-    def get_sizes(
-        self,
-        size_standard: SizeStandard = SizeStandard.MENS_US,
-    ) -> list[str]:
-        return [size.get_standardized(size_standard) for size in self.sizes]
-
-    @property
-    def prices(self) -> list["Price"]:
-        return list(reduce(lambda x, y: x.prices + y.prices, self.sizes, []))
-
-    def get_prices(self) -> list[int]:
-        return [price.amount for price in self.prices]
-
-    def merge(self, other=None):
-        if other:
-            stockx_images = [
-                img for img in other.images if img.platform == Platform.stockx
-            ]
-            if stockx_images:
-                self.images = stockx_images
-
-            if len(other.colorway) > len(self.colorway):
-                self.colorway = other.colorway
-
 
 class SneakerPublic(SneakerBase):
-    id: int
+    sneaker_links: list["Link"] = Field(default_factory=list, exclude=True)
+    sneaker_images: list["Image"] = Field(default_factory=list, exclude=True)
+
+    sneaker_sizes: list["SneakerSizePublic"] = Field(
+        default_factory=list, alias="sizes"
+    )
 
     @computed_field
     @property
@@ -90,18 +69,15 @@ class SneakerPublic(SneakerBase):
 
     @computed_field
     @property
-    def links(self) -> list[str]:
-        return self.get_links() if hasattr(self, "get_links") else []
-
-    @computed_field
-    @property
     def images(self) -> list[str]:
-        return self.get_images() if hasattr(self, "get_images") else []
+        return [
+            img.url for img in sorted(self.sneaker_images, key=lambda x: x.position)
+        ]
 
     @computed_field
     @property
-    def sizes(self) -> list[str]:
-        return self.get_sizes() if hasattr(self, "get_sizes") else []
+    def links(self) -> dict[Platform, str]:
+        return {link.platform: link.url for link in self.sneaker_links}
 
 
 class PaginatedSneakersPublic(SQLModel):
@@ -129,9 +105,9 @@ class SneakerSize(TimestampedModel, table=True):
     meta: dict = Field(sa_type=JSONB, default_factory=dict)
 
     sneaker_id: int | None = Field(default=None, foreign_key="sneaker.id")
-    sneaker: Sneaker | None = Relationship(back_populates="sizes")
+    sneaker: Sneaker | None = Relationship(back_populates="sneaker_sizes")
 
-    prices: list["Price"] = Relationship(back_populates="sneaker_size")
+    sneaker_size_prices: list["Price"] = Relationship(back_populates="sneaker_size")
 
 
 class Price(SQLModel, table=True):
@@ -149,7 +125,9 @@ class Price(SQLModel, table=True):
     last_observed: datetime | None = None
 
     sneaker_size_id: int | None = Field(default=None, foreign_key="sneakersize.id")
-    sneaker_size: SneakerSize | None = Relationship(back_populates="prices")
+    sneaker_size: SneakerSize | None = Relationship(
+        back_populates="sneaker_size_prices"
+    )
 
     @property
     def in_dollars(self) -> Decimal:
@@ -167,7 +145,7 @@ class Link(TimestampedModel, table=True):
     url: str
 
     sneaker_id: int | None = Field(default=None, foreign_key="sneaker.id")
-    sneaker: Sneaker | None = Relationship(back_populates="links")
+    sneaker: Sneaker | None = Relationship(back_populates="sneaker_links")
 
 
 class Image(TimestampedModel, table=True):
@@ -181,7 +159,7 @@ class Image(TimestampedModel, table=True):
     url: str
 
     sneaker_id: int | None = Field(default=None, foreign_key="sneaker.id")
-    sneaker: Sneaker | None = Relationship(back_populates="images")
+    sneaker: Sneaker | None = Relationship(back_populates="sneaker_images")
 
 
 class NikeLaunch(SQLModel, table=True):
@@ -205,3 +183,22 @@ class NikeLaunch(SQLModel, table=True):
     merch_product_status: str | None = None
     is_launch_product: bool | None = None
     last_observed: datetime | None = None
+
+
+class SneakerSizePublic(SQLModel):
+    value: str
+    size_standard: SizeStandard
+    sneaker_size_prices: list["PricePublic"] = []
+
+
+class PricePublic(SQLModel):
+    platform: Platform | None = None
+    amount: int
+
+    @computed_field
+    @property
+    def amount_formatted(self) -> str:
+        return f"${Decimal(self.amount) / 100:.2f}"
+
+    last_observed: datetime | None = None
+    first_observed: datetime | None = None

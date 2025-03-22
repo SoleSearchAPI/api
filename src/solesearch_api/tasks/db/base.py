@@ -1,5 +1,6 @@
 import logfire
 from sqlmodel import Session, select
+from sqlalchemy.orm import joinedload
 
 from solesearch_api.models.enums import Platform
 from solesearch_api.models.sneaker import Sneaker
@@ -26,14 +27,22 @@ def create_or_update_sneaker(
             The created or updated sneaker object
         """
         # Check if sneaker already exists with eager loading of relationships
-        statement = select(Sneaker).where(
-            Sneaker.sku == sneaker.sku,
-            Sneaker.brand == sneaker.brand,
+        statement = (
+            select(Sneaker)
+            .where(
+                Sneaker.sku == sneaker.sku,
+                Sneaker.brand == sneaker.brand,
+            )
+            .options(
+                joinedload(Sneaker.sneaker_links),
+                joinedload(Sneaker.sneaker_images),
+                joinedload(Sneaker.sneaker_sizes),
+            )
         )
         existing_sneaker = session.exec(statement).first()
 
         if existing_sneaker:
-            logfire.info(
+            logfire.trace(
                 f"{sneaker.brand} SKU '{sneaker.sku}' found, updating existing sneaker",
                 sneaker=sneaker,
                 existing_sneaker=existing_sneaker,
@@ -65,9 +74,9 @@ def create_or_update_sneaker(
 
             # Add any new links
             existing_links = {
-                link.platform: link.url for link in existing_sneaker.links
+                link.platform: link.url for link in existing_sneaker.sneaker_links
             }
-            for new_link in sneaker.links:
+            for new_link in sneaker.sneaker_links:
                 if existing_links.get(new_link.platform) == new_link.url:
                     # Skip if we already have this exact link
                     continue
@@ -84,14 +93,14 @@ def create_or_update_sneaker(
                 else:
                     # Only add if we don't have a link for this platform yet
                     new_link.sneaker = existing_sneaker
-                    existing_sneaker.links.append(new_link)
+                    existing_sneaker.sneaker_links.append(new_link)
 
             # Add any new images
             existing_images = {
                 (image.platform, image.position): image.url
-                for image in existing_sneaker.images
+                for image in existing_sneaker.sneaker_images
             }
-            for image in sneaker.images:
+            for image in sneaker.sneaker_images:
                 key = (image.platform, image.position)
                 if existing_images.get(key) == image.url:
                     # Skip if we already have this exact image
@@ -109,14 +118,14 @@ def create_or_update_sneaker(
                 else:
                     # Only add if we don't have an image for this platform/position yet
                     image.sneaker = existing_sneaker
-                    existing_sneaker.images.append(image)
+                    existing_sneaker.sneaker_images.append(image)
 
             # Add any new sizes
             existing_sizes = {
                 (size.value, size.size_standard): size
-                for size in existing_sneaker.sizes
+                for size in existing_sneaker.sneaker_sizes
             }
-            for size in sneaker.sizes:
+            for size in sneaker.sneaker_sizes:
                 key = (size.value, size.size_standard)
                 if key in existing_sizes:
                     # Skip if we already have this size
@@ -124,7 +133,7 @@ def create_or_update_sneaker(
                 else:
                     # Only add if we don't have this size yet
                     size.sneaker = existing_sneaker
-                    existing_sneaker.sizes.append(size)
+                    existing_sneaker.sneaker_sizes.append(size)
 
             session.add(existing_sneaker)
             result = existing_sneaker

@@ -9,6 +9,12 @@ from solesearch_api.tasks.scraping.retail.adidas.kids_sneakers import (
     adidas_children_and_little_kids_task,
     adidas_youth_and_big_kids_task,
 )
+from solesearch_api.tasks.scraping.retail.adidas.mens_sneakers import (
+    adidas_mens_sneakers_task,
+)
+from solesearch_api.tasks.scraping.retail.adidas.womens_sneakers import (
+    adidas_womens_sneakers_task,
+)
 
 # Nike Tasks
 from solesearch_api.tasks.scraping.retail.nike.new_releases import (
