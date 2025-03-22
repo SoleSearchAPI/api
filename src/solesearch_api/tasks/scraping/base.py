@@ -31,15 +31,10 @@ class BaseScrapingTask:
         download_url: str = None,
         headers: dict = {},
         extractor: Callable[[str], dict] | None = None,
+        prefix: str = "",
         *args,
         **kwargs,
     ):
-        if not brand:
-            raise MisconfigurationError("brand is required")
-        if not audience_mapping:
-            raise MisconfigurationError("audience_mapping is required")
-        if not extractor:
-            raise MisconfigurationError("extractor is required")
         self.audience_mapping = audience_mapping
         self.brand = brand
         self.download_url = download_url
@@ -47,12 +42,16 @@ class BaseScrapingTask:
         if headers:
             self.headers.update(headers)
         self.extractor = extractor
+        self.prefix = prefix
 
     def run(self, *args, **kwargs):
         logfire.info(
             "Running scraping task",
             brand=self.brand,
             task_name=self.__class__.__name__,
+            download_url=self.download_url,
+            args=args,
+            kwargs=kwargs,
         )
         result = self.scrape(*args, **kwargs)
         logfire.info(
@@ -85,6 +84,7 @@ class BaseScrapingTask:
             HTML_DIR,
             self.brand,
             self.__class__.__name__,
+            self.prefix,
             datetime.now().strftime("%Y-%m-%d.html"),
         )
         if os.path.exists(file_path):
@@ -129,6 +129,7 @@ class BaseScrapingTask:
             JSON_DIR,
             self.brand,
             self.__class__.__name__,
+            self.prefix,
             datetime.now().strftime("%Y-%m-%d.json"),
         )
         if os.path.exists(file_path):
@@ -137,6 +138,7 @@ class BaseScrapingTask:
                     "JSON data loaded from file",
                     brand=self.brand,
                     task_name=self.__class__.__name__,
+                    prefix=self.prefix,
                     file_path=file_path,
                 )
                 return json.load(f)
@@ -147,6 +149,7 @@ class BaseScrapingTask:
             "JSON data saved to file",
             brand=self.brand,
             task_name=self.__class__.__name__,
+            prefix=self.prefix,
             file_path=file_path,
         )
         return json_data
