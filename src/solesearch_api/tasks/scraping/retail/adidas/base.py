@@ -104,16 +104,13 @@ class AdidasPaginatedScrapingTask(AdidasScrapingTask):
             )
             sneaker.sneaker_links.append(sneaker_link)
 
-        for index, image in enumerate(data.get("images", [])):
-            image_url = re.sub(r"images/[^/]+/", "images/", image.get("src"))
-            position = image.get("metadata", {}).get("sortOrder")
-            position = int(position) if position else index
-            image = Image(
-                platform=Platform.RETAIL,
-                position=position,
-                url=image_url,
-            )
-            sneaker.sneaker_images.append(image)
+        image_url = re.sub(r"images/[^/]+/", "images/", data.get("image"))
+        image = Image(
+            platform=Platform.RETAIL,
+            position=0,
+            url=image_url,
+        )
+        sneaker.sneaker_images.append(image)
 
         sneakers.append(sneaker)
 
