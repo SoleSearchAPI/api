@@ -3,7 +3,7 @@ version: "3.8"
 services:
   api:
     container_name: solesearch_api
-    image: peterrauscher/solesearch-api:latest
+    image: peterrauscher/solesearch-api:v3.0.1
     volumes:
       - ~/solesearch/api/data:/var/data/solesearch
     networks:
@@ -17,7 +17,7 @@ services:
 
   celery_worker:
     container_name: solesearch_worker
-    image: peterrauscher/solesearch-api:latest
+    image: peterrauscher/solesearch-api:v3.0.1
     command: celery -A solesearch_api.tasks worker --loglevel=info
     volumes:
       - ~/solesearch/api/data:/var/data/solesearch
@@ -33,7 +33,7 @@ services:
 
   celery_beat:
     container_name: solesearch_beat
-    image: peterrauscher/solesearch-api:latest
+    image: peterrauscher/solesearch-api:v3.0.1
     command: celery -A solesearch_api.tasks beat --loglevel=info
     volumes:
       - ~/solesearch/api/data:/var/data/solesearch
