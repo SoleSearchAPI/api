@@ -23,3 +23,11 @@ from solesearch_api.tasks.scraping.retail.nike.new_releases import (
 from solesearch_api.tasks.scraping.retail.nike.in_stock import (
     nike_in_stock_scraping_task,
 )
+
+# Goat Tasks
+from solesearch_api.tasks.scraping.aftermarket.goat.browse_brand_index import (
+    goat_brand_index_task,
+)
+from solesearch_api.tasks.scraping.aftermarket.goat.recently_added_by_brand import (
+    goat_recently_added_by_brand_task,
+)

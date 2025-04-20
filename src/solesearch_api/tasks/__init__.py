@@ -46,6 +46,10 @@ app.conf.beat_schedule = {
         "task": "solesearch_api.tasks.scraping.NikeInStockScrapingTask",
         "schedule": 4 * 60 * 60,  # every 4 hours
     },
+    "goat-recently-added-by-brand-every-24-hours": {
+        "task": "solesearch_api.tasks.scraping.GoatRecentlyAddedByBrandScrapingTask",
+        "schedule": 24 * 60 * 60,  # every 24 hours
+    },
     "healthcheck-every-minute": {
         "task": "solesearch_api.tasks.alerting.healthcheck",
         "schedule": 60 * 10,  # every 10 minutes

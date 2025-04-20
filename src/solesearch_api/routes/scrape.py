@@ -10,6 +10,7 @@ from solesearch_api.tasks.scraping import (
     adidas_womens_sneakers_task,
     nike_in_stock_scraping_task,
     nike_new_releases_task,
+    goat_recently_added_by_brand_task,
 )
 
 router = APIRouter(
@@ -47,6 +48,7 @@ async def scrape_retailer_new_releases(
         "adidas/youth": adidas_youth_and_big_kids_task,
         "adidas/womens": adidas_womens_sneakers_task,
         "adidas/mens": adidas_mens_sneakers_task,
+        "goat/recently_added_by_brand": goat_recently_added_by_brand_task,
     }
     if task_name not in task_mapping:
         raise HTTPException(status_code=404, detail="Task not found")

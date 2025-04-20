@@ -45,6 +45,10 @@ class BaseScrapingTask:
         self.prefix = prefix
 
     def run(self, *args, **kwargs):
+        if "download_url" in kwargs:
+            self.download_url = kwargs["download_url"]
+        if "brand" in kwargs:
+            self.brand = kwargs["brand"]
         logfire.info(
             "Running scraping task",
             brand=self.brand,

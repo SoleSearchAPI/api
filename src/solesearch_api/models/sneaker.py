@@ -32,6 +32,7 @@ class Sneaker(SneakerBase, TimestampedModel, table=True):
     last_observed: datetime | None = None
     stockx_id: str | None = None
     stadium_goods_id: str | None = None
+    goat_id: str | None = None
     source: Platform | None = None
     meta: dict = Field(sa_type=JSONB, default_factory=dict)
 

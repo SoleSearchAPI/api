@@ -22,6 +22,7 @@ if ENVIRONMENT == "production":
 @app.task(name="solesearch_api.tasks.alerting.healthcheck")
 def healthcheck():
     if ENVIRONMENT != "production":
+        print("Healthcheck not needed in non-production environment")
         return
     response = requests.post(
         AWS_HEALTHCHECK_URL,
