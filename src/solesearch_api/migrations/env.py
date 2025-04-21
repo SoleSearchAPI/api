@@ -2,9 +2,9 @@ from logging.config import fileConfig
 
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
+from sqlmodel import SQLModel
 
 from alembic import context
-from sqlmodel import SQLModel
 from solesearch_api.config import DB_URL
 
 # this is the Alembic Config object, which provides
@@ -25,7 +25,7 @@ if config.config_file_name is not None:
 target_metadata = SQLModel.metadata
 
 # Import models here so they are registered with SQLModel.metadata
-import solesearch_api.models
+import solesearch_api.models  # noqa: F401
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:

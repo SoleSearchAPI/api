@@ -10,7 +10,6 @@ from fastapi.responses import RedirectResponse
 from fastapi_pagination import add_pagination
 from starlette.middleware.sessions import SessionMiddleware
 
-from solesearch_api.db import initialize_db
 from solesearch_api.routes import auth, scrape, sneakers
 
 desc = """
@@ -53,17 +52,12 @@ app.add_middleware(
 
 @app.on_event("startup")
 async def startup_event():
-    # Create the database tables
-    initialize_db()
-    logfire.info("Database initialized")
     # Include all routers
     app.include_router(sneakers.router)
     app.include_router(auth.router)
     app.include_router(scrape.router)
-    logfire.info("Routers imported")
     # Load the pagination module
     add_pagination(app)
-    logfire.info("Pagination module loaded")
 
 
 @app.get("/docs", include_in_schema=False)
