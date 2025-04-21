@@ -39,6 +39,8 @@ ENV PYTHONPATH=/app/src:$PYTHONPATH
 # Expose the port the app runs on
 EXPOSE 8000
 
+RUN poetry run alembic upgrade head
+
 # Command to run the application
 CMD if [ "$ENVIRONMENT" = "development" ]; then \
     poetry run debugpy --listen 0.0.0.0:5678 -m uvicorn --reload src.solesearch_api.main:app --host 0.0.0.0 --port 8000; \
