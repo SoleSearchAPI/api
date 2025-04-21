@@ -43,5 +43,6 @@ EXPOSE 8000
 CMD if [ "$ENVIRONMENT" = "development" ]; then \
     poetry run debugpy --listen 0.0.0.0:5678 -m uvicorn --reload src.solesearch_api.main:app --host 0.0.0.0 --port 8000; \
     else \
-    poetry run uvicorn src.solesearch_api.main:app --host 0.0.0.0 --port 8000; \
+    cd src/solesearch_api && poetry run alembic upgrade head && \
+    cd ../../ && poetry run uvicorn src.solesearch_api.main:app --host 0.0.0.0 --port 8000; \
     fi
